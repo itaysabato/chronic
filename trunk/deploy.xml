@@ -1,0 +1,16 @@
+<project name="deploy" default="dist" basedir=".">
+    <description>
+        simple example build file
+    </description>
+
+    <target name="dist">
+        <delete dir="${dest}"/>
+
+        <copy todir="${dest}" overwrite="true">
+            <fileset dir="${src}"/>
+        </copy>
+
+        <exec executable="run.cmd"/>
+    </target>
+
+</project>
