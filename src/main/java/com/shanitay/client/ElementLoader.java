@@ -28,12 +28,18 @@ public class ElementLoader {
     private final OMSVGGElement ballsButton;
     private final OMSVGGElement leftSocket;
     private final OMSVGGElement rightSocket;
+    private final OMSVGGElement ball1;
+    private final OMSVGGElement ball2;
+    private final OMSVGGElement ball3;
 
     public ElementLoader(OMSVGSVGElement svgsvgElement) {
         tongue = Utils.getGElement("tongue", svgsvgElement);
         mouthWide = Utils.getGElement("mouthWide", svgsvgElement);
         mouthThin = Utils.getGElement("mouthThin", svgsvgElement);
         ballsButton = Utils.getGElement("ballsButton", svgsvgElement);
+        ball1 = Utils.getGElement("ball1", svgsvgElement);
+        ball2 = Utils.getGElement("ball2", svgsvgElement);
+        ball3 = Utils.getGElement("ball3", svgsvgElement);
         leftOpen = Utils.getGElement("eyeballLeftOpen", svgsvgElement);
         leftSocket = Utils.getGElement("leftSocket", svgsvgElement);
         rightOpen = Utils.getGElement("eyeballRightOpen", svgsvgElement);
@@ -125,5 +131,17 @@ public class ElementLoader {
 
     public OMSVGGElement getRightSocket() {
         return rightSocket;
+    }
+
+    public OMSVGGElement getBall1() {
+        return ball1;
+    }
+
+    public OMSVGGElement getBall2() {
+        return ball2;
+    }
+
+    public OMSVGGElement getBall3() {
+        return ball3;
     }
 }

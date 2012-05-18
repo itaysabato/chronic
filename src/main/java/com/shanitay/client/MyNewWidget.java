@@ -62,6 +62,8 @@ public class MyNewWidget extends Composite {
         stopToy(elementLoader.getNose3(), noseToy);
         stopToy(elementLoader.getNose4(), noseToy);
         stopToy(elementLoader.getNose5(), noseToy);
+
+        attachToy(elementLoader.getBallsButton(), soundLoader.getBalls(), animationLoader.getBalls(), false);
     }
 
     private void stopToy(OMSVGGElement element, final Toy toy) {
