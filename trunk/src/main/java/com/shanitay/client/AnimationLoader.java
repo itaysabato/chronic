@@ -7,10 +7,11 @@ package com.shanitay.client;
  */
 public class AnimationLoader {
     private static final int BG_INTERVAL = 125;
+    public static final int TIME_UNIT = 41;
 
     private final Toy.Animation bg;
     private final Toy.Animation nose;
-//    private final Toy.Animation balls;
+    private final Toy.Animation balls;
     private final Toy.Animation mouth;
     private final Toy.Animation tongue;
     private final Toy.Animation leftEye;
@@ -35,7 +36,14 @@ public class AnimationLoader {
         mouth = new PeekabooToyAnimation(PeekabooToyAnimation.Kind.APPEAR, 800, elementLoader.getMouthWide());
         leftEye = new PeekabooToyAnimation(PeekabooToyAnimation.Kind.DISAPPEAR, 500, elementLoader.getLeftOpen());
         rightEye = new PeekabooToyAnimation(PeekabooToyAnimation.Kind.DISAPPEAR, 500, elementLoader.getRightOpen());
-        tongue = new MovingToyAnimation(41, 48, 0, 3.75f, elementLoader.getTongue(), true);
+
+        final MovementEquation tongueEquationX = new MovementEquation(0, 0);
+        final MovementEquation tongueEquationY = new MovementEquation(0, 3.75f);
+        tongue = new MovingToyAnimation(TIME_UNIT, 48, tongueEquationX, tongueEquationY, elementLoader.getTongue(), true);
+
+        final MovementEquation ballsEquationX = new MovementEquation(0, 10);
+        final MovementEquation ballsEquationY = new MovementEquation(0, 0, 1);
+        balls = new MovingToyAnimation(TIME_UNIT, 48, ballsEquationX, ballsEquationY, elementLoader.getBall1(), false);
     }
 
     public Toy.Animation getRightEye() {
@@ -60,5 +68,9 @@ public class AnimationLoader {
 
     public Toy.Animation getBg() {
         return bg;
+    }
+
+    public Toy.Animation getBalls() {
+        return balls;
     }
 }

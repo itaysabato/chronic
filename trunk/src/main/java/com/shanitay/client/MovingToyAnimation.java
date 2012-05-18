@@ -19,14 +19,15 @@ public class MovingToyAnimation implements Toy.Animation {
     private int dt = 0;
     private boolean looping = false;
     private boolean stopping = false;
+    private MyRepeatingCommand command = new MyRepeatingCommand();
 
-    public MovingToyAnimation(int timeUnit, int numSteps, float vX, float vY, OMSVGGElement target, boolean rewind) {
+    public MovingToyAnimation(int timeUnit, int numSteps, MovementEquation equationX, MovementEquation equationY, OMSVGGElement target, boolean rewind) {
         this.target = target;
         this.rewind = rewind;
         this.numSteps = numSteps;
         this.timeUnit = timeUnit;
-        equationX = new MovementEquation(0, vX);
-        equationY = new MovementEquation(0, vY);
+        this.equationX = equationX;
+        this.equationY = equationY;
     }
 
     public void setLooping(boolean looping) {
@@ -35,22 +36,9 @@ public class MovingToyAnimation implements Toy.Animation {
 
     public void play() {
         reset();
-
-        final Scheduler.RepeatingCommand cmd = new Scheduler.RepeatingCommand() {
-
-            public boolean execute() {
-                if((!looping && dt == numSteps - 1) || stopping){
-                    reset();
-                    return false;
-                }
-
-                dt = (dt + 1) % numSteps;
-                translate();
-                return true;
-            }
-        };
-
-        Scheduler.get().scheduleFixedDelay(cmd, timeUnit);
+        if(!command.repeat){
+            Scheduler.get().scheduleFixedDelay(command, timeUnit);
+        }
     }
 
     private void reset() {
@@ -76,5 +64,22 @@ public class MovingToyAnimation implements Toy.Animation {
 
     public void stop() {
         stopping = true;
+    }
+
+    private class MyRepeatingCommand implements Scheduler.RepeatingCommand {
+        private boolean repeat = false;
+
+        public boolean execute() {
+            if((!looping && dt == numSteps - 1) || stopping){
+                reset();
+                repeat = false;
+                return false;
+            }
+
+            dt = (dt + 1) % numSteps;
+            translate();
+            repeat = true;
+            return true;
+        }
     }
 }
