@@ -66,7 +66,6 @@ public class MyNewWidget extends Composite {
 
     private void stopToy(OMSVGGElement element, final Toy toy) {
         Utils.addHandler(element, new Utils.SomeHandler() {
-            @Override
             public void handle() {
                 toy.stop();
             }
