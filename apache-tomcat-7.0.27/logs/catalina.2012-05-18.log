@@ -1,0 +1,154 @@
+18/05/2012 02:52:23 org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files (x86)\Java\jdk1.6.0_24\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\JetBrains\IntelliJ IDEA 11.1.1\bin\..\.\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Java\jdk1.6.0_24\bin;C:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;C:\Program Files (x86)\Common Files\Roxio Shared\10.0\DLLShared\;C:\Program Files\MATLAB\R2008b\bin;C:\Program Files\MATLAB\R2008b\bin\win64;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\apache-ant-1.8.2\bin;C:\Users\itay\IdeaProjects\undermind\release;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\apache-maven-3.0.4\bin;c:\program files (x86)\jetbrains\intellij idea 11.1.1\jre\jre\bin
+18/05/2012 02:52:25 org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+18/05/2012 02:52:25 org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+18/05/2012 02:52:25 org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 3875 ms
+18/05/2012 02:52:26 org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+18/05/2012 02:52:26 org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.27
+18/05/2012 02:52:26 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\docs
+18/05/2012 02:52:27 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\examples
+18/05/2012 02:52:27 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\host-manager
+18/05/2012 02:52:27 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\manager
+18/05/2012 02:52:28 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\ROOT
+18/05/2012 02:52:28 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\shanitay-1.0-SNAPSHOT
+18/05/2012 02:52:28 org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+18/05/2012 02:52:28 org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+18/05/2012 02:52:28 org.apache.catalina.startup.Catalina start
+INFO: Server startup in 2719 ms
+18/05/2012 02:57:14 org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files (x86)\Java\jdk1.6.0_24\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\JetBrains\IntelliJ IDEA 11.1.1\bin\..\.\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Java\jdk1.6.0_24\bin;C:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;C:\Program Files (x86)\Common Files\Roxio Shared\10.0\DLLShared\;C:\Program Files\MATLAB\R2008b\bin;C:\Program Files\MATLAB\R2008b\bin\win64;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\apache-ant-1.8.2\bin;C:\Users\itay\IdeaProjects\undermind\release;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\apache-maven-3.0.4\bin;c:\program files (x86)\jetbrains\intellij idea 11.1.1\jre\jre\bin
+18/05/2012 02:57:15 org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+18/05/2012 02:57:15 org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+18/05/2012 02:57:15 org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 780 ms
+18/05/2012 02:57:15 org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+18/05/2012 02:57:15 org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.27
+18/05/2012 02:57:15 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\docs
+18/05/2012 02:57:15 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\examples
+18/05/2012 02:57:16 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\host-manager
+18/05/2012 02:57:16 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\manager
+18/05/2012 02:57:16 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\ROOT
+18/05/2012 02:57:16 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\shanitay-1.0-SNAPSHOT
+18/05/2012 02:57:16 org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+18/05/2012 02:57:16 org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+18/05/2012 02:57:16 org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1456 ms
+18/05/2012 03:06:36 org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files (x86)\Java\jdk1.6.0_24\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\JetBrains\IntelliJ IDEA 11.1.1\bin\..\.\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Java\jdk1.6.0_24\bin;C:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;C:\Program Files (x86)\Common Files\Roxio Shared\10.0\DLLShared\;C:\Program Files\MATLAB\R2008b\bin;C:\Program Files\MATLAB\R2008b\bin\win64;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\apache-ant-1.8.2\bin;C:\Users\itay\IdeaProjects\undermind\release;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\apache-maven-3.0.4\bin;c:\program files (x86)\jetbrains\intellij idea 11.1.1\jre\jre\bin
+18/05/2012 03:06:36 org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+18/05/2012 03:06:36 org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+18/05/2012 03:06:36 org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 756 ms
+18/05/2012 03:06:36 org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+18/05/2012 03:06:36 org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.27
+18/05/2012 03:06:36 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\docs
+18/05/2012 03:06:37 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\examples
+18/05/2012 03:06:37 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\host-manager
+18/05/2012 03:06:37 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\manager
+18/05/2012 03:06:37 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\ROOT
+18/05/2012 03:06:37 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\shanitay-1.0-SNAPSHOT
+18/05/2012 03:06:38 org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+18/05/2012 03:06:38 org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+18/05/2012 03:06:38 org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1405 ms
+18/05/2012 03:29:05 org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files (x86)\Java\jdk1.6.0_24\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\JetBrains\IntelliJ IDEA 11.1.1\bin\..\.\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Java\jdk1.6.0_24\bin;C:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;C:\Program Files (x86)\Common Files\Roxio Shared\10.0\DLLShared\;C:\Program Files\MATLAB\R2008b\bin;C:\Program Files\MATLAB\R2008b\bin\win64;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\apache-ant-1.8.2\bin;C:\Users\itay\IdeaProjects\undermind\release;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\apache-maven-3.0.4\bin;c:\program files (x86)\jetbrains\intellij idea 11.1.1\jre\jre\bin
+18/05/2012 03:29:05 org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+18/05/2012 03:29:06 org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+18/05/2012 03:29:06 org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 1063 ms
+18/05/2012 03:29:06 org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+18/05/2012 03:29:06 org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.27
+18/05/2012 03:29:06 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\docs
+18/05/2012 03:29:06 org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFO: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [366] milliseconds.
+18/05/2012 03:29:06 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\examples
+18/05/2012 03:29:07 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\host-manager
+18/05/2012 03:29:07 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\manager
+18/05/2012 03:29:07 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\ROOT
+18/05/2012 03:29:07 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\shanitay-1.0-SNAPSHOT
+18/05/2012 03:29:07 org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+18/05/2012 03:29:07 org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+18/05/2012 03:29:07 org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1498 ms
+18/05/2012 04:40:57 org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files (x86)\Java\jdk1.6.0_24\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\JetBrains\IntelliJ IDEA 11.1.1\bin\..\.\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Java\jdk1.6.0_24\bin;C:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;C:\Program Files (x86)\Common Files\Roxio Shared\10.0\DLLShared\;C:\Program Files\MATLAB\R2008b\bin;C:\Program Files\MATLAB\R2008b\bin\win64;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\apache-ant-1.8.2\bin;C:\Users\itay\IdeaProjects\undermind\release;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\apache-maven-3.0.4\bin;c:\program files (x86)\jetbrains\intellij idea 11.1.1\jre\jre\bin
+18/05/2012 04:40:58 org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+18/05/2012 04:40:58 org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+18/05/2012 04:40:58 org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 1514 ms
+18/05/2012 04:40:58 org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+18/05/2012 04:40:58 org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.27
+18/05/2012 04:40:58 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\docs
+18/05/2012 04:40:59 org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFO: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [152] milliseconds.
+18/05/2012 04:40:59 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\examples
+18/05/2012 04:41:00 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\host-manager
+18/05/2012 04:41:00 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\manager
+18/05/2012 04:41:00 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\ROOT
+18/05/2012 04:41:00 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Users\itay\IdeaProjects\shanitay\apache-tomcat-7.0.27\webapps\shanitay-1.0-SNAPSHOT
+18/05/2012 04:41:00 org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+18/05/2012 04:41:00 org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+18/05/2012 04:41:00 org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1908 ms
