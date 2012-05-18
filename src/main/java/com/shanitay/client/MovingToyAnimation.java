@@ -37,7 +37,7 @@ public class MovingToyAnimation implements Toy.Animation {
         reset();
 
         final Scheduler.RepeatingCommand cmd = new Scheduler.RepeatingCommand() {
-            @Override
+
             public boolean execute() {
                 if((!looping && dt == numSteps - 1) || stopping){
                     reset();

@@ -2,8 +2,6 @@ package com.shanitay.client;
 
 import com.allen_sauer.gwt.voices.client.Sound;
 import com.allen_sauer.gwt.voices.client.SoundController;
-import com.allen_sauer.gwt.voices.client.handler.SoundHandler;
-import com.chj.gwt.client.soundmanager2.SoundManager;
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.event.dom.client.MouseDownEvent;
@@ -62,7 +60,7 @@ public class Utils {
 //            }
 //        });
 
-        element.getElement().getStyle().setCursor(Style.Cursor.POINTER);
+//        element.getElement().getStyle().setCursor(Style.Cursor.POINTER);
     }
 
     public static OMSVGGElement getGElement(String elementId, OMSVGSVGElement element) {
@@ -85,73 +83,10 @@ public class Utils {
         gElement.setAttribute("transform", "translate(" + x + "," + y + ")");
     }
 
-    private static int counter = 0;
     public static Sound getSound(final String soundUrl, SoundController soundController) {
-        final SoundManager soundManager = SoundManager.quickStart();
-        final String id = "sound" + counter;
-        counter++;
-        soundManager.createSound(id, soundUrl);
-
-        return new Sound() {
-            public int getBalance() {
-                return 0;  //To change body of implemented methods use File | Settings | File Templates.
-            }
-
-            public LoadState getLoadState() {
-                return null;  //To change body of implemented methods use File | Settings | File Templates.
-            }
-
-            public boolean getLooping() {
-                return false;  //To change body of implemented methods use File | Settings | File Templates.
-            }
-
-            public String getMimeType() {
-                return null;  //To change body of implemented methods use File | Settings | File Templates.
-            }
-
-            public String getSoundType() {
-                return null;  //To change body of implemented methods use File | Settings | File Templates.
-            }
-
-            public String getUrl() {
-                return null;  //To change body of implemented methods use File | Settings | File Templates.
-            }
-
-            public int getVolume() {
-                return 0;  //To change body of implemented methods use File | Settings | File Templates.
-            }
-
-            public boolean play() {
-                soundManager.play(id);
-                return true;
-            }
-
-            public void setBalance(int balance) {
-                //To change body of implemented methods use File | Settings | File Templates.
-            }
-
-            public void setLooping(boolean looping) {
-                //To change body of implemented methods use File | Settings | File Templates.
-            }
-
-            public void setVolume(int volume) {
-                //To change body of implemented methods use File | Settings | File Templates.
-            }
-
-            public void stop() {
-                soundManager.stop(id);
-            }
-
-            public void addEventHandler(SoundHandler handler) {
-                //To change body of implemented methods use File | Settings | File Templates.
-            }
-
-            public void removeEventHandler(SoundHandler handler) {
-                //To change body of implemented methods use File | Settings | File Templates.
-            }
-        };
-//        return soundController.createSound(Sound.MIME_TYPE_AUDIO_MPEG_MP3, soundUrl, true, false);
+        return soundController.createSound(Sound.MIME_TYPE_AUDIO_MPEG_MP3, soundUrl, true, false);
     }
+
     public interface SomeHandler {
         void handle();
     }
