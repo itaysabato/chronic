@@ -1,0 +1,15 @@
+package com.shanitay.client;
+
+import com.google.gwt.resources.client.ClientBundle;
+import org.vectomatic.dom.svg.ui.SVGResource;
+
+/**
+ * Created By: Itay Sabato<br/>
+ * Date: 05/05/12 <br/>
+ * Time: 04:01 <br/>
+ */
+public interface SVGBundle extends ClientBundle {
+    @Source("face1.svg")
+    @SVGResource.Validated(validated = false)
+    SVGResource mainSvg();
+}
