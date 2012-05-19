@@ -1,4 +1,4 @@
-package com.shanitay.client;
+package com.shanitay.client.utils;
 
 import com.allen_sauer.gwt.voices.client.Sound;
 import com.allen_sauer.gwt.voices.client.handler.PlaybackCompleteEvent;

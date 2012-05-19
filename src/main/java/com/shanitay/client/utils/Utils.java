@@ -1,4 +1,4 @@
-package com.shanitay.client;
+package com.shanitay.client.utils;
 
 import com.allen_sauer.gwt.voices.client.Sound;
 import com.allen_sauer.gwt.voices.client.SoundController;
@@ -87,6 +87,27 @@ public class Utils {
     public static OMSVGAnimationElement getAnimationElement(String elementId, OMSVGSVGElement svgsvgElement) {
         final OMNode element = Utils.getElement(elementId, svgsvgElement);
         return (OMSVGAnimationElement) element;
+    }
+
+    public static void stopToy(OMSVGGElement element, final Toy toy) {
+        Utils.addHandler(element, new Utils.SomeHandler() {
+            public void handle() {
+                toy.stop();
+            }
+        });
+    }
+
+    public static Toy attachToy(OMSVGGElement element, Sound sound, boolean looping, Toy.Animation... animations) {
+        final Toy toy = new Toy(sound, animations);
+        toy.setLooping(looping);
+
+        Utils.addHandler(element, new Utils.SomeHandler() {
+            public void handle() {
+                toy.toggle();
+            }
+        });
+
+        return toy;
     }
 
     public interface SomeHandler {

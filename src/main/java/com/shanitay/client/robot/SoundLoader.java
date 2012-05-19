@@ -1,14 +1,15 @@
-package com.shanitay.client;
+package com.shanitay.client.robot;
 
 import com.allen_sauer.gwt.voices.client.Sound;
 import com.allen_sauer.gwt.voices.client.SoundController;
+import com.shanitay.client.utils.Utils;
 
 /**
  * Created By: Itay Sabato<br/>
  * Date: 17/05/12 <br/>
  * Time: 20:04 <br/>
  */
-public class SoundLoader {
+class SoundLoader {
     private final Sound bg;
     private final Sound nose;
     private final Sound mouth;

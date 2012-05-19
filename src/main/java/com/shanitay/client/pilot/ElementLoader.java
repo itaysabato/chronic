@@ -1,5 +1,6 @@
-package com.shanitay.client;
+package com.shanitay.client.pilot;
 
+import com.shanitay.client.utils.Utils;
 import org.vectomatic.dom.svg.OMSVGAnimationElement;
 import org.vectomatic.dom.svg.OMSVGGElement;
 import org.vectomatic.dom.svg.OMSVGSVGElement;
@@ -9,7 +10,7 @@ import org.vectomatic.dom.svg.OMSVGSVGElement;
  * Date: 17/05/12 <br/>
  * Time: 20:04 <br/>
  */
-public class ElementLoader {
+class ElementLoader {
     private final OMSVGGElement bg;
     private final OMSVGGElement bg1;
     private final OMSVGGElement bg2;

@@ -1,11 +1,13 @@
-package com.shanitay.client;
+package com.shanitay.client.pilot;
+
+import com.shanitay.client.utils.*;
 
 /**
  * Created By: Itay Sabato<br/>
  * Date: 17/05/12 <br/>
  * Time: 20:05 <br/>
  */
-public class AnimationLoader {
+class AnimationLoader {
     private static final int BG_INTERVAL = 125;
     public static final int TIME_UNIT = 41;
 
