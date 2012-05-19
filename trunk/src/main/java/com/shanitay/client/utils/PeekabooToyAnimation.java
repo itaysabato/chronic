@@ -9,14 +9,14 @@ import org.vectomatic.dom.svg.OMSVGGElement;
  * Time: 21:35 <br/>
  */
 public class PeekabooToyAnimation implements Toy.Animation {
-    private final Kind kind;
+    private final StateChangeAnimator kind;
     private final int durationMillis;
     private final OMSVGGElement target;
 
     private boolean looping = false;
     private boolean stopping = false;
 
-    public PeekabooToyAnimation(Kind kind, int durationMillis, OMSVGGElement target) {
+    public PeekabooToyAnimation(StateChangeAnimator kind, int durationMillis, OMSVGGElement target) {
         this.kind = kind;
         this.durationMillis = durationMillis;
         this.target = target;
@@ -50,32 +50,4 @@ public class PeekabooToyAnimation implements Toy.Animation {
         stopping = true;
     }
 
-    public static enum Kind {
-       APPEAR {
-           @Override
-           protected void inAnimation(OMSVGGElement target) {
-               Utils.show(target);
-           }
-
-           @Override
-           protected void offAnimation(OMSVGGElement target) {
-               Utils.hide(target);
-           }
-       },
-
-       DISAPPEAR {
-           @Override
-           protected void inAnimation(OMSVGGElement target) {
-               Utils.hide(target);
-           }
-
-           @Override
-           protected void offAnimation(OMSVGGElement target) {
-               Utils.show(target);
-           }
-       };
-
-        protected abstract void inAnimation(OMSVGGElement target);
-        protected abstract void offAnimation(OMSVGGElement target);
-    }
 }
