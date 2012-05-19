@@ -36,9 +36,9 @@ class AnimationLoader {
                 elementLoader.getNose3(),
                 elementLoader.getNose2());
 
-        mouth = new PeekabooToyAnimation(PeekabooToyAnimation.Kind.APPEAR, 800, elementLoader.getMouthWide());
-        leftEye = new PeekabooToyAnimation(PeekabooToyAnimation.Kind.DISAPPEAR, 500, elementLoader.getLeftOpen());
-        rightEye = new PeekabooToyAnimation(PeekabooToyAnimation.Kind.DISAPPEAR, 500, elementLoader.getRightOpen());
+        mouth = new PeekabooToyAnimation(AnimatorImpls.APPEAR, 800, elementLoader.getMouthWide());
+        leftEye = new PeekabooToyAnimation(AnimatorImpls.DISAPPEAR, 500, elementLoader.getLeftOpen());
+        rightEye = new PeekabooToyAnimation(AnimatorImpls.DISAPPEAR, 500, elementLoader.getRightOpen());
 
         final MovementEquation tongueEquationX = new MovementEquation(0, 0);
         final MovementEquation tongueEquationY = new MovementEquation(0, 3.75f);
