@@ -31,11 +31,11 @@ public class Utils {
     }
 
     public static void show(OMSVGElement element) {
-        element.getStyle().setVisibility(Style.Visibility.VISIBLE);
+        element.getStyle().setDisplay(Style.Display.BLOCK);
     }
 
     public static void hide(OMSVGElement element) {
-        element.getStyle().setVisibility(Style.Visibility.HIDDEN);
+        element.getStyle().setDisplay(Style.Display.NONE);
     }
 
     public static void addHandler(OMSVGGElement element, final SomeHandler someHandler) {

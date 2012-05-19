@@ -29,10 +29,12 @@ public class Toy {
 
         sound.addEventHandler(new SoundHandler() {
             public void onPlaybackComplete(PlaybackCompleteEvent event) {
-                for (Animation animation : animations) {
-                    animation.stop();
+                if (looping) {
+                    for (Animation animation : animations) {
+                        animation.stop();
+                    }
+                    played = false;
                 }
-                played = false;
             }
 
             public void onSoundLoadStateChange(SoundLoadStateChangeEvent event) {
