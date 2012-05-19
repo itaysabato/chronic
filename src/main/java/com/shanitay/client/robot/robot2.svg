@@ -394,10 +394,10 @@
 		h59.244V737.529z"/>
 </g>
 <g id="coopButton">
-	<g id="coopButtonBg_2_">
+	<g id="coopButtonBg">
 		<rect x="1072.98" y="64.405" fill="#CCDDD7" width="102.342" height="106.082"/>
 	</g>
-	<g id="coopButtonCenter_2_">
+	<g id="coopButtonCenter">
 		<rect x="1095.345" y="88.637" fill="#173434" width="57.614" height="57.617"/>
 	</g>
 </g>
@@ -526,7 +526,7 @@
 </g>
 <g id="lightningButton">
 	<rect x="45.477" y="39.319" fill="#173434" width="143.214" height="143.213"/>
-	<g id="smallLightning_2_">
+	<g id="smallLightning">
 		<polygon fill="#EAE984" points="101.062,52.916 147.802,52.995 118.438,97.733 139.567,131.4 106.321,175.357 120.92,129.963 
 			95.736,99.029 		"/>
 	</g>
