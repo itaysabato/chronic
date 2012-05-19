@@ -427,22 +427,22 @@
 	</g>
 </g>
 <g id="teethUp">
-	<g id="tooth1_2_">
+	<g id="tooth1">
 		<rect x="624.548" y="355.351" fill="#CCDDD7" width="38.807" height="38.806"/>
 	</g>
-	<g id="tooth2_2_">
+	<g id="tooth2">
 		<rect x="663.597" y="355.351" fill="#EAE984" width="38.806" height="38.806"/>
 	</g>
-	<g id="tooth3_2_">
+	<g id="tooth3">
 		<rect x="702.646" y="355.351" fill="#F2B1B6" width="38.806" height="38.806"/>
 	</g>
-	<g id="tooth4_2_">
+	<g id="tooth4">
 		<rect x="741.694" y="355.351" fill="#CCDDD7" width="38.806" height="38.806"/>
 	</g>
-	<g id="tooth5_2_">
+	<g id="tooth5">
 		<rect x="780.742" y="355.351" fill="#EAE984" width="38.807" height="38.806"/>
 	</g>
-	<g id="tooth6_2_">
+	<g id="tooth6">
 		<rect x="819.791" y="355.351" fill="#F2B1B6" width="38.806" height="38.806"/>
 	</g>
 </g>

@@ -10,15 +10,15 @@ import org.vectomatic.dom.svg.OMSVGGElement;
  */
 public class PeekabooToyAnimation implements Toy.Animation {
     private final Kind kind;
-    private final int duration;
+    private final int durationMillis;
     private final OMSVGGElement target;
 
     private boolean looping = false;
     private boolean stopping = false;
 
-    public PeekabooToyAnimation(Kind kind, int duration, OMSVGGElement target) {
+    public PeekabooToyAnimation(Kind kind, int durationMillis, OMSVGGElement target) {
         this.kind = kind;
-        this.duration = duration;
+        this.durationMillis = durationMillis;
         this.target = target;
 
         kind.offAnimation(target);
@@ -43,7 +43,7 @@ public class PeekabooToyAnimation implements Toy.Animation {
                 }
             }
         };
-        Scheduler.get().scheduleFixedDelay(cmd, duration);
+        Scheduler.get().scheduleFixedDelay(cmd, durationMillis);
     }
 
     public void stop() {

@@ -2,6 +2,7 @@ package com.shanitay.client.robot;
 
 import com.google.gwt.core.client.GWT;
 import com.shanitay.client.WidgetBinder;
+import com.shanitay.client.utils.Utils;
 import org.vectomatic.dom.svg.OMSVGSVGElement;
 import org.vectomatic.dom.svg.ui.SVGResource;
 
@@ -20,6 +21,13 @@ public class RobotWidgetBinder implements WidgetBinder {
         final SoundLoader soundLoader = new SoundLoader();
         final ElementLoader elementLoader = new ElementLoader(svgElement);
         final AnimationLoader animationLoader = new AnimationLoader(elementLoader);
+
+        Utils.attachToy(elementLoader.tooth1, soundLoader.tooth1, false, animationLoader.tooth1);
+        Utils.attachToy(elementLoader.tooth2, soundLoader.tooth2, false, animationLoader.tooth2);
+        Utils.attachToy(elementLoader.tooth3, soundLoader.tooth3, false, animationLoader.tooth3);
+        Utils.attachToy(elementLoader.tooth4, soundLoader.tooth4, false, animationLoader.tooth4);
+        Utils.attachToy(elementLoader.tooth5, soundLoader.tooth5, false, animationLoader.tooth5);
+        Utils.attachToy(elementLoader.tooth6, soundLoader.tooth6, false, animationLoader.tooth6);
 
         return svgElement;
     }
