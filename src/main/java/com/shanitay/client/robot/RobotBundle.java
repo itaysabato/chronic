@@ -9,7 +9,7 @@ import org.vectomatic.dom.svg.ui.SVGResource;
  * Time: 04:01 <br/>
  */
 interface RobotBundle extends ClientBundle {
-    @Source("robot.svg")
+    @Source("robot2.svg")
     @SVGResource.Validated(validated = false)
     SVGResource mainSvg();
 }
