@@ -45,25 +45,25 @@ public class MyNewWidget extends Composite {
         final ElementLoader elementLoader = new ElementLoader(svgElement);
         final AnimationLoader animationLoader = new AnimationLoader(elementLoader);
 
-        attachToy(elementLoader.getTongue(), soundLoader.getTongue(), animationLoader.getTongue(), true);
-        attachToy(elementLoader.getMouthThin(), soundLoader.getMouth(), animationLoader.getMouth(), false);
-        attachToy(elementLoader.getLeftSocket(), soundLoader.getLeftEye(), animationLoader.getLeftEye(), false);
-        attachToy(elementLoader.getRightSocket(), soundLoader.getRightEye(), animationLoader.getRightEye(), false);
+        attachToy(elementLoader.getTongue(), soundLoader.getTongue(), true, animationLoader.getTongue());
+        attachToy(elementLoader.getMouthThin(), soundLoader.getMouth(), false, animationLoader.getMouth());
+        attachToy(elementLoader.getLeftSocket(), soundLoader.getLeftEye(), false, animationLoader.getLeftEye());
+        attachToy(elementLoader.getRightSocket(), soundLoader.getRightEye(), false, animationLoader.getRightEye());
 
-        final Toy bgToy = attachToy(elementLoader.getBg(), soundLoader.getBg(), animationLoader.getBg(), true);
+        final Toy bgToy = attachToy(elementLoader.getBg(), soundLoader.getBg(), true, animationLoader.getBg());
         stopToy(elementLoader.getBg1(), bgToy);
         stopToy(elementLoader.getBg2(), bgToy);
         stopToy(elementLoader.getBg3(), bgToy);
         stopToy(elementLoader.getBg4(), bgToy);
 
-        final Toy noseToy = attachToy(elementLoader.getNose(), soundLoader.getNose(), animationLoader.getNose(), true);
+        final Toy noseToy = attachToy(elementLoader.getNose(), soundLoader.getNose(), true, animationLoader.getNose());
         stopToy(elementLoader.getNose1(), noseToy);
         stopToy(elementLoader.getNose2(), noseToy);
         stopToy(elementLoader.getNose3(), noseToy);
         stopToy(elementLoader.getNose4(), noseToy);
         stopToy(elementLoader.getNose5(), noseToy);
 
-        attachToy(elementLoader.getBallsButton(), soundLoader.getBalls(), animationLoader.getBalls(), false);
+        attachToy(elementLoader.getBallsButton(), soundLoader.getBalls(), false, animationLoader.getBalls(), animationLoader.getBallScale());
     }
 
     private void stopToy(OMSVGGElement element, final Toy toy) {
@@ -74,8 +74,8 @@ public class MyNewWidget extends Composite {
         });
     }
 
-    private Toy attachToy(OMSVGGElement element, Sound sound, Toy.Animation animation, boolean looping) {
-        final Toy toy = new Toy(sound, animation);
+    private Toy attachToy(OMSVGGElement element, Sound sound, boolean looping, Toy.Animation... animations) {
+        final Toy toy = new Toy(sound, animations);
         toy.setLooping(looping);
 
         Utils.addHandler(element, new Utils.SomeHandler() {

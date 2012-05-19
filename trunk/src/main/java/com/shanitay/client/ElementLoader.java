@@ -1,5 +1,6 @@
 package com.shanitay.client;
 
+import org.vectomatic.dom.svg.OMSVGAnimationElement;
 import org.vectomatic.dom.svg.OMSVGGElement;
 import org.vectomatic.dom.svg.OMSVGSVGElement;
 
@@ -31,6 +32,7 @@ public class ElementLoader {
     private final OMSVGGElement ball1;
     private final OMSVGGElement ball2;
     private final OMSVGGElement ball3;
+    private final OMSVGAnimationElement ballScale;
 
     public ElementLoader(OMSVGSVGElement svgsvgElement) {
         tongue = Utils.getGElement("tongue", svgsvgElement);
@@ -55,6 +57,7 @@ public class ElementLoader {
         nose3 = Utils.getGElement("nose3", svgsvgElement);
         nose2 = Utils.getGElement("nose2", svgsvgElement);
         nose1 = Utils.getGElement("nose1", svgsvgElement);
+        ballScale = Utils.getAnimationElement("ballScale", svgsvgElement);
     }
 
     public OMSVGGElement getBg() {
@@ -143,5 +146,9 @@ public class ElementLoader {
 
     public OMSVGGElement getBall3() {
         return ball3;
+    }
+
+    public OMSVGAnimationElement getBallScale() {
+        return ballScale;
     }
 }

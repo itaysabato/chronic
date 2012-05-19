@@ -6,10 +6,7 @@ import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.event.dom.client.MouseDownEvent;
 import com.google.gwt.event.dom.client.MouseDownHandler;
-import org.vectomatic.dom.svg.OMNode;
-import org.vectomatic.dom.svg.OMSVGElement;
-import org.vectomatic.dom.svg.OMSVGGElement;
-import org.vectomatic.dom.svg.OMSVGSVGElement;
+import org.vectomatic.dom.svg.*;
 import org.vectomatic.dom.svg.utils.DOMHelper;
 import org.vectomatic.dom.svg.utils.SVGPrefixResolver;
 
@@ -85,6 +82,11 @@ public class Utils {
 
     public static Sound getSound(final String soundUrl, SoundController soundController) {
         return soundController.createSound(Sound.MIME_TYPE_AUDIO_MPEG_MP3, soundUrl, true, false);
+    }
+
+    public static OMSVGAnimationElement getAnimationElement(String elementId, OMSVGSVGElement svgsvgElement) {
+        final OMNode element = Utils.getElement(elementId, svgsvgElement);
+        return (OMSVGAnimationElement) element;
     }
 
     public interface SomeHandler {

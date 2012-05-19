@@ -68,7 +68,7 @@
 	</g>
 </g>
 <g id="ball1" >
-	<g>
+	<g id="ball1Wrapper">
 		<circle fill="#F2B1B6" stroke="#F2B1B6" cx="598.163" cy="244.757" r="13.451"/>
 		<path fill="#1F9C8D" d="M597.182,258.168c0,0-10.573-12.248-7.453-23.885c2.357,12.199,17.403,20.496,17.403,20.496
 			S602.753,259.832,597.182,258.168z"/>
@@ -401,5 +401,8 @@
     <animateMotion id="ballFlyAnimation" begin="indefinite" dur="indefinite" fill="freeze" xlink:href="#ball1" >
         <mpath xlink:href="#ballPath"/>
     </animateMotion>
+
+    <animateTransform id="ballScale" attributeName="transform" attributeType="XML" begin="indefinite"
+                      type="scale" from="1" to="1" dur="2s" additive="replace" fill="freeze" xlink:href="#ball1Wrapper"/>
 
 </svg>
