@@ -12,7 +12,7 @@ import com.shanitay.client.utils.SequenceToyAnimation;
 class AnimationLoader {
 
     public static final int TOOTH_DURATION = 500;
-    private static final int ELECTRIC_DURATION = 500;
+    private static final int ELECTRIC_DURATION = 125;
 
     final PeekabooToyAnimation tooth1;
     final PeekabooToyAnimation tooth2;
