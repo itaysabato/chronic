@@ -16,6 +16,7 @@ public class AnimationLoader {
     private final Toy.Animation tongue;
     private final Toy.Animation leftEye;
     private final Toy.Animation rightEye;
+    private final SvgToyAnimation ballScale;
 
     public AnimationLoader(ElementLoader elementLoader) {
         bg = new DiscoToyAnimation(
@@ -44,6 +45,7 @@ public class AnimationLoader {
         final MovementEquation ballsEquationX = new MovementEquation(0, 10);
         final MovementEquation ballsEquationY = new MovementEquation(0, 0, 1);
         balls = new MovingToyAnimation(TIME_UNIT, 48, ballsEquationX, ballsEquationY, elementLoader.getBall1(), false);
+        ballScale = new SvgToyAnimation(elementLoader.getBallScale());
     }
 
     public Toy.Animation getRightEye() {
@@ -72,5 +74,9 @@ public class AnimationLoader {
 
     public Toy.Animation getBalls() {
         return balls;
+    }
+
+    public SvgToyAnimation getBallScale() {
+        return ballScale;
     }
 }
