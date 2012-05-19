@@ -1,4 +1,4 @@
-package com.shanitay.client;
+package com.shanitay.client.utils;
 
 import com.google.gwt.core.client.Scheduler;
 import org.vectomatic.dom.svg.OMSVGGElement;
