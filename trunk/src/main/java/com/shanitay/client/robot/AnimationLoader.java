@@ -13,7 +13,7 @@ class AnimationLoader {
     private static final int TOOTH_DURATION = 500;
     private static final int ELECTRIC_DURATION = 125;
     private static final int RIGHT_EAR_DURATION = 500;
-    private static final int COOP_CENTER_DURATION = 500;
+    private static final int COOP_CENTER_DURATION = 250;
 
     private final ElementLoader elementLoader;
     final PeekabooToyAnimation tooth1;
