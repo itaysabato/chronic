@@ -59,6 +59,8 @@ class AnimationLoader {
     final Toy.Animation pumpColors;
     final Toy.Animation pumpHouse;
     final Toy.Animation bgPump;
+    final SvgToyAnimation leftBraw;
+    final SvgToyAnimation rightBraw;
 
 
     public AnimationLoader(ElementLoader elementLoader) {
@@ -137,6 +139,9 @@ class AnimationLoader {
                 createScheduledBgPump(elementLoader.bgPump2, 1),
                 createScheduledBgPump(elementLoader.bgPump3, 2),
                 createScheduledBgPump(elementLoader.bgPump4, 3));
+
+        leftBraw = new SvgToyAnimation(elementLoader.leftBrawRise);
+        rightBraw = new SvgToyAnimation(elementLoader.rightBrawRise);
     }
 
     private Toy.Animation createExplodeAnimation(OMSVGGElement step, OMSVGRectElement stepRect) {

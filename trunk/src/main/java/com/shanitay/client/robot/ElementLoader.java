@@ -61,6 +61,10 @@ class ElementLoader {
     final OMSVGGElement nose;
     final OMSVGGElement eyes;
     final OMSVGGElement lightning;
+    final OMSVGAnimationElement leftBrawRise;
+    final OMSVGAnimationElement rightBrawRise;
+    final OMSVGGElement eyeBrawLeft;
+    final OMSVGGElement eyeBrawRight;
 
     public ElementLoader(OMSVGSVGElement svgsvgElement) {
         tooth1 = Utils.getGElement("tooth1", svgsvgElement);
@@ -125,6 +129,11 @@ class ElementLoader {
         glasses = Utils.getGElement("glasses", svgsvgElement);
 
         lightning = Utils.getGElement("lightning", svgsvgElement);
+
+        eyeBrawLeft = Utils.getGElement("eyeBrawLeft", svgsvgElement);
+        eyeBrawRight = Utils.getGElement("eyeBrawRight", svgsvgElement);
+        leftBrawRise = Utils.getAnimationElement("leftBrawRise", svgsvgElement);
+        rightBrawRise = Utils.getAnimationElement("rightBrawRise", svgsvgElement);
     }
 
     private OMSVGRectElement getStepRect(OMSVGGElement step) {

@@ -860,4 +860,20 @@
        <animateTransform attributeName="transform" attributeType="XML" repeatCount="indefinite"
                     type="rotate" from="0 812.39 208.33" to="359 812.39 208.33"  begin="0" dur="2.5"
                     additive="replace" fill="freeze" xlink:href="#glassesRight"/>
+
+    <animateTransform id="rightBrawRise" attributeName="transform" attributeType="XML" repeatCount="1"
+                    type="rotate" from="0 830 100" to="30 830 100"  begin="indefinite" dur="0.3"
+                    additive="replace" fill="freeze" xlink:href="#eyeBrawRight"/>
+
+        <animateTransform id="rightBrawDown" attributeName="transform" attributeType="XML" repeatCount="1"
+                    type="rotate" to="0 830 100" from="30 830 100"  begin="rightBrawRise.end" dur="0.3"
+                    additive="replace" fill="freeze" xlink:href="#eyeBrawRight"/>
+
+        <animateTransform id="leftBrawRise" attributeName="transform" attributeType="XML" repeatCount="1"
+                    type="rotate" from="0 580 100" to="-30 580 100"  begin="indefinite" dur="0.3"
+                    additive="replace" fill="freeze" xlink:href="#eyeBrawLeft"/>
+
+        <animateTransform id="leftBrawDown" attributeName="transform" attributeType="XML" repeatCount="1"
+                    type="rotate" to="0 580 100" from="-30 580 100"  begin="leftBrawRise.end" dur="0.3"
+                    additive="replace" fill="freeze" xlink:href="#eyeBrawLeft"/>
 </svg>
