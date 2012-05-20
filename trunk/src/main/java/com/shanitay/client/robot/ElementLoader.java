@@ -39,6 +39,14 @@ class ElementLoader {
     final OMSVGGElement step6;
     final OMSVGGElement step7;
     final OMSVGGElement pump;
+    final OMSVGGElement pumpColors1;
+    final OMSVGGElement pumpColors2;
+    final OMSVGGElement pumpColors3;
+    final OMSVGGElement pumpHouse;
+    final OMSVGGElement bgPump1;
+    final OMSVGGElement bgPump2;
+    final OMSVGGElement bgPump3;
+    final OMSVGGElement bgPump4;
 
     public ElementLoader(OMSVGSVGElement svgsvgElement) {
         tooth1 = Utils.getGElement("tooth1", svgsvgElement);
@@ -75,6 +83,15 @@ class ElementLoader {
         step5 = Utils.getGElement("step5", svgsvgElement);
         step6 = Utils.getGElement("step6", svgsvgElement);
         step7 = Utils.getGElement("step7", svgsvgElement);
+
         pump = Utils.getGElement("pump", svgsvgElement);
+        pumpColors1 = Utils.getGElement("pumpColors1", svgsvgElement);
+        pumpColors2 = Utils.getGElement("pumpColors2", svgsvgElement);
+        pumpColors3 = Utils.getGElement("pumpColors3", svgsvgElement);
+        pumpHouse = Utils.getGElement("pumpHouse", svgsvgElement);
+        bgPump1 = Utils.getGElement("bgPump1", svgsvgElement);
+        bgPump2 = Utils.getGElement("bgPump2", svgsvgElement);
+        bgPump3 = Utils.getGElement("bgPump3", svgsvgElement);
+        bgPump4 = Utils.getGElement("bgPump4", svgsvgElement);
     }
 }

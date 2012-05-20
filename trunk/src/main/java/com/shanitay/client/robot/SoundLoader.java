@@ -20,6 +20,7 @@ class SoundLoader {
     final Sound earLeft;
     final Sound earRight;
     final Sound coop;
+    final Sound pumpHouse;
 
     public SoundLoader() {
         SoundController soundController = new SoundController();
@@ -34,5 +35,6 @@ class SoundLoader {
         earLeft = Utils.getSound("80s Dance Bass Synth 04 new.mp3", soundController);
         earRight = Utils.getSound("boom new.mp3", soundController);
         coop = Utils.getSound("boom new.mp3", soundController);
+        pumpHouse = Utils.getSound("base10new.mp3", soundController);
     }
 }

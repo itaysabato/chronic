@@ -16,15 +16,21 @@ public class DiscoToyAnimation implements Toy.Animation {
     private boolean looping = false;
     private boolean stopping = false;
 
-    private final StateChangeAnimator animator;
     private final int interval;
+    private final boolean hideBase;
     private final List<OMSVGGElement> layers;
+    private final StateChangeAnimator animator;
 
-    public DiscoToyAnimation(StateChangeAnimator animator, int interval, OMSVGGElement... layers) {
-        this(animator, interval, Arrays.asList(layers));
+    public DiscoToyAnimation(boolean hideBase, StateChangeAnimator animator, int interval, OMSVGGElement... layers) {
+        this(hideBase, animator, interval, Arrays.asList(layers));
     }
 
-    public DiscoToyAnimation(StateChangeAnimator animator, int interval, List<OMSVGGElement> layers) {
+    public DiscoToyAnimation(StateChangeAnimator animator, int interval, OMSVGGElement... layers) {
+        this(false, animator, interval, Arrays.asList(layers));
+    }
+
+    public DiscoToyAnimation(boolean hideBase, StateChangeAnimator animator, int interval, List<OMSVGGElement> layers) {
+        this.hideBase = hideBase;
         this.animator = animator;
         this.layers = layers;
         this.interval = interval;
@@ -54,7 +60,7 @@ public class DiscoToyAnimation implements Toy.Animation {
     }
 
     private void disco() {
-        Utils.animateFor(animator, layers.get(0), durationMs() - interval);
+        Utils.animateFor(animator, layers.get(0), hideBase ? durationMs() - interval : durationMs());
 
         for(int i = 1; i < layers.size(); i++){
             final int finalI = i;
