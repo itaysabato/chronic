@@ -1,6 +1,7 @@
 package com.shanitay.client.robot;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.core.client.Scheduler;
 import com.shanitay.client.WidgetBinder;
 import com.shanitay.client.utils.Utils;
 import org.vectomatic.dom.svg.OMSVGGElement;
@@ -30,7 +31,20 @@ public class RobotWidgetBinder implements WidgetBinder {
         Utils.attachToy(elementLoader.tooth5, soundLoader.tooth5, false, animationLoader.tooth5);
         Utils.attachToy(elementLoader.tooth6, soundLoader.tooth6, false, animationLoader.tooth6);
 
+        Utils.addHandler(elementLoader.lightningButton, new Utils.SomeHandler() {
+            public void handle() {
+                Scheduler.get().scheduleFixedDelay(new Scheduler.RepeatingCommand() {
+                    public boolean execute() {
+                        Utils.hide(elementLoader.eyes);
+                        Utils.show(elementLoader.surprised);
+                        Utils.hide(elementLoader.glasses);
+                        return false;
+                    }
+                }, 4*AnimationLoader.ELECTRIC_DURATION);
+            }
+        });
         Utils.attachToy(elementLoader.lightningButton, soundLoader.electric, false, animationLoader.electric);
+
         Utils.attachToy(elementLoader.earLeft, soundLoader.earLeft, false, animationLoader.earLeft);
         Utils.attachToy(elementLoader.earRight, soundLoader.earRight, false, animationLoader.earRight);
 
@@ -57,20 +71,19 @@ public class RobotWidgetBinder implements WidgetBinder {
                 animationLoader.bgPump,
                 animationLoader.pumpHouse);
 
-        Utils.createToggleButton(elementLoader.nose,
-                new Utils.SomeHandler() {
-                    public void handle() {
-                        Utils.show(elementLoader.surprised);
-                        Utils.hide(elementLoader.eyes);
-                    }
-                },
-
-                new Utils.SomeHandler() {
-                    public void handle() {
-                        Utils.hide(elementLoader.surprised);
-                        Utils.show(elementLoader.eyes);
-                    }
-                });
+        Utils.addHandler(elementLoader.nose, new Utils.SomeHandler() {
+            public void handle() {
+                String display = elementLoader.surprised.getStyle().getDisplay();
+                if(display.equalsIgnoreCase("none")){
+                    Utils.show(elementLoader.surprised);
+                    Utils.hide(elementLoader.eyes);
+                }
+                else {
+                    Utils.hide(elementLoader.surprised);
+                    Utils.show(elementLoader.eyes);
+                }
+            }
+        });
 
         createGlassesButton(elementLoader, elementLoader.teethDown);
         createGlassesButton(elementLoader, elementLoader.teethDownOpen);
@@ -79,18 +92,16 @@ public class RobotWidgetBinder implements WidgetBinder {
     }
 
     private void createGlassesButton(final ElementLoader elementLoader, OMSVGGElement teethDown) {
-        Utils.createToggleButton(teethDown,
-                new Utils.SomeHandler() {
-                    public void handle() {
-                        Utils.show(elementLoader.glasses);
-                    }
-                },
-
-                new Utils.SomeHandler() {
-                    public void handle() {
-                        Utils.hide(elementLoader.glasses);
-                    }
+        Utils.addHandler(teethDown, new Utils.SomeHandler() {
+            public void handle() {
+                String display = elementLoader.glasses.getStyle().getDisplay();
+                if (display.equalsIgnoreCase("none")) {
+                    Utils.show(elementLoader.glasses);
                 }
-        );
+                else {
+                    Utils.hide(elementLoader.glasses);
+                }
+            }
+        });
     }
 }

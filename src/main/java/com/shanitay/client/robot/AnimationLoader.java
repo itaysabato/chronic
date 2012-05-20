@@ -13,19 +13,17 @@ import org.vectomatic.dom.svg.OMSVGRectElement;
  */
 class AnimationLoader {
 
-    public static final int EYE_STEPS = 48;
+    private static final int EYE_STEPS = 48;
     private static final int STEP_DELAY = 2000;
     private static final int BG_INTERVAL = 125;
     private static final int EXPLODE_DUR = 250;
     private static final int TOOTH_DURATION = 500;
-    public static final int LADDER_NUM_STEPS = 300;
-    private static final int ELECTRIC_DURATION = 125;
+    private static final int LADDER_NUM_STEPS = 300;
+    public static final int ELECTRIC_DURATION = 125;
     private static final int RIGHT_EAR_DURATION = 500;
     private static final int LIGHTNING_DURATION = 500;
     private static final int PUMP_LIGHT_DURATION = 500;
-
     private static final int COOP_CENTER_DURATION = 250;
-
 
     private final ElementLoader elementLoader;
     final Toy.Animation tooth1;
@@ -194,23 +192,24 @@ class AnimationLoader {
         return new MovingToyAnimation(Utils.TIME_UNIT, EYE_STEPS, eyeBallsEquationX, eyeBallsEquationY, eyeBall, true);
     }
 
-    private SequenceToyAnimation createElectric() {
-        final ScheduledAnimation scheduledWhite1 = getScheduledWhite(elementLoader, 0);
+    private Toy.Animation createElectric() {
+
+        PeekabooToyAnimation lightningAnimation = new PeekabooToyAnimation(AnimatorImpls.APPEAR, ELECTRIC_DURATION, elementLoader.lightning);
+        ScheduledAnimation scheduledLightning1 = getScheduledAnimation(0, lightningAnimation);
+        ScheduledAnimation scheduledLightning2 = getScheduledAnimation(2 * ELECTRIC_DURATION, lightningAnimation);
+
+        PeekabooToyAnimation whiteAnimation = new PeekabooToyAnimation(AnimatorImpls.APPEAR, 7 * ELECTRIC_DURATION, elementLoader.electricWhite);
+        final ScheduledAnimation scheduledWhite1 = getScheduledAnimation(3 * ELECTRIC_DURATION, whiteAnimation);
 
         final PeekabooToyAnimation electricBlackAnimation = new PeekabooToyAnimation(AnimatorImpls.APPEAR, ELECTRIC_DURATION, elementLoader.electricBlack);
-        final ScheduledAnimation scheduledBlack1 = getScheduledBlack(ELECTRIC_DURATION, electricBlackAnimation);
-        final ScheduledAnimation scheduledBlack2 = getScheduledBlack((3 * ELECTRIC_DURATION), electricBlackAnimation);
-        final ScheduledAnimation scheduledBlack3 = getScheduledBlack((5 * ELECTRIC_DURATION), electricBlackAnimation);
+        final ScheduledAnimation scheduledBlack1 = getScheduledAnimation(4 * ELECTRIC_DURATION, electricBlackAnimation);
+        final ScheduledAnimation scheduledBlack2 = getScheduledAnimation((6 * ELECTRIC_DURATION), electricBlackAnimation);
+        final ScheduledAnimation scheduledBlack3 = getScheduledAnimation((8 * ELECTRIC_DURATION), electricBlackAnimation);
 
-        return new SequenceToyAnimation(scheduledWhite1, scheduledBlack1, scheduledBlack2, scheduledBlack3);
+        return new SequenceToyAnimation(scheduledLightning1, scheduledLightning2, scheduledWhite1, scheduledBlack1, scheduledBlack2, scheduledBlack3);
     }
 
-    private ScheduledAnimation getScheduledWhite(ElementLoader elementLoader, int startTimeMillis) {
-        final PeekabooToyAnimation electricWhite = new PeekabooToyAnimation(AnimatorImpls.APPEAR, 7 * ELECTRIC_DURATION, elementLoader.electricWhite);
-        return new ScheduledAnimation(electricWhite, startTimeMillis);
-    }
-
-    private ScheduledAnimation getScheduledBlack(int startTimeMillis, PeekabooToyAnimation peekabooToyAnimation) {
+    private ScheduledAnimation getScheduledAnimation(int startTimeMillis, PeekabooToyAnimation peekabooToyAnimation) {
         return new ScheduledAnimation(peekabooToyAnimation, startTimeMillis);
     }
 

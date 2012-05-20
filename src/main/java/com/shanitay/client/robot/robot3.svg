@@ -620,7 +620,7 @@
 			c19.856-2.318,37.834,11.901,40.151,31.758L902.595,112.893z"/>
 	</g>
 </g>
-<g id="surprised" display="none">
+<g id="surprised" style="display: none;">
 	<g id="eyeLeftSur" display="inline">
 		<circle fill="#173434" cx="578.684" cy="195.982" r="57.432"/>
 		<circle fill="#EAE984" cx="578.684" cy="196.55" r="35.954"/>
@@ -663,7 +663,7 @@
 		<circle fill="#EAE984" cx="611.338" cy="102.651" r="12.573"/>
 	</g>
 </g>
-<g id="glasses" display="none">
+<g id="glasses" style="display: none;">
 	<polygon display="inline" fill="#EAE984" points="683.66,-64.149 683.66,-7.147 620.844,-7.147 620.844,73.289 757.268,73.289 
 		757.268,-64.149 	"/>
 	<g id="glassesLeft" display="inline">

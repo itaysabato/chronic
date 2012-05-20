@@ -60,6 +60,7 @@ class ElementLoader {
     final OMSVGGElement surprised;
     final OMSVGGElement nose;
     final OMSVGGElement eyes;
+    final OMSVGGElement lightning;
 
     public ElementLoader(OMSVGSVGElement svgsvgElement) {
         tooth1 = Utils.getGElement("tooth1", svgsvgElement);
@@ -97,6 +98,14 @@ class ElementLoader {
         step6 = Utils.getGElement("step6", svgsvgElement);
         step7 = Utils.getGElement("step7", svgsvgElement);
 
+        step1Rect = getStepRect(step1);
+        step2Rect = getStepRect(step2);
+        step3Rect = getStepRect(step3);
+        step4Rect = getStepRect(step4);
+        step5Rect = getStepRect(step5);
+        step6Rect = getStepRect(step6);
+        step7Rect = getStepRect(step7);
+
         pump = Utils.getGElement("pump", svgsvgElement);
         pumpColors1 = Utils.getGElement("pumpColors1", svgsvgElement);
         pumpColors2 = Utils.getGElement("pumpColors2", svgsvgElement);
@@ -115,13 +124,7 @@ class ElementLoader {
         teethDownOpen = Utils.getGElement("teethDownOpen", svgsvgElement);
         glasses = Utils.getGElement("glasses", svgsvgElement);
 
-        step1Rect = getStepRect(step1);
-        step2Rect = getStepRect(step2);
-        step3Rect = getStepRect(step3);
-        step4Rect = getStepRect(step4);
-        step5Rect = getStepRect(step5);
-        step6Rect = getStepRect(step6);
-        step7Rect = getStepRect(step7);
+        lightning = Utils.getGElement("lightning", svgsvgElement);
     }
 
     private OMSVGRectElement getStepRect(OMSVGGElement step) {
