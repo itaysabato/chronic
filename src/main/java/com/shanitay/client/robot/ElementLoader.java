@@ -31,6 +31,13 @@ class ElementLoader {
     final OMSVGGElement smallLightning;
     final OMSVGGElement eyeBallLeft;
     final OMSVGGElement eyeBallRight;
+    final OMSVGGElement step1;
+    final OMSVGGElement step2;
+    final OMSVGGElement step3;
+    final OMSVGGElement step4;
+    final OMSVGGElement step5;
+    final OMSVGGElement step6;
+    final OMSVGGElement step7;
 
     public ElementLoader(OMSVGSVGElement svgsvgElement) {
         tooth1 = Utils.getGElement("tooth1", svgsvgElement);
@@ -59,5 +66,13 @@ class ElementLoader {
 
         eyeBallLeft = Utils.getGElement("eyeBallLeft", svgsvgElement);
         eyeBallRight = Utils.getGElement("eyeBallRight", svgsvgElement);
+
+        step1 = Utils.getGElement("step1", svgsvgElement);
+        step2 = Utils.getGElement("step2", svgsvgElement);
+        step3 = Utils.getGElement("step3", svgsvgElement);
+        step4 = Utils.getGElement("step4", svgsvgElement);
+        step5 = Utils.getGElement("step5", svgsvgElement);
+        step6 = Utils.getGElement("step6", svgsvgElement);
+        step7 = Utils.getGElement("step7", svgsvgElement);
     }
 }
