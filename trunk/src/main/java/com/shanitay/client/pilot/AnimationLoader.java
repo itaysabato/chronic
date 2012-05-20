@@ -21,6 +21,7 @@ class AnimationLoader {
 
     public AnimationLoader(ElementLoader elementLoader) {
         bg = new DiscoToyAnimation(
+                AnimatorImpls.DISAPPEAR,
                 BG_INTERVAL,
                 elementLoader.getBg(),
                 elementLoader.getBg4(),
@@ -28,6 +29,7 @@ class AnimationLoader {
                 elementLoader.getBg2());
 
         nose = new DiscoToyAnimation(
+                AnimatorImpls.DISAPPEAR,
                 BG_INTERVAL,
                 elementLoader.getNose(),
                 elementLoader.getNose5(),

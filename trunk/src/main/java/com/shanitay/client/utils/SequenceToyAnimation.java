@@ -34,7 +34,7 @@ public class SequenceToyAnimation implements Toy.Animation {
 
     private void innerPlay() {
         for (ScheduledAnimation scheduledAnimation : scheduledAnimations) {
-            final myCommand myCommand = new SequenceToyAnimation.myCommand(scheduledAnimation.animation);
+            final myCommand myCommand = new SequenceToyAnimation.myCommand(scheduledAnimation.getAnimation());
             myCommands.add(myCommand);
             Scheduler.get().scheduleFixedDelay(myCommand, scheduledAnimation.getStartTimeMillis());
         }
@@ -48,7 +48,7 @@ public class SequenceToyAnimation implements Toy.Animation {
         myCommands.clear();
 
         for (ScheduledAnimation scheduledAnimation : scheduledAnimations) {
-            scheduledAnimation.animation.stop();
+            scheduledAnimation.getAnimation().stop();
         }
     }
 
@@ -68,21 +68,4 @@ public class SequenceToyAnimation implements Toy.Animation {
         }
     }
 
-    public static class ScheduledAnimation {
-        private final Toy.Animation animation;
-        private final int startTimeMillis;
-
-        public ScheduledAnimation(Toy.Animation animation, int startTimeMillis) {
-            this.animation = animation;
-            this.startTimeMillis = startTimeMillis;
-        }
-
-        public Toy.Animation getAnimation() {
-            return animation;
-        }
-
-        public int getStartTimeMillis() {
-            return startTimeMillis;
-        }
-    }
 }
