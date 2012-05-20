@@ -47,6 +47,7 @@ class AnimationLoader {
     final MovingToyAnimation step5;
     final MovingToyAnimation step6;
     final MovingToyAnimation step7;
+    private final MovingToyAnimation pump;
 
 
     public AnimationLoader(ElementLoader elementLoader) {
@@ -64,9 +65,7 @@ class AnimationLoader {
         final FillColorAnimator earsAnimator = new FillColorAnimator("#1F9C8D", "#EAE984");
         earRight = new PeekabooToyAnimation(earsAnimator, RIGHT_EAR_DURATION, elementLoader.earRight);
 
-        final MovementEquation earEquationX = new MovementEquation(0, -13);
-        final MovementEquation earEquationY = new MovementEquation(0, 0);
-        earLeft = new MovingToyAnimation(Utils.TIME_UNIT, 24, earEquationX, earEquationY, elementLoader.earHandle, true);
+        earLeft = createLeftEar(elementLoader);
 
         final FillColorAnimator coopCenterAnimator = new FillColorAnimator("#173434", "#EAE984");
         coopCenter = new PeekabooToyAnimation(coopCenterAnimator, COOP_CENTER_DURATION, elementLoader.coopButtonCenter);
@@ -107,6 +106,21 @@ class AnimationLoader {
         scheduleStep(step5, 4);
         scheduleStep(step6, 5);
         scheduleStep(step7, 6);
+
+        pump = createPump(elementLoader);
+        pump.play();
+    }
+
+    private MovingToyAnimation createPump(ElementLoader elementLoader) {
+        final MovementEquation pumpEquation = new MovementEquation(0, -12);
+        final MovingToyAnimation movingToyAnimation = new MovingToyAnimation(Utils.TIME_UNIT, 24, MovementEquation.STILL, pumpEquation, elementLoader.pump, true);
+        movingToyAnimation.setLooping(true);
+        return movingToyAnimation;
+    }
+
+    private MovingToyAnimation createLeftEar(ElementLoader elementLoader) {
+        final MovementEquation earEquationX = new MovementEquation(0, -13);
+        return new MovingToyAnimation(Utils.TIME_UNIT, 24, earEquationX, MovementEquation.STILL, elementLoader.earHandle, true);
     }
 
     private void scheduleStep(final MovingToyAnimation step, int i) {
