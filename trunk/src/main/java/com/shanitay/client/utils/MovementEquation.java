@@ -6,6 +6,8 @@ package com.shanitay.client.utils;
  * Time: 22:33 <br/>
  */
 public class MovementEquation {
+    public static final MovementEquation STILL = new MovementEquation(0, 0);
+
     private final float p0;
     private final float v0;
     private final float halfA;

@@ -356,6 +356,30 @@
 		<circle fill="#5AA17B" cx="31.487" cy="752.04" r="8.708"/>
 	</g>
 </g>
+        <g id="ladder">
+	<g id="step7">
+		<rect x="1108.282" y="686.838" fill="#CCDDD7" width="118.513" height="39.349"/>
+	</g>
+	<g id="step6">
+		<rect x="1108.282" y="686.906" fill="#EE8F78" width="118.513" height="39.349"/>
+	</g>
+	<g id="step5">
+		<rect x="1108.282" y="686.974" fill="#1F9C8D" width="118.513" height="39.35"/>
+	</g>
+	<g id="step4">
+		<rect x="1108.282" y="687.043" fill="#173434" width="118.513" height="39.348"/>
+	</g>
+	<g id="step3">
+		<rect x="1108.282" y="687.109" fill="#CCDDD7" width="118.513" height="39.35"/>
+	</g>
+	<g id="step2">
+		<rect x="1108.282" y="687.178" fill="#EE8F78" width="118.513" height="39.348"/>
+	</g>
+	<g id="step1">
+		<rect x="1108.282" y="687.246" fill="#1F9C8D" width="118.513" height="39.348"/>
+	</g>
+</g>
+
 <g id="earHandle">
 	<g display="inline">
 		<rect x="383.359" y="187.115" fill="#1F9C8D" width="26.558" height="93.07"/>
@@ -620,29 +644,6 @@
 			c19.068-7.815,29.354-27.467,21.54-46.538l-18.571-40.381c-7.815-19.07-29.607-28.192-48.681-20.376L456.204,127.01
 			c-19.068,7.815-28.191,29.609-20.375,48.677L443.988,193.602z"/>
 		<circle fill="#EAE984" cx="611.338" cy="102.651" r="12.573"/>
-	</g>
-</g>
-<g id="ladder">
-	<g id="step7">
-		<rect x="1108.283" y="626.291" fill="#CCDDD7" width="118.513" height="39.349"/>
-	</g>
-	<g id="step6">
-		<rect x="1108.283" y="560.359" fill="#EE8F78" width="118.513" height="39.349"/>
-	</g>
-	<g id="step5">
-		<rect x="1108.283" y="494.427" fill="#1F9C8D" width="118.513" height="39.349"/>
-	</g>
-	<g id="step4">
-		<rect x="1108.283" y="428.496" fill="#173434" width="118.513" height="39.348"/>
-	</g>
-	<g id="step3">
-		<rect x="1108.283" y="362.563" fill="#CCDDD7" width="118.513" height="39.349"/>
-	</g>
-	<g id="step2">
-		<rect x="1108.283" y="296.631" fill="#EE8F78" width="118.513" height="39.348"/>
-	</g>
-	<g id="step1">
-		<rect x="1108.283" y="230.699" fill="#1F9C8D" width="118.513" height="39.348"/>
 	</g>
 </g>
 <g id="glasses" display="none">

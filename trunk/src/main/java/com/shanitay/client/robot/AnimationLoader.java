@@ -11,15 +11,19 @@ import org.vectomatic.dom.svg.OMSVGGElement;
  */
 class AnimationLoader {
 
+    public static final int EYE_STEPS = 48;
+    private static final int STEP_DELAY = 2000;
     private static final int BG_INTERVAL = 125;
     private static final int TOOTH_DURATION = 500;
+    public static final int LADDER_NUM_STEPS = 300;
     private static final int ELECTRIC_DURATION = 125;
-    private static final int LIGHTNING_DURATION = 500;
     private static final int RIGHT_EAR_DURATION = 500;
+    private static final int LIGHTNING_DURATION = 500;
     private static final int PUMP_LIGHT_DURATION = 500;
     private static final int COOP_CENTER_DURATION = 250;
-    public static final int EYE_STEPS = 48;
+
     private final ElementLoader elementLoader;
+
 
     final Toy.Animation tooth1;
     final Toy.Animation tooth2;
@@ -36,6 +40,14 @@ class AnimationLoader {
     final Toy.Animation smallLightning;
     final Toy.Animation eyeBallLeft;
     final Toy.Animation eyeBallRight;
+    final Toy.Animation step1;
+    final MovingToyAnimation step2;
+    final MovingToyAnimation step3;
+    final MovingToyAnimation step4;
+    final MovingToyAnimation step5;
+    final MovingToyAnimation step6;
+    final MovingToyAnimation step7;
+
 
     public AnimationLoader(ElementLoader elementLoader) {
         this.elementLoader = elementLoader;
@@ -79,6 +91,38 @@ class AnimationLoader {
                 return true;
             }
         }, 3*Utils.TIME_UNIT * EYE_STEPS);
+
+        step1 = createStep(elementLoader.step1);
+        step2 = createStep(elementLoader.step2);
+        step3 = createStep(elementLoader.step3);
+        step4 = createStep(elementLoader.step4);
+        step5 = createStep(elementLoader.step5);
+        step6 = createStep(elementLoader.step6);
+        step7 = createStep(elementLoader.step7);
+
+        step1.play();
+        scheduleStep(step2, 1);
+        scheduleStep(step3, 2);
+        scheduleStep(step4, 3);
+        scheduleStep(step5, 4);
+        scheduleStep(step6, 5);
+        scheduleStep(step7, 6);
+    }
+
+    private void scheduleStep(final MovingToyAnimation step, int i) {
+        Scheduler.get().scheduleFixedDelay(new Scheduler.RepeatingCommand() {
+            public boolean execute() {
+                step.play();
+                return false;
+            }
+        }, i *STEP_DELAY);
+    }
+
+    private MovingToyAnimation createStep(OMSVGGElement step) {
+        final MovementEquation movementEquationY = new MovementEquation(0, -2);
+        final MovingToyAnimation movingToyAnimation = new MovingToyAnimation(Utils.TIME_UNIT, LADDER_NUM_STEPS, MovementEquation.STILL, movementEquationY, step, false);
+        movingToyAnimation.setLooping(true);
+        return movingToyAnimation;
     }
 
     private SequenceToyAnimation createEyeSequence(OMSVGGElement eyeBall) {
