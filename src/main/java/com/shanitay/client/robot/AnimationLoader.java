@@ -47,7 +47,10 @@ class AnimationLoader {
     final MovingToyAnimation step5;
     final MovingToyAnimation step6;
     final MovingToyAnimation step7;
-    private final MovingToyAnimation pump;
+    final MovingToyAnimation pump;
+    final DiscoToyAnimation pumpColors;
+    final MovingToyAnimation pumpHouse;
+    final SequenceToyAnimation bgPump;
 
 
     public AnimationLoader(ElementLoader elementLoader) {
@@ -69,7 +72,7 @@ class AnimationLoader {
 
         final FillColorAnimator coopCenterAnimator = new FillColorAnimator("#173434", "#EAE984");
         coopCenter = new PeekabooToyAnimation(coopCenterAnimator, COOP_CENTER_DURATION, elementLoader.coopButtonCenter);
-        coopBg = new DiscoToyAnimation(AnimatorImpls.APPEAR, BG_INTERVAL, elementLoader.bgCoop1, elementLoader.bgCoop2, elementLoader.bgCoop3);
+        coopBg = new DiscoToyAnimation(true, AnimatorImpls.APPEAR, BG_INTERVAL, elementLoader.bgCoop1, elementLoader.bgCoop2, elementLoader.bgCoop3);
 
         final FillColorAnimator pumpLightAnimator = new FillColorAnimator("#EAE984", "#F2B1B6");
         pumpLight = new PeekabooToyAnimation(pumpLightAnimator, PUMP_LIGHT_DURATION, elementLoader.pumpLight);
@@ -109,6 +112,19 @@ class AnimationLoader {
 
         pump = createPump(elementLoader);
         pump.play();
+
+        pumpColors = new DiscoToyAnimation(AnimatorImpls.DISAPPEAR, BG_INTERVAL, elementLoader.pumpColors3, elementLoader.pumpColors2);
+        pumpHouse = new MovingToyAnimation(Utils.TIME_UNIT, 48, new MovementEquation(0, 5), MovementEquation.STILL, elementLoader.pumpHouse, true);
+        bgPump = new SequenceToyAnimation(
+                createScheduledBgPump(elementLoader.bgPump1, 0),
+                createScheduledBgPump(elementLoader.bgPump2, 1),
+                createScheduledBgPump(elementLoader.bgPump3, 2),
+                createScheduledBgPump(elementLoader.bgPump4, 3));
+    }
+
+    private ScheduledAnimation createScheduledBgPump(OMSVGGElement bgPump, int i) {
+        final PeekabooToyAnimation peekabooToyAnimation = new PeekabooToyAnimation(AnimatorImpls.APPEAR, BG_INTERVAL, bgPump);
+        return new ScheduledAnimation(peekabooToyAnimation, i*BG_INTERVAL);
     }
 
     private MovingToyAnimation createPump(ElementLoader elementLoader) {

@@ -39,6 +39,14 @@ public class RobotWidgetBinder implements WidgetBinder {
             }
         });
 
+        Utils.attachToy(
+                elementLoader.pumpHouse,
+                soundLoader.pumpHouse,
+                true,
+                animationLoader.pumpColors,
+                animationLoader.bgPump,
+                animationLoader.pumpHouse);
+
         return svgElement;
     }
 }
