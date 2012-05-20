@@ -48,6 +48,9 @@ public class RobotWidgetBinder implements WidgetBinder {
         Utils.attachToy(elementLoader.earLeft, soundLoader.earLeft, false, animationLoader.earLeft);
         Utils.attachToy(elementLoader.earRight, soundLoader.earRight, false, animationLoader.earRight);
 
+        Utils.attachToy(elementLoader.eyeBrawLeft, soundLoader.leftBraw, false, animationLoader.leftBraw);
+        Utils.attachToy(elementLoader.eyeBrawRight, soundLoader.rightBraw, false, animationLoader.rightBraw);
+
         Utils.attachToy(elementLoader.step1, soundLoader.step1, false, animationLoader.step1Explode);
         Utils.attachToy(elementLoader.step2, soundLoader.step2, false, animationLoader.step2Explode);
         Utils.attachToy(elementLoader.step3, soundLoader.step3, false, animationLoader.step3Explode);
