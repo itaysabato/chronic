@@ -1,6 +1,6 @@
 package com.shanitay.client.utils;
 
-import org.vectomatic.dom.svg.OMSVGGElement;
+import org.vectomatic.dom.svg.OMSVGElement;
 
 /**
 * Created By: Itay Sabato<br/>
@@ -9,21 +9,21 @@ import org.vectomatic.dom.svg.OMSVGGElement;
 */
 public enum AnimatorImpls implements StateChangeAnimator {
    APPEAR {
-       public void inAnimation(OMSVGGElement target) {
+       public void inAnimation(OMSVGElement target) {
            Utils.show(target);
        }
 
-       public void offAnimation(OMSVGGElement target) {
+       public void offAnimation(OMSVGElement target) {
            Utils.hide(target);
        }
    },
 
    DISAPPEAR {
-       public void inAnimation(OMSVGGElement target) {
+       public void inAnimation(OMSVGElement target) {
            Utils.hide(target);
        }
 
-       public void offAnimation(OMSVGGElement target) {
+       public void offAnimation(OMSVGElement target) {
            Utils.show(target);
        }
    }

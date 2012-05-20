@@ -17,6 +17,8 @@ class SoundLoader {
     final Sound tooth5;
     final Sound tooth6;
     final Sound electric;
+    final Sound earLeft;
+    final Sound earRight;
 
     public SoundLoader() {
         SoundController soundController = new SoundController();
@@ -28,5 +30,8 @@ class SoundLoader {
         tooth5 = Utils.getSound("80s Dance Bass Synth 04 new.mp3", soundController);
         tooth6 = Utils.getSound("boom new.mp3", soundController);
         electric = Utils.getSound("smash nwe.mp3", soundController);
+        earLeft = Utils.getSound("yeah.mp3", soundController);
+        earRight = Utils.getSound("laugh.mp3", soundController);
+
     }
 }
