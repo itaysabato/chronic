@@ -114,7 +114,7 @@ class AnimationLoader {
         pump.play();
 
         pumpColors = new DiscoToyAnimation(true, AnimatorImpls.DISAPPEAR, BG_INTERVAL, elementLoader.pumpColors3, elementLoader.pumpColors2);
-        pumpHouse = new MovingToyAnimation(Utils.TIME_UNIT, 48, new MovementEquation(0, 5), MovementEquation.STILL, elementLoader.pumpHouse, true);
+        pumpHouse = new MovingToyAnimation(Utils.TIME_UNIT, 6, new MovementEquation(0, 20), MovementEquation.STILL, elementLoader.pumpHouse, true);
         bgPump = new SequenceToyAnimation(
                 createScheduledBgPump(elementLoader.bgPump1, 0),
                 createScheduledBgPump(elementLoader.bgPump2, 1),
