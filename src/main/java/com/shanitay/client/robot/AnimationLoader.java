@@ -2,7 +2,9 @@ package com.shanitay.client.robot;
 
 import com.google.gwt.core.client.Scheduler;
 import com.shanitay.client.utils.*;
+import org.vectomatic.dom.svg.OMSVGElement;
 import org.vectomatic.dom.svg.OMSVGGElement;
+import org.vectomatic.dom.svg.OMSVGRectElement;
 
 /**
  * Created By: Itay Sabato<br/>
@@ -14,17 +16,18 @@ class AnimationLoader {
     public static final int EYE_STEPS = 48;
     private static final int STEP_DELAY = 2000;
     private static final int BG_INTERVAL = 125;
+    private static final int EXPLODE_DUR = 250;
     private static final int TOOTH_DURATION = 500;
     public static final int LADDER_NUM_STEPS = 300;
     private static final int ELECTRIC_DURATION = 125;
     private static final int RIGHT_EAR_DURATION = 500;
     private static final int LIGHTNING_DURATION = 500;
     private static final int PUMP_LIGHT_DURATION = 500;
+
     private static final int COOP_CENTER_DURATION = 250;
 
+
     private final ElementLoader elementLoader;
-
-
     final Toy.Animation tooth1;
     final Toy.Animation tooth2;
     final Toy.Animation tooth3;
@@ -41,16 +44,23 @@ class AnimationLoader {
     final Toy.Animation eyeBallLeft;
     final Toy.Animation eyeBallRight;
     final Toy.Animation step1;
-    final MovingToyAnimation step2;
-    final MovingToyAnimation step3;
-    final MovingToyAnimation step4;
-    final MovingToyAnimation step5;
-    final MovingToyAnimation step6;
-    final MovingToyAnimation step7;
-    final MovingToyAnimation pump;
-    final DiscoToyAnimation pumpColors;
-    final MovingToyAnimation pumpHouse;
-    final SequenceToyAnimation bgPump;
+    final Toy.Animation step2;
+    final Toy.Animation step3;
+    final Toy.Animation step4;
+    final Toy.Animation step5;
+    final Toy.Animation step6;
+    final Toy.Animation step7;
+    final Toy.Animation step1Explode;
+    final Toy.Animation step2Explode;
+    final Toy.Animation step3Explode;
+    final Toy.Animation step4Explode;
+    final Toy.Animation step5Explode;
+    final Toy.Animation step6Explode;
+    final Toy.Animation step7Explode;
+    final Toy.Animation pump;
+    final Toy.Animation pumpColors;
+    final Toy.Animation pumpHouse;
+    final Toy.Animation bgPump;
 
 
     public AnimationLoader(ElementLoader elementLoader) {
@@ -110,6 +120,14 @@ class AnimationLoader {
         scheduleStep(step6, 5);
         scheduleStep(step7, 6);
 
+        step1Explode = createExplodeAnimation(elementLoader.step1, elementLoader.step1Rect);
+        step2Explode = createExplodeAnimation(elementLoader.step2, elementLoader.step2Rect);
+        step3Explode = createExplodeAnimation(elementLoader.step3, elementLoader.step3Rect);
+        step4Explode = createExplodeAnimation(elementLoader.step4, elementLoader.step4Rect);
+        step5Explode = createExplodeAnimation(elementLoader.step5, elementLoader.step5Rect);
+        step6Explode = createExplodeAnimation(elementLoader.step6, elementLoader.step6Rect);
+        step7Explode = createExplodeAnimation(elementLoader.step7, elementLoader.step7Rect);
+
         pump = createPump(elementLoader);
         pump.play();
 
@@ -121,6 +139,11 @@ class AnimationLoader {
                 createScheduledBgPump(elementLoader.bgPump2, 1),
                 createScheduledBgPump(elementLoader.bgPump3, 2),
                 createScheduledBgPump(elementLoader.bgPump4, 3));
+    }
+
+    private Toy.Animation createExplodeAnimation(OMSVGGElement step, OMSVGRectElement stepRect) {
+        StateChangeAnimator stepExplodeAnimator = createStepExplodeAnimator(stepRect);
+        return new PeekabooToyAnimation(stepExplodeAnimator, EXPLODE_DUR, step);
     }
 
     private ScheduledAnimation createScheduledBgPump(OMSVGGElement bgPump, int i) {
@@ -140,7 +163,7 @@ class AnimationLoader {
         return new MovingToyAnimation(Utils.TIME_UNIT, 24, earEquationX, MovementEquation.STILL, elementLoader.earHandle, true);
     }
 
-    private void scheduleStep(final MovingToyAnimation step, int i) {
+    private void scheduleStep(final Toy.Animation step, int i) {
         Scheduler.get().scheduleFixedDelay(new Scheduler.RepeatingCommand() {
             public boolean execute() {
                 step.play();
@@ -189,5 +212,23 @@ class AnimationLoader {
 
     private ScheduledAnimation getScheduledBlack(int startTimeMillis, PeekabooToyAnimation peekabooToyAnimation) {
         return new ScheduledAnimation(peekabooToyAnimation, startTimeMillis);
+    }
+
+    private StateChangeAnimator createStepExplodeAnimator(final OMSVGRectElement stepRect){
+        return new StateChangeAnimator() {
+            public void inAnimation(OMSVGElement target) {
+                stepRect.getX().getBaseVal().setValue(1078.282f);
+                stepRect.getY().getBaseVal().setValue(657.246f);
+                stepRect.getWidth().getBaseVal().setValue(178.513f);
+                stepRect.getHeight().getBaseVal().setValue(99.348f);
+            }
+
+            public void offAnimation(OMSVGElement target) {
+                stepRect.getX().getBaseVal().setValue(1108.282f);
+                stepRect.getY().getBaseVal().setValue(687.246f);
+                stepRect.getWidth().getBaseVal().setValue(118.513f);
+                stepRect.getHeight().getBaseVal().setValue(39.348f);
+            }
+        };
     }
 }
