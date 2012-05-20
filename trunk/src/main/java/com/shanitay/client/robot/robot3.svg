@@ -356,7 +356,18 @@
 		<circle fill="#5AA17B" cx="31.487" cy="752.04" r="8.708"/>
 	</g>
 </g>
-        <g id="ladder">
+
+<g id="earHandle">
+	<g display="inline">
+		<rect x="383.359" y="187.115" fill="#1F9C8D" width="26.558" height="93.07"/>
+		<rect x="409.917" y="209.668" fill="#EAE984" width="245.378" height="45.173"/>
+	</g>
+</g>
+<rect x="1086.972" y="175.394" fill="#EAE984" width="21.311" height="592.193"/>
+<rect x="1227.065" y="175.394" fill="#EAE984" width="21.312" height="592.193"/>
+<rect x="1240.81" y="222.624" fill="#EAE984" width="65.806" height="57.661"/>
+
+<g id="ladder">
 	<g id="step7">
 		<rect x="1108.282" y="686.838" fill="#CCDDD7" width="118.513" height="39.349"/>
 	</g>
@@ -376,22 +387,27 @@
 		<rect x="1108.282" y="687.178" fill="#EE8F78" width="118.513" height="39.348"/>
 	</g>
 	<g id="step1">
-		<rect x="1108.282" y="687.246" fill="#1F9C8D" width="118.513" height="39.348"/>
+		<rect x="1108.282" y="687.246" fill="#1F9C8D" width="118.513" height="39.348">
+            <!--<animate attributeName="width" from="0" to="60" dur="0.1"-->
+                            <!--begin="0" repeatCount="indefinite" additive="sum"/>-->
+
+            <!--<animate attributeName="x" from="0" to="-30" dur="0.1"-->
+                            <!--begin="0" repeatCount="indefinite" additive="sum"/>-->
+
+            <!--<animate attributeName="height" from="0" to="60" dur="0.1"-->
+                            <!--begin="0" repeatCount="indefinite" additive="sum"/>-->
+
+            <!--<animate attributeName="y" from="0" to="-30" dur="0.1"-->
+                            <!--begin="0" repeatCount="indefinite" additive="sum"/>-->
+		</rect>
 	</g>
 </g>
 
-<g id="earHandle">
-	<g display="inline">
-		<rect x="383.359" y="187.115" fill="#1F9C8D" width="26.558" height="93.07"/>
-		<rect x="409.917" y="209.668" fill="#EAE984" width="245.378" height="45.173"/>
-	</g>
-</g>
 <g id="coopColored">
 	<rect x="1087.048" y="41.496" fill="#EE8F78" width="161.347" height="136.106"/>
 	<path fill="#1F9C8D" d="M1087.048,41.496h162.059C1249.107,41.496,1171.147-54.859,1087.048,41.496z"/>
-	<rect x="1086.972" y="175.394" fill="#EAE984" width="21.311" height="592.193"/>
-	<rect x="1227.065" y="175.394" fill="#EAE984" width="21.312" height="592.193"/>
 </g>
+
 <g id="coopBlack" display="none">
 	<rect x="1002.292" y="167.232" display="inline" fill="#173434" width="22.949" height="637.713"/>
 	<rect x="1153.153" y="167.232" display="inline" fill="#173434" width="22.949" height="637.713"/>
@@ -423,7 +439,6 @@
 		644.926,484.749 644.926,522.608 	"/>
 	<path fill="#EE8F78" d="M582.52,131.696c0,0,194.539,0.689,194.43,5.024c-0.109,4.336-36.699,68.888-36.699,68.888
 		s-52.518-34.195-105.393,4.06L582.52,131.696z"/>
-	<rect x="1240.81" y="222.624" fill="#EAE984" width="65.806" height="57.661"/>
 	<path id="pumpLight" fill="#EAE984" d="M259.085,735.055c0-8.294-6.724-15.017-15.02-15.017h-34.882c-8.294,0-15.018,6.723-15.018,15.017V768
 		h64.919V735.055z"/>
 </g>

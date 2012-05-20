@@ -38,6 +38,13 @@ class ElementLoader {
     final OMSVGGElement step5;
     final OMSVGGElement step6;
     final OMSVGGElement step7;
+    final OMSVGRectElement step1Rect;
+    final OMSVGRectElement step2Rect;
+    final OMSVGRectElement step3Rect;
+    final OMSVGRectElement step4Rect;
+    final OMSVGRectElement step5Rect;
+    final OMSVGRectElement step6Rect;
+    final OMSVGRectElement step7Rect;
     final OMSVGGElement pump;
     final OMSVGGElement pumpColors1;
     final OMSVGGElement pumpColors2;
@@ -107,5 +114,24 @@ class ElementLoader {
         teethDown = Utils.getGElement("teethDown", svgsvgElement);
         teethDownOpen = Utils.getGElement("teethDownOpen", svgsvgElement);
         glasses = Utils.getGElement("glasses", svgsvgElement);
+
+        step1Rect = getStepRect(step1);
+        step2Rect = getStepRect(step2);
+        step3Rect = getStepRect(step3);
+        step4Rect = getStepRect(step4);
+        step5Rect = getStepRect(step5);
+        step6Rect = getStepRect(step6);
+        step7Rect = getStepRect(step7);
+    }
+
+    private OMSVGRectElement getStepRect(OMSVGGElement step) {
+        OMSVGRectElement rect = null;
+        for (OMNode omNode : step.getChildNodes()) {
+            if(omNode instanceof OMSVGRectElement){
+                rect = (OMSVGRectElement) omNode;
+                break;
+            }
+        }
+        return rect;
     }
 }

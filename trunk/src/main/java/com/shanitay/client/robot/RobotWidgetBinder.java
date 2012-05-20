@@ -29,9 +29,18 @@ public class RobotWidgetBinder implements WidgetBinder {
         Utils.attachToy(elementLoader.tooth4, soundLoader.tooth4, false, animationLoader.tooth4);
         Utils.attachToy(elementLoader.tooth5, soundLoader.tooth5, false, animationLoader.tooth5);
         Utils.attachToy(elementLoader.tooth6, soundLoader.tooth6, false, animationLoader.tooth6);
+
         Utils.attachToy(elementLoader.lightningButton, soundLoader.electric, false, animationLoader.electric);
         Utils.attachToy(elementLoader.earLeft, soundLoader.earLeft, false, animationLoader.earLeft);
         Utils.attachToy(elementLoader.earRight, soundLoader.earRight, false, animationLoader.earRight);
+
+        Utils.attachToy(elementLoader.step1, soundLoader.step1, false, animationLoader.step1Explode);
+        Utils.attachToy(elementLoader.step2, soundLoader.step2, false, animationLoader.step2Explode);
+        Utils.attachToy(elementLoader.step3, soundLoader.step3, false, animationLoader.step3Explode);
+        Utils.attachToy(elementLoader.step4, soundLoader.step4, false, animationLoader.step4Explode);
+        Utils.attachToy(elementLoader.step5, soundLoader.step5, false, animationLoader.step5Explode);
+        Utils.attachToy(elementLoader.step6, soundLoader.step6, false, animationLoader.step6Explode);
+        Utils.attachToy(elementLoader.step7, soundLoader.step7, false, animationLoader.step7Explode);
 
         Utils.attachToy(elementLoader.coopButton, soundLoader.coop, true, animationLoader.coopBg);
         Utils.addHandler(elementLoader.coopButton, new Utils.SomeHandler() {
