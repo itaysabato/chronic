@@ -13,20 +13,23 @@ class AnimationLoader {
     private static final int TOOTH_DURATION = 500;
     private static final int ELECTRIC_DURATION = 125;
     private static final int RIGHT_EAR_DURATION = 500;
+    private static final int PUMP_LIGHT_DURATION = 500;
     private static final int COOP_CENTER_DURATION = 250;
 
     private final ElementLoader elementLoader;
-    final PeekabooToyAnimation tooth1;
-    final PeekabooToyAnimation tooth2;
-    final PeekabooToyAnimation tooth3;
-    final PeekabooToyAnimation tooth4;
-    final PeekabooToyAnimation tooth5;
-    final PeekabooToyAnimation tooth6;
-    final SequenceToyAnimation electric;
+
+    final Toy.Animation tooth1;
+    final Toy.Animation tooth2;
+    final Toy.Animation tooth3;
+    final Toy.Animation tooth4;
+    final Toy.Animation tooth5;
+    final Toy.Animation tooth6;
+    final Toy.Animation electric;
     final Toy.Animation earLeft;
-    final PeekabooToyAnimation earRight;
-    final PeekabooToyAnimation coopCenter;
-    final DiscoToyAnimation coopBg;
+    final Toy.Animation earRight;
+    final Toy.Animation coopCenter;
+    final Toy.Animation coopBg;
+    final Toy.Animation pumpLight;
 
     public AnimationLoader(ElementLoader elementLoader) {
         this.elementLoader = elementLoader;
@@ -50,6 +53,9 @@ class AnimationLoader {
         final FillColorAnimator coopCenterAnimator = new FillColorAnimator("#173434", "#EAE984");
         coopCenter = new PeekabooToyAnimation(coopCenterAnimator, COOP_CENTER_DURATION, elementLoader.coopButtonCenter);
         coopBg = new DiscoToyAnimation(AnimatorImpls.APPEAR, BG_INTERVAL, elementLoader.bgCoop1, elementLoader.bgCoop2, elementLoader.bgCoop3);
+
+        final FillColorAnimator pumpLightAnimator = new FillColorAnimator("#EAE984", "#F2B1B6");
+        pumpLight = new PeekabooToyAnimation(pumpLightAnimator, PUMP_LIGHT_DURATION, elementLoader.pumpLight);
     }
 
     private SequenceToyAnimation createElectric() {

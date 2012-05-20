@@ -1,10 +1,7 @@
 package com.shanitay.client.robot;
 
 import com.shanitay.client.utils.Utils;
-import org.vectomatic.dom.svg.OMSVGGElement;
-import org.vectomatic.dom.svg.OMSVGPathElement;
-import org.vectomatic.dom.svg.OMSVGRectElement;
-import org.vectomatic.dom.svg.OMSVGSVGElement;
+import org.vectomatic.dom.svg.*;
 
 /**
  * Created By: Itay Sabato<br/>
@@ -30,6 +27,7 @@ class ElementLoader {
     final OMSVGGElement bgCoop2;
     final OMSVGGElement bgCoop3;
     final OMSVGRectElement coopButtonCenter;
+    final OMSVGElement pumpLight;
 
     public ElementLoader(OMSVGSVGElement svgsvgElement) {
         tooth1 = Utils.getGElement("tooth1", svgsvgElement);
@@ -52,5 +50,7 @@ class ElementLoader {
         bgCoop2 = Utils.getGElement("bgCoop2", svgsvgElement);
         bgCoop3 = Utils.getGElement("bgCoop3", svgsvgElement);
         coopButtonCenter = (OMSVGRectElement) Utils.getSVGElement("coopButtonCenter", svgsvgElement);
+
+        pumpLight = Utils.getSVGElement("pumpLight", svgsvgElement);
     }
 }

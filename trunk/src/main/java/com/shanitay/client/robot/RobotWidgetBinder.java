@@ -39,6 +39,8 @@ public class RobotWidgetBinder implements WidgetBinder {
             }
         });
 
+        animationLoader.pumpLight.setLooping(true);
+        animationLoader.pumpLight.play();
         return svgElement;
     }
 }
