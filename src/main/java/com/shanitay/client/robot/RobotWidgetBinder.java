@@ -3,6 +3,7 @@ package com.shanitay.client.robot;
 import com.google.gwt.core.client.GWT;
 import com.shanitay.client.WidgetBinder;
 import com.shanitay.client.utils.Utils;
+import org.vectomatic.dom.svg.OMSVGGElement;
 import org.vectomatic.dom.svg.OMSVGSVGElement;
 import org.vectomatic.dom.svg.ui.SVGResource;
 
@@ -47,6 +48,40 @@ public class RobotWidgetBinder implements WidgetBinder {
                 animationLoader.bgPump,
                 animationLoader.pumpHouse);
 
+        Utils.createToggleButton(elementLoader.nose,
+                new Utils.SomeHandler() {
+                    public void handle() {
+                        Utils.show(elementLoader.surprised);
+                        Utils.hide(elementLoader.eyes);
+                    }
+                },
+
+                new Utils.SomeHandler() {
+                    public void handle() {
+                        Utils.hide(elementLoader.surprised);
+                        Utils.show(elementLoader.eyes);
+                    }
+                });
+
+        createGlassesButton(elementLoader, elementLoader.teethDown);
+        createGlassesButton(elementLoader, elementLoader.teethDownOpen);
+
         return svgElement;
+    }
+
+    private void createGlassesButton(final ElementLoader elementLoader, OMSVGGElement teethDown) {
+        Utils.createToggleButton(teethDown,
+                new Utils.SomeHandler() {
+                    public void handle() {
+                        Utils.show(elementLoader.glasses);
+                    }
+                },
+
+                new Utils.SomeHandler() {
+                    public void handle() {
+                        Utils.hide(elementLoader.glasses);
+                    }
+                }
+        );
     }
 }

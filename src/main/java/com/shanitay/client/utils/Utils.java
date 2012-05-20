@@ -117,6 +117,21 @@ public class Utils {
         return toy;
     }
 
+    public static void createToggleButton(HasGraphicalHandlers element, final SomeHandler offHandler, final SomeHandler onHandler) {
+        addHandler(element, new SomeHandler() {
+            private boolean on = false;
+
+            public void handle() {
+                if(on){
+                    onHandler.handle();
+                }
+                else {
+                    offHandler.handle();
+                }
+                on = !on;
+            }
+        });
+    }
     public interface SomeHandler {
         void handle();
     }

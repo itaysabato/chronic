@@ -47,6 +47,12 @@ class ElementLoader {
     final OMSVGGElement bgPump2;
     final OMSVGGElement bgPump3;
     final OMSVGGElement bgPump4;
+    final OMSVGGElement teethDown;
+    final OMSVGGElement teethDownOpen;
+    final OMSVGGElement glasses;
+    final OMSVGGElement surprised;
+    final OMSVGGElement nose;
+    final OMSVGGElement eyes;
 
     public ElementLoader(OMSVGSVGElement svgsvgElement) {
         tooth1 = Utils.getGElement("tooth1", svgsvgElement);
@@ -93,5 +99,13 @@ class ElementLoader {
         bgPump2 = Utils.getGElement("bgPump2", svgsvgElement);
         bgPump3 = Utils.getGElement("bgPump3", svgsvgElement);
         bgPump4 = Utils.getGElement("bgPump4", svgsvgElement);
+
+        nose = Utils.getGElement("nose", svgsvgElement);
+        surprised = Utils.getGElement("surprised", svgsvgElement);
+        eyes = Utils.getGElement("eyes", svgsvgElement);
+
+        teethDown = Utils.getGElement("teethDown", svgsvgElement);
+        teethDownOpen = Utils.getGElement("teethDownOpen", svgsvgElement);
+        glasses = Utils.getGElement("glasses", svgsvgElement);
     }
 }
