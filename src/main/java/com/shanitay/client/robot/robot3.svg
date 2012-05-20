@@ -546,7 +546,7 @@
 	<g id="eyeLeft">
 		<circle fill="#173434" cx="573.306" cy="189.046" r="80.279"/>
 		<circle fill="#1F9C8D" cx="509.834" cy="189.836" r="7.821"/>
-		<g id="eyeballLeft" transform="translate(34,0)" >
+		<g id="eyeBallLeft" >
 			<circle fill="#EAE984" cx="573.306" cy="189.046" r="45.873"/>
 			<circle fill="#1F9C8D" cx="573.306" cy="189.046" r="35.448"/>
 			<circle fill="#F2B1B6" cx="573.306" cy="189.046" r="27.108"/>
@@ -558,7 +558,7 @@
 		<circle fill="#F2B1B6" cx="802.682" cy="194.547" r="76.204"/>
 		<path fill="#1F9C8D" d="M867.009,186.631c0,4.098-3.321,7.421-7.423,7.421c-4.099,0-7.421-3.323-7.421-7.421
 			c0-4.102,3.322-7.423,7.421-7.423C863.688,179.208,867.009,182.529,867.009,186.631z"/>
-		<g id="eyeballRight" transform="translate(34,0)">
+		<g id="eyeBallRight">
 			<circle fill="#EAE984" cx="802.681" cy="194.547" r="43.545"/>
 			<circle fill="#1F9C8D" cx="802.682" cy="194.547" r="33.648"/>
 			<circle fill="#CCDDD7" cx="802.681" cy="194.547" r="25.731"/>
