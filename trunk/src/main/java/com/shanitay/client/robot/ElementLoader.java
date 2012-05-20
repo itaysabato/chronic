@@ -38,6 +38,7 @@ class ElementLoader {
     final OMSVGGElement step5;
     final OMSVGGElement step6;
     final OMSVGGElement step7;
+    final OMSVGGElement pump;
 
     public ElementLoader(OMSVGSVGElement svgsvgElement) {
         tooth1 = Utils.getGElement("tooth1", svgsvgElement);
@@ -74,5 +75,6 @@ class ElementLoader {
         step5 = Utils.getGElement("step5", svgsvgElement);
         step6 = Utils.getGElement("step6", svgsvgElement);
         step7 = Utils.getGElement("step7", svgsvgElement);
+        pump = Utils.getGElement("pump", svgsvgElement);
     }
 }
