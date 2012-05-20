@@ -29,6 +29,8 @@ class ElementLoader {
     final OMSVGRectElement coopButtonCenter;
     final OMSVGElement pumpLight;
     final OMSVGGElement smallLightning;
+    final OMSVGGElement eyeBallLeft;
+    final OMSVGGElement eyeBallRight;
 
     public ElementLoader(OMSVGSVGElement svgsvgElement) {
         tooth1 = Utils.getGElement("tooth1", svgsvgElement);
@@ -54,5 +56,8 @@ class ElementLoader {
 
         pumpLight = Utils.getSVGElement("pumpLight", svgsvgElement);
         smallLightning = Utils.getGElement("smallLightning", svgsvgElement);
+
+        eyeBallLeft = Utils.getGElement("eyeBallLeft", svgsvgElement);
+        eyeBallRight = Utils.getGElement("eyeBallRight", svgsvgElement);
     }
 }

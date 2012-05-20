@@ -1,6 +1,8 @@
 package com.shanitay.client.robot;
 
+import com.google.gwt.core.client.Scheduler;
 import com.shanitay.client.utils.*;
+import org.vectomatic.dom.svg.OMSVGGElement;
 
 /**
  * Created By: Itay Sabato<br/>
@@ -16,6 +18,7 @@ class AnimationLoader {
     private static final int RIGHT_EAR_DURATION = 500;
     private static final int PUMP_LIGHT_DURATION = 500;
     private static final int COOP_CENTER_DURATION = 250;
+    public static final int EYE_STEPS = 48;
     private final ElementLoader elementLoader;
 
     final Toy.Animation tooth1;
@@ -30,7 +33,9 @@ class AnimationLoader {
     final Toy.Animation coopCenter;
     final Toy.Animation coopBg;
     final Toy.Animation pumpLight;
-    private final PeekabooToyAnimation smallLightning;
+    final Toy.Animation smallLightning;
+    final Toy.Animation eyeBallLeft;
+    final Toy.Animation eyeBallRight;
 
     public AnimationLoader(ElementLoader elementLoader) {
         this.elementLoader = elementLoader;
@@ -63,6 +68,32 @@ class AnimationLoader {
         smallLightning = new PeekabooToyAnimation(AnimatorImpls.DISAPPEAR, LIGHTNING_DURATION, elementLoader.smallLightning);
         smallLightning.setLooping(true);
         smallLightning.play();
+
+        eyeBallLeft = createEyeSequence(elementLoader.eyeBallLeft);
+        eyeBallRight = createEyeSequence(elementLoader.eyeBallRight);
+
+        Scheduler.get().scheduleFixedDelay(new Scheduler.RepeatingCommand() {
+            public boolean execute() {
+                eyeBallLeft.play();
+                eyeBallRight.play();
+                return true;
+            }
+        }, 3*Utils.TIME_UNIT * EYE_STEPS);
+    }
+
+    private SequenceToyAnimation createEyeSequence(OMSVGGElement eyeBall) {
+        final MovingToyAnimation leftAnimation = createEyeBallAnimation(eyeBall, 1.2f);
+        final ScheduledAnimation leftScheduledAnimation = new ScheduledAnimation(leftAnimation, 0);
+
+        final MovingToyAnimation rightAnimation = createEyeBallAnimation(eyeBall, -1.2f);
+        final ScheduledAnimation rightScheduledAnimation = new ScheduledAnimation(rightAnimation, Utils.TIME_UNIT * 55);
+        return new SequenceToyAnimation(leftScheduledAnimation, rightScheduledAnimation);
+    }
+
+    private MovingToyAnimation createEyeBallAnimation(OMSVGGElement eyeBall, float vX) {
+        final MovementEquation eyeBallsEquationX = new MovementEquation(0, vX);
+        final MovementEquation eyeBallsEquationY = new MovementEquation(0, 0);
+        return new MovingToyAnimation(Utils.TIME_UNIT, EYE_STEPS, eyeBallsEquationX, eyeBallsEquationY, eyeBall, true);
     }
 
     private SequenceToyAnimation createElectric() {
