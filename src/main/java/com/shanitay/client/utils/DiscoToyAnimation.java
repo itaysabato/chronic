@@ -54,7 +54,7 @@ public class DiscoToyAnimation implements Toy.Animation {
     }
 
     private void disco() {
-        Utils.animateFor(animator, layers.get(0), durationMs());
+        Utils.animateFor(animator, layers.get(0), durationMs() - interval);
 
         for(int i = 1; i < layers.size(); i++){
             final int finalI = i;
