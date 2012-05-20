@@ -12,10 +12,10 @@ class AnimationLoader {
     private static final int BG_INTERVAL = 125;
     private static final int TOOTH_DURATION = 500;
     private static final int ELECTRIC_DURATION = 125;
+    private static final int LIGHTNING_DURATION = 500;
     private static final int RIGHT_EAR_DURATION = 500;
     private static final int PUMP_LIGHT_DURATION = 500;
     private static final int COOP_CENTER_DURATION = 250;
-
     private final ElementLoader elementLoader;
 
     final Toy.Animation tooth1;
@@ -30,6 +30,7 @@ class AnimationLoader {
     final Toy.Animation coopCenter;
     final Toy.Animation coopBg;
     final Toy.Animation pumpLight;
+    private final PeekabooToyAnimation smallLightning;
 
     public AnimationLoader(ElementLoader elementLoader) {
         this.elementLoader = elementLoader;
@@ -56,6 +57,12 @@ class AnimationLoader {
 
         final FillColorAnimator pumpLightAnimator = new FillColorAnimator("#EAE984", "#F2B1B6");
         pumpLight = new PeekabooToyAnimation(pumpLightAnimator, PUMP_LIGHT_DURATION, elementLoader.pumpLight);
+        pumpLight.setLooping(true);
+        pumpLight.play();
+
+        smallLightning = new PeekabooToyAnimation(AnimatorImpls.DISAPPEAR, LIGHTNING_DURATION, elementLoader.smallLightning);
+        smallLightning.setLooping(true);
+        smallLightning.play();
     }
 
     private SequenceToyAnimation createElectric() {
