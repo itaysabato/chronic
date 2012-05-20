@@ -19,6 +19,7 @@ import java.util.Iterator;
  * Time: 03:40 <br/>
  */
 public class Utils {
+    public static final int TIME_UNIT = 41;
 
     public static void hideFor(final OMSVGElement element, int invisibilityDuration) {
         hide(element);

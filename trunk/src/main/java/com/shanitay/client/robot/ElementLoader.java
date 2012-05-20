@@ -23,6 +23,7 @@ class ElementLoader {
     final OMSVGGElement lightningButton;
     final OMSVGPathElement earRight;
     final OMSVGPathElement earLeft;
+    final OMSVGGElement earHandle;
 
     public ElementLoader(OMSVGSVGElement svgsvgElement) {
         tooth1 = Utils.getGElement("tooth1", svgsvgElement);
@@ -33,10 +34,11 @@ class ElementLoader {
         tooth6 = Utils.getGElement("tooth6", svgsvgElement);
 
         lightningButton = Utils.getGElement("lightningButton", svgsvgElement);
-        electricWhite =Utils.getGElement("electricWhite", svgsvgElement);
+        electricWhite = Utils.getGElement("electricWhite", svgsvgElement);
         electricBlack = Utils.getGElement("electricBlack", svgsvgElement);
 
         earRight = (OMSVGPathElement) Utils.getSVGElement("earRight", svgsvgElement);
         earLeft = (OMSVGPathElement) Utils.getSVGElement("earLeft", svgsvgElement);
+        earHandle = Utils.getGElement("earHandle", svgsvgElement);
     }
 }

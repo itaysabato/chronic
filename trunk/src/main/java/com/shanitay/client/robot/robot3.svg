@@ -356,7 +356,7 @@
 		<circle fill="#5AA17B" cx="31.487" cy="752.04" r="8.708"/>
 	</g>
 </g>
-<g id="earHandle" display="none">
+<g id="earHandle">
 	<g display="inline">
 		<rect x="383.359" y="187.115" fill="#1F9C8D" width="26.558" height="93.07"/>
 		<rect x="409.917" y="209.668" fill="#EAE984" width="245.378" height="45.173"/>
