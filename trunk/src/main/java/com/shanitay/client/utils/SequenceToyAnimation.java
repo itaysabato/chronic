@@ -12,24 +12,47 @@ import java.util.List;
  * Time: 23:10 <br/>
  */
 public class SequenceToyAnimation implements Toy.Animation {
+    private boolean looping = false;
+    private boolean stopping =false;
+    private final int totalDurationMillis;
     private List<myCommand> myCommands = new LinkedList<myCommand>();
     private final List<ScheduledAnimation> scheduledAnimations;
 
-    public SequenceToyAnimation(ScheduledAnimation... scheduledAnimations) {
-            this( Arrays.asList(scheduledAnimations));
+    public SequenceToyAnimation(int totalDurationMillis, ScheduledAnimation... scheduledAnimations) {
+        this(totalDurationMillis, Arrays.asList(scheduledAnimations));
     }
 
-    public SequenceToyAnimation(List<ScheduledAnimation> scheduledAnimations) {
+    public SequenceToyAnimation(ScheduledAnimation... scheduledAnimations) {
+            this(0, Arrays.asList(scheduledAnimations));
+    }
+
+    public SequenceToyAnimation(int totalDurationMillis, List<ScheduledAnimation> scheduledAnimations) {
+        this.totalDurationMillis = totalDurationMillis;
         this.scheduledAnimations = scheduledAnimations;
     }
 
     public void setLooping(boolean looping) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        this.looping = looping;
     }
 
     public void play() {
-        stop();
+        stopping =false;
         innerPlay();
+
+        if(looping){
+
+            Scheduler.get().scheduleFixedDelay(new Scheduler.RepeatingCommand() {
+                public boolean execute() {
+                    if (looping && !stopping) {
+                        innerPlay();
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                }
+            }, totalDurationMillis);
+        }
     }
 
     private void innerPlay() {
@@ -41,6 +64,7 @@ public class SequenceToyAnimation implements Toy.Animation {
     }
 
     public void stop() {
+        stopping = true;
         for (myCommand command : myCommands) {
             command.stop = true;
         }
