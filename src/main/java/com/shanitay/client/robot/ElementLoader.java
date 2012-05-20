@@ -2,6 +2,7 @@ package com.shanitay.client.robot;
 
 import com.shanitay.client.utils.Utils;
 import org.vectomatic.dom.svg.OMSVGGElement;
+import org.vectomatic.dom.svg.OMSVGPathElement;
 import org.vectomatic.dom.svg.OMSVGSVGElement;
 
 /**
@@ -20,6 +21,8 @@ class ElementLoader {
     final OMSVGGElement electricWhite;
     final OMSVGGElement electricBlack;
     final OMSVGGElement lightningButton;
+    final OMSVGPathElement earRight;
+    final OMSVGPathElement earLeft;
 
     public ElementLoader(OMSVGSVGElement svgsvgElement) {
         tooth1 = Utils.getGElement("tooth1", svgsvgElement);
@@ -32,5 +35,8 @@ class ElementLoader {
         lightningButton = Utils.getGElement("lightningButton", svgsvgElement);
         electricWhite =Utils.getGElement("electricWhite", svgsvgElement);
         electricBlack = Utils.getGElement("electricBlack", svgsvgElement);
+
+        earRight = (OMSVGPathElement) Utils.getSVGElement("earRight", svgsvgElement);
+        earLeft = (OMSVGPathElement) Utils.getSVGElement("earLeft", svgsvgElement);
     }
 }

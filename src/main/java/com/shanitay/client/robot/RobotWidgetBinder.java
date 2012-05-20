@@ -29,6 +29,8 @@ public class RobotWidgetBinder implements WidgetBinder {
         Utils.attachToy(elementLoader.tooth5, soundLoader.tooth5, false, animationLoader.tooth5);
         Utils.attachToy(elementLoader.tooth6, soundLoader.tooth6, false, animationLoader.tooth6);
         Utils.attachToy(elementLoader.lightningButton, soundLoader.electric, false, animationLoader.electric);
+        Utils.attachToy(elementLoader.earLeft, soundLoader.earLeft, false, animationLoader.earLeft);
+        Utils.attachToy(elementLoader.earRight, soundLoader.earRight, false, animationLoader.earRight);
 
         return svgElement;
     }

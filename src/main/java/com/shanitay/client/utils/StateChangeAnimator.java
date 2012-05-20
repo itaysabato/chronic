@@ -1,6 +1,6 @@
 package com.shanitay.client.utils;
 
-import org.vectomatic.dom.svg.OMSVGGElement;
+import org.vectomatic.dom.svg.OMSVGElement;
 
 /**
 * Created By: Itay Sabato<br/>
@@ -8,6 +8,6 @@ import org.vectomatic.dom.svg.OMSVGGElement;
 * Time: 01:55 <br/>
 */
 public interface StateChangeAnimator {
-    void inAnimation(OMSVGGElement target);
-    void offAnimation(OMSVGGElement target);
+    void inAnimation(OMSVGElement target);
+    void offAnimation(OMSVGElement target);
 }

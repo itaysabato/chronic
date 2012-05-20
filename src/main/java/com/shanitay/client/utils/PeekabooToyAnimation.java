@@ -1,7 +1,7 @@
 package com.shanitay.client.utils;
 
 import com.google.gwt.core.client.Scheduler;
-import org.vectomatic.dom.svg.OMSVGGElement;
+import org.vectomatic.dom.svg.OMSVGElement;
 
 /**
  * Created By: Itay Sabato<br/>
@@ -11,12 +11,12 @@ import org.vectomatic.dom.svg.OMSVGGElement;
 public class PeekabooToyAnimation implements Toy.Animation {
     private final StateChangeAnimator kind;
     private final int durationMillis;
-    private final OMSVGGElement target;
+    private final OMSVGElement target;
 
     private boolean looping = false;
     private boolean stopping = false;
 
-    public PeekabooToyAnimation(StateChangeAnimator kind, int durationMillis, OMSVGGElement target) {
+    public PeekabooToyAnimation(StateChangeAnimator kind, int durationMillis, OMSVGElement target) {
         this.kind = kind;
         this.durationMillis = durationMillis;
         this.target = target;

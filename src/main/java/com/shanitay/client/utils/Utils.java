@@ -7,6 +7,7 @@ import com.google.gwt.dom.client.Style;
 import com.google.gwt.event.dom.client.MouseDownEvent;
 import com.google.gwt.event.dom.client.MouseDownHandler;
 import org.vectomatic.dom.svg.*;
+import org.vectomatic.dom.svg.events.HasGraphicalHandlers;
 import org.vectomatic.dom.svg.utils.DOMHelper;
 import org.vectomatic.dom.svg.utils.SVGPrefixResolver;
 
@@ -38,7 +39,7 @@ public class Utils {
         element.getStyle().setDisplay(Style.Display.NONE);
     }
 
-    public static void addHandler(OMSVGGElement element, final SomeHandler someHandler) {
+    public static void addHandler(HasGraphicalHandlers element, final SomeHandler someHandler) {
 //        element.addTouchStartHandler(new TouchStartHandler() {
 //            public void onTouchStart(TouchStartEvent event) {
 //                someHandler.handle();
@@ -58,6 +59,11 @@ public class Utils {
 //        });
 
 //        element.getElement().getStyle().setCursor(Style.Cursor.POINTER);
+    }
+
+    public static OMSVGElement getSVGElement(String elementId, OMSVGSVGElement element) {
+        final OMNode node = getElement(elementId, element);
+        return (OMSVGElement) node;
     }
 
     public static OMSVGGElement getGElement(String elementId, OMSVGSVGElement element) {
@@ -97,7 +103,7 @@ public class Utils {
         });
     }
 
-    public static Toy attachToy(OMSVGGElement element, Sound sound, boolean looping, Toy.Animation... animations) {
+    public static Toy attachToy(HasGraphicalHandlers element, Sound sound, boolean looping, Toy.Animation... animations) {
         final Toy toy = new Toy(sound, animations);
         toy.setLooping(looping);
 
