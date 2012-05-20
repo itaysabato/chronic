@@ -446,7 +446,9 @@
 	<path display="inline" fill="#1F9C8D" d="M592.109,497.727c60.935,60.936,159.729,60.936,220.665,0l12.889-12.89H579.221
 		L592.109,497.727z"/>
 	<rect x="529.397" y="125.746" display="inline" fill="#173434" width="346.087" height="348.133"/>
-	<rect x="528.001" y="444.742" display="inline" fill="#EAE984" width="294.265" height="29.137"/>
+    <g id="teethDownOpen">
+	    <rect x="528.001" y="444.742" display="inline" fill="#EAE984" width="294.265" height="29.137"/>
+    </g>
 </g>
 <g id="closedMouthUp">
 	<rect x="495.112" y="334.758" fill="#1F9C8D" width="402.791" height="81.297"/>
