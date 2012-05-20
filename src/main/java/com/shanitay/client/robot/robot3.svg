@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" width="1366px"
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1366px"
 	 height="763px" viewBox="0 0 1366 763" enable-background="new 0 0 1366 763" xml:space="preserve">
 <g id="bg">
 	<rect y="-0.017" fill="#F2B1B6" width="1366" height="769.553"/>
@@ -852,4 +852,12 @@
 	<path display="inline" fill="#FFFFFF" stroke="#231F20" stroke-width="5" d="M955.941,130.674
 		c15.733,0,28.488,12.755,28.488,28.489v83.575c0,15.733-12.755,28.489-28.488,28.489h-38.544V130.674H955.941z"/>
 </g>
+
+   <animateTransform attributeName="transform" attributeType="XML" repeatCount="indefinite"
+                    type="rotate" from="0 568.23 204.86" to="359 568.23 204.86"  begin="0" dur="2.5"
+                    additive="replace" fill="freeze" xlink:href="#glassesLeft"/>
+
+       <animateTransform attributeName="transform" attributeType="XML" repeatCount="indefinite"
+                    type="rotate" from="0 812.39 208.33" to="359 812.39 208.33"  begin="0" dur="2.5"
+                    additive="replace" fill="freeze" xlink:href="#glassesRight"/>
 </svg>
