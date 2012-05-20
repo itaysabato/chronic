@@ -9,7 +9,6 @@ import com.shanitay.client.utils.*;
  */
 class AnimationLoader {
     private static final int BG_INTERVAL = 125;
-    public static final int TIME_UNIT = 41;
 
     private final Toy.Animation bg;
     private final Toy.Animation nose;
@@ -42,11 +41,11 @@ class AnimationLoader {
 
         final MovementEquation tongueEquationX = new MovementEquation(0, 0);
         final MovementEquation tongueEquationY = new MovementEquation(0, 3.75f);
-        tongue = new MovingToyAnimation(TIME_UNIT, 48, tongueEquationX, tongueEquationY, elementLoader.getTongue(), true);
+        tongue = new MovingToyAnimation(Utils.TIME_UNIT, 48, tongueEquationX, tongueEquationY, elementLoader.getTongue(), true);
 
         final MovementEquation ballsEquationX = new MovementEquation(0, 10);
         final MovementEquation ballsEquationY = new MovementEquation(0, 0, 1);
-        balls = new MovingToyAnimation(TIME_UNIT, 48, ballsEquationX, ballsEquationY, elementLoader.getBall1(), false);
+        balls = new MovingToyAnimation(Utils.TIME_UNIT, 48, ballsEquationX, ballsEquationY, elementLoader.getBall1(), false);
         ballScale = new SvgToyAnimation(elementLoader.getBallScale());
     }
 

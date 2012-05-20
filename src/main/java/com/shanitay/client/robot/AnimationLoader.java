@@ -1,9 +1,6 @@
 package com.shanitay.client.robot;
 
-import com.shanitay.client.utils.AnimatorImpls;
-import com.shanitay.client.utils.FillColorAnimator;
-import com.shanitay.client.utils.PeekabooToyAnimation;
-import com.shanitay.client.utils.SequenceToyAnimation;
+import com.shanitay.client.utils.*;
 
 /**
  * Created By: Itay Sabato<br/>
@@ -13,10 +10,11 @@ import com.shanitay.client.utils.SequenceToyAnimation;
 class AnimationLoader {
 
     private static final int TOOTH_DURATION = 500;
-    private static final int EARS_DURATION = 500;
+    private static final int RIGHT_EAR_DURATION = 500;
     private static final int ELECTRIC_DURATION = 125;
 
     private final ElementLoader elementLoader;
+
     final PeekabooToyAnimation tooth1;
     final PeekabooToyAnimation tooth2;
     final PeekabooToyAnimation tooth3;
@@ -24,7 +22,7 @@ class AnimationLoader {
     final PeekabooToyAnimation tooth5;
     final PeekabooToyAnimation tooth6;
     final SequenceToyAnimation electric;
-    final PeekabooToyAnimation earLeft;
+    final Toy.Animation earLeft;
     final PeekabooToyAnimation earRight;
 
     public AnimationLoader(ElementLoader elementLoader) {
@@ -40,8 +38,11 @@ class AnimationLoader {
         electric = createElectric();
 
         final FillColorAnimator earsAnimator = new FillColorAnimator("#1F9C8D", "#EAE984");
-        earLeft = new PeekabooToyAnimation(earsAnimator, EARS_DURATION, elementLoader.earLeft);
-        earRight = new PeekabooToyAnimation(earsAnimator, EARS_DURATION, elementLoader.earRight);
+        earRight = new PeekabooToyAnimation(earsAnimator, RIGHT_EAR_DURATION, elementLoader.earRight);
+
+        final MovementEquation earEquationX = new MovementEquation(0, -13);
+        final MovementEquation earEquationY = new MovementEquation(0, 0);
+        earLeft = new MovingToyAnimation(Utils.TIME_UNIT, 24, earEquationX, earEquationY, elementLoader.earHandle, true);
     }
 
     private SequenceToyAnimation createElectric() {
