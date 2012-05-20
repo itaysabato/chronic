@@ -15,6 +15,7 @@ public class PeekabooToyAnimation implements Toy.Animation {
 
     private boolean looping = false;
     private boolean stopping = false;
+    private boolean on = false;
 
     public PeekabooToyAnimation(StateChangeAnimator kind, int durationMillis, OMSVGElement target) {
         this.kind = kind;
@@ -30,6 +31,7 @@ public class PeekabooToyAnimation implements Toy.Animation {
 
     public void play() {
         stopping = false;
+        on = true;
         kind.inAnimation(target);
 
         final Scheduler.RepeatingCommand cmd = new Scheduler.RepeatingCommand() {
@@ -39,6 +41,13 @@ public class PeekabooToyAnimation implements Toy.Animation {
                     return false;
                 }
                 else {
+                    if(on){
+                        kind.offAnimation(target);
+                    }
+                    else {
+                        kind.inAnimation(target);
+                    }
+                    on = !on;
                     return true;
                 }
             }
@@ -48,6 +57,7 @@ public class PeekabooToyAnimation implements Toy.Animation {
 
     public void stop() {
         stopping = true;
+        on = false;
     }
 
 }
