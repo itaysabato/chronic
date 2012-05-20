@@ -407,9 +407,9 @@
 	<g id="coopButtonBg">
 		<rect x="1116.008" y="52.034" fill="#CCDDD7" width="104.141" height="107.946"/>
 	</g>
-	<g id="coopButtonCenter">
-		<rect x="1138.764" y="76.692" fill="#173434" width="58.629" height="58.63"/>
-	</g>
+
+		<rect id="coopButtonCenter" x="1138.764" y="76.692" fill="#173434" width="58.629" height="58.63"/>
+
 </g>
 <g id="nose">
 	<rect x="611.636" y="290.055" fill="#EE8F78" width="124.778" height="44.703"/>

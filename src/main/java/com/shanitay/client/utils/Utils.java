@@ -21,15 +21,15 @@ import java.util.Iterator;
 public class Utils {
     public static final int TIME_UNIT = 41;
 
-    public static void hideFor(final OMSVGElement element, int invisibilityDuration) {
-        hide(element);
+    public static void animateFor(final StateChangeAnimator animator, final OMSVGElement element, int durationMillis) {
+        animator.inAnimation(element);
 
         Scheduler.get().scheduleFixedDelay(new Scheduler.RepeatingCommand() {
             public boolean execute() {
-                show(element);
+                animator.offAnimation(element);
                 return false;
             }
-        }, invisibilityDuration);
+        }, durationMillis);
     }
 
     public static void show(OMSVGElement element) {

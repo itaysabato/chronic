@@ -32,6 +32,13 @@ public class RobotWidgetBinder implements WidgetBinder {
         Utils.attachToy(elementLoader.earLeft, soundLoader.earLeft, false, animationLoader.earLeft);
         Utils.attachToy(elementLoader.earRight, soundLoader.earRight, false, animationLoader.earRight);
 
+        Utils.attachToy(elementLoader.coopButton, soundLoader.coop, true, animationLoader.coopBg);
+        Utils.addHandler(elementLoader.coopButton, new Utils.SomeHandler() {
+            public void handle() {
+                animationLoader.coopCenter.play();
+            }
+        });
+
         return svgElement;
     }
 }

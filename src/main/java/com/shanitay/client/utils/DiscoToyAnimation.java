@@ -16,14 +16,16 @@ public class DiscoToyAnimation implements Toy.Animation {
     private boolean looping = false;
     private boolean stopping = false;
 
+    private final StateChangeAnimator animator;
     private final int interval;
     private final List<OMSVGGElement> layers;
 
-    public DiscoToyAnimation(int interval, OMSVGGElement... layers) {
-        this(interval, Arrays.asList(layers));
+    public DiscoToyAnimation(StateChangeAnimator animator, int interval, OMSVGGElement... layers) {
+        this(animator, interval, Arrays.asList(layers));
     }
 
-    public DiscoToyAnimation(int interval, List<OMSVGGElement> layers) {
+    public DiscoToyAnimation(StateChangeAnimator animator, int interval, List<OMSVGGElement> layers) {
+        this.animator = animator;
         this.layers = layers;
         this.interval = interval;
     }
@@ -52,14 +54,14 @@ public class DiscoToyAnimation implements Toy.Animation {
     }
 
     private void disco() {
-        Utils.hideFor(layers.get(0), durationMs());
+        Utils.animateFor(animator, layers.get(0), durationMs());
 
         for(int i = 1; i < layers.size(); i++){
             final int finalI = i;
 
             Scheduler.get().scheduleFixedDelay(new Scheduler.RepeatingCommand() {
                 public boolean execute() {
-                    Utils.hideFor(layers.get(finalI), durationMs() - (2*interval* finalI));
+                    Utils.animateFor(animator, layers.get(finalI), durationMs() - (2*interval* finalI));
                     return false;
                 }
             }, finalI*interval);

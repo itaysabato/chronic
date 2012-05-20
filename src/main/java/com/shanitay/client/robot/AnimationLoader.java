@@ -9,12 +9,13 @@ import com.shanitay.client.utils.*;
  */
 class AnimationLoader {
 
+    private static final int BG_INTERVAL = 125;
     private static final int TOOTH_DURATION = 500;
-    private static final int RIGHT_EAR_DURATION = 500;
     private static final int ELECTRIC_DURATION = 125;
+    private static final int RIGHT_EAR_DURATION = 500;
+    private static final int COOP_CENTER_DURATION = 500;
 
     private final ElementLoader elementLoader;
-
     final PeekabooToyAnimation tooth1;
     final PeekabooToyAnimation tooth2;
     final PeekabooToyAnimation tooth3;
@@ -24,6 +25,8 @@ class AnimationLoader {
     final SequenceToyAnimation electric;
     final Toy.Animation earLeft;
     final PeekabooToyAnimation earRight;
+    final PeekabooToyAnimation coopCenter;
+    final DiscoToyAnimation coopBg;
 
     public AnimationLoader(ElementLoader elementLoader) {
         this.elementLoader = elementLoader;
@@ -43,25 +46,29 @@ class AnimationLoader {
         final MovementEquation earEquationX = new MovementEquation(0, -13);
         final MovementEquation earEquationY = new MovementEquation(0, 0);
         earLeft = new MovingToyAnimation(Utils.TIME_UNIT, 24, earEquationX, earEquationY, elementLoader.earHandle, true);
+
+        final FillColorAnimator coopCenterAnimator = new FillColorAnimator("#173434", "#EAE984");
+        coopCenter = new PeekabooToyAnimation(coopCenterAnimator, COOP_CENTER_DURATION, elementLoader.coopButtonCenter);
+        coopBg = new DiscoToyAnimation(AnimatorImpls.APPEAR, BG_INTERVAL, elementLoader.bgCoop1, elementLoader.bgCoop2, elementLoader.bgCoop3);
     }
 
     private SequenceToyAnimation createElectric() {
-        final SequenceToyAnimation.ScheduledAnimation scheduledWhite1 = getScheduledWhite(elementLoader, 0);
+        final ScheduledAnimation scheduledWhite1 = getScheduledWhite(elementLoader, 0);
 
         final PeekabooToyAnimation electricBlackAnimation = new PeekabooToyAnimation(AnimatorImpls.APPEAR, ELECTRIC_DURATION, elementLoader.electricBlack);
-        final SequenceToyAnimation.ScheduledAnimation scheduledBlack1 = getScheduledBlack(ELECTRIC_DURATION, electricBlackAnimation);
-        final SequenceToyAnimation.ScheduledAnimation scheduledBlack2 = getScheduledBlack((3 * ELECTRIC_DURATION), electricBlackAnimation);
-        final SequenceToyAnimation.ScheduledAnimation scheduledBlack3 = getScheduledBlack((5 * ELECTRIC_DURATION), electricBlackAnimation);
+        final ScheduledAnimation scheduledBlack1 = getScheduledBlack(ELECTRIC_DURATION, electricBlackAnimation);
+        final ScheduledAnimation scheduledBlack2 = getScheduledBlack((3 * ELECTRIC_DURATION), electricBlackAnimation);
+        final ScheduledAnimation scheduledBlack3 = getScheduledBlack((5 * ELECTRIC_DURATION), electricBlackAnimation);
 
         return new SequenceToyAnimation(scheduledWhite1, scheduledBlack1, scheduledBlack2, scheduledBlack3);
     }
 
-    private SequenceToyAnimation.ScheduledAnimation getScheduledWhite(ElementLoader elementLoader, int startTimeMillis) {
+    private ScheduledAnimation getScheduledWhite(ElementLoader elementLoader, int startTimeMillis) {
         final PeekabooToyAnimation electricWhite = new PeekabooToyAnimation(AnimatorImpls.APPEAR, 7 * ELECTRIC_DURATION, elementLoader.electricWhite);
-        return new SequenceToyAnimation.ScheduledAnimation(electricWhite, startTimeMillis);
+        return new ScheduledAnimation(electricWhite, startTimeMillis);
     }
 
-    private SequenceToyAnimation.ScheduledAnimation getScheduledBlack(int startTimeMillis, PeekabooToyAnimation peekabooToyAnimation) {
-        return new SequenceToyAnimation.ScheduledAnimation(peekabooToyAnimation, startTimeMillis);
+    private ScheduledAnimation getScheduledBlack(int startTimeMillis, PeekabooToyAnimation peekabooToyAnimation) {
+        return new ScheduledAnimation(peekabooToyAnimation, startTimeMillis);
     }
 }
