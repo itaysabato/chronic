@@ -54,7 +54,6 @@ class ElementLoader {
     final OMSVGGElement bgPump2;
     final OMSVGGElement bgPump3;
     final OMSVGGElement bgPump4;
-    final OMSVGGElement teethDown;
     final OMSVGGElement teethDownOpen;
     final OMSVGGElement glasses;
     final OMSVGGElement surprised;
@@ -124,7 +123,6 @@ class ElementLoader {
         surprised = Utils.getGElement("surprised", svgsvgElement);
         eyes = Utils.getGElement("eyes", svgsvgElement);
 
-        teethDown = Utils.getGElement("teethDown", svgsvgElement);
         teethDownOpen = Utils.getGElement("teethDownOpen", svgsvgElement);
         glasses = Utils.getGElement("glasses", svgsvgElement);
 

@@ -88,7 +88,6 @@ public class RobotWidgetBinder implements WidgetBinder {
             }
         });
 
-        createGlassesButton(elementLoader, elementLoader.teethDown);
         createGlassesButton(elementLoader, elementLoader.teethDownOpen);
 
         return svgElement;
