@@ -31,32 +31,36 @@ class SoundLoader {
     final Sound leftBraw;
     final Sound rightBraw;
     final Sound mot;
+    final Sound nose;
+    final Sound toothBottom;
 
     public SoundLoader() {
         SoundController soundController = new SoundController();
 
-        tooth1 = Utils.getSound("laugh.mp3", soundController);
-        tooth2 = Utils.getSound("laugh.mp3", soundController);
-        tooth3 = Utils.getSound("laugh.mp3", soundController);
-        tooth4 = Utils.getSound("yeah.mp3", soundController);
-        tooth5 = Utils.getSound("80s Dance Bass Synth 04 new.mp3", soundController);
-        tooth6 = Utils.getSound("boom new.mp3", soundController);
-        electric = Utils.getSound("smash nwe.mp3", soundController);
+        nose = Utils.getSound("crash1.mp3", soundController);
+        tooth1 = Utils.getSound("snar2.mp3", soundController);
+        tooth2 = Utils.getSound("snare1.mp3", soundController);
+        tooth3 = Utils.getSound("hihat1.mp3", soundController);
+        tooth4 = Utils.getSound("cowbell1.mp3", soundController);
+        tooth5 = Utils.getSound("basedrum2.mp3", soundController);
+        tooth6 = Utils.getSound("basedrum1.mp3", soundController);
+        electric = Utils.getSound("electric.mp3", soundController);
         earLeft = Utils.getSound("80s Dance Bass Synth 04 new.mp3", soundController);
-        earRight = Utils.getSound("boom new.mp3", soundController);
+        earRight = Utils.getSound("splash1.mp3", soundController);
         coop = Utils.getSound("boom new.mp3", soundController);
-        pumpHouse = Utils.getSound("base10new.mp3", soundController);
+        pumpHouse = Utils.getSound("base06 new.mp3", soundController);
 
         step1 = Utils.getSound("laugh.mp3", soundController);
-        step2 = Utils.getSound("yeah.mp3", soundController);
-        step3 = Utils.getSound("80s Dance Bass Synth 04 new.mp3", soundController);
-        step4 = Utils.getSound("boom new.mp3", soundController);
-        step5 = Utils.getSound("smash nwe.mp3", soundController);
+        step2 = Utils.getSound("base07.mp3", soundController);
+        step3 = Utils.getSound("scifi laser gun10.mp3", soundController);
+        step4 = Utils.getSound("scifi laser gun5.mp3", soundController);
+        step5 = Utils.getSound("beep1.mp3", soundController);
         step6 = Utils.getSound("base10new.mp3", soundController);
-        step7 = Utils.getSound("yeah.mp3", soundController);
+        step7 = Utils.getSound("laser10.mp3", soundController);
 
-        leftBraw = Utils.getSound("laugh.mp3", soundController);
-        rightBraw = Utils.getSound("yeah.mp3", soundController);
-        mot = Utils.getSound("smash nwe.mp3", soundController);
+        leftBraw = Utils.getSound("base1.mp3", soundController);
+        rightBraw = Utils.getSound("cowbell2.mp3", soundController);
+        mot = Utils.getSound("laser10.mp3", soundController);
+        toothBottom = Utils.getSound("yeah.mp3", soundController);
     }
 }

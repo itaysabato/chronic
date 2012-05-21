@@ -17,7 +17,7 @@ class AnimationLoader {
     private static final int STEP_DELAY = 2000;
     private static final int BG_INTERVAL = 125;
     private static final int EXPLODE_DUR = 250;
-    private static final int TOOTH_DURATION = 500;
+    private static final int TOOTH_DURATION = 250;
     private static final int LADDER_NUM_STEPS = 300;
     public static final int ELECTRIC_DURATION = 125;
     private static final int RIGHT_EAR_DURATION = 500;

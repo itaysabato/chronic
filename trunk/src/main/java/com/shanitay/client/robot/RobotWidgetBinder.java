@@ -78,6 +78,7 @@ public class RobotWidgetBinder implements WidgetBinder {
             public void handle() {
                 String display = elementLoader.surprised.getStyle().getDisplay();
                 if(display.equalsIgnoreCase("none")){
+                    soundLoader.nose.play();
                     Utils.show(elementLoader.surprised);
                     Utils.hide(elementLoader.eyes);
                 }
@@ -88,7 +89,7 @@ public class RobotWidgetBinder implements WidgetBinder {
             }
         });
 
-        createGlassesButton(elementLoader, elementLoader.teethDownOpen);
+        createGlassesButton(soundLoader, elementLoader, elementLoader.teethDownOpen);
 
         Utils.attachToy(elementLoader.mot, soundLoader.mot, false, animationLoader.mot);
         Utils.addHandler(elementLoader.mot,  new Utils.SomeHandler() {
@@ -109,11 +110,12 @@ public class RobotWidgetBinder implements WidgetBinder {
         return elementLoader.isMouthOpen();
     }
 
-    private void createGlassesButton(final ElementLoader elementLoader, OMSVGGElement teethDown) {
+    private void createGlassesButton(final SoundLoader soundLoader, final ElementLoader elementLoader, OMSVGGElement teethDown) {
         Utils.addHandler(teethDown, new Utils.SomeHandler() {
             public void handle() {
                 String display = elementLoader.glasses.getStyle().getDisplay();
                 if (display.equalsIgnoreCase("none")) {
+                    soundLoader.toothBottom.play();
                     Utils.show(elementLoader.glasses);
                 }
                 else {
