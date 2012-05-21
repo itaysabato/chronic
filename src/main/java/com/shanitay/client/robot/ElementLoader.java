@@ -2,6 +2,8 @@ package com.shanitay.client.robot;
 
 import com.shanitay.client.utils.Utils;
 import org.vectomatic.dom.svg.*;
+import org.vectomatic.dom.svg.events.BeginEvent;
+import org.vectomatic.dom.svg.events.BeginHandler;
 
 /**
  * Created By: Itay Sabato<br/>
@@ -10,6 +12,7 @@ import org.vectomatic.dom.svg.*;
  */
 class ElementLoader {
 
+    private boolean mouthOpen = false;
     final OMSVGGElement tooth1;
     final OMSVGGElement tooth2;
     final OMSVGGElement tooth3;
@@ -64,6 +67,9 @@ class ElementLoader {
     final OMSVGAnimationElement rightBrawRise;
     final OMSVGGElement eyeBrawLeft;
     final OMSVGGElement eyeBrawRight;
+    final OMSVGRectElement mot;
+    final OMSVGAnimationElement openMouthAnimation;
+    final OMSVGAnimationElement closeMouthAnimation;
 
     public ElementLoader(OMSVGSVGElement svgsvgElement) {
         tooth1 = Utils.getGElement("tooth1", svgsvgElement);
@@ -132,6 +138,23 @@ class ElementLoader {
         eyeBrawRight = Utils.getGElement("eyeBrawRight", svgsvgElement);
         leftBrawRise = Utils.getAnimationElement("leftBrawRise", svgsvgElement);
         rightBrawRise = Utils.getAnimationElement("rightBrawRise", svgsvgElement);
+
+        mot = (OMSVGRectElement) Utils.getSVGElement("mot", svgsvgElement);
+        openMouthAnimation = Utils.getAnimationElement("openMouth", svgsvgElement);
+        closeMouthAnimation = Utils.getAnimationElement("closeMouth", svgsvgElement);
+
+        openMouthAnimation.addBeginHandler(new BeginHandler() {
+            public void onBegin(BeginEvent event) {
+                mouthOpen = true;
+            }
+        });
+
+        closeMouthAnimation.addBeginHandler(new BeginHandler() {
+            public void onBegin(BeginEvent event) {
+                mouthOpen = false;
+            }
+        });
+
     }
 
     private OMSVGRectElement getStepRect(OMSVGGElement step) {
@@ -143,5 +166,9 @@ class ElementLoader {
             }
         }
         return rect;
+    }
+
+    public boolean isMouthOpen() {
+        return mouthOpen;
     }
 }

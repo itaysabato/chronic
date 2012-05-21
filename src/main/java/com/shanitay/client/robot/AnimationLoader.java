@@ -59,8 +59,11 @@ class AnimationLoader {
     final Toy.Animation pumpColors;
     final Toy.Animation pumpHouse;
     final Toy.Animation bgPump;
-    final SvgToyAnimation leftBraw;
-    final SvgToyAnimation rightBraw;
+    final Toy.Animation leftBraw;
+    final Toy.Animation rightBraw;
+    final Toy.Animation mot;
+    final Toy.Animation openMouth;
+    final Toy.Animation closeMouth;
 
 
     public AnimationLoader(ElementLoader elementLoader) {
@@ -142,6 +145,11 @@ class AnimationLoader {
 
         leftBraw = new SvgToyAnimation(elementLoader.leftBrawRise);
         rightBraw = new SvgToyAnimation(elementLoader.rightBrawRise);
+
+        FillColorAnimator fillColorAnimator = new FillColorAnimator("#EE8F78", "#EAE984");
+        mot = new PeekabooToyAnimation(fillColorAnimator, 250, elementLoader.mot);
+        openMouth = new SvgToyAnimation(elementLoader.openMouthAnimation);
+        closeMouth = new SvgToyAnimation(elementLoader.closeMouthAnimation);
     }
 
     private Toy.Animation createExplodeAnimation(OMSVGGElement step, OMSVGRectElement stepRect) {

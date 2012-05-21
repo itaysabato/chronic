@@ -30,6 +30,7 @@ class SoundLoader {
     final Sound step7;
     final Sound leftBraw;
     final Sound rightBraw;
+    final Sound mot;
 
     public SoundLoader() {
         SoundController soundController = new SoundController();
@@ -56,5 +57,6 @@ class SoundLoader {
 
         leftBraw = Utils.getSound("laugh.mp3", soundController);
         rightBraw = Utils.getSound("yeah.mp3", soundController);
+        mot = Utils.getSound("smash nwe.mp3", soundController);
     }
 }
