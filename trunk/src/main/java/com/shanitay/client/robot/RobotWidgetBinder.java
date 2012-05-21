@@ -90,7 +90,23 @@ public class RobotWidgetBinder implements WidgetBinder {
 
         createGlassesButton(elementLoader, elementLoader.teethDownOpen);
 
+        Utils.attachToy(elementLoader.mot, soundLoader.mot, false, animationLoader.mot);
+        Utils.addHandler(elementLoader.mot,  new Utils.SomeHandler() {
+            public void handle() {
+                if(isMouthOpen(elementLoader)){
+                    animationLoader.closeMouth.play();
+                }
+                else {
+                    animationLoader.openMouth.play();
+                }
+            }
+        });
+
         return svgElement;
+    }
+
+    private boolean isMouthOpen(ElementLoader elementLoader) {
+        return elementLoader.isMouthOpen();
     }
 
     private void createGlassesButton(final ElementLoader elementLoader, OMSVGGElement teethDown) {

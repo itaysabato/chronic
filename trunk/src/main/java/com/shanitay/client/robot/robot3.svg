@@ -433,10 +433,6 @@
 	<path fill="#CCDDD7" d="M922.543,452.214c0,12.165-10.005,22.027-22.349,22.027H469.527c-12.34,0-22.348-9.862-22.348-22.027
 		V57.468c0-12.165,10.007-22.026,22.348-22.026h430.668c12.344,0,22.349,9.862,22.349,22.026V452.214z"/>
 	<rect x="683.536" y="190.134" fill="#1F9C8D" width="17.121" height="145.13"/>
-	<polygon fill="#CCDDD7" points="776.521,524.608 831.292,524.608 831.292,504.292 882.313,504.292 899.857,486.749 
-		753.089,486.749 753.089,524.608 	"/>
-	<polygon fill="#CCDDD7" points="621.496,522.608 566.725,522.608 566.725,502.292 515.702,502.292 498.158,484.749 
-		644.926,484.749 644.926,522.608 	"/>
 	<path fill="#EE8F78" d="M582.52,131.696c0,0,194.539,0.689,194.43,5.024c-0.109,4.336-36.699,68.888-36.699,68.888
 		s-52.518-34.195-105.393,4.06L582.52,131.696z"/>
 	<path id="pumpLight" fill="#EAE984" d="M259.085,735.055c0-8.294-6.724-15.017-15.02-15.017h-34.882c-8.294,0-15.018,6.723-15.018,15.017V768
@@ -450,16 +446,20 @@
 		<rect id="coopButtonCenter" x="1138.764" y="76.692" fill="#173434" width="58.629" height="58.63"/>
 
 </g>
-    <g id="mot">
-	<rect x="406.095" y="395.731" fill="#EE8F78" width="562.54" height="41.158"/>
-</g>
-        <g id="openMouthDown">
+	<rect id="mot" x="406.095" y="395.731" fill="#EE8F78" width="562.54" height="41.158"/>
+
+<g id="openMouthDown">
+        	<polygon fill="#CCDDD7" points="776.521,524.608 831.292,524.608 831.292,504.292 882.313,504.292 899.857,486.749
+		753.089,486.749 753.089,524.608 	"/>
+	<polygon fill="#CCDDD7" points="621.496,522.608 566.725,522.608 566.725,502.292 515.702,502.292 498.158,484.749
+		644.926,484.749 644.926,522.608 	"/>
         <rect x="494.854" y="106.052" fill="#1F9C8D" width="403.305" height="399.584"/>
         <path fill="#1F9C8D" d="M590.465,498.778c61.308,61.311,160.705,61.311,222.013,0l12.968-12.967H577.498L590.465,498.778z"/>
         <rect x="527.369" y="124.526" fill="#173434" width="348.201" height="350.26"/>
         <g id="teethDownOpen">
             <rect x="526.965" y="445.472" fill="#EAE984" width="296.064" height="29.314"/>
         </g>
+
     </g>
 <g id="ribua">
 	<rect x="485.5" y="93.856" fill="#CCDDD7" width="415.611" height="240.902"/>
@@ -872,4 +872,10 @@
         <animateTransform id="leftBrawDown" attributeName="transform" attributeType="XML" repeatCount="1"
                     type="rotate" to="0 580 100" from="-30 580 100"  begin="leftBrawRise.end" dur="0.3"
                     additive="replace" fill="freeze" xlink:href="#eyeBrawLeft"/>
+
+            <animateMotion id="openMouth" repeatCount="1" path="M 0 0 L 0 230"  begin="indefinite" dur="0.2"
+                           fill="freeze" xlink:href="#openMouthDown"/>
+
+                <animateMotion id="closeMouth" repeatCount="1" path="z"  begin="indefinite" dur="0.2"
+                           fill="freeze" xlink:href="#openMouthDown"/>
 </svg>
