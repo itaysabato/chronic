@@ -450,32 +450,28 @@
 		<rect id="coopButtonCenter" x="1138.764" y="76.692" fill="#173434" width="58.629" height="58.63"/>
 
 </g>
+    <g id="mot">
+	<rect x="406.095" y="395.731" fill="#EE8F78" width="562.54" height="41.158"/>
+</g>
+        <g id="openMouthDown">
+        <rect x="494.854" y="106.052" fill="#1F9C8D" width="403.305" height="399.584"/>
+        <path fill="#1F9C8D" d="M590.465,498.778c61.308,61.311,160.705,61.311,222.013,0l12.968-12.967H577.498L590.465,498.778z"/>
+        <rect x="527.369" y="124.526" fill="#173434" width="348.201" height="350.26"/>
+        <g id="teethDownOpen">
+            <rect x="526.965" y="445.472" fill="#EAE984" width="296.064" height="29.314"/>
+        </g>
+    </g>
+<g id="ribua">
+	<rect x="485.5" y="93.856" fill="#CCDDD7" width="415.611" height="240.902"/>
+</g>
 <g id="nose">
 	<rect x="611.636" y="290.055" fill="#EE8F78" width="124.778" height="44.703"/>
 </g>
-<g id="mot">
-	<rect x="406.095" y="395.731" fill="#EE8F78" width="562.54" height="41.158"/>
-</g>
-<g id="openMouthDown" display="none">
-	<rect x="497.079" y="107.385" display="inline" fill="#1F9C8D" width="400.857" height="397.158"/>
-	<path display="inline" fill="#1F9C8D" d="M592.109,497.727c60.935,60.936,159.729,60.936,220.665,0l12.889-12.89H579.221
-		L592.109,497.727z"/>
-	<rect x="529.397" y="125.746" display="inline" fill="#173434" width="346.087" height="348.133"/>
-    <g id="teethDownOpen">
-	    <rect x="528.001" y="444.742" display="inline" fill="#EAE984" width="294.265" height="29.137"/>
-    </g>
-</g>
+
+
 <g id="closedMouthUp">
 	<rect x="495.112" y="334.758" fill="#1F9C8D" width="402.791" height="81.297"/>
-	<rect x="527.587" y="353.208" fill="#173434" width="347.756" height="62.848"/>
-</g>
-<g id="closedMouthDown">
-	<rect x="495.112" y="414.055" fill="#1F9C8D" width="402.791" height="79.693"/>
-	<path fill="#1F9C8D" d="M590.601,488.192c61.229,61.229,160.501,61.229,221.729,0l12.951-12.95H577.65L590.601,488.192z"/>
-	<rect x="527.587" y="407.333" fill="#173434" width="347.756" height="65.705"/>
-	<g id="teethDown">
-		<rect x="527.669" y="443.889" fill="#EAE984" width="295.685" height="29.279"/>
-	</g>
+	<rect x="527.587" y="353.208" fill="#173434" width="347.756" height="63.848"/>
 </g>
 <g id="teethUp">
 	<g id="tooth1">
