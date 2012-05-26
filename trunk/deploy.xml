@@ -13,4 +13,8 @@
         <exec executable="run.cmd"/>
     </target>
 
+    <target name="deployToAppEngine">
+        <exec executable="deploy_app_engine.cmd"/>
+    </target>
+
 </project>
