@@ -42,11 +42,11 @@ class AnimationLoader {
         rightEye = new PeekabooToyAnimation(AnimatorImpls.DISAPPEAR, 500, elementLoader.getRightOpen());
 
         final MovementEquation tongueEquationX = new MovementEquation(0, 0);
-        final MovementEquation tongueEquationY = new MovementEquation(0, 3.75f);
+        final MovementEquation tongueEquationY = new MovementEquation(0, 3.75f / 41f);
         tongue = new MovingToyAnimation(Utils.TIME_UNIT, 48, tongueEquationX, tongueEquationY, elementLoader.getTongue(), true);
 
-        final MovementEquation ballsEquationX = new MovementEquation(0, 10);
-        final MovementEquation ballsEquationY = new MovementEquation(0, 0, 1);
+        final MovementEquation ballsEquationX = new MovementEquation(0, 10f / 41f);
+        final MovementEquation ballsEquationY = new MovementEquation(0, 0, 1f / (41f * 41f));
         balls = new MovingToyAnimation(Utils.TIME_UNIT, 48, ballsEquationX, ballsEquationY, elementLoader.getBall1(), false);
         ballScale = new SvgToyAnimation(elementLoader.getBallScale());
     }

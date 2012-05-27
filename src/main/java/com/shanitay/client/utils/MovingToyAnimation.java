@@ -1,6 +1,6 @@
 package com.shanitay.client.utils;
 
-import com.google.gwt.core.client.Scheduler;
+import com.google.gwt.animation.client.AnimationScheduler;
 import org.vectomatic.dom.svg.OMSVGGElement;
 
 /**
@@ -9,23 +9,26 @@ import org.vectomatic.dom.svg.OMSVGGElement;
  * Time: 22:21 <br/>
  */
 public class MovingToyAnimation implements Toy.Animation {
-    private final int timeUnit;
-    private final int numSteps;
+
     private final boolean rewind;
+    private double start;
+    private final double duration;
     private final OMSVGGElement target;
     private final MovementEquation equationX;
     private final MovementEquation equationY;
 
-    private int dt = 0;
+    private double dt = 0;
     private boolean looping = false;
-    private boolean stopping = false;
-    private MyRepeatingCommand command = new MyRepeatingCommand();
+    private AnimationScheduler.AnimationHandle animationHandle;
 
     public MovingToyAnimation(int timeUnit, int numSteps, MovementEquation equationX, MovementEquation equationY, OMSVGGElement target, boolean rewind) {
+        this(numSteps * timeUnit, equationX, equationY, target, rewind);
+    }
+
+    public MovingToyAnimation(double duration, MovementEquation equationX, MovementEquation equationY, OMSVGGElement target, boolean rewind) {
         this.target = target;
         this.rewind = rewind;
-        this.numSteps = numSteps;
-        this.timeUnit = timeUnit;
+        this.duration = duration;
         this.equationX = equationX;
         this.equationY = equationY;
     }
@@ -35,51 +38,58 @@ public class MovingToyAnimation implements Toy.Animation {
     }
 
     public void play() {
-        reset();
-        if(!command.repeat){
-            Scheduler.get().scheduleFixedDelay(command, timeUnit);
+        stop();
+        animationHandle = AnimationScheduler.get().requestAnimationFrame(new MyAnimationCallback(), target.getElement());
+    }
+
+    private void cancel() {
+        if (animationHandle != null) {
+            animationHandle.cancel();
+            animationHandle = null;
         }
     }
 
     private void reset() {
         dt = 0;
-        stopping = false;
+        start = System.currentTimeMillis();
         translate();
     }
 
     private void translate() {
-        int dtPrime = dt;
+        double dtPrime = dt;
 
         if(rewind){
-            int middle = numSteps / 2;
+            double middle = duration / 2;
             if(dt > middle){
                 dtPrime = (2*middle) - dt;
             }
         }
 
-        final float translationX = equationX.getTranslation(dtPrime);
-        final float translationY = equationY.getTranslation(dtPrime);
-        Utils.translate(target, translationX, translationY);
+        final double translationX = equationX.getTranslation(dtPrime);
+        final double translationY = equationY.getTranslation(dtPrime);
+        Utils.translate(target, (float) translationX, (float) translationY);
     }
 
     public void stop() {
-        stopping = true;
+        cancel();
+        reset();
     }
 
-    private class MyRepeatingCommand implements Scheduler.RepeatingCommand {
-        private boolean repeat = false;
+    private class MyAnimationCallback implements AnimationScheduler.AnimationCallback {
 
-        public boolean execute() {
-            if((!looping && dt == numSteps - 1) || stopping){
+        public void execute(double timestamp) {
+            dt = timestamp - start;
+
+            if (dt >= duration) {
                 reset();
-                repeat = false;
-                return false;
+                if(looping){
+                    animationHandle = AnimationScheduler.get().requestAnimationFrame(this, target.getElement());
+                }
             }
-
-            dt = (dt + 1) % numSteps;
-            translate();
-            repeat = true;
-            return true;
+            else {
+                translate();
+                animationHandle = AnimationScheduler.get().requestAnimationFrame(this, target.getElement());
+            }
         }
     }
 }
