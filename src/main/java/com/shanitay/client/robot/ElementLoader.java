@@ -70,6 +70,7 @@ class ElementLoader {
     final OMSVGRectElement mot;
     final OMSVGAnimationElement openMouthAnimation;
     final OMSVGAnimationElement closeMouthAnimation;
+    final OMSVGAnimationElement handleMove1;
 
     public ElementLoader(OMSVGSVGElement svgsvgElement) {
         tooth1 = Utils.getGElement("tooth1", svgsvgElement);
@@ -155,6 +156,7 @@ class ElementLoader {
             }
         });
 
+        handleMove1 = Utils.getAnimationElement("handleMove1", svgsvgElement);
     }
 
     private OMSVGRectElement getStepRect(OMSVGGElement step) {
