@@ -876,6 +876,6 @@
             <animateMotion id="openMouth" repeatCount="1" path="M 0 0 L 0 230"  begin="indefinite" dur="0.2"
                            fill="freeze" xlink:href="#openMouthDown"/>
 
-                <animateMotion id="closeMouth" repeatCount="1" path="z"  begin="indefinite" dur="0.2"
+                <animateMotion id="closeMouth" repeatCount="1" path="M 0 230 L 0 0"  begin="indefinite" dur="0.2"
                            fill="freeze" xlink:href="#openMouthDown"/>
 </svg>
