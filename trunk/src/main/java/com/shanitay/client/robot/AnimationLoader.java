@@ -37,10 +37,10 @@ class AnimationLoader {
     final Toy.Animation earRight;
     final Toy.Animation coopCenter;
     final Toy.Animation coopBg;
-    final Toy.Animation pumpLight;
-    final Toy.Animation smallLightning;
-    final Toy.Animation eyeBallLeft;
-    final Toy.Animation eyeBallRight;
+//    final Toy.Animation pumpLight;
+//    final Toy.Animation smallLightning;
+//    final Toy.Animation eyeBallLeft;
+//    final Toy.Animation eyeBallRight;
     final Toy.Animation step1;
     final Toy.Animation step2;
     final Toy.Animation step3;
@@ -55,7 +55,7 @@ class AnimationLoader {
     final Toy.Animation step5Explode;
     final Toy.Animation step6Explode;
     final Toy.Animation step7Explode;
-    final Toy.Animation pump;
+//    final Toy.Animation pump;
     final Toy.Animation pumpColors;
     final Toy.Animation pumpHouse;
     final Toy.Animation bgPump;
@@ -88,24 +88,24 @@ class AnimationLoader {
         coopBg = new DiscoToyAnimation(true, AnimatorImpls.APPEAR, BG_INTERVAL, elementLoader.bgCoop1, elementLoader.bgCoop2, elementLoader.bgCoop3);
 
         final FillColorAnimator pumpLightAnimator = new FillColorAnimator("#EAE984", "#F2B1B6");
-        pumpLight = new PeekabooToyAnimation(pumpLightAnimator, PUMP_LIGHT_DURATION, elementLoader.pumpLight);
-        pumpLight.setLooping(true);
-        pumpLight.play();
+//        pumpLight = new PeekabooToyAnimation(pumpLightAnimator, PUMP_LIGHT_DURATION, elementLoader.pumpLight);
+//        pumpLight.setLooping(true);
+//        pumpLight.play();
 
-        smallLightning = new PeekabooToyAnimation(AnimatorImpls.DISAPPEAR, LIGHTNING_DURATION, elementLoader.smallLightning);
-        smallLightning.setLooping(true);
-        smallLightning.play();
+//        smallLightning = new PeekabooToyAnimation(AnimatorImpls.DISAPPEAR, LIGHTNING_DURATION, elementLoader.smallLightning);
+//        smallLightning.setLooping(true);
+//        smallLightning.play();
 
-        eyeBallLeft = createEyeSequence(elementLoader.eyeBallLeft);
-        eyeBallRight = createEyeSequence(elementLoader.eyeBallRight);
+//        eyeBallLeft = createEyeSequence(elementLoader.eyeBallLeft);
+//        eyeBallRight = createEyeSequence(elementLoader.eyeBallRight);
 
-        Scheduler.get().scheduleFixedDelay(new Scheduler.RepeatingCommand() {
-            public boolean execute() {
-                eyeBallLeft.play();
-                eyeBallRight.play();
-                return true;
-            }
-        }, 3*Utils.TIME_UNIT * EYE_STEPS);
+//        Scheduler.get().scheduleFixedDelay(new Scheduler.RepeatingCommand() {
+//            public boolean execute() {
+//                eyeBallLeft.play();
+//                eyeBallRight.play();
+//                return true;
+//            }
+//        }, 3*Utils.TIME_UNIT * EYE_STEPS);
 
         step1 = createStep(elementLoader.step1);
         step2 = createStep(elementLoader.step2);
@@ -131,8 +131,8 @@ class AnimationLoader {
         step6Explode = createExplodeAnimation(elementLoader.step6, elementLoader.step6Rect);
         step7Explode = createExplodeAnimation(elementLoader.step7, elementLoader.step7Rect);
 
-        pump = createPump(elementLoader);
-        pump.play();
+//        pump = createPump(elementLoader);
+//        pump.play();
 
         pumpColors = new DiscoToyAnimation(true, AnimatorImpls.DISAPPEAR, BG_INTERVAL, elementLoader.pumpColors3, elementLoader.pumpColors2);
         pumpHouse = new MovingToyAnimation(Utils.TIME_UNIT, 6, new MovementEquation(0, 20), MovementEquation.STILL, elementLoader.pumpHouse, true);
@@ -162,16 +162,15 @@ class AnimationLoader {
         return new ScheduledAnimation(peekabooToyAnimation, i*BG_INTERVAL);
     }
 
-    private MovingToyAnimation createPump(ElementLoader elementLoader) {
-        final MovementEquation pumpEquation = new MovementEquation(0, -12);
-        final MovingToyAnimation movingToyAnimation = new MovingToyAnimation(Utils.TIME_UNIT, 24, MovementEquation.STILL, pumpEquation, elementLoader.pump, true);
-        movingToyAnimation.setLooping(true);
-        return movingToyAnimation;
-    }
+//    private MovingToyAnimation createPump(ElementLoader elementLoader) {
+//        final MovementEquation pumpEquation = new MovementEquation(0, -12);
+//        final MovingToyAnimation movingToyAnimation = new MovingToyAnimation(Utils.TIME_UNIT, 24, MovementEquation.STILL, pumpEquation, elementLoader.pump, true);
+//        movingToyAnimation.setLooping(true);
+//        return movingToyAnimation;
+//    }
 
-    private MovingToyAnimation createLeftEar(ElementLoader elementLoader) {
-        final MovementEquation earEquationX = new MovementEquation(0, -13);
-        return new MovingToyAnimation(Utils.TIME_UNIT, 24, earEquationX, MovementEquation.STILL, elementLoader.earHandle, true);
+    private Toy.Animation createLeftEar(ElementLoader elementLoader) {
+        return new SvgToyAnimation(elementLoader.handleMove1);
     }
 
     private void scheduleStep(final Toy.Animation step, int i) {
@@ -190,20 +189,20 @@ class AnimationLoader {
         return movingToyAnimation;
     }
 
-    private SequenceToyAnimation createEyeSequence(OMSVGGElement eyeBall) {
-        final MovingToyAnimation leftAnimation = createEyeBallAnimation(eyeBall, 1.2f);
-        final ScheduledAnimation leftScheduledAnimation = new ScheduledAnimation(leftAnimation, 0);
+//    private SequenceToyAnimation createEyeSequence(OMSVGGElement eyeBall) {
+//        final MovingToyAnimation leftAnimation = createEyeBallAnimation(eyeBall, 1.2f);
+//        final ScheduledAnimation leftScheduledAnimation = new ScheduledAnimation(leftAnimation, 0);
+//
+//        final MovingToyAnimation rightAnimation = createEyeBallAnimation(eyeBall, -1.2f);
+//        final ScheduledAnimation rightScheduledAnimation = new ScheduledAnimation(rightAnimation, Utils.TIME_UNIT * 55);
+//        return new SequenceToyAnimation(leftScheduledAnimation, rightScheduledAnimation);
+//    }
 
-        final MovingToyAnimation rightAnimation = createEyeBallAnimation(eyeBall, -1.2f);
-        final ScheduledAnimation rightScheduledAnimation = new ScheduledAnimation(rightAnimation, Utils.TIME_UNIT * 55);
-        return new SequenceToyAnimation(leftScheduledAnimation, rightScheduledAnimation);
-    }
-
-    private MovingToyAnimation createEyeBallAnimation(OMSVGGElement eyeBall, float vX) {
-        final MovementEquation eyeBallsEquationX = new MovementEquation(0, vX);
-        final MovementEquation eyeBallsEquationY = new MovementEquation(0, 0);
-        return new MovingToyAnimation(Utils.TIME_UNIT, EYE_STEPS, eyeBallsEquationX, eyeBallsEquationY, eyeBall, true);
-    }
+//    private MovingToyAnimation createEyeBallAnimation(OMSVGGElement eyeBall, float vX) {
+//        final MovementEquation eyeBallsEquationX = new MovementEquation(0, vX);
+//        final MovementEquation eyeBallsEquationY = new MovementEquation(0, 0);
+//        return new MovingToyAnimation(Utils.TIME_UNIT, EYE_STEPS, eyeBallsEquationX, eyeBallsEquationY, eyeBall, true);
+//    }
 
     private Toy.Animation createElectric() {
 

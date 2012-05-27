@@ -860,7 +860,6 @@
     <animateTransform id="rightBrawRise" attributeName="transform" attributeType="XML" repeatCount="1"
                     type="rotate" from="0 802.68 118.34" to="30 802.68 118.34"  begin="indefinite" dur="0.3"
                     additive="replace" fill="freeze" xlink:href="#eyeBrawRight"/>
-
         <animateTransform id="rightBrawDown" attributeName="transform" attributeType="XML" repeatCount="1"
                     type="rotate" to="0 802.68 118.34" from="30 802.68 118.34"  begin="rightBrawRise.end" dur="0.3"
                     additive="replace" fill="freeze" xlink:href="#eyeBrawRight"/>
@@ -868,14 +867,50 @@
         <animateTransform id="leftBrawRise" attributeName="transform" attributeType="XML" repeatCount="1"
                     type="rotate" from="0 573.31 108.77" to="-30 573.31 108.77"  begin="indefinite" dur="0.3"
                     additive="replace" fill="freeze" xlink:href="#eyeBrawLeft"/>
-
         <animateTransform id="leftBrawDown" attributeName="transform" attributeType="XML" repeatCount="1"
                     type="rotate" to="0 573.31 108.77" from="-30 573.31 108.77"  begin="leftBrawRise.end" dur="0.3"
                     additive="replace" fill="freeze" xlink:href="#eyeBrawLeft"/>
 
             <animateMotion id="openMouth" repeatCount="1" path="M 0 0 L 0 230"  begin="indefinite" dur="0.2"
                            fill="freeze" xlink:href="#openMouthDown"/>
-
                 <animateMotion id="closeMouth" repeatCount="1" path="M 0 230 L 0 0"  begin="indefinite" dur="0.2"
                            fill="freeze" xlink:href="#openMouthDown"/>
+
+                <animate id="pumpFlick1" attributeName="fill" attributeType="CSS" from="#EAE984" to="#EAE984"
+                                        begin="0; pumpFlick2.end" dur="0.5" fill="freeze" xlink:href="#pumpLight" />
+                    <animate id="pumpFlick2" attributeName="fill" attributeType="CSS" to="#F2B1B6" from="#F2B1B6"
+                                        begin="pumpFlick1.end" dur="0.5" fill="freeze" xlink:href="#pumpLight" />
+
+                    <animate id="lightningFlick1" attributeName="display" attributeType="CSS" from="block" to="block"
+                                        begin="0; lightningFlick2.end" dur="0.5" fill="freeze" xlink:href="#smallLightning" />
+                    <animate id="lightningFlick2" attributeName="display" attributeType="CSS" from="none" to="none"
+                                        begin="lightningFlick1.end" dur="0.5" fill="freeze" xlink:href="#smallLightning" />
+
+                        <animateTransform id="pumping1" attributeName="transform" attributeType="XML" from="0,0" to="0,-140"
+                                        type="translate" begin="0; pumping2.end" dur="0.5" fill="freeze" xlink:href="#pump" />
+                        <animateTransform id="pumping2" attributeName="transform" attributeType="XML" to="0,0" from="0,-140"
+                                        type="translate" begin="pumping1.end" dur="0.5" fill="freeze" xlink:href="#pump" />
+
+                        <animateTransform id="eyeBallRightMove1" attributeName="transform" attributeType="XML" from="0,0" to="30,0"
+                                        type="translate" begin="0; eyeBallRightMove4.end" dur="1.5" fill="freeze" xlink:href="#eyeBallRight" />
+                        <animateTransform id="eyeBallRightMove2" attributeName="transform" attributeType="XML" from="30,0" to="-30,0"
+                                        type="translate" begin="eyeBallRightMove1.end" dur="3" fill="freeze" xlink:href="#eyeBallRight" />
+                        <animateTransform id="eyeBallRightMove3" attributeName="transform" attributeType="XML" from="-30,0" to="0,0"
+                                        type="translate" begin="eyeBallRightMove2.end" dur="1.5" fill="freeze" xlink:href="#eyeBallRight" />
+                        <animateTransform id="eyeBallRightMove4" attributeName="transform" attributeType="XML" from="0,0" to="0,0"
+                                        type="translate" begin="eyeBallRightMove3.end" dur="3" fill="freeze" xlink:href="#eyeBallRight" />
+
+                            <animateTransform id="eyeBallLeftMove1" attributeName="transform" attributeType="XML" from="0,0" to="30,0"
+                                        type="translate" begin="0; eyeBallRightMove4.end" dur="1.5" fill="freeze" xlink:href="#eyeBallLeft" />
+                        <animateTransform id="eyeBallLeftMove2" attributeName="transform" attributeType="XML" from="30,0" to="-30,0"
+                                        type="translate" begin="eyeBallRightMove1.end" dur="3" fill="freeze" xlink:href="#eyeBallLeft" />
+                        <animateTransform id="eyeBallLeftMove3" attributeName="transform" attributeType="XML" from="-30,0" to="0,0"
+                                        type="translate" begin="eyeBallRightMove2.end" dur="1.5" fill="freeze" xlink:href="#eyeBallLeft" />
+                        <animateTransform id="eyeBallLeftMove4" attributeName="transform" attributeType="XML" from="0,0" to="0,0"
+                                        type="translate" begin="eyeBallRightMove3.end" dur="2" fill="freeze" xlink:href="#eyeBallLeft" />
+
+                            <animateTransform id="handleMove1" attributeName="transform" attributeType="XML" from="0,0" to="-150,0"
+                                        type="translate" begin="indefinite" dur="0.5" fill="freeze" xlink:href="#earHandle" />
+                        <animateTransform id="handleMove2" attributeName="transform" attributeType="XML" to="0,0" from="-150,0"
+                                        type="translate" begin="handleMove1.end" dur="0.5" fill="freeze" xlink:href="#earHandle" />
 </svg>
