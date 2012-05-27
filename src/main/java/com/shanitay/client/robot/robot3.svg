@@ -913,4 +913,21 @@
                                         type="translate" begin="indefinite" dur="0.5" fill="freeze" xlink:href="#earHandle" />
                         <animateTransform id="handleMove2" attributeName="transform" attributeType="XML" to="0,0" from="-150,0"
                                         type="translate" begin="handleMove1.end" dur="0.5" fill="freeze" xlink:href="#earHandle" />
+
+                        <animateTransform id="step1Move" attributeName="transform" attributeType="XML" from="0,0" to="0,-550"
+                                        repeatCount="1" type="translate" begin="0; step7Move.begin+2" dur="13" fill="freeze" xlink:href="#step1" />
+
+                       <animateTransform id="step2Move" attributeName="transform" attributeType="XML" from="0,0" to="0,-550"
+                                        repeatCount="1" type="translate" begin="step1Move.begin+2" dur="13" fill="freeze" xlink:href="#step2" />
+
+                        <animateTransform id="step3Move" attributeName="transform" attributeType="XML" from="0,0" to="0,-550"
+                                        repeatCount="1" type="translate" begin="step2Move.begin+2" dur="13" fill="freeze" xlink:href="#step3" />
+                     <animateTransform id="step4Move" attributeName="transform" attributeType="XML" from="0,0" to="0,-550"
+                                        repeatCount="1" type="translate" begin="step3Move.begin+2" dur="13" fill="freeze" xlink:href="#step4" />
+                     <animateTransform id="step5Move" attributeName="transform" attributeType="XML" from="0,0" to="0,-550"
+                                        repeatCount="1" type="translate" begin="step4Move.begin+2" dur="13" fill="freeze" xlink:href="#step5" />
+                    <animateTransform id="step6Move" attributeName="transform" attributeType="XML" from="0,0" to="0,-550"
+                                        repeatCount="1" type="translate" begin="step5Move.begin+2" dur="13" fill="freeze" xlink:href="#step6" />
+                    <animateTransform id="step7Move" attributeName="transform" attributeType="XML" from="0,0" to="0,-550"
+                                        repeatCount="1" type="translate" begin="step6Move.begin+2" dur="13" fill="freeze" xlink:href="#step7" />
 </svg>
