@@ -1,6 +1,5 @@
 package com.shanitay.client.robot;
 
-import com.google.gwt.core.client.Scheduler;
 import com.shanitay.client.utils.*;
 import org.vectomatic.dom.svg.OMSVGElement;
 import org.vectomatic.dom.svg.OMSVGGElement;
@@ -41,13 +40,13 @@ class AnimationLoader {
 //    final Toy.Animation smallLightning;
 //    final Toy.Animation eyeBallLeft;
 //    final Toy.Animation eyeBallRight;
-    final Toy.Animation step1;
-    final Toy.Animation step2;
-    final Toy.Animation step3;
-    final Toy.Animation step4;
-    final Toy.Animation step5;
-    final Toy.Animation step6;
-    final Toy.Animation step7;
+//    final Toy.Animation step1;
+//    final Toy.Animation step2;
+//    final Toy.Animation step3;
+//    final Toy.Animation step4;
+//    final Toy.Animation step5;
+//    final Toy.Animation step6;
+//    final Toy.Animation step7;
     final Toy.Animation step1Explode;
     final Toy.Animation step2Explode;
     final Toy.Animation step3Explode;
@@ -107,21 +106,21 @@ class AnimationLoader {
 //            }
 //        }, 3*Utils.TIME_UNIT * EYE_STEPS);
 
-        step1 = createStep(elementLoader.step1);
-        step2 = createStep(elementLoader.step2);
-        step3 = createStep(elementLoader.step3);
-        step4 = createStep(elementLoader.step4);
-        step5 = createStep(elementLoader.step5);
-        step6 = createStep(elementLoader.step6);
-        step7 = createStep(elementLoader.step7);
-
-        step1.play();
-        scheduleStep(step2, 1);
-        scheduleStep(step3, 2);
-        scheduleStep(step4, 3);
-        scheduleStep(step5, 4);
-        scheduleStep(step6, 5);
-        scheduleStep(step7, 6);
+//        step1 = createStep(elementLoader.step1);
+//        step2 = createStep(elementLoader.step2);
+//        step3 = createStep(elementLoader.step3);
+//        step4 = createStep(elementLoader.step4);
+//        step5 = createStep(elementLoader.step5);
+//        step6 = createStep(elementLoader.step6);
+//        step7 = createStep(elementLoader.step7);
+//
+//        step1.play();
+//        scheduleStep(step2, 1);
+//        scheduleStep(step3, 2);
+//        scheduleStep(step4, 3);
+//        scheduleStep(step5, 4);
+//        scheduleStep(step6, 5);
+//        scheduleStep(step7, 6);
 
         step1Explode = createExplodeAnimation(elementLoader.step1, elementLoader.step1Rect);
         step2Explode = createExplodeAnimation(elementLoader.step2, elementLoader.step2Rect);
@@ -173,21 +172,21 @@ class AnimationLoader {
         return new SvgToyAnimation(elementLoader.handleMove1);
     }
 
-    private void scheduleStep(final Toy.Animation step, int i) {
-        Scheduler.get().scheduleFixedDelay(new Scheduler.RepeatingCommand() {
-            public boolean execute() {
-                step.play();
-                return false;
-            }
-        }, i *STEP_DELAY);
-    }
-
-    private MovingToyAnimation createStep(OMSVGGElement step) {
-        final MovementEquation movementEquationY = new MovementEquation(0, -2);
-        final MovingToyAnimation movingToyAnimation = new MovingToyAnimation(Utils.TIME_UNIT, LADDER_NUM_STEPS, MovementEquation.STILL, movementEquationY, step, false);
-        movingToyAnimation.setLooping(true);
-        return movingToyAnimation;
-    }
+//    private void scheduleStep(final Toy.Animation step, int i) {
+//        Scheduler.get().scheduleFixedDelay(new Scheduler.RepeatingCommand() {
+//            public boolean execute() {
+//                step.play();
+//                return false;
+//            }
+//        }, i *STEP_DELAY);
+//    }
+//
+//    private MovingToyAnimation createStep(OMSVGGElement step) {
+//        final MovementEquation movementEquationY = new MovementEquation(0, -2);
+//        final MovingToyAnimation movingToyAnimation = new MovingToyAnimation(Utils.TIME_UNIT, LADDER_NUM_STEPS, MovementEquation.STILL, movementEquationY, step, false);
+//        movingToyAnimation.setLooping(true);
+//        return movingToyAnimation;
+//    }
 
 //    private SequenceToyAnimation createEyeSequence(OMSVGGElement eyeBall) {
 //        final MovingToyAnimation leftAnimation = createEyeBallAnimation(eyeBall, 1.2f);
