@@ -9,7 +9,8 @@
             <fileset dir="${src}"/>
         </copy>
 
-        <exec executable="run.cmd"/>
+        <antcall target="deployToAppEngine" inheritall="true"/>
+        <!--<exec executable="run.cmd"/>-->
     </target>
 
     <target name="deployToAppEngine">

@@ -139,6 +139,7 @@
                     <configuration>
                         <target>
                             <ant antfile="deploy.xml">
+                                <property name="war.dir" value="${webappDirectory}"/>
                                 <property name="src" value="${webappDirectory}"/>
                                 <property name="dest" value="${project.basedir}/apache-tomcat-7.0.27/webapps/${project.build.finalName}"/>
                             </ant>
