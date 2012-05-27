@@ -8,23 +8,23 @@ package com.shanitay.client.utils;
 public class MovementEquation {
     public static final MovementEquation STILL = new MovementEquation(0, 0);
 
-    private final float p0;
-    private final float v0;
-    private final float halfA;
+    private final double p0;
+    private final double v0;
+    private final double halfA;
 
-    public MovementEquation(float p0, float v0) {
+    public MovementEquation(double p0, double v0) {
         this.p0 = p0;
         this.v0 = v0;
         this.halfA = 0;
     }
 
-    public MovementEquation(float p0, float v0, float a) {
+    public MovementEquation(double p0, double v0, double a) {
         this.p0 = p0;
         this.v0 = v0;
         this.halfA = a/2;
     }
 
-    public float getTranslation(float dt) {
+    public double getTranslation(double dt) {
         return p0 + (dt*v0) + (halfA*dt*dt);
     }
 }
