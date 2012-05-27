@@ -23,11 +23,11 @@ class SoundLoader {
 
         balls = Utils.getSound("yeah.mp3", soundController);
         mouth = Utils.getSound("laugh.mp3", soundController);
-        bg = Utils.getSound("base06 new.mp3", soundController);
+        bg = Utils.getSound("base06_new.mp3", soundController);
         nose = Utils.getSound("base10new.mp3", soundController);
-        leftEye = Utils.getSound("boom new.mp3", soundController);
-        rightEye = Utils.getSound("smash nwe.mp3", soundController);
-        tongue = Utils.getSound("80s Dance Bass Synth 04 new.mp3", soundController);
+        leftEye = Utils.getSound("boom_new.mp3", soundController);
+        rightEye = Utils.getSound("smash.mp3", soundController);
+        tongue = Utils.getSound("80s.mp3", soundController);
     }
 
     public Sound getBg() {

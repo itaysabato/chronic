@@ -45,15 +45,15 @@ class SoundLoader {
         tooth5 = Utils.getSound("basedrum2.mp3", soundController);
         tooth6 = Utils.getSound("basedrum1.mp3", soundController);
         electric = Utils.getSound("electric.mp3", soundController);
-        earLeft = Utils.getSound("80s Dance Bass Synth 04 new.mp3", soundController);
+        earLeft = Utils.getSound("80s.mp3", soundController);
         earRight = Utils.getSound("splash1.mp3", soundController);
-        coop = Utils.getSound("boom new.mp3", soundController);
-        pumpHouse = Utils.getSound("base06 new.mp3", soundController);
+        coop = Utils.getSound("boom_new.mp3", soundController);
+        pumpHouse = Utils.getSound("base06_new.mp3", soundController);
 
         step1 = Utils.getSound("laugh.mp3", soundController);
         step2 = Utils.getSound("base07.mp3", soundController);
-        step3 = Utils.getSound("scifi laser gun10.mp3", soundController);
-        step4 = Utils.getSound("scifi laser gun5.mp3", soundController);
+        step3 = Utils.getSound("gun10.mp3", soundController);
+        step4 = Utils.getSound("gun5.mp3", soundController);
         step5 = Utils.getSound("beep1.mp3", soundController);
         step6 = Utils.getSound("base10new.mp3", soundController);
         step7 = Utils.getSound("laser10.mp3", soundController);
