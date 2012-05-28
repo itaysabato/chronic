@@ -3,6 +3,7 @@ package com.shanitay.client.robot;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
 import com.shanitay.client.WidgetBinder;
+import com.shanitay.client.utils.Spinner;
 import com.shanitay.client.utils.Utils;
 import org.vectomatic.dom.svg.OMSVGGElement;
 import org.vectomatic.dom.svg.OMSVGSVGElement;
@@ -102,6 +103,9 @@ public class RobotWidgetBinder implements WidgetBinder {
                 }
             }
         });
+
+        Spinner spinner = new Spinner(soundLoader.open, soundLoader.close);
+        spinner.init(elementLoader.eyeRightSur, svgElement, 809.87f, 199.86f);
 
         return svgElement;
     }

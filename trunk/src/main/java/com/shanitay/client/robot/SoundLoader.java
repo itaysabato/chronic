@@ -33,6 +33,8 @@ class SoundLoader {
     final Sound mot;
     final Sound nose;
     final Sound toothBottom;
+    final Sound open;
+    final Sound close;
 
     public SoundLoader() {
         SoundController soundController = new SoundController();
@@ -62,5 +64,9 @@ class SoundLoader {
         rightBraw = Utils.getSound("cowbell2.mp3", soundController);
         mot = Utils.getSound("laser10.mp3", soundController);
         toothBottom = Utils.getSound("yeah.mp3", soundController);
+
+        open = Utils.getSound("open2.mp3", soundController);
+        close = Utils.getSound("close2.mp3", soundController);
+
     }
 }

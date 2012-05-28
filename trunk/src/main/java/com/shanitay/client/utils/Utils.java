@@ -87,6 +87,10 @@ public class Utils {
         gElement.setAttribute("transform", "translate(" + x + "," + y + ")");
     }
 
+    public static void rotate(OMSVGGElement gElement, float angle, float cx, float cy) {
+        gElement.setAttribute("transform", "rotate(" + angle + "," + cx + "," + cy + ")");
+    }
+
     public static Sound getSound(final String soundUrl, SoundController soundController) {
         return soundController.createSound(Sound.MIME_TYPE_AUDIO_MPEG_MP3, soundUrl, true, false);
     }
@@ -115,6 +119,13 @@ public class Utils {
         });
 
         return toy;
+    }
+
+    public static double getAngle(OMSVGPoint p1, OMSVGPoint p2) {
+        double v1 = Math.atan2(p1.getY(), p1.getX());
+        double v2 = Math.atan2(p2.getY(), p2.getX());
+        double v = v1 - v2;
+        return Math.toDegrees(v);
     }
 
     public static void createToggleButton(HasGraphicalHandlers element, final SomeHandler offHandler, final SomeHandler onHandler) {
