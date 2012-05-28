@@ -12,16 +12,11 @@ import org.vectomatic.dom.svg.OMSVGRectElement;
  */
 class AnimationLoader {
 
-    private static final int EYE_STEPS = 48;
-    private static final int STEP_DELAY = 2000;
     private static final int BG_INTERVAL = 125;
     private static final int EXPLODE_DUR = 250;
     private static final int TOOTH_DURATION = 250;
-    private static final int LADDER_NUM_STEPS = 300;
     public static final int ELECTRIC_DURATION = 125;
     private static final int RIGHT_EAR_DURATION = 500;
-    private static final int LIGHTNING_DURATION = 500;
-    private static final int PUMP_LIGHT_DURATION = 500;
     private static final int COOP_CENTER_DURATION = 250;
 
     private final ElementLoader elementLoader;
@@ -36,17 +31,6 @@ class AnimationLoader {
     final Toy.Animation earRight;
     final Toy.Animation coopCenter;
     final Toy.Animation coopBg;
-//    final Toy.Animation pumpLight;
-//    final Toy.Animation smallLightning;
-//    final Toy.Animation eyeBallLeft;
-//    final Toy.Animation eyeBallRight;
-//    final Toy.Animation step1;
-//    final Toy.Animation step2;
-//    final Toy.Animation step3;
-//    final Toy.Animation step4;
-//    final Toy.Animation step5;
-//    final Toy.Animation step6;
-//    final Toy.Animation step7;
     final Toy.Animation step1Explode;
     final Toy.Animation step2Explode;
     final Toy.Animation step3Explode;
@@ -54,7 +38,6 @@ class AnimationLoader {
     final Toy.Animation step5Explode;
     final Toy.Animation step6Explode;
     final Toy.Animation step7Explode;
-//    final Toy.Animation pump;
     final Toy.Animation pumpColors;
     final Toy.Animation pumpHouse;
     final Toy.Animation bgPump;
@@ -86,42 +69,6 @@ class AnimationLoader {
         coopCenter = new PeekabooToyAnimation(coopCenterAnimator, COOP_CENTER_DURATION, elementLoader.coopButtonCenter);
         coopBg = new DiscoToyAnimation(true, AnimatorImpls.APPEAR, BG_INTERVAL, elementLoader.bgCoop1, elementLoader.bgCoop2, elementLoader.bgCoop3);
 
-        final FillColorAnimator pumpLightAnimator = new FillColorAnimator("#EAE984", "#F2B1B6");
-//        pumpLight = new PeekabooToyAnimation(pumpLightAnimator, PUMP_LIGHT_DURATION, elementLoader.pumpLight);
-//        pumpLight.setLooping(true);
-//        pumpLight.play();
-
-//        smallLightning = new PeekabooToyAnimation(AnimatorImpls.DISAPPEAR, LIGHTNING_DURATION, elementLoader.smallLightning);
-//        smallLightning.setLooping(true);
-//        smallLightning.play();
-
-//        eyeBallLeft = createEyeSequence(elementLoader.eyeBallLeft);
-//        eyeBallRight = createEyeSequence(elementLoader.eyeBallRight);
-
-//        Scheduler.get().scheduleFixedDelay(new Scheduler.RepeatingCommand() {
-//            public boolean execute() {
-//                eyeBallLeft.play();
-//                eyeBallRight.play();
-//                return true;
-//            }
-//        }, 3*Utils.TIME_UNIT * EYE_STEPS);
-
-//        step1 = createStep(elementLoader.step1);
-//        step2 = createStep(elementLoader.step2);
-//        step3 = createStep(elementLoader.step3);
-//        step4 = createStep(elementLoader.step4);
-//        step5 = createStep(elementLoader.step5);
-//        step6 = createStep(elementLoader.step6);
-//        step7 = createStep(elementLoader.step7);
-//
-//        step1.play();
-//        scheduleStep(step2, 1);
-//        scheduleStep(step3, 2);
-//        scheduleStep(step4, 3);
-//        scheduleStep(step5, 4);
-//        scheduleStep(step6, 5);
-//        scheduleStep(step7, 6);
-
         step1Explode = createExplodeAnimation(elementLoader.step1, elementLoader.step1Rect);
         step2Explode = createExplodeAnimation(elementLoader.step2, elementLoader.step2Rect);
         step3Explode = createExplodeAnimation(elementLoader.step3, elementLoader.step3Rect);
@@ -129,9 +76,6 @@ class AnimationLoader {
         step5Explode = createExplodeAnimation(elementLoader.step5, elementLoader.step5Rect);
         step6Explode = createExplodeAnimation(elementLoader.step6, elementLoader.step6Rect);
         step7Explode = createExplodeAnimation(elementLoader.step7, elementLoader.step7Rect);
-
-//        pump = createPump(elementLoader);
-//        pump.play();
 
         pumpColors = new DiscoToyAnimation(true, AnimatorImpls.DISAPPEAR, BG_INTERVAL, elementLoader.pumpColors3, elementLoader.pumpColors2);
         pumpHouse = new MovingToyAnimation(Utils.TIME_UNIT, 6, new MovementEquation(0, 20f / 41f), MovementEquation.STILL, elementLoader.pumpHouse, true);
@@ -161,47 +105,9 @@ class AnimationLoader {
         return new ScheduledAnimation(peekabooToyAnimation, i*BG_INTERVAL);
     }
 
-//    private MovingToyAnimation createPump(ElementLoader elementLoader) {
-//        final MovementEquation pumpEquation = new MovementEquation(0, -12);
-//        final MovingToyAnimation movingToyAnimation = new MovingToyAnimation(Utils.TIME_UNIT, 24, MovementEquation.STILL, pumpEquation, elementLoader.pump, true);
-//        movingToyAnimation.setLooping(true);
-//        return movingToyAnimation;
-//    }
-
     private Toy.Animation createLeftEar(ElementLoader elementLoader) {
         return new SvgToyAnimation(elementLoader.handleMove1);
     }
-
-//    private void scheduleStep(final Toy.Animation step, int i) {
-//        Scheduler.get().scheduleFixedDelay(new Scheduler.RepeatingCommand() {
-//            public boolean execute() {
-//                step.play();
-//                return false;
-//            }
-//        }, i *STEP_DELAY);
-//    }
-//
-//    private MovingToyAnimation createStep(OMSVGGElement step) {
-//        final MovementEquation movementEquationY = new MovementEquation(0, -2);
-//        final MovingToyAnimation movingToyAnimation = new MovingToyAnimation(Utils.TIME_UNIT, LADDER_NUM_STEPS, MovementEquation.STILL, movementEquationY, step, false);
-//        movingToyAnimation.setLooping(true);
-//        return movingToyAnimation;
-//    }
-
-//    private SequenceToyAnimation createEyeSequence(OMSVGGElement eyeBall) {
-//        final MovingToyAnimation leftAnimation = createEyeBallAnimation(eyeBall, 1.2f);
-//        final ScheduledAnimation leftScheduledAnimation = new ScheduledAnimation(leftAnimation, 0);
-//
-//        final MovingToyAnimation rightAnimation = createEyeBallAnimation(eyeBall, -1.2f);
-//        final ScheduledAnimation rightScheduledAnimation = new ScheduledAnimation(rightAnimation, Utils.TIME_UNIT * 55);
-//        return new SequenceToyAnimation(leftScheduledAnimation, rightScheduledAnimation);
-//    }
-
-//    private MovingToyAnimation createEyeBallAnimation(OMSVGGElement eyeBall, float vX) {
-//        final MovementEquation eyeBallsEquationX = new MovementEquation(0, vX);
-//        final MovementEquation eyeBallsEquationY = new MovementEquation(0, 0);
-//        return new MovingToyAnimation(Utils.TIME_UNIT, EYE_STEPS, eyeBallsEquationX, eyeBallsEquationY, eyeBall, true);
-//    }
 
     private Toy.Animation createElectric() {
 
