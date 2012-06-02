@@ -75,10 +75,10 @@ public class RobotWidgetBinder implements WidgetBinder {
                 animationLoader.bgPump,
                 animationLoader.pumpHouse);
 
-        Utils.addHandler(elementLoader.nose, new Utils.SomeHandler() {
+        Toy.Animation noseAnimation = new HandlerToyAnimation(new Utils.SomeHandler() {
             public void handle() {
                 String display = elementLoader.surprised.getStyle().getDisplay();
-                if(display.equalsIgnoreCase("none")){
+                if (display.equalsIgnoreCase("none")) {
                     soundLoader.nose.play();
                     Utils.show(elementLoader.surprised);
                     Utils.hide(elementLoader.eyes);
@@ -90,12 +90,13 @@ public class RobotWidgetBinder implements WidgetBinder {
             }
         });
 
+        Utils.attachToy(elementLoader.nose, Utils.getNullSound(), false, noseAnimation);
+
         createGlassesButton(soundLoader, elementLoader, elementLoader.teethDownOpen);
 
-        Utils.attachToy(elementLoader.mot, soundLoader.mot, false, animationLoader.mot);
-        Utils.addHandler(elementLoader.mot,  new Utils.SomeHandler() {
+        HandlerToyAnimation mouthOpenAnimation = new HandlerToyAnimation(new Utils.SomeHandler() {
             public void handle() {
-                if(isMouthOpen(elementLoader)){
+                if (isMouthOpen(elementLoader)) {
                     animationLoader.closeMouth.play();
                 }
                 else {
@@ -103,6 +104,7 @@ public class RobotWidgetBinder implements WidgetBinder {
                 }
             }
         });
+        Utils.attachToy(elementLoader.mot, soundLoader.mot, false, animationLoader.mot, mouthOpenAnimation);
 
         Spinner spinner = new Spinner(soundLoader.open, soundLoader.close);
         spinner.init(elementLoader.eyeRightSur, svgElement, 809.87f, 199.86f);
@@ -137,7 +139,7 @@ public class RobotWidgetBinder implements WidgetBinder {
     }
 
     private void createGlassesButton(final SoundLoader soundLoader, final ElementLoader elementLoader, OMSVGGElement teethDown) {
-        Utils.addHandler(teethDown, new Utils.SomeHandler() {
+        Utils.SomeHandler teethHandler = new Utils.SomeHandler() {
             public void handle() {
                 String display = elementLoader.glasses.getStyle().getDisplay();
                 if (display.equalsIgnoreCase("none")) {
@@ -148,6 +150,7 @@ public class RobotWidgetBinder implements WidgetBinder {
                     Utils.hide(elementLoader.glasses);
                 }
             }
-        });
+        };
+        Utils.attachToy(teethDown, Utils.getNullSound(), false, new HandlerToyAnimation(teethHandler));
     }
 }
