@@ -23,11 +23,7 @@ public class RobotWidgetBinder implements WidgetBinder {
         final SoundLoader soundLoader = new SoundLoader();
         final ElementLoader elementLoader = new ElementLoader(svgElement);
         final AnimationLoader animationLoader = new AnimationLoader(elementLoader);
-
-        LoopRecorder recorder = new LoopRecorder();
-        LoopRecorderController loopRecorderController = new LoopRecorderController(svgElement);
-        loopRecorderController.setRecorder(recorder);
-        LoopRecorderFactory.initRecorder(recorder);
+        initRecorder(svgElement);
 
         Utils.attachToy(elementLoader.tooth1, soundLoader.tooth1, false, animationLoader.tooth1);
         Utils.attachToy(elementLoader.tooth2, soundLoader.tooth2, false, animationLoader.tooth2);
@@ -112,6 +108,28 @@ public class RobotWidgetBinder implements WidgetBinder {
         spinner.init(elementLoader.eyeRightSur, svgElement, 809.87f, 199.86f);
 
         return svgElement;
+    }
+
+    private void initRecorder(OMSVGSVGElement svgElement) {
+        final LoopRecorder recorder1 = new LoopRecorder();
+        final LoopRecorder recorder2 = new LoopRecorder();
+        final LoopRecorderController loopRecorderController = new LoopRecorderController(svgElement);
+        loopRecorderController.setRecorder(recorder1);
+        LoopRecorderFactory.setRecorder(recorder1);
+
+        OMSVGGElement switcher = Utils.getGElement("switcher", svgElement);
+        Utils.addHandler(switcher, new Utils.SomeHandler() {
+            public void handle() {
+                if(LoopRecorderFactory.getRecorder() == recorder1){
+                    loopRecorderController.setRecorder(recorder2);
+                    LoopRecorderFactory.setRecorder(recorder2);
+                }
+                else {
+                    loopRecorderController.setRecorder(recorder1);
+                    LoopRecorderFactory.setRecorder(recorder1);
+                }
+            }
+        });
     }
 
     private boolean isMouthOpen(ElementLoader elementLoader) {

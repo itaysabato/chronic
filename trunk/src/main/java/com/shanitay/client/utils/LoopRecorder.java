@@ -2,10 +2,8 @@ package com.shanitay.client.utils;
 
 import com.google.gwt.core.client.Scheduler;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created By: Itay Sabato<br/>
@@ -13,9 +11,6 @@ import java.util.Map;
  * Time: 16:37 <br/>
  */
 public class LoopRecorder {
-    private long nextId = 0;
-    private final Map<Long, Toy> toyMap = new HashMap<Long, Toy>();
-
     private State state = State.INITIAL;
     private long startTimeMillis;
     private long relativeEndTimeMillis = -1;
@@ -75,15 +70,10 @@ public class LoopRecorder {
         }
     }
 
-    public void register(Toy toy) {
-        toy.setId(nextId++);
-        toyMap.put(toy.getId(), toy);
-    }
-
     public void record(Toy toy) {
         long timestampMillis = System.currentTimeMillis() - startTimeMillis;
 
-        if (state == State.RECORDING && toyMap.containsKey(toy.getId())) {
+        if (state == State.RECORDING && toy.getId() != null) {
             if(recordedEvents.isEmpty()){
                 startTimeMillis = timestampMillis + startTimeMillis;
                 timestampMillis = 0;
