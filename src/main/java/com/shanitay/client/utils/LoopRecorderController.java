@@ -30,6 +30,10 @@ public class LoopRecorderController {
     }
 
     public void setRecorder(LoopRecorder recorder) {
+        if(loopRecorder != null && loopRecorder.getState() == LoopRecorder.State.RECORDING){
+            loopRecorder.stop();
+        }
+
         loopRecorder = recorder;
 
         switch (loopRecorder.getState()) {
