@@ -14,6 +14,7 @@ import java.util.List;
  * Time: 01:58 <br/>
  */
 public class Toy {
+    private Long id = null;
     private final Sound sound;
     private final List<Animation> animations;
     private boolean played = false;
@@ -75,6 +76,14 @@ public class Toy {
             animation.stop();
         }
         played = false;
+    }
+
+    Long getId() {
+        return id;
+    }
+
+    void setId(Long id) {
+        this.id = id;
     }
 
     public interface Animation {
