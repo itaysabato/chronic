@@ -112,9 +112,16 @@ public class Utils {
         final Toy toy = new Toy(sound, animations);
         toy.setLooping(looping);
 
-        Utils.addHandler(element, new Utils.SomeHandler() {
+        if(LoopRecorderFactory.hasRecorder() && !looping) {
+            LoopRecorderFactory.getRecorder().register(toy);
+        }
+
+        addHandler(element, new Utils.SomeHandler() {
             public void handle() {
                 toy.toggle();
+                if(LoopRecorderFactory.hasRecorder()) {
+                    LoopRecorderFactory.getRecorder().record(toy);
+                }
             }
         });
 
