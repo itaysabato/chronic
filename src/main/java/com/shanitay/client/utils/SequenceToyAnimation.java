@@ -56,6 +56,7 @@ public class SequenceToyAnimation implements Toy.Animation {
     }
 
     private void innerPlay() {
+        myCommands.clear();
         for (ScheduledAnimation scheduledAnimation : scheduledAnimations) {
             final myCommand myCommand = new SequenceToyAnimation.myCommand(scheduledAnimation.getAnimation());
             myCommands.add(myCommand);
