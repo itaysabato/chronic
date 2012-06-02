@@ -19,8 +19,9 @@ public class LoopRecorder {
     private State state = State.IDLE;
     private long startTimeMillis;
     private long relativeEndTimeMillis;
-    private List<ToyEvent> recordedEvents = new LinkedList<ToyEvent>();
-    private MyRepeatingCommand currentPlayback;
+    private StoppableRepeatingCommand nextPlayback;
+    private final List<StoppableRepeatingCommand> currentPlaybacks = new LinkedList<StoppableRepeatingCommand>();
+    private final List<ToyEvent> recordedEvents = new LinkedList<ToyEvent>();
 
     void startRecording() {
         startTimeMillis = System.currentTimeMillis();
@@ -33,7 +34,10 @@ public class LoopRecorder {
             relativeEndTimeMillis = System.currentTimeMillis() - startTimeMillis;
         }
         else if(state == State.PLAYING) {
-            currentPlayback.continueLoop = false;
+            nextPlayback.stop();
+            for (StoppableRepeatingCommand currentPlayback : currentPlaybacks) {
+                currentPlayback.stop();
+            }
         }
         state = State.IDLE;
     }
@@ -42,21 +46,32 @@ public class LoopRecorder {
         state = State.PLAYING;
         playOnce();
 
-        currentPlayback = new MyRepeatingCommand();
+        nextPlayback = new StoppableRepeatingCommand(new Scheduler.RepeatingCommand() {
+            public boolean execute() {
+                playOnce();
+                return true;
+            }
+        });
 
-        Scheduler.get().scheduleFixedDelay(currentPlayback, (int) relativeEndTimeMillis);
+        Scheduler.get().scheduleFixedDelay(nextPlayback, (int) relativeEndTimeMillis);
     }
 
     private void playOnce() {
+        currentPlaybacks.clear();
+
         for (final ToyEvent recordedEvent : recordedEvents) {
             final Toy target = recordedEvent.getTarget();
 
-            Scheduler.get().scheduleFixedDelay(new Scheduler.RepeatingCommand() {
+            Scheduler.RepeatingCommand cmd = new Scheduler.RepeatingCommand() {
                 public boolean execute() {
                     target.toggle();
                     return false;
                 }
-            }, (int) recordedEvent.getTimestampMillis());
+            };
+            StoppableRepeatingCommand stoppableRepeatingCommand = new StoppableRepeatingCommand(cmd);
+
+            currentPlaybacks.add(stoppableRepeatingCommand);
+            Scheduler.get().scheduleFixedDelay(stoppableRepeatingCommand, (int) recordedEvent.getTimestampMillis());
         }
     }
 
@@ -84,15 +99,23 @@ public class LoopRecorder {
         IDLE
     }
 
-    private class MyRepeatingCommand implements Scheduler.RepeatingCommand {
+    private class StoppableRepeatingCommand implements Scheduler.RepeatingCommand {
         private boolean continueLoop = true;
+        private final Scheduler.RepeatingCommand delegate;
+
+        private StoppableRepeatingCommand(Scheduler.RepeatingCommand delegate) {
+            this.delegate = delegate;
+        }
 
         public boolean execute() {
             if (continueLoop) {
-                playOnce();
-                return true;
+                return delegate.execute();
             }
             return false;
+        }
+
+        public void stop() {
+            continueLoop = false;
         }
     }
 }
