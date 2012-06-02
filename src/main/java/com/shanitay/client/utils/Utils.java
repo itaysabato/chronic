@@ -6,6 +6,7 @@ import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.event.dom.client.MouseDownEvent;
 import com.google.gwt.event.dom.client.MouseDownHandler;
+import com.google.gwt.event.shared.HandlerRegistration;
 import org.vectomatic.dom.svg.*;
 import org.vectomatic.dom.svg.events.HasGraphicalHandlers;
 import org.vectomatic.dom.svg.utils.DOMHelper;
@@ -40,21 +41,24 @@ public class Utils {
         element.getStyle().setDisplay(Style.Display.NONE);
     }
 
-    public static void addHandler(HasGraphicalHandlers element, final SomeHandler someHandler) {
-//        element.addTouchStartHandler(new TouchStartHandler() {
+    public static HandlerRegistration addHandler(HasGraphicalHandlers element, final SomeHandler someHandler) {
+//        return element.addTouchStartHandler(new TouchStartHandler() {
 //            public void onTouchStart(TouchStartEvent event) {
+//                event.preventDefault();
 //                someHandler.handle();
 //            }
 //        });
 
-        element.addMouseDownHandler(new MouseDownHandler() {
+        return element.addMouseDownHandler(new MouseDownHandler() {
             public void onMouseDown(MouseDownEvent event) {
+                event.preventDefault();
                 someHandler.handle();
             }
         });
 
-//        element.addClickHandler(new ClickHandler() {
+//        return element.addClickHandler(new ClickHandler() {
 //            public void onClick(ClickEvent event) {
+//                event.preventDefault();
 //                someHandler.handle();
 //            }
 //        });

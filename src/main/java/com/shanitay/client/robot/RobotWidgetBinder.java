@@ -3,10 +3,7 @@ package com.shanitay.client.robot;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
 import com.shanitay.client.WidgetBinder;
-import com.shanitay.client.utils.LoopRecorder;
-import com.shanitay.client.utils.LoopRecorderFactory;
-import com.shanitay.client.utils.Spinner;
-import com.shanitay.client.utils.Utils;
+import com.shanitay.client.utils.*;
 import org.vectomatic.dom.svg.OMSVGGElement;
 import org.vectomatic.dom.svg.OMSVGSVGElement;
 import org.vectomatic.dom.svg.ui.SVGResource;
@@ -27,7 +24,10 @@ public class RobotWidgetBinder implements WidgetBinder {
         final ElementLoader elementLoader = new ElementLoader(svgElement);
         final AnimationLoader animationLoader = new AnimationLoader(elementLoader);
 
-        LoopRecorderFactory.initRecorder(new LoopRecorder(), svgElement);
+        LoopRecorder recorder = new LoopRecorder();
+        LoopRecorderController loopRecorderController = new LoopRecorderController(svgElement);
+        loopRecorderController.setRecorder(recorder);
+        LoopRecorderFactory.initRecorder(recorder);
 
         Utils.attachToy(elementLoader.tooth1, soundLoader.tooth1, false, animationLoader.tooth1);
         Utils.attachToy(elementLoader.tooth2, soundLoader.tooth2, false, animationLoader.tooth2);
