@@ -16,9 +16,9 @@ public class LoopRecorder {
     private long nextId = 0;
     private final Map<Long, Toy> toyMap = new HashMap<Long, Toy>();
 
-    private State state = State.IDLE;
+    private State state = State.INITIAL;
     private long startTimeMillis;
-    private long relativeEndTimeMillis;
+    private long relativeEndTimeMillis = -1;
     private StoppableRepeatingCommand nextPlayback;
     private final List<StoppableRepeatingCommand> currentPlaybacks = new LinkedList<StoppableRepeatingCommand>();
     private final List<ToyEvent> recordedEvents = new LinkedList<ToyEvent>();
@@ -93,7 +93,12 @@ public class LoopRecorder {
         }
     }
 
-    private static enum State {
+    State getState() {
+        return state;
+    }
+
+    static enum State {
+        INITIAL,
         RECORDING,
         PLAYING,
         IDLE
