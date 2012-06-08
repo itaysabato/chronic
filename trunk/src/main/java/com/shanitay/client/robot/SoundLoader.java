@@ -39,34 +39,34 @@ class SoundLoader {
     public SoundLoader() {
         SoundController soundController = new SoundController();
 
-        nose = Utils.getSound("crash1.mp3", soundController);
-        tooth1 = Utils.getSound("snar2.mp3", soundController);
-        tooth2 = Utils.getSound("snare1.mp3", soundController);
-        tooth3 = Utils.getSound("hihat1.mp3", soundController);
-        tooth4 = Utils.getSound("cowbell1.mp3", soundController);
-        tooth5 = Utils.getSound("basedrum2.mp3", soundController);
-        tooth6 = Utils.getSound("basedrum1.mp3", soundController);
-        electric = Utils.getSound("electric.mp3", soundController);
-        earLeft = Utils.getSound("80s.mp3", soundController);
-        earRight = Utils.getSound("splash1.mp3", soundController);
-        coop = Utils.getSound("boom_new.mp3", soundController);
-        pumpHouse = Utils.getSound("base06_new.mp3", soundController);
+        nose = Utils.getSound("robot/nose.mp3", soundController);
+        tooth1 = Utils.getSound("robot/tooth1.mp3", soundController);
+        tooth2 = Utils.getSound("robot/tooth2.mp3", soundController);
+        tooth3 = Utils.getSound("robot/tooth3.mp3", soundController);
+        tooth4 = Utils.getSound("robot/tooth4.mp3", soundController);
+        tooth5 = Utils.getSound("robot/tooth5.mp3", soundController);
+        tooth6 = Utils.getSound("robot/tooth6.mp3", soundController);
+        electric = Utils.getSound("robot/electric.mp3", soundController);
+        earLeft = Utils.getSound("robot/earLeft.mp3", soundController);
+        earRight = Utils.getSound("robot/earRight.mp3", soundController);
+        coop = Utils.getSound("robot/coop.mp3", soundController);
+        pumpHouse = Utils.getSound("robot/pumpHouse.mp3", soundController);
 
-        step1 = Utils.getSound("laugh.mp3", soundController);
-        step2 = Utils.getSound("base07.mp3", soundController);
-        step3 = Utils.getSound("gun10.mp3", soundController);
-        step4 = Utils.getSound("gun5.mp3", soundController);
-        step5 = Utils.getSound("beep1.mp3", soundController);
-        step6 = Utils.getSound("base10new.mp3", soundController);
-        step7 = Utils.getSound("laser10.mp3", soundController);
+        step1 = Utils.getSound("robot/step1.mp3", soundController);
+        step2 = Utils.getSound("robot/step2.mp3", soundController);
+        step3 = Utils.getSound("robot/step3.mp3", soundController);
+        step4 = Utils.getSound("robot/step4.mp3", soundController);
+        step5 = Utils.getSound("robot/step5.mp3", soundController);
+        step6 = Utils.getSound("robot/step6.mp3", soundController);
+        step7 = Utils.getSound("robot/step7.mp3", soundController);
 
-        leftBraw = Utils.getSound("base1.mp3", soundController);
-        rightBraw = Utils.getSound("cowbell2.mp3", soundController);
-        mot = Utils.getSound("laser10.mp3", soundController);
-        toothBottom = Utils.getSound("yeah.mp3", soundController);
+        leftBraw = Utils.getSound("robot/leftBraw.mp3", soundController);
+        rightBraw = Utils.getSound("robot/rightBraw.mp3", soundController);
+        mot = Utils.getSound("robot/mot.mp3", soundController);
+        toothBottom = Utils.getSound("robot/toothBottom.mp3", soundController);
 
-        open = Utils.getSound("open2.mp3", soundController);
-        close = Utils.getSound("close2.mp3", soundController);
+        open = Utils.getSound("robot/open.mp3", soundController);
+        close = Utils.getSound("robot/close.mp3", soundController);
 
     }
 }

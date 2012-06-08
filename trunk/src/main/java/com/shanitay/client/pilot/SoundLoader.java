@@ -21,13 +21,13 @@ class SoundLoader {
     public SoundLoader() {
         SoundController soundController = new SoundController();
 
-        balls = Utils.getSound("yeah.mp3", soundController);
-        mouth = Utils.getSound("laugh.mp3", soundController);
-        bg = Utils.getSound("base06_new.mp3", soundController);
-        nose = Utils.getSound("base10new.mp3", soundController);
-        leftEye = Utils.getSound("boom_new.mp3", soundController);
-        rightEye = Utils.getSound("smash.mp3", soundController);
-        tongue = Utils.getSound("80s.mp3", soundController);
+        balls = Utils.getSound("pilot/yeah.mp3", soundController);
+        mouth = Utils.getSound("pilot/laugh.mp3", soundController);
+        bg = Utils.getSound("pilot/base06_new.mp3", soundController);
+        nose = Utils.getSound("pilot/base10new.mp3", soundController);
+        leftEye = Utils.getSound("pilot/boom_new.mp3", soundController);
+        rightEye = Utils.getSound("pilot/smash.mp3", soundController);
+        tongue = Utils.getSound("pilot/80s.mp3", soundController);
     }
 
     public Sound getBg() {
