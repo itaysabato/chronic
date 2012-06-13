@@ -4,12 +4,11 @@ import com.allen_sauer.gwt.voices.client.Sound;
 import com.allen_sauer.gwt.voices.client.SoundController;
 import com.allen_sauer.gwt.voices.client.handler.SoundHandler;
 import com.google.gwt.core.client.Scheduler;
+import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.Style;
-import com.google.gwt.event.dom.client.MouseDownEvent;
-import com.google.gwt.event.dom.client.MouseDownHandler;
-import com.google.gwt.event.shared.HandlerRegistration;
+import com.google.gwt.user.client.Event;
+import com.google.gwt.user.client.EventListener;
 import org.vectomatic.dom.svg.*;
-import org.vectomatic.dom.svg.events.HasGraphicalHandlers;
 import org.vectomatic.dom.svg.utils.DOMHelper;
 import org.vectomatic.dom.svg.utils.SVGPrefixResolver;
 
@@ -42,7 +41,14 @@ public class Utils {
         element.getStyle().setDisplay(Style.Display.NONE);
     }
 
-    public static HandlerRegistration addHandler(HasGraphicalHandlers element, final SomeHandler someHandler) {
+    public static void addHandler(OMSVGElement element, final SomeHandler someHandler) {
+        addEventListener(element.getElement(), "MozTouchDown", new EventListener() {
+            public void onBrowserEvent(Event event) {
+                event.preventDefault();
+                someHandler.handle();
+            }
+        }, false);
+
 //        return element.addTouchStartHandler(new TouchStartHandler() {
 //            public void onTouchStart(TouchStartEvent event) {
 //                event.preventDefault();
@@ -50,12 +56,12 @@ public class Utils {
 //            }
 //        });
 
-        return element.addMouseDownHandler(new MouseDownHandler() {
-            public void onMouseDown(MouseDownEvent event) {
-                event.preventDefault();
-                someHandler.handle();
-            }
-        });
+//        return element.addMouseDownHandler(new MouseDownHandler() {
+//            public void onMouseDown(MouseDownEvent event) {
+//                event.preventDefault();
+//                someHandler.handle();
+//            }
+//        });
 
 //        return element.addClickHandler(new ClickHandler() {
 //            public void onClick(ClickEvent event) {
@@ -66,6 +72,16 @@ public class Utils {
 
 //        element.getElement().getStyle().setCursor(Style.Cursor.POINTER);
     }
+
+    public static native void addEventListener(Element element, String event, EventListener listener, boolean capture)
+        /*-{
+            element.addEventListener(
+                    event,
+                    function (e) {
+                        listener.@com.google.gwt.user.client.EventListener::onBrowserEvent(Lcom/google/gwt/user/client/Event;)(e);
+                    },
+                    capture);
+        }-*/;
 
     public static OMSVGElement getSVGElement(String elementId, OMSVGSVGElement element) {
         final OMNode node = getElement(elementId, element);
@@ -113,7 +129,7 @@ public class Utils {
         });
     }
 
-    public static Toy attachToy(HasGraphicalHandlers element, Sound sound, boolean looping, Toy.Animation... animations) {
+    public static Toy attachToy(OMSVGElement element, Sound sound, boolean looping, Toy.Animation... animations) {
         final Toy toy = new Toy(sound, animations);
         toy.setLooping(looping);
 
@@ -140,7 +156,7 @@ public class Utils {
         return Math.toDegrees(v);
     }
 
-    public static void createToggleButton(HasGraphicalHandlers element, final SomeHandler offHandler, final SomeHandler onHandler) {
+    public static void createToggleButton(OMSVGElement element, final SomeHandler offHandler, final SomeHandler onHandler) {
         addHandler(element, new SomeHandler() {
             private boolean on = false;
 
