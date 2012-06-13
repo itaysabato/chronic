@@ -9,6 +9,8 @@ import com.shanitay.client.robot.RobotWidgetBinder;
  * Time: 18:57 <br/>
  */
 public enum PlaceType {
+    PLACES(new DefaultWidgetBinder()),
+    MAIN(new DefaultWidgetBinder()),
     PILOT(new PilotWidgetBinder()),
     ROBOT(new RobotWidgetBinder());
 
