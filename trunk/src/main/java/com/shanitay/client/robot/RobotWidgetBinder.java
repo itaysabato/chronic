@@ -2,7 +2,7 @@ package com.shanitay.client.robot;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
-import com.shanitay.client.WidgetBinder;
+import com.shanitay.client.AbstractSvgWidgetBinder;
 import com.shanitay.client.utils.*;
 import org.vectomatic.dom.svg.OMSVGGElement;
 import org.vectomatic.dom.svg.OMSVGSVGElement;
@@ -13,9 +13,9 @@ import org.vectomatic.dom.svg.ui.SVGResource;
  * Date: 19/05/12 <br/>
  * Time: 20:24 <br/>
  */
-public class RobotWidgetBinder implements WidgetBinder {
+public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
 
-    public OMSVGSVGElement bindWidgets() {
+    protected OMSVGSVGElement bindWidgets() {
         RobotBundle robotBundle = GWT.create(RobotBundle.class);
         final SVGResource svgResource = robotBundle.mainSvg();
         final OMSVGSVGElement svgElement = svgResource.getSvg();
