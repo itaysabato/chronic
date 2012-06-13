@@ -5,20 +5,13 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.event.logical.shared.ValueChangeHandler;
 import com.google.gwt.user.client.History;
-import com.google.gwt.user.client.ui.Hyperlink;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
 public class shanitay implements EntryPoint {
-    private VerticalPanel mainPage;
 
     public void onModuleLoad() {
         try {
-            mainPage = new VerticalPanel();
-            mainPage.add(new Hyperlink("Pilot", "Pilot"));
-            mainPage.add(new Hyperlink("Robot", "Robot"));
-
             History.addValueChangeHandler(new ValueChangeHandler<String>() {
                 public void onValueChange(ValueChangeEvent<String> stringValueChangeEvent) {
                     final String historyToken = stringValueChangeEvent.getValue();
@@ -35,20 +28,21 @@ public class shanitay implements EntryPoint {
 
     private void setView(String historyToken) {
         RootPanel.get().clear();
-        Widget widget = mainPage;
+        WidgetBinder widgetBinder = PlaceType.MAIN.getWidgetBinder();
 
         if(historyToken != null && !historyToken.isEmpty()){
             String upperToken = historyToken.toUpperCase();
 
             try {
                 PlaceType placeType = PlaceType.valueOf(upperToken);
-                widget = placeType.getWidgetBinder().initWidget();
+                widgetBinder = placeType.getWidgetBinder();
             }
             catch (IllegalArgumentException e) {
                 // ignore
             }
         }
 
+        Widget widget = widgetBinder.initWidget();
         RootPanel.get().add(widget);
     }
 }
