@@ -1,0 +1,10 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+    <g:HTMLPanel ui:field="panel">
+        <video width="1360" height="763" autoplay="autoplay">
+            <source src="clip/clip.mp4" type="video/mp4"/>
+            Your browser does not support the video tag.
+        </video>
+    </g:HTMLPanel>
+</ui:UiBinder>
