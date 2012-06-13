@@ -6,15 +6,15 @@
 <web-app>
 
   <!-- Servlets -->
-  <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>com.shanitay.server.GreetingServiceImpl</servlet-class>
-  </servlet>
+  <!--<servlet>-->
+    <!--<servlet-name>greetServlet</servlet-name>-->
+    <!--<servlet-class>com.shanitay.server.GreetingServiceImpl</servlet-class>-->
+  <!--</servlet>-->
 
-  <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/shanitay/greet</url-pattern>
-  </servlet-mapping>
+  <!--<servlet-mapping>-->
+    <!--<servlet-name>greetServlet</servlet-name>-->
+    <!--<url-pattern>/shanitay/greet</url-pattern>-->
+  <!--</servlet-mapping>-->
 
   <!-- Default page to serve -->
   <welcome-file-list>

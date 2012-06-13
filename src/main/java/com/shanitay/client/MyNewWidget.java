@@ -26,9 +26,8 @@ public class MyNewWidget extends Composite {
         initWidget(uiBinder.createAndBindUi(this));
     }
 
-    public void init(WidgetBinder widgetBinder) {
+    public void init(OMSVGSVGElement svgElement) {
         panel.clear();
-        final OMSVGSVGElement svgElement = widgetBinder.bindWidgets();
         final MySVGWidget widget = new MySVGWidget(svgElement);
         panel.add(widget);
     }

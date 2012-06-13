@@ -8,24 +8,13 @@ import com.google.gwt.user.client.History;
 import com.google.gwt.user.client.ui.Hyperlink;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
-import com.shanitay.client.pilot.PilotWidgetBinder;
-import com.shanitay.client.robot.RobotWidgetBinder;
+import com.google.gwt.user.client.ui.Widget;
 
 public class shanitay implements EntryPoint {
-
-    private MyNewWidget myNewWidget;
     private VerticalPanel mainPage;
-    private final PilotWidgetBinder pilotWidgetBinder;
-    private final RobotWidgetBinder robotWidgetBinder;
-
-    public shanitay() {
-        pilotWidgetBinder = new PilotWidgetBinder();
-        robotWidgetBinder = new RobotWidgetBinder();
-    }
 
     public void onModuleLoad() {
         try {
-            myNewWidget = new MyNewWidget();
             mainPage = new VerticalPanel();
             mainPage.add(new Hyperlink("Pilot", "Pilot"));
             mainPage.add(new Hyperlink("Robot", "Robot"));
@@ -46,16 +35,20 @@ public class shanitay implements EntryPoint {
 
     private void setView(String historyToken) {
         RootPanel.get().clear();
-        if(historyToken == null || historyToken.isEmpty()){
-            RootPanel.get().add(mainPage);
+        Widget widget = mainPage;
+
+        if(historyToken != null && !historyToken.isEmpty()){
+            String upperToken = historyToken.toUpperCase();
+
+            try {
+                PlaceType placeType = PlaceType.valueOf(upperToken);
+                widget = placeType.getWidgetBinder().initWidget();
+            }
+            catch (IllegalArgumentException e) {
+                // ignore
+            }
         }
-        else if(historyToken.equalsIgnoreCase("pilot")){
-            myNewWidget.init(pilotWidgetBinder);
-            RootPanel.get().add(myNewWidget);
-        }
-        else if(historyToken.equalsIgnoreCase("robot")){
-            myNewWidget.init(robotWidgetBinder);
-            RootPanel.get().add(myNewWidget);
-        }
+
+        RootPanel.get().add(widget);
     }
 }

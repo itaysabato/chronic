@@ -1,7 +1,7 @@
 package com.shanitay.client.pilot;
 
 import com.google.gwt.core.client.GWT;
-import com.shanitay.client.WidgetBinder;
+import com.shanitay.client.AbstractSvgWidgetBinder;
 import com.shanitay.client.utils.Toy;
 import com.shanitay.client.utils.Utils;
 import org.vectomatic.dom.svg.OMSVGSVGElement;
@@ -12,9 +12,9 @@ import org.vectomatic.dom.svg.ui.SVGResource;
  * Date: 19/05/12 <br/>
  * Time: 20:24 <br/>
  */
-public class PilotWidgetBinder implements WidgetBinder {
+public class PilotWidgetBinder extends AbstractSvgWidgetBinder {
 
-    public OMSVGSVGElement bindWidgets() {
+    protected OMSVGSVGElement bindWidgets() {
         PilotBundle pilotBundle = GWT.create(PilotBundle.class);
         final SVGResource svgResource = pilotBundle.mainSvg();
         final OMSVGSVGElement svgElement = svgResource.getSvg();
