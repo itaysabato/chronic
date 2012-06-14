@@ -1,6 +1,7 @@
 package com.shanitay.client;
 
 import com.shanitay.client.clip.ClipWidgetBinder;
+import com.shanitay.client.main.MainWidgetBinder;
 import com.shanitay.client.pilot.PilotWidgetBinder;
 import com.shanitay.client.robot.RobotWidgetBinder;
 
@@ -12,7 +13,7 @@ import com.shanitay.client.robot.RobotWidgetBinder;
 public enum PlaceType {
     CLIP(new ClipWidgetBinder()),
     PLACES(new DefaultWidgetBinder()),
-    MAIN(new DefaultWidgetBinder()),
+    MAIN(new MainWidgetBinder()),
     PILOT(new PilotWidgetBinder()),
     ROBOT(new RobotWidgetBinder());
 
