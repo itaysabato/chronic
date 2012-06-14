@@ -2,7 +2,7 @@
 <!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" width="1360px"
-	 height="763px" viewBox="0 0 1360 763" enable-background="new 0 0 1360 763" xml:space="preserve" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	 height="763px" viewBox="0 0 1360 763" enable-background="new 0 0 1360 763" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink"  >
     <g id="back">
 	<rect id="pink_line" x="852.826" y="317.791" fill="#F2B1B6" width="208.786" height="57.01"/>
 </g>
@@ -608,8 +608,26 @@
 	<rect x="262.146" y="570.865" fill="#EE8F78" stroke="#EE8F78" width="46.344" height="203.441"/>
 	<rect x="261.919" y="568.24" fill="#EE8F78" stroke="#EE8F78" width="197.135" height="20.172"/>
 </g>
+
+        <animate id="watchRightGif1" attributeName="display" attributeType="CSS" from="none" to="none"
+									begin="0; watchRightGif8.end+0.125" dur="0.125" fill="freeze" xlink:href="#watchRight1" />
+		<animate id="watchRightGif2" attributeName="display" attributeType="CSS" from="none" to="none"
+									begin="watchRightGif1.end" dur="0.125" fill="freeze" xlink:href="#watchRight2" />
+		<animate id="watchRightGif3" attributeName="display" attributeType="CSS" from="none" to="none"
+									begin="watchRightGif2.end" dur="0.125" fill="freeze" xlink:href="#watchRight3" />
+		<animate id="watchRightGif4" attributeName="display" attributeType="CSS" from="none" to="none"
+									begin="watchRightGif3.end" dur="0.125" fill="freeze" xlink:href="#watchRight4" />
+
+		<animate id="watchRightGif5" attributeName="display" attributeType="CSS" from="block" to="block"
+									begin="watchRightGif4.end+0.125" dur="0.125" fill="freeze" xlink:href="#watchRight4" />
+		<animate id="watchRightGif6" attributeName="display" attributeType="CSS" from="block" to="block"
+									begin="watchRightGif5.end" dur="0.125" fill="freeze" xlink:href="#watchRight3" />
+		<animate id="watchRightGif7" attributeName="display" attributeType="CSS" from="block" to="block"
+									begin="watchRightGif6.end" dur="0.125" fill="freeze" xlink:href="#watchRight2" />
+		<animate id="watchRightGif8" attributeName="display" attributeType="CSS" from="block" to="block"
+									begin="watchRightGif7.end" dur="0.125" fill="freeze" xlink:href="#watchRight1" />
 <g id="watch2">
-	<g id="watch_right_5">
+	<g id="watchRight5">
 		<path fill="#1F9C8D" d="M1173.837,433.721l0.923,5.252l1.056-5.252h2.314l1.043,5.252l0.948-5.252h2.687l-2.1,8.49h-2.758
 			l-0.947-4.93l-1.008,4.93h-2.734l-2.063-8.49H1173.837z"/>
 		<path fill="#1F9C8D" d="M1186.172,433.721h2.831l3.034,8.49h-2.771l-0.324-1.115h-2.771l-0.323,1.115h-2.723L1186.172,433.721z
@@ -626,37 +644,38 @@
 			c0.349,0.348,0.612,0.756,0.804,1.211c0.132,0.336,0.216,0.719,0.264,1.176L1207.218,436.971z"/>
 		<path fill="#1F9C8D" d="M1211.229,433.721h2.795v2.865h2.602v-2.865h2.795v8.49h-2.795v-3.285h-2.602v3.285h-2.795V433.721z"/>
 	</g>
-	<g id="whach_right_4">
+	<g id="watchRight4">
 		<rect x="1163.602" y="427.049" fill="#1F9C8D" width="64.099" height="22.797"/>
 		<rect x="1170.631" y="433.156" fill="#EAE984" width="50.04" height="9.689"/>
 	</g>
-	<g id="whatch_right_3">
+	<g id="watchRight3">
 		<rect x="1154.602" y="420.846" fill="#1F9C8D" width="80.433" height="36"/>
 		<rect x="1163.602" y="427.049" fill="#EAE984" width="64.099" height="22.797"/>
 	</g>
-	<g id="whatch_right_2">
+	<g id="watchRight2">
 		<rect x="1146.602" y="413.345" fill="#1F9C8D" width="96" height="51.314"/>
 		<rect x="1154.602" y="420.845" fill="#EAE984" width="80.433" height="36"/>
 	</g>
-	<g id="watch_right_1">
+	<g id="watchRight1">
 		<rect x="1135.886" y="404.033" fill="#EAE984" width="117" height="70.258"/>
 	</g>
 </g>
-<g id="watch2_1">
-</g>
-<g id="watch2_2">
-</g>
-<g id="watch2_3">
-</g>
-<g id="watch2_4">
-</g>
-<g id="watch2_1_">
-</g>
 <g id="create">
 	<g id="create_1_">
+        <animateTransform id="createMove1" attributeName="transform" attributeType="XML" from="0,0" to="-18,-27"
+			repeatCount="1" type="translate" begin="0; createMove2.end" dur="1" fill="freeze" />
+
+		<animateTransform id="createMove2" attributeName="transform" attributeType="XML" to="0,0" from="-18,-27"
+			repeatCount="1" type="translate" begin="createMove1.end" dur="1" fill="freeze" />
+
 		<polygon fill="#1F9C8D" points="816.158,108.688 764.42,198.301 712.681,108.688 		"/>
 		<rect x="761.938" y="84.923" fill="#EAE984" width="134.954" height="23.765"/>
 		<g id="create_word">
+            <animate id="createFlick1" attributeName="display" attributeType="CSS" from="none" to="none"
+                                        begin="0; createFlick2.end" dur="0.5" fill="freeze" />
+            <animate id="createFlick2" attributeName="display" attributeType="CSS" to="block" from="block"
+                                        begin="createFlick1.end" dur="0.5" fill="freeze" />
+
 			<path fill="#1F9C8D" d="M777.2,97.232c-0.047-0.432-0.203-0.768-0.455-0.995c-0.264-0.24-0.588-0.36-0.983-0.36
 				c-0.491,0-0.888,0.192-1.199,0.576s-0.468,1.007-0.468,1.858c0,0.588,0.072,1.044,0.203,1.355c0.133,0.3,0.313,0.528,0.553,0.684
 				c0.239,0.156,0.527,0.229,0.887,0.229c0.42,0,0.768-0.12,1.02-0.36c0.252-0.228,0.408-0.588,0.456-1.043h2.675
