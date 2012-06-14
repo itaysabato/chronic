@@ -609,22 +609,22 @@
 	<rect x="261.919" y="568.24" fill="#EE8F78" stroke="#EE8F78" width="197.135" height="20.172"/>
 </g>
 
-        <animate id="watchRightGif1" attributeName="display" attributeType="CSS" from="none" to="none"
+        <animate id="watchRightGif1" attributeName="display" attributeType="CSS" to="none"
 									begin="0; watchRightGif8.end+0.125" dur="0.125" fill="freeze" xlink:href="#watchRight1" />
-		<animate id="watchRightGif2" attributeName="display" attributeType="CSS" from="none" to="none"
+		<animate id="watchRightGif2" attributeName="display" attributeType="CSS" to="none"
 									begin="watchRightGif1.end" dur="0.125" fill="freeze" xlink:href="#watchRight2" />
-		<animate id="watchRightGif3" attributeName="display" attributeType="CSS" from="none" to="none"
+		<animate id="watchRightGif3" attributeName="display" attributeType="CSS" to="none"
 									begin="watchRightGif2.end" dur="0.125" fill="freeze" xlink:href="#watchRight3" />
-		<animate id="watchRightGif4" attributeName="display" attributeType="CSS" from="none" to="none"
+		<animate id="watchRightGif4" attributeName="display" attributeType="CSS" to="none"
 									begin="watchRightGif3.end" dur="0.125" fill="freeze" xlink:href="#watchRight4" />
 
-		<animate id="watchRightGif5" attributeName="display" attributeType="CSS" from="block" to="block"
+		<animate id="watchRightGif5" attributeName="display" attributeType="CSS" to="block"
 									begin="watchRightGif4.end+0.125" dur="0.125" fill="freeze" xlink:href="#watchRight4" />
-		<animate id="watchRightGif6" attributeName="display" attributeType="CSS" from="block" to="block"
+		<animate id="watchRightGif6" attributeName="display" attributeType="CSS" to="block"
 									begin="watchRightGif5.end" dur="0.125" fill="freeze" xlink:href="#watchRight3" />
-		<animate id="watchRightGif7" attributeName="display" attributeType="CSS" from="block" to="block"
+		<animate id="watchRightGif7" attributeName="display" attributeType="CSS" to="block"
 									begin="watchRightGif6.end" dur="0.125" fill="freeze" xlink:href="#watchRight2" />
-		<animate id="watchRightGif8" attributeName="display" attributeType="CSS" from="block" to="block"
+		<animate id="watchRightGif8" attributeName="display" attributeType="CSS" to="block"
 									begin="watchRightGif7.end" dur="0.125" fill="freeze" xlink:href="#watchRight1" />
 <g id="watch2">
 	<g id="watchRight5">
@@ -662,18 +662,14 @@
 </g>
 <g id="create">
 	<g id="create_1_">
-        <animateTransform id="createMove1" attributeName="transform" attributeType="XML" from="0,0" to="-18,-27"
-			repeatCount="1" type="translate" begin="0; createMove2.end" dur="1" fill="freeze" />
-
-		<animateTransform id="createMove2" attributeName="transform" attributeType="XML" to="0,0" from="-18,-27"
-			repeatCount="1" type="translate" begin="createMove1.end" dur="1" fill="freeze" />
+		<animateMotion id="createMove" repeatCount="indefinite" path="m 0 0 L -18 -27 z"  begin="0" dur="2" fill="freeze" />
 
 		<polygon fill="#1F9C8D" points="816.158,108.688 764.42,198.301 712.681,108.688 		"/>
 		<rect x="761.938" y="84.923" fill="#EAE984" width="134.954" height="23.765"/>
 		<g id="create_word">
-            <animate id="createFlick1" attributeName="display" attributeType="CSS" from="none" to="none"
+            <animate id="createFlick1" attributeName="display" attributeType="CSS" to="none"
                                         begin="0; createFlick2.end" dur="0.5" fill="freeze" />
-            <animate id="createFlick2" attributeName="display" attributeType="CSS" to="block" from="block"
+            <animate id="createFlick2" attributeName="display" attributeType="CSS" to="block"
                                         begin="createFlick1.end" dur="0.5" fill="freeze" />
 
 			<path fill="#1F9C8D" d="M777.2,97.232c-0.047-0.432-0.203-0.768-0.455-0.995c-0.264-0.24-0.588-0.36-0.983-0.36
