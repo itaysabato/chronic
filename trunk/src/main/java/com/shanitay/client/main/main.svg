@@ -212,6 +212,14 @@
 </g>
 <g id="roteating_pink">
 	<g>
+        <animateTransform id="pinkRotation1" attributeName="transform" attributeType="XML" repeatCount="1"
+			type="rotate" from="0 894.42 183.62" to="-35 894.42 183.62" begin="0; pinkRotation2.end" dur="1"
+			additive="replace" fill="freeze" />
+
+		<animateTransform id="pinkRotation2" attributeName="transform" attributeType="XML" repeatCount="1"
+			type="rotate" to="0 894.42 183.62" from="-35 894.42 183.62" begin="pinkRotation1.end" dur="1"
+			additive="replace" fill="freeze" />
+
 		<path fill="#F2B1B6" d="M907.288,180.557c4.63,4.104,5.056,11.183,0.951,15.812l0,0c-4.104,4.629-11.181,5.055-15.812,0.952
 			l-65.272-57.861c-4.629-4.104-5.056-11.183-0.952-15.812l0,0c4.104-4.629,11.184-5.055,15.811-0.952L907.288,180.557z"/>
 	</g>
@@ -370,7 +378,25 @@
 		<circle fill="#EAE984" cx="744.975" cy="305.695" r="10.621"/>
 	</g>
 </g>
-<g id="igul_giff5">
+
+        <animate id="coolIgulGif1" attributeName="display" attributeType="CSS" to="none"
+									begin="0; coolIgulGif8.end+0.125" dur="0.125" fill="freeze" xlink:href="#coolIgul1" />
+		<animate id="coolIgulGif2" attributeName="display" attributeType="CSS" to="none"
+									begin="coolIgulGif1.end" dur="0.125" fill="freeze" xlink:href="#coolIgul2" />
+		<animate id="coolIgulGif3" attributeName="display" attributeType="CSS" to="none"
+									begin="coolIgulGif2.end" dur="0.125" fill="freeze" xlink:href="#coolIgul3" />
+		<animate id="coolIgulGif4" attributeName="display" attributeType="CSS" to="none"
+									begin="coolIgulGif3.end" dur="0.125" fill="freeze" xlink:href="#coolIgul4" />
+
+		<animate id="coolIgulGif5" attributeName="display" attributeType="CSS" to="block"
+									begin="coolIgulGif4.end+0.125" dur="0.125" fill="freeze" xlink:href="#coolIgul4" />
+		<animate id="coolIgulGif6" attributeName="display" attributeType="CSS" to="block"
+									begin="coolIgulGif5.end" dur="0.125" fill="freeze" xlink:href="#coolIgul3" />
+		<animate id="coolIgulGif7" attributeName="display" attributeType="CSS" to="block"
+									begin="coolIgulGif6.end" dur="0.125" fill="freeze" xlink:href="#coolIgul2" />
+		<animate id="coolIgulGif8" attributeName="display" attributeType="CSS" to="block"
+									begin="coolIgulGif7.end" dur="0.125" fill="freeze" xlink:href="#coolIgul1" />
+<g id="coolIgul5">
 	<g>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="797.292" cy="389.812" r="49.351"/>
 		<circle fill="#173434" cx="797.292" cy="389.812" r="12.358"/>
@@ -382,7 +408,7 @@
 		<circle fill="#CCDDD7" cx="822.11" cy="365.559" r="12.358"/>
 	</g>
 </g>
-<g id="igul_giff4">
+<g id="coolIgul4">
 	<g>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="797.292" cy="389.812" r="49.351"/>
 		<circle fill="#173434" cx="797.292" cy="389.812" r="12.358"/>
@@ -394,7 +420,7 @@
 		<circle fill="#CCDDD7" cx="822.11" cy="365.559" r="12.358"/>
 	</g>
 </g>
-<g id="igul_giff3">
+<g id="coolIgul3">
 	<g>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="797.292" cy="389.812" r="49.351"/>
 		<circle fill="#CCDDD7" cx="797.292" cy="389.812" r="12.358"/>
@@ -406,7 +432,7 @@
 		<circle fill="#173434" cx="772.627" cy="365.559" r="12.358"/>
 	</g>
 </g>
-<g id="igul_giff2">
+<g id="coolIgul2">
 	<g>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="797.292" cy="389.812" r="49.351"/>
 		<circle fill="#173434" cx="797.292" cy="389.812" r="12.358"/>
@@ -416,7 +442,7 @@
 		<circle fill="#CCDDD7" cx="797.292" cy="414.063" r="12.358"/>
 	</g>
 </g>
-<g id="igul_giff1">
+<g id="coolIgul1">
 	<g>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="797.292" cy="389.812" r="49.351"/>
 		<circle fill="#CCDDD7" cx="797.292" cy="389.812" r="12.358"/>
