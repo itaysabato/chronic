@@ -2,9 +2,12 @@
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 
     <g:HTMLPanel ui:field="panel">
-        <video width="1360" height="763" autoplay="autoplay">
+        <video width="1360" height="763" preload="auto" controls="controls">
             <source src="clip/clip.mp4" type="video/mp4"/>
+            <source src="clip/clip3.ogv" type="video/ogg"/>
             Your browser does not support the video tag.
         </video>
+        <!--<embed alt="a" src="clip/clip.mp4" width="1360" height="768" >-->
+        <!--</embed>-->
     </g:HTMLPanel>
 </ui:UiBinder>
