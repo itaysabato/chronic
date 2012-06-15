@@ -42,7 +42,8 @@ public class Utils {
     }
 
     public static void addHandler(OMSVGElement element, final SomeHandler someHandler) {
-        addEventListener(element.getElement(), "MozTouchDown", new EventListener() {
+//        addEventListener(element.getElement(), "MozTouchDown", new EventListener() {
+            addEventListener(element.getElement(), "mousedown", new EventListener() {
             public void onBrowserEvent(Event event) {
                 event.preventDefault();
                 someHandler.handle();

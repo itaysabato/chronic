@@ -4,7 +4,7 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" width="1360px"
 	 height="763px" viewBox="0 0 1360 763" enable-background="new 0 0 1360 763" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink"  >
     <g id="back">
-	<rect id="pink_line" x="852.826" y="317.791" fill="#F2B1B6" width="208.786" height="57.01"/>
+	<rect id="pinkLine" x="852.826" y="317.791" fill="#F2B1B6" width="208.786" height="57.01"/>
 </g>
 <g id="change_color_ribua1_1_">
 	<g>
@@ -88,11 +88,11 @@
 	</g>
 </g>
 <g id="ribua_igul_color">
-	<rect id="blue_cube" x="472.193" y="371" fill="#1F9C8D" width="105.814" height="59.708"/>
+	<rect id="blueCube" x="472.193" y="371" fill="#1F9C8D" width="105.814" height="59.708"/>
 </g>
 <g id="mooving_orenge_cube">
-    <animateMotion id="moveBlackCube" repeatCount="indefinite" path="m 0 0 L -47 0 z"  begin="0" dur="1" fill="freeze" />
-	<rect id="black_mooving_cube" x="472.193" y="316.231" fill="#173434" width="57.146" height="54.67"/>
+    <animateMotion id="moveBlackCube" repeatCount="1" path="m 0 0 L -47 0 z"  begin="indefinite" dur="1" fill="freeze" />
+	<rect id="blackCube" x="472.193" y="316.231" fill="#173434" width="57.146" height="54.67"/>
 </g>
 <g id="Layer_1">
 	<rect x="672.951" y="149.058" fill="#1F9C8D" width="24.251" height="61.272"/>
@@ -104,8 +104,8 @@
 		C518.07,270.071,518.075,269.853,518.075,269.631z"/>
 	<rect x="621.768" y="227.853" fill="#EE8F78" stroke="#EE8F78" width="88.378" height="39.462"/>
 	<rect x="621.768" y="247.584" fill="#173434" width="100.325" height="19.731"/>
-	<rect id="orenge_cube" x="577.99" y="370.902" fill="#EE8F78" stroke="#EE8F78" width="40.901" height="60.015"/>
-	<rect id="yellow_middle_cube" x="528.458" y="306.366" fill="#EAE984" width="112.63" height="64.536"/>
+	<rect id="orangeCube" x="577.99" y="370.902" fill="#EE8F78" stroke="#EE8F78" width="40.901" height="60.015"/>
+	<rect id="yellowMiddleCube" x="528.458" y="306.366" fill="#EAE984" width="112.63" height="64.536"/>
 	<rect x="147.688" y="430.917" fill="#1F9C8D" width="672.441" height="82.211"/>
 	<rect x="649.31" y="306.366" fill="#CCDDD7" width="104.819" height="65.893"/>
 	<rect x="542.434" y="270.604" fill="#1F9C8D" width="16.442" height="62.481"/>
@@ -155,7 +155,7 @@
 <g id="black_line_2">
 	<rect x="646.843" y="264.849" fill="#1F9C8D" width="233.092" height="41.517"/>
 </g>
-<g id="mooving_house">
+<g id="house">
 	<rect x="425.436" y="270.604" fill="#CCDDD7" width="103.998" height="45.628"/>
 	<rect x="425.436" y="308.01" fill="#1F9C8D" width="103.998" height="8.221"/>
 	<rect x="476.801" y="267.824" fill="#F2B1B6" width="41.38" height="9.75"/>
@@ -225,7 +225,7 @@
 		</rect>
 	</g>
 </g>
-<g id="blue_meshulash">
+<g id="blueTriangle">
 	<polygon id="blue_meshulash_1_" fill="#1F9C8D" points="540.699,172.803 587.287,212.564 540.699,252.324 	"/>
 </g>
 <g id="up_yellow_meshulash">
@@ -260,18 +260,18 @@
 	</g>
 </g>
 <g id="up_blue_down">
-    <animateMotion id="greenLineMove" repeatCount="indefinite" path="m 0 0 L 80 0 z"  begin="0" dur="1" fill="freeze" />
-	<rect id="green_line_down" x="384.176" y="525.049" fill="#1F9C8D" width="106.258" height="19.319"/>
+    <animateMotion id="greenLineMove" repeatCount="1" path="m 0 0 L 80 0 z"  begin="indefinite" dur="1" fill="freeze" />
+	<rect id="greenLineDown" x="384.176" y="525.049" fill="#1F9C8D" width="106.258" height="19.319"/>
 </g>
 <g id="up_orenge_down">
-	<g id="red_line_down">
-		<animateMotion id="redLineMove" repeatCount="indefinite" path="m 0 0 L -60 0 z"  begin="0" dur="1" fill="freeze" />
+	<g id="redLine">
+		<animateMotion id="redLineMove" repeatCount="1" path="m 0 0 L -60 0 z"  begin="indefinite" dur="1" fill="freeze" />
 		<rect x="555.793" y="517.239" fill="#EE8F78" stroke="#EE8F78" width="91.05" height="22.197"/>
 	</g>
 </g>
-<g id="up_yellow_down">
+<g id="yellow">
 	<g>
-		<rect id="yellow_line_down" x="490.435" y="512.717" fill="#EAE984" width="100.915" height="31.651"/>
+		<rect id="yellowLineDown" x="490.435" y="512.717" fill="#EAE984" width="100.915" height="31.651"/>
 	</g>
 </g>
 <g id="mesila">
@@ -389,7 +389,7 @@
 		</g>
 	</g>
 </g>
-<g id="igul_slide">
+<g id="igulSlide">
 	<g>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="744.975" cy="305.695" r="21.718"/>
 		<circle fill="#EAE984" cx="744.975" cy="305.695" r="10.621"/>
@@ -885,6 +885,6 @@
 
     <rect x="348.993" y="325.553" fill="#CCDDD7" width="22.986" height="20.743"/>
 </g>
-<rect id="pink_button" x="326.884" y="301.844" fill="#F2B1B6" width="57.292" height="49.532"/>
-<rect id="red_button" x="326.884" y="301.844" fill="#EE8F78" stroke="#EE8F78" width="57.292" height="49.532"/>
+<rect id="pinkButton" x="326.884" y="301.844" fill="#F2B1B6" width="57.292" height="49.532"/>
+<rect id="redButton" x="326.884" y="301.844" fill="#EE8F78" stroke="#EE8F78" width="57.292" height="49.532"/>
 </svg>
