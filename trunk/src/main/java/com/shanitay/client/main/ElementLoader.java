@@ -1,5 +1,7 @@
 package com.shanitay.client.main;
 
+import org.vectomatic.dom.svg.OMSVGSVGElement;
+
 /**
  * Created By: Itay Sabato<br/>
  * Date: 17/05/12 <br/>
@@ -68,7 +70,9 @@ class ElementLoader {
 //    final OMSVGAnimationElement handleMove1;
 //    final OMSVGGElement eyeRightSur;
 //
-//    public ElementLoader(OMSVGSVGElement svgsvgElement) {
+    public ElementLoader(OMSVGSVGElement svg) {
+
+    }
 //        tooth1 = Utils.getGElement("tooth1", svgsvgElement);
 //        tooth2 = Utils.getGElement("tooth2", svgsvgElement);
 //        tooth3 = Utils.getGElement("tooth3", svgsvgElement);
