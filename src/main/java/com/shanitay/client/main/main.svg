@@ -247,11 +247,6 @@
 	<rect id="green_line_down" x="384.176" y="525.049" fill="#1F9C8D" width="106.258" height="19.319"/>
 </g>
 <g id="up_orenge_down">
-	<g id="Layer_76">
-		<g id="_door_maker">
-			<rect x="348.993" y="325.553" fill="#CCDDD7" width="22.986" height="20.743"/>
-		</g>
-	</g>
 	<g id="red_line_down">
 		<rect x="555.793" y="517.239" fill="#EE8F78" stroke="#EE8F78" width="91.05" height="22.197"/>
 	</g>
@@ -384,7 +379,7 @@
 </g>
 
         <animate id="coolIgulGif1" attributeName="display" attributeType="CSS" to="none"
-									begin="0; coolIgulGif8.end+0.125" dur="0.125" fill="freeze" xlink:href="#coolIgul1" />
+									begin="0; coolIgulGif8.end" dur="0.125" fill="freeze" xlink:href="#coolIgul1" />
 		<animate id="coolIgulGif2" attributeName="display" attributeType="CSS" to="none"
 									begin="coolIgulGif1.end" dur="0.125" fill="freeze" xlink:href="#coolIgul2" />
 		<animate id="coolIgulGif3" attributeName="display" attributeType="CSS" to="none"
@@ -393,7 +388,7 @@
 									begin="coolIgulGif3.end" dur="0.125" fill="freeze" xlink:href="#coolIgul4" />
 
 		<animate id="coolIgulGif5" attributeName="display" attributeType="CSS" to="block"
-									begin="coolIgulGif4.end+0.125" dur="0.125" fill="freeze" xlink:href="#coolIgul4" />
+									begin="coolIgulGif4.end" dur="0.125" fill="freeze" xlink:href="#coolIgul4" />
 		<animate id="coolIgulGif6" attributeName="display" attributeType="CSS" to="block"
 									begin="coolIgulGif5.end" dur="0.125" fill="freeze" xlink:href="#coolIgul3" />
 		<animate id="coolIgulGif7" attributeName="display" attributeType="CSS" to="block"
@@ -459,7 +454,7 @@
 	</g>
 </g>
 <g id="up_meshulash_handdel">
-	
+
 		<rect id="meshulash_zir_handdle_1_" x="650.248" y="93.846" transform="matrix(0.7071 -0.7071 0.7071 0.7071 105.0388 500.8895)" fill="#EAE984" width="13.882" height="59.593"/>
 </g>
 <g id="up_meshulash">
@@ -557,54 +552,119 @@
 		<rect x="308.873" y="588.412" fill="#CCDDD7" width="116.386" height="180.12"/>
 	</g>
 </g>
+<animate id="moonGif1" attributeName="display" attributeType="CSS" to="none"
+                            begin="doorVanish.end" dur="0.125" fill="freeze" xlink:href="#moon1" />
+<animate id="moonGif2" attributeName="display" attributeType="CSS" to="none"
+                            begin="moonGif1.end" dur="0.125" fill="freeze" xlink:href="#moon2" />
+<animate id="moonGif3" attributeName="display" attributeType="CSS" to="none"
+                            begin="moonGif2.end" dur="0.125" fill="freeze" xlink:href="#moon3" />
+<animate id="moonGif4" attributeName="display" attributeType="CSS" to="none"
+                            begin="moonGif3.end" dur="0.125" fill="freeze" xlink:href="#moon4" />
+<animate id="moonGif5" attributeName="display" attributeType="CSS" to="none"
+                            begin="moonGif4.end" dur="0.125" fill="freeze" xlink:href="#moon5" />
+<animate id="moonGif6" attributeName="display" attributeType="CSS" to="none"
+                            begin="moonGif5.end" dur="0.125" fill="freeze" xlink:href="#moon6" />
+<animate id="moonGif7" attributeName="display" attributeType="CSS" to="none"
+                            begin="moonGif6.end" dur="0.125" fill="freeze" xlink:href="#moon7" />
+<animate id="moonGif8" attributeName="display" attributeType="CSS" to="none"
+                            begin="moonGif7.end" dur="0.125" fill="freeze" xlink:href="#moon8" />
+<animate id="moonGif9" attributeName="display" attributeType="CSS" to="none"
+                            begin="moonGif8.end" dur="0.125" fill="freeze" xlink:href="#moon9" />
+<animate id="moonGif10" attributeName="display" attributeType="CSS" to="none"
+                            begin="moonGif9.end" dur="0.125" fill="freeze" xlink:href="#moon10" />
+<animate id="moonGif11" attributeName="display" attributeType="CSS" to="none"
+                            begin="moonGif10.end" dur="0.125" fill="freeze" xlink:href="#moon11" />
+<animate id="moonGif12" attributeName="display" attributeType="CSS" to="none"
+                            begin="moonGif11.end" dur="0.125" fill="freeze" xlink:href="#moon12" />
+<animate id="moonGif13" attributeName="display" attributeType="CSS" to="none"
+                            begin="moonGif12.end" dur="0.125" fill="freeze" xlink:href="#moon13" />
+
+<animate id="moonGif14" attributeName="display" attributeType="CSS" to="block"
+                            begin="moonGif13.end" dur="0.125" fill="freeze" xlink:href="#moon13" />
+<animate id="moonGif15" attributeName="display" attributeType="CSS" to="block"
+                            begin="moonGif13.end" dur="0.125" fill="freeze" xlink:href="#moon12" />
+<animate id="moonGif16" attributeName="display" attributeType="CSS" to="block"
+                            begin="moonGif13.end" dur="0.125" fill="freeze" xlink:href="#moon11" />
+<animate id="moonGif17" attributeName="display" attributeType="CSS" to="block"
+                            begin="moonGif13.end" dur="0.125" fill="freeze" xlink:href="#moon10" />
+<animate id="moonGif18" attributeName="display" attributeType="CSS" to="block"
+                            begin="moonGif13.end" dur="0.125" fill="freeze" xlink:href="#moon9" />
+<animate id="moonGif19" attributeName="display" attributeType="CSS" to="block"
+                            begin="moonGif13.end" dur="0.125" fill="freeze" xlink:href="#moon8" />
+<animate id="moonGif20" attributeName="display" attributeType="CSS" to="block"
+                            begin="moonGif13.end" dur="0.125" fill="freeze" xlink:href="#moon7" />
+<animate id="moonGif21" attributeName="display" attributeType="CSS" to="block"
+                            begin="moonGif13.end" dur="0.125" fill="freeze" xlink:href="#moon6" />
+<animate id="moonGif22" attributeName="display" attributeType="CSS" to="block"
+                            begin="moonGif13.end" dur="0.125" fill="freeze" xlink:href="#moon5" />
+<animate id="moonGif23" attributeName="display" attributeType="CSS" to="block"
+                            begin="moonGif13.end" dur="0.125" fill="freeze" xlink:href="#moon4" />
+<animate id="moonGif24" attributeName="display" attributeType="CSS" to="block"
+                            begin="moonGif13.end" dur="0.125" fill="freeze" xlink:href="#moon3" />
+<animate id="moonGif25" attributeName="display" attributeType="CSS" to="block"
+                            begin="moonGif13.end" dur="0.125" fill="freeze" xlink:href="#moon2" />
+<animate id="moonGif26" attributeName="display" attributeType="CSS" to="block"
+                            begin="moonGif13.end" dur="0.125" fill="freeze" xlink:href="#moon1" />
+
 <g id="Layer_72">
-	<g id="moon1">
+	<g id="moon14" style="display: block;">
+		<rect x="308.873" y="587.105" fill="#CCDDD7" width="116.386" height="185.895"/>
+		<circle fill="#EE8F78" cx="367.609" cy="678.618" r="37.608"/>
 		<circle fill="#CCDDD7" cx="367.609" cy="678.618" r="35.745"/>
 		<circle fill="#1F9C8D" cx="367.608" cy="678.618" r="13.077"/>
 	</g>
-	<g id="moon2">
+	<g id="moon13" style="display: block;">
+		<rect x="308.873" y="587.105" fill="#CCDDD7" width="116.386" height="185.895"/>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="367.609" cy="678.618" r="99.715"/>
 		<circle fill="#1F9C8D" cx="367.61" cy="678.618" r="93.924"/>
 		<circle fill="#CCDDD7" cx="367.609" cy="678.618" r="3.253"/>
 	</g>
-	<g id="moon3">
+	<g id="moon12" style="display: block;">
+		<rect x="308.873" y="587.105" fill="#CCDDD7" width="116.386" height="185.895"/>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="367.609" cy="678.618" r="90.899"/>
 		<circle fill="#1F9C8D" cx="367.609" cy="678.618" r="85.622"/>
 		<circle fill="#CCDDD7" cx="367.609" cy="678.618" r="2.967"/>
 	</g>
-	<g id="moon4">
+	<g id="moon11" style="display: block;">
+		<rect x="308.873" y="587.105" fill="#CCDDD7" width="116.386" height="185.895"/>
 		<path fill="#EE8F78" stroke="#EE8F78" d="M448.434,678.618c0,44.639-36.186,80.827-80.825,80.827s-80.825-36.188-80.825-80.827
 			c0-44.637,36.186-80.825,80.825-80.825S448.434,633.981,448.434,678.618z"/>
 		<circle fill="#1F9C8D" cx="367.609" cy="678.618" r="76.13"/>
 		<circle fill="#CCDDD7" cx="367.609" cy="678.618" r="2.638"/>
 	</g>
-	<g id="moon5">
+	<g id="moon10" style="display: block;">
+		<rect x="308.873" y="587.105" fill="#CCDDD7" width="116.386" height="185.895"/>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="367.609" cy="678.618" r="72.264"/>
 		<circle fill="#1F9C8D" cx="367.609" cy="678.618" r="68.066"/>
 		<circle fill="#CCDDD7" cx="367.609" cy="678.618" r="2.359"/>
 	</g>
-	<g id="moon6">
+	<g id="moon9" style="display: block;">
+		<rect x="308.873" y="587.105" fill="#CCDDD7" width="116.386" height="185.895"/>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="367.609" cy="678.618" r="64.455"/>
 		<circle fill="#1F9C8D" cx="367.609" cy="678.618" r="60.711"/>
 		<circle fill="#CCDDD7" cx="367.609" cy="678.618" r="2.104"/>
 	</g>
-	<g id="moon7">
+	<g id="moon8" style="display: block;">
+		<rect x="308.873" y="587.105" fill="#CCDDD7" width="116.386" height="185.895"/>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="367.609" cy="678.618" r="56.271"/>
 		<circle fill="#1F9C8D" cx="367.61" cy="678.618" r="51.868"/>
 		<path fill="#CCDDD7" d="M369.446,678.618c0,1.016-0.825,1.838-1.837,1.838s-1.838-0.822-1.838-1.838s0.826-1.838,1.838-1.838
 			S369.446,677.603,369.446,678.618z"/>
 	</g>
-	<g id="moon8">
+	<g id="moon7" style="display: block;">
+		<rect x="308.873" y="587.105" fill="#CCDDD7" width="116.386" height="185.895"/>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="367.609" cy="678.618" r="48.966"/>
 		<circle fill="#1F9C8D" cx="367.609" cy="678.618" r="45.136"/>
 		<circle fill="#CCDDD7" cx="367.609" cy="678.618" r="1.598"/>
 	</g>
-	<g id="moon9">
+	<g id="moon6" style="display: block;">
+		<rect x="308.873" y="587.105" fill="#CCDDD7" width="116.386" height="185.895"/>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="367.609" cy="678.618" r="43.677"/>
 		<circle fill="#1F9C8D" cx="367.609" cy="678.618" r="40.259"/>
 		<circle fill="#CCDDD7" cx="367.609" cy="678.618" r="1.426"/>
 	</g>
-	<g id="moon10">
+	<g id="moon5" style="display: block;">
+		<rect x="308.873" y="587.105" fill="#CCDDD7" width="116.386" height="185.895"/>
 		<path fill="#EE8F78" stroke="#EE8F78" d="M465.31,678.618c0,53.96-43.742,97.702-97.701,97.702s-97.701-43.742-97.701-97.702
 			c0-53.956,43.742-97.7,97.701-97.7S465.31,624.662,465.31,678.618z"/>
 		<path fill="#CCDDD7" d="M459.768,678.618c0,50.898-41.258,92.159-92.159,92.159c-50.898,0-92.158-41.261-92.158-92.159
@@ -614,28 +674,32 @@
 		<path fill="#CCDDD7" d="M369.445,678.618c0,1.016-0.824,1.837-1.836,1.837s-1.835-0.821-1.835-1.837
 			c0-1.012,0.823-1.833,1.835-1.833S369.445,677.606,369.445,678.618z"/>
 	</g>
-	<g id="moon11">
+	<g id="moon4" style="display: block;">
+		<rect x="308.873" y="587.105" fill="#CCDDD7" width="116.386" height="185.895"/>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="367.61" cy="678.618" r="82.085"/>
 		<circle fill="#CCDDD7" cx="367.609" cy="678.618" r="77.431"/>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="367.609" cy="678.618" r="31.479"/>
 		<circle fill="#1F9C8D" cx="367.609" cy="678.618" r="29.014"/>
 		<circle fill="#CCDDD7" cx="367.609" cy="678.618" r="1.541"/>
 	</g>
-	<g id="moon12">
+	<g id="moon3" style="display: block;">
+		<rect x="308.873" y="587.105" fill="#CCDDD7" width="116.386" height="185.895"/>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="367.609" cy="678.618" r="66.807"/>
 		<circle fill="#CCDDD7" cx="367.608" cy="678.618" r="63.017"/>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="367.609" cy="678.618" r="25.619"/>
 		<circle fill="#1F9C8D" cx="367.609" cy="678.618" r="23.614"/>
 		<circle fill="#CCDDD7" cx="367.609" cy="678.618" r="1.255"/>
 	</g>
-	<g id="moon13">
+	<g id="moon2" style="display: block;">
+		<rect x="308.873" y="587.105" fill="#CCDDD7" width="116.386" height="185.895"/>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="367.609" cy="678.618" r="54.885"/>
 		<circle fill="#CCDDD7" cx="367.608" cy="678.618" r="52.949"/>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="367.609" cy="678.618" r="21.046"/>
 		<circle fill="#1F9C8D" cx="367.609" cy="678.618" r="19.4"/>
 		<circle fill="#CCDDD7" cx="367.609" cy="678.618" r="1.417"/>
 	</g>
-	<g id="moon14">
+	<g id="moon1" style="display: block;">
+		<rect x="308.873" y="587.105" fill="#CCDDD7" width="116.386" height="185.895"/>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="367.609" cy="678.618" r="42.46"/>
 		<circle fill="#CCDDD7" cx="367.61" cy="678.618" r="40.962"/>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="367.609" cy="678.618" r="16.282"/>
@@ -646,9 +710,13 @@
 	</g>
 </g>
 <g id="Layer_74">
-	<g id="door">
-		<rect x="308.873" y="587.105" fill="#CCDDD7" width="116.386" height="185.895"/>
-	</g>
+    <svg x="367.066" y="680.0525">
+        <g id="door">
+            <animateTransform id="doorVanish" attributeName="transform" attributeType="XML" from="1,1" to="0,0"
+                repeatCount="1" type="scale" begin="makerMove.end" dur="1" fill="freeze" />
+            <rect x="-58.193" y="-92.9475" fill="#CCDDD7" width="116.386" height="185.895"/>
+        </g>
+    </svg>
 </g>
 <g id="color_cover">
 	<rect x="967.101" y="568.347" fill="#EE8F78" stroke="#EE8F78" width="151.375" height="204.213"/>
@@ -656,9 +724,7 @@
 <g id="pump_left">
 	<g>
 		<rect x="371.893" y="351.376" fill="#1F9C8D" width="12.284" height="79.541"/>
-		<rect id="pink_button" x="326.884" y="301.844" fill="#F2B1B6" width="57.292" height="49.532"/>
 	</g>
-	<rect id="red_button" x="326.884" y="301.844" fill="#EE8F78" stroke="#EE8F78" width="57.292" height="49.532"/>
 </g>
 <g id="orenge_cover">
 	<rect x="425.259" y="568.347" fill="#EE8F78" stroke="#EE8F78" width="558.108" height="205.204"/>
@@ -667,7 +733,7 @@
 </g>
 
         <animate id="watchRightGif1" attributeName="display" attributeType="CSS" to="none"
-									begin="0; watchRightGif8.end+0.125" dur="0.125" fill="freeze" xlink:href="#watchRight1" />
+									begin="0; watchRightGif8.end" dur="0.125" fill="freeze" xlink:href="#watchRight1" />
 		<animate id="watchRightGif2" attributeName="display" attributeType="CSS" to="none"
 									begin="watchRightGif1.end" dur="0.125" fill="freeze" xlink:href="#watchRight2" />
 		<animate id="watchRightGif3" attributeName="display" attributeType="CSS" to="none"
@@ -676,7 +742,7 @@
 									begin="watchRightGif3.end" dur="0.125" fill="freeze" xlink:href="#watchRight4" />
 
 		<animate id="watchRightGif5" attributeName="display" attributeType="CSS" to="block"
-									begin="watchRightGif4.end+0.125" dur="0.125" fill="freeze" xlink:href="#watchRight4" />
+									begin="watchRightGif4.end" dur="0.125" fill="freeze" xlink:href="#watchRight4" />
 		<animate id="watchRightGif6" attributeName="display" attributeType="CSS" to="block"
 									begin="watchRightGif5.end" dur="0.125" fill="freeze" xlink:href="#watchRight3" />
 		<animate id="watchRightGif7" attributeName="display" attributeType="CSS" to="block"
@@ -771,4 +837,13 @@
 		</rect>
 	</g>
 </g>
+
+<g id="_door_maker">
+    <animateMotion id="makerMove" repeatCount="1" path="m 0 0 l 0 222 l -110 0 l 0 130 l 115 0"
+                   begin="0; doorVanish.end" dur="5" fill="freeze" />
+
+    <rect x="348.993" y="325.553" fill="#CCDDD7" width="22.986" height="20.743"/>
+</g>
+<rect id="pink_button" x="326.884" y="301.844" fill="#F2B1B6" width="57.292" height="49.532"/>
+<rect id="red_button" x="326.884" y="301.844" fill="#EE8F78" stroke="#EE8F78" width="57.292" height="49.532"/>
 </svg>
