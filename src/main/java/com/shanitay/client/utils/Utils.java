@@ -133,11 +133,15 @@ public class Utils {
         final Toy toy = new Toy(sound, animations);
         toy.setLooping(looping);
 
-        if(!looping) {
+        return attachToy(element, toy);
+    }
+
+    private static Toy attachToy(OMSVGElement element, final Toy toy) {
+        if(!toy.isLooping()) {
             LoopRecorderFactory.register(toy);
         }
 
-        addHandler(element, new Utils.SomeHandler() {
+        addHandler(element, new SomeHandler() {
             public void handle() {
                 toy.toggle();
                 if(LoopRecorderFactory.hasRecorder()) {

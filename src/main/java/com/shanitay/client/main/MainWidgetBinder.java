@@ -16,12 +16,13 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         MainBundle mainBundle = GWT.create(MainBundle.class);
         final SVGResource svgResource = mainBundle.mainSvg();
         final OMSVGSVGElement svgElement = svgResource.getSvg();
+
+        final SoundLoader soundLoader = new SoundLoader();
+        final ElementLoader elementLoader = new ElementLoader(svgElement);
+        final AnimationLoader animationLoader = new AnimationLoader(elementLoader);
+
         return svgElement;
     }
-//
-//        final SoundLoader soundLoader = new SoundLoader();
-//        final ElementLoader elementLoader = new ElementLoader(svgElement);
-//        final AnimationLoader animationLoader = new AnimationLoader(elementLoader);
 //        initRecorder(svgElement);
 //
 //        Utils.attachToy(elementLoader.tooth1, soundLoader.tooth1, false, animationLoader.tooth1);

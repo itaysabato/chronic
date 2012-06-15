@@ -53,6 +53,10 @@ public class Toy {
         }
     }
 
+    public boolean isLooping() {
+        return looping;
+    }
+
     public void toggle() {
         if(played && looping) {
             stop();

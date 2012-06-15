@@ -1,12 +1,19 @@
 package com.shanitay.client.main;
 
+import com.allen_sauer.gwt.voices.client.Sound;
+import com.allen_sauer.gwt.voices.client.SoundController;
+import com.shanitay.client.utils.Utils;
+
 /**
  * Created By: Itay Sabato<br/>
  * Date: 17/05/12 <br/>
  * Time: 20:04 <br/>
  */
 class SoundLoader {
-//    final Sound tooth1;
+
+    private final SoundController soundController;
+
+    //    final Sound tooth1;
 //    final Sound tooth2;
 //    final Sound tooth3;
 //    final Sound tooth4;
@@ -32,8 +39,13 @@ class SoundLoader {
 //    final Sound open;
 //    final Sound close;
 //
-//    public SoundLoader() {
-//        SoundController soundController = new SoundController();
+    public SoundLoader() {
+        soundController = new SoundController();
+    }
+
+    private Sound getSound(String path) {
+        return Utils.getSound(path, soundController);
+    }
 //
 //        nose = Utils.getSound("robot/nose.mp3", soundController);
 //        tooth1 = Utils.getSound("robot/tooth1.mp3", soundController);

@@ -14,7 +14,7 @@ class AnimationLoader {
 //    private static final int RIGHT_EAR_DURATION = 500;
 //    private static final int COOP_CENTER_DURATION = 250;
 //
-//    private final ElementLoader elementLoader;
+    private final ElementLoader elementLoader;
 //    final Toy.Animation tooth1;
 //    final Toy.Animation tooth2;
 //    final Toy.Animation tooth3;
@@ -43,7 +43,9 @@ class AnimationLoader {
 //    final Toy.Animation closeMouth;
 //
 //
-//    public AnimationLoader(ElementLoader elementLoader) {
+    public AnimationLoader(ElementLoader elementLoader) {
+        this.elementLoader = elementLoader;
+    }
 //        this.elementLoader = elementLoader;
 //
 //        tooth1 = new PeekabooToyAnimation(AnimatorImpls.DISAPPEAR, TOOTH_DURATION, elementLoader.tooth1);
