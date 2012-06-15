@@ -40,7 +40,22 @@
 	<path fill="#EE8F78" d="M393.42,229.562H339.5v6.306h48.245c7.139,0,5.99-1.148,5.99,5.989v153.521v140.598h6.305V395.378V236.182
 		C400.039,229.194,400.039,229.558,393.42,229.562z"/>
 </g>
-<g id="igul_color1">
+
+<animate id="igulColorGif1" attributeName="display" attributeType="CSS" to="none"
+                            begin="0; igulColorGif6.end" dur="0.125" fill="freeze" xlink:href="#igulColor1" />
+<animate id="igulColorGif2" attributeName="display" attributeType="CSS" to="none"
+                            begin="igulColorGif1.end" dur="0.125" fill="freeze" xlink:href="#igulColor2" />
+<animate id="igulColorGif3" attributeName="display" attributeType="CSS" to="none"
+                            begin="igulColorGif2.end" dur="0.125" fill="freeze" xlink:href="#igulColor3" />
+
+<animate id="igulColorGif4" attributeName="display" attributeType="CSS" to="block"
+                            begin="igulColorGif3.end" dur="0.125" fill="freeze" xlink:href="#igulColor3" />
+<animate id="igulColorGif5" attributeName="display" attributeType="CSS" to="block"
+                            begin="igulColorGif3.end" dur="0.125" fill="freeze" xlink:href="#igulColor2" />
+<animate id="igulColorGif6" attributeName="display" attributeType="CSS" to="block"
+                            begin="igulColorGif3.end" dur="0.125" fill="freeze" xlink:href="#igulColor1" />
+
+<g id="igulColor4">
 	<g>
 		<circle fill="#F2B1B6" cx="480.364" cy="430.917" r="94.992"/>
 		<circle fill="#CCDDD7" cx="480.364" cy="430.917" r="81.801"/>
@@ -48,7 +63,7 @@
 		<circle fill="#EAE984" cx="480.364" cy="430.917" r="44.189"/>
 	</g>
 </g>
-<g id="igul__color2">
+<g id="igulColor3">
 	<g>
 		<circle fill="#CCDDD7" cx="480.364" cy="430.917" r="94.992"/>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="480.364" cy="430.917" r="81.801"/>
@@ -56,7 +71,7 @@
 		<circle fill="#F2B1B6" cx="480.364" cy="430.917" r="44.189"/>
 	</g>
 </g>
-<g id="igul_color_3">
+<g id="igulColor2">
 	<g>
 		<circle fill="#EE8F78" cx="480.364" cy="430.917" r="94.992"/>
 		<circle fill="#EAE984" cx="480.364" cy="430.917" r="81.801"/>
@@ -64,7 +79,7 @@
 		<circle fill="#CCDDD7" cx="480.364" cy="430.917" r="44.189"/>
 	</g>
 </g>
-<g id="igul_color_4">
+<g id="igulColor1">
 	<g>
 		<circle fill="#EAE984" cx="480.364" cy="430.917" r="94.992"/>
 		<circle fill="#F2B1B6" cx="480.364" cy="430.917" r="81.801"/>
