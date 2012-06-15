@@ -8,39 +8,37 @@
 </g>
 <g id="change_color_ribua1_1_">
 	<g>
-		<rect x="619.843" y="370.902" fill="#CCDDD7" width="112.629" height="55.905">
+        <rect x="618.84" y="370.902" fill="#CCDDD7" width="113.63" height="59.91">
             <animate id="squareColorChange1" attributeName="fill" attributeType="CSS" to="#CCDDD7"
-                begin="0; squareColorChange6.end" dur="0.125" fill="freeze" calcMode="discrete" />
+                begin="0; squareColorChange6.end" dur="0.125" fill="freeze" />
             <animate id="squareColorChange2" attributeName="fill" attributeType="CSS" to="#EE8F78"
-                begin="squareColorChange1.end" dur="0.125" fill="freeze" calcMode="discrete" />
+                begin="squareColorChange1.end" dur="0.125" fill="freeze" />
             <animate id="squareColorChange3" attributeName="fill" attributeType="CSS" to="#1F9C8D"
-                begin="squareColorChange2.end" dur="0.125" fill="freeze" calcMode="discrete" />
+                begin="squareColorChange2.end" dur="0.125" fill="freeze" />
             <animate id="squareColorChange4" attributeName="fill" attributeType="CSS" to="#F2B1B6"
-                begin="squareColorChange3.end" dur="0.125" fill="freeze" calcMode="discrete" />
+                begin="squareColorChange3.end" dur="0.125" fill="freeze" />
 
             <animate id="squareColorChange5" attributeName="fill" attributeType="CSS" to="#1F9C8D"
-                begin="squareColorChange4.end" dur="0.125" fill="freeze" calcMode="discrete" />
+                begin="squareColorChange4.end" dur="0.125" fill="freeze" />
             <animate id="squareColorChange6" attributeName="fill" attributeType="CSS" to="#EE8F78"
-                begin="squareColorChange5.end" dur="0.125" fill="freeze" calcMode="discrete" />
+                begin="squareColorChange5.end" dur="0.125" fill="freeze" />
 		</rect>
 	</g>
 </g>
 <g id="igul_slide_path">
 	<circle fill="#1F9C8D" cx="695.708" cy="312.121" r="49.267"/>
 </g>
-<g id="part_color">
-	<g>
-		<path fill="#1F9C8D" d="M412.334,204.343H268.361v6.304h140.821c7.138,0,9.772,2.635,9.772,9.773v174.958v140.597h6.305V395.378
-			v-178.11C425.259,210.129,419.473,204.343,412.334,204.343z"/>
-		<path fill="#F2B1B6" d="M409.182,210.647H268.361v6.305h136.408c7.138,0,7.881,0.743,7.881,7.882v170.544v140.597h6.304V395.378
-			V220.42C418.954,213.282,416.32,210.647,409.182,210.647z"/>
-		<path fill="#EAE984" d="M404.769,216.952H268.361v6.306h131.364c7.138,0,6.62-0.519,6.62,6.62v165.501v140.597h6.306V395.378
-			V224.833C412.65,217.695,411.907,216.952,404.769,216.952z"/>
-		<path fill="#173434" d="M399.725,223.257H268.361v6.304H394.05c6.384,0,5.99,0,5.99,5.99v159.827v140.597h6.304V395.378V229.877
-			C406.344,222.739,406.863,223.257,399.725,223.257z"/>
-		<path fill="#EE8F78" stroke="#EE8F78" d="M393.42,229.562H268.361v6.306h119.385c7.138,0,5.99-1.149,5.99,5.989v153.521v140.597
-			h6.305V395.378V236.182C400.04,229.194,400.04,229.558,393.42,229.562z"/>
-	</g>
+<g id="staticStripes">
+	<path fill="#1F9C8D" d="M412.334,204.344H339.5v6.304h69.682c7.138,0,9.771,2.635,9.771,9.772v174.958v140.598h6.306V395.378
+		V217.268C425.259,210.129,419.473,204.344,412.334,204.344z"/>
+	<path fill="#F2B1B6" d="M409.182,210.647H339.5v6.305h65.269c7.138,0,7.881,0.743,7.881,7.882v170.544v140.598h6.304V395.378
+		V220.42C418.953,213.282,416.32,210.647,409.182,210.647z"/>
+	<path fill="#EAE984" d="M404.769,216.952H339.5v6.306h60.225c7.138,0,6.62-0.519,6.62,6.62v165.501v140.598h6.306V395.378V224.833
+		C412.65,217.695,411.906,216.952,404.769,216.952z"/>
+	<path fill="#173434" d="M399.725,223.257H339.5v6.305h54.55c6.384,0,5.989,0,5.989,5.99v159.826v140.598h6.305V395.378V229.877
+		C406.344,222.739,406.863,223.257,399.725,223.257z"/>
+	<path fill="#EE8F78" d="M393.42,229.562H339.5v6.306h48.245c7.139,0,5.99-1.148,5.99,5.989v153.521v140.598h6.305V395.378V236.182
+		C400.039,229.194,400.039,229.558,393.42,229.562z"/>
 </g>
 <g id="igul_color1">
 	<g>
@@ -153,19 +151,25 @@
 	<rect x="147.688" y="430.916" fill="#173434" width="224" height="82.212"/>
 </g>
 <g id="igul_little_middle">
+    <animateMotion id="littleMiddleMove" repeatCount="indefinite" path="m 0 0 L 200 0 z"  begin="0" dur="2" fill="freeze" />
 	<g>
 		<g>
 			<rect x="634.812" y="426.807" fill="#EAE984" width="231.86" height="37.024"/>
 		</g>
 		<g id="circle_with_yellow_2_">
-			<g id="igul_with_yellow">
-				<circle fill="#1F9C8D" cx="631.524" cy="445.247" r="25.547"/>
-				<circle fill="#F2B1B6" cx="631.524" cy="445.247" r="21.484"/>
-				<circle fill="#CCDDD7" cx="631.524" cy="445.247" r="14.648"/>
-			</g>
-			<g>
-				<circle id="yellow_pas_1_" fill="#EAE984" cx="620.291" cy="422.297" r="6.595"/>
-			</g>
+			<svg x="631.524" y="445.247" id="igul_with_yellow">
+				<circle fill="#1F9C8D" cx="0" cy="0" r="25.547"/>
+				<circle fill="#F2B1B6" cx="0" cy="0" r="21.484"/>
+				<circle fill="#CCDDD7" cx="0" cy="0" r="14.648"/>
+
+                <g>
+                    <circle id="yellow_pas_1_" fill="#EAE984" cx="-11.233" cy="-22.95" r="6.595"/>
+
+                    <animateTransform id="circleWithYellowRotate1" attributeName="transform" attributeType="XML"
+                                      repeatCount="indefinite" type="rotate" from="0 0 0" to="360 0 0" begin="0" dur="1"
+                        additive="replace" fill="freeze" />
+                </g>
+			</svg>
 		</g>
 	</g>
 </g>
@@ -412,12 +416,10 @@
 	<g>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="797.292" cy="389.812" r="49.351"/>
 		<circle fill="#173434" cx="797.292" cy="389.812" r="12.358"/>
-		<circle fill="#173434" cx="822.365" cy="389.812" r="12.358"/>
+		<circle fill="#CCDDD7" cx="822.365" cy="389.812" r="12.358"/>
 		<circle fill="#CCDDD7" cx="797.292" cy="365.559" r="12.358"/>
-		<circle fill="#173434" cx="772.216" cy="390.222" r="12.358"/>
+		<circle fill="#CCDDD7" cx="772.216" cy="390.222" r="12.358"/>
 		<circle fill="#CCDDD7" cx="797.292" cy="414.063" r="12.358"/>
-		<circle fill="#CCDDD7" cx="771.238" cy="414.063" r="12.359"/>
-		<circle fill="#CCDDD7" cx="822.11" cy="365.559" r="12.358"/>
 	</g>
 </g>
 <g id="coolIgul3">
@@ -433,13 +435,15 @@
 	</g>
 </g>
 <g id="coolIgul2">
-	<g>
+    	<g>
 		<circle fill="#EE8F78" stroke="#EE8F78" cx="797.292" cy="389.812" r="49.351"/>
 		<circle fill="#173434" cx="797.292" cy="389.812" r="12.358"/>
-		<circle fill="#CCDDD7" cx="822.365" cy="389.812" r="12.358"/>
+		<circle fill="#173434" cx="822.365" cy="389.812" r="12.358"/>
 		<circle fill="#CCDDD7" cx="797.292" cy="365.559" r="12.358"/>
-		<circle fill="#CCDDD7" cx="772.216" cy="390.222" r="12.358"/>
+		<circle fill="#173434" cx="772.216" cy="390.222" r="12.358"/>
 		<circle fill="#CCDDD7" cx="797.292" cy="414.063" r="12.358"/>
+		<circle fill="#CCDDD7" cx="771.238" cy="414.063" r="12.359"/>
+		<circle fill="#CCDDD7" cx="822.11" cy="365.559" r="12.358"/>
 	</g>
 </g>
 <g id="coolIgul1">
@@ -489,18 +493,39 @@
 <g id="haous_meshulash">
 	<polygon fill="#EAE984" points="515.43,175.238 490.64,218.174 465.851,175.238 	"/>
 </g>
-<g id="part_1">
+
+<animateMotion id="partsMoveIn1" repeatCount="1" path="m 0 0 L 50 0"
+               begin="0; partsMoveIn4.end" dur="0.5" fill="freeze" xlink:href="#partYellowAndRed" />
+<animateMotion id="partsMoveIn2" repeatCount="1" path="m 0 0 L 40 0"
+               begin="partsMoveIn1.end" dur="0.5" fill="freeze" xlink:href="#partRed" />
+<animateMotion id="partsMoveIn3" repeatCount="1" path="m 40 0 L 0 0"
+               begin="partsMoveIn2.end" dur="0.5" fill="freeze"  xlink:href="#partRed" />
+<animateMotion id="partsMoveIn4" repeatCount="1" path="m 50 0 L 0 0"
+               begin="partsMoveIn3.end" dur="0.5" fill="freeze"  xlink:href="#partYellowAndRed" />
+
+<g id="part1">
+    <animateMotion id="partMove" repeatCount="indefinite" path="m 0 0 L 60 0 z"  begin="0" dur="2" fill="freeze" />
+
+    <g id="movingStripes">
+        <rect x="268.361" y="204.344" fill="#1F9C8D" width="71.14" height="6.304"/>
+        <rect x="268.361" y="210.647" fill="#F2B1B6" width="71.14" height="6.305"/>
+        <rect x="268.361" y="216.952" fill="#EAE984" width="71.14" height="6.306"/>
+        <rect x="268.361" y="223.257" fill="#173434" width="71.14" height="6.305"/>
+        <rect x="268.361" y="229.562" fill="#EE8F78" width="71.14" height="6.306"/>
+    </g>
 	<g>
-		<g id="part_red">
-			<polygon fill="#EE8F78" stroke="#EE8F78" points="131.368,198.585 171.444,198.585 171.444,237.225 151.406,237.225 
-				151.406,217.905 131.368,217.905 			"/>
-		</g>
-		<g id="part_yellow">
-			<rect x="171.444" y="190.364" fill="#EAE984" width="48.505" height="52.661"/>
-		</g>
-		<g id="part_green">
-			<rect x="219.949" y="189.953" fill="#1F9C8D" width="53.64" height="66.592"/>
-		</g>
+        <g id="partYellowAndRed">
+            <g id="partRed">
+                <polygon fill="#EE8F78" stroke="#EE8F78" points="131.368,198.585 171.444,198.585 171.444,237.225 151.406,237.225
+                    151.406,217.905 131.368,217.905 			"/>
+            </g>
+            <g id="partYellow">
+                <rect x="171.444" y="190.364" fill="#EAE984" width="48.505" height="52.661"/>
+            </g>
+        </g>
+            <g id="partGreen">
+                <rect x="219.949" y="189.953" fill="#1F9C8D" width="53.64" height="66.592"/>
+            </g>
 	</g>
 </g>
 <g id="machine_down">
