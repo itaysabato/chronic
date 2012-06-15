@@ -238,6 +238,11 @@ public class Utils {
         };
     }
 
+    public static void stopAnimation(OMSVGAnimationElement svgAnimationElement) {
+        svgAnimationElement.beginElement();
+        svgAnimationElement.endElementAt(0.01f);
+    }
+
     public interface SomeHandler {
         void handle();
     }

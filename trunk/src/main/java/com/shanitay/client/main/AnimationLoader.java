@@ -3,6 +3,8 @@ package com.shanitay.client.main;
 import com.shanitay.client.utils.SvgToyAnimation;
 import com.shanitay.client.utils.Toy;
 import org.vectomatic.dom.svg.OMSVGAnimationElement;
+import org.vectomatic.dom.svg.events.EndEvent;
+import org.vectomatic.dom.svg.events.EndHandler;
 
 /**
  * Created By: Itay Sabato<br/>
@@ -112,10 +114,62 @@ class AnimationLoader {
     }
 
     private Toy.Animation createIgulColor() {
-        return null;  //To change body of created methods use File | Settings | File Templates.
+        String firstAnimationId = "igulColorGif1";
+        final String lastAnimationId = "igulColorGif6";
+
+        final OMSVGAnimationElement firstAnimation = elementLoader.getAnimation(firstAnimationId);
+        final OMSVGAnimationElement lastAnimation = elementLoader.getAnimation(lastAnimationId);
+        return new GifSvgAnimation(firstAnimation, lastAnimation);
     }
 
     private Toy.Animation createPinkLine() {
         return null;  //To change body of created methods use File | Settings | File Templates.
+    }
+
+    private static class GifSvgAnimation implements Toy.Animation {
+        private final OMSVGAnimationElement firstAnimation;
+
+        private boolean looping;
+        private boolean playing;
+        private boolean stopping;
+
+        public GifSvgAnimation(OMSVGAnimationElement firstAnimation, OMSVGAnimationElement lastAnimation) {
+            this.firstAnimation = firstAnimation;
+
+            lastAnimation.addEndHandler(new EndHandler() {
+                public void onEnd(EndEvent event) {
+                    if(looping && !stopping){
+                        GifSvgAnimation.this.firstAnimation.beginElement();
+                    }
+                    else {
+                        playing = false;
+                        stopping = false;
+                    }
+                }
+            });
+
+            looping = false;
+            playing = false;
+            stopping = false;
+        }
+
+        public void setLooping(boolean looping) {
+            this.looping = looping;
+        }
+
+        public void play() {
+            if(!playing) {
+                playing = true;
+                stopping = false;
+                firstAnimation.beginElement();
+            }
+            else {
+                stopping = false;
+            }
+        }
+
+        public void stop() {
+            stopping = true;
+        }
     }
 }

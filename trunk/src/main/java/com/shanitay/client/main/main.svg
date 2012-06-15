@@ -42,7 +42,7 @@
 </g>
 
 <animate id="igulColorGif1" attributeName="display" attributeType="CSS" to="none"
-                            begin="0; igulColorGif6.end" dur="0.125" fill="freeze" xlink:href="#igulColor1" />
+                            begin="indefinite" dur="0.125" fill="freeze" xlink:href="#igulColor1" />
 <animate id="igulColorGif2" attributeName="display" attributeType="CSS" to="none"
                             begin="igulColorGif1.end" dur="0.125" fill="freeze" xlink:href="#igulColor2" />
 <animate id="igulColorGif3" attributeName="display" attributeType="CSS" to="none"

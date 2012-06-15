@@ -24,8 +24,7 @@ public class SvgToyAnimation implements Toy.Animation {
     }
 
     public void stop() {
-        svgAnimationElement.beginElement();
-        svgAnimationElement.endElementAt(0.01f);
+        Utils.stopAnimation(svgAnimationElement);
     }
 
     public OMSVGAnimationElement getSvgAnimationElement() {
