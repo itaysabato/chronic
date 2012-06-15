@@ -245,10 +245,12 @@
 	</g>
 </g>
 <g id="up_blue_down">
+    <animateMotion id="greenLineMove" repeatCount="indefinite" path="m 0 0 L 80 0 z"  begin="0" dur="1" fill="freeze" />
 	<rect id="green_line_down" x="384.176" y="525.049" fill="#1F9C8D" width="106.258" height="19.319"/>
 </g>
 <g id="up_orenge_down">
 	<g id="red_line_down">
+		<animateMotion id="redLineMove" repeatCount="indefinite" path="m 0 0 L -60 0 z"  begin="0" dur="1" fill="freeze" />
 		<rect x="555.793" y="517.239" fill="#EE8F78" stroke="#EE8F78" width="91.05" height="22.197"/>
 	</g>
 </g>
