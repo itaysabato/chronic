@@ -14,7 +14,8 @@ class SoundLoader {
 
     final Sound slide;
     final Sound watchRight;
-    final Sound igulSlide;
+    final Sound igulSlidePos;
+    final Sound igulSlideNeg;
     final Sound orangeCube;
     final Sound blueCube;
     final Sound blackCube;
@@ -34,7 +35,8 @@ class SoundLoader {
 
         slide = getSound("slide");
         watchRight = getSound("watchRight");
-        igulSlide = getSound("igulSlide");
+        igulSlidePos = getSound("igulSlidePos");
+        igulSlideNeg = getSound("igulSlideNeg");
         orangeCube = getSound("orangeCube");
         blueCube = getSound("blueCube");
         blackCube = getSound("blackCube");

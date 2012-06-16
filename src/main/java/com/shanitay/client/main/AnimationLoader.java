@@ -16,7 +16,6 @@ class AnimationLoader {
 
     final Toy.Animation slide;
     final Toy.Animation watchRight;
-    final Toy.Animation igulSlide;
     final Toy.Animation orangeCube;
     final Toy.Animation blueCube;
     final Toy.Animation blackCube;
@@ -36,7 +35,6 @@ class AnimationLoader {
 
         slide = createSlide();
         watchRight = createWatchRight();
-        igulSlide = createIgulSlide();
         orangeCube = createOrangeCube();
         blueCube = createBlueCube();
         blackCube = createBlackCube();
@@ -57,10 +55,6 @@ class AnimationLoader {
     }
 
     private Toy.Animation createWatchRight() {
-        return null;  //To change body of created methods use File | Settings | File Templates.
-    }
-
-    private Toy.Animation createIgulSlide() {
         return null;  //To change body of created methods use File | Settings | File Templates.
     }
 

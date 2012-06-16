@@ -4,6 +4,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.History;
 import com.shanitay.client.AbstractSvgWidgetBinder;
 import com.shanitay.client.PlaceType;
+import com.shanitay.client.utils.Spinner;
 import com.shanitay.client.utils.Toy;
 import com.shanitay.client.utils.Utils;
 import org.vectomatic.dom.svg.OMSVGSVGElement;
@@ -31,6 +32,10 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         bindRedLine();
         bindIgulColors();
         linkWatchRight();
+
+        Spinner spinner = new Spinner(soundLoader.igulSlidePos, soundLoader.igulSlideNeg);
+        spinner.setBounds(0f, 200f);
+        spinner.init(elementLoader.igulSlide, svgElement, 695.71f, 311.79f);
 
         return svgElement;
     }
