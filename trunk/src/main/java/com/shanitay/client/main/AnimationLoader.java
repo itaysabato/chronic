@@ -34,6 +34,7 @@ class AnimationLoader {
     final Toy.Animation pinkCube;
     final Toy.Animation coolIgul;
     final Toy.Animation partGreen;
+    final Toy.Animation movingHouse;
 
     public AnimationLoader(ElementLoader elementLoader) {
         this.elementLoader = elementLoader;
@@ -59,6 +60,11 @@ class AnimationLoader {
         upTriIgul = createUpTriIgul();
         coolIgul = createCoolIgul();
         partGreen = createPartGreen();
+        movingHouse = createMovingHouse();
+    }
+
+    private Toy.Animation createMovingHouse() {
+        return getAnimation("movingHouseMove");
     }
 
     private Toy.Animation createPartGreen() {

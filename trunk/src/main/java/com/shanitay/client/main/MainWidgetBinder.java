@@ -41,6 +41,7 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         bindCoolIgul();
 
         Utils.attachToy(elementLoader.partGreen, soundLoader.partGreen, true, animationLoader.partGreen);
+        Utils.attachToy(elementLoader.movingHouse, soundLoader.movingHouse, true, animationLoader.movingHouse);
 
         return svgElement;
     }
