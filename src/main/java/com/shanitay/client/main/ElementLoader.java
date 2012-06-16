@@ -43,6 +43,7 @@ class ElementLoader {
     final OMSVGGElement coolIgul3;
     final OMSVGGElement coolIgul4;
     final OMSVGGElement coolIgul5;
+    final OMSVGGElement partGreen;
 
     public ElementLoader(OMSVGSVGElement svg) {
         this.svg = svg;
@@ -79,7 +80,7 @@ class ElementLoader {
         coolIgul3 = (OMSVGGElement) getElement("coolIgul3");
         coolIgul4 = (OMSVGGElement) getElement("coolIgul4");
         coolIgul5 = (OMSVGGElement) getElement("coolIgul5");
-
+        partGreen = (OMSVGGElement) getElement("partGreen");
     }
 
     private OMSVGElement getElement(String elementId) {

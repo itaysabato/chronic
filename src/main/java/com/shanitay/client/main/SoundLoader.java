@@ -34,6 +34,7 @@ class SoundLoader {
     final Sound upTriIgul;
     final Sound pinkCube;
     final Sound coolIgul;
+    final Sound partGreen;
 
     public SoundLoader() {
         soundController = new SoundController();
@@ -60,6 +61,7 @@ class SoundLoader {
         upTriIgul = getSound("upTriIgul");
         pinkCube = getSound("pinkCube");
         coolIgul = getSound("coolIgul");
+        partGreen = getSound("partGreen");
     }
 
     private Sound getSound(String name) {

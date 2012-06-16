@@ -540,7 +540,7 @@
                begin="partsMoveIn3.end" dur="0.5" fill="freeze"  xlink:href="#partYellowAndRed" />
 
 <g id="part1">
-    <animateMotion id="partMove" repeatCount="indefinite" path="m 0 0 L 60 0 z"  begin="0" dur="2" fill="freeze" />
+    <animateMotion id="partMove" repeatCount="1" path="m 0 0 L 60 0 z"  begin="indefinite" dur="2" fill="freeze" />
 
     <g id="movingStripes">
         <rect x="268.361" y="204.344" fill="#1F9C8D" width="71.14" height="6.304"/>
