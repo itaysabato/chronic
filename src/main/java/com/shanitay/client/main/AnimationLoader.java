@@ -176,7 +176,7 @@ class AnimationLoader {
     }
 
     private Toy.Animation createPinkLine() {
-        return null;  //To change body of created methods use File | Settings | File Templates.
+        return getAnimationChain("pinkLineExpand1", "pinkLineExpand2");
     }
 
 }

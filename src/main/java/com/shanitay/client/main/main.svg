@@ -6,10 +6,10 @@
     <g id="back">
 	<rect id="pinkLine" x="852.826" y="317.791" fill="#F2B1B6" width="208.786" height="57.01">
 		<animate id="pinkLineExpand1" attributeName="width" attributeType="XML" additive="replace"
-			from="208.786" to="496" begin="0; pinkLineExpand2.end" dur="1" fill="freeze" />
+			from="208.786" to="496" begin="indefinite" dur="0.5" fill="freeze" />
 
 		<animate id="pinkLineExpand2" attributeName="width" attributeType="XML" additive="replace"
-			from="496" to="208.786" begin="pinkLineExpand1.end" dur="1" fill="freeze" />
+			from="496" to="208.786" begin="pinkLineExpand1.end" dur="0.5" fill="freeze" />
 	</rect>
 </g>
 <g id="squareColor">
@@ -501,7 +501,7 @@
                     additive="replace" fill="freeze" />
 
                 <g transform="translate(-685.58,-152.63)">
-                    <polygon id="meshulash_zir_2_" fill="#5AA17B" points="613.543,61.151 684.104,101.889 613.543,142.626 	"/>
+                    <polygon id="meshulash_zir_2_" fill="#EE8F78" points="613.543,61.151 684.104,101.889 613.543,142.626 	"/>
                 </g>
             </g>
             <g transform="translate(-685.58,-152.63)">
@@ -540,13 +540,13 @@
 </g>
 
 <animateMotion id="partsMoveIn1" repeatCount="1" path="m 0 0 L 50 0"
-               begin="0; partsMoveIn4.end" dur="0.5" fill="freeze" xlink:href="#partYellowAndRed" />
-<animateMotion id="partsMoveIn2" repeatCount="1" path="m 0 0 L 40 0"
-               begin="partsMoveIn1.end" dur="0.5" fill="freeze" xlink:href="#partRed" />
-<animateMotion id="partsMoveIn3" repeatCount="1" path="m 40 0 L 0 0"
-               begin="partsMoveIn2.end" dur="0.5" fill="freeze"  xlink:href="#partRed" />
+               begin="0; partsMoveIn4.end" dur="1" fill="freeze" xlink:href="#partYellowAndRed" />
+<animateMotion id="partsMoveIn2" repeatCount="1" path="m 0 0 L 30 0"
+               begin="partsMoveIn1.end" dur="0.6" fill="freeze" xlink:href="#partRed" />
+<animateMotion id="partsMoveIn3" repeatCount="1" path="m 30 0 L 0 0"
+               begin="partsMoveIn2.end" dur="0.6" fill="freeze"  xlink:href="#partRed" />
 <animateMotion id="partsMoveIn4" repeatCount="1" path="m 50 0 L 0 0"
-               begin="partsMoveIn3.end" dur="0.5" fill="freeze"  xlink:href="#partYellowAndRed" />
+               begin="partsMoveIn3.end" dur="1" fill="freeze"  xlink:href="#partYellowAndRed" />
 
 <g id="part1" transform="translate(1,0)">
     <animateMotion id="partMove" repeatCount="1" path="m 0 0 L 60 0 z"  begin="indefinite" dur="2" fill="freeze" />
@@ -875,26 +875,26 @@
 	</g>
 </g>
 <g id="cube2">
-    <animateMotion id="cube2Move" repeatCount="1" path="m 0 0 L 94 0 z"  begin="indefinite" dur="1" fill="freeze" />
+    <animateMotion id="cube2Move" repeatCount="1" path="m 0 0 L 47 0 L -47 0 z"  begin="indefinite" dur="1.5" fill="freeze" />
 	<g>
-		<rect x="722" y="191.876" fill="#EAE984" width="53" height="73.384"/>
+		<rect x="769" y="191.876" fill="#EAE984" width="53" height="73.384"/>
 	</g>
 </g>
 <g id="strip_down">
 	<g id="strip_down_1_">
 		<rect x="879.937" y="500.824" fill="#CCDDD7" width="55.49" height="191.115">
                     <animate id="stripeDownExpand1" attributeName="height" attributeType="XML" additive="replace"
-                        from="0" to="191.115" begin="0; stripeDownExpand2.end" dur="1" fill="freeze" />
+                        from="0" to="191.115" begin="0; stripeDownExpand2.end" dur="2" fill="freeze" />
 
                     <animate id="stripeDownExpand2" attributeName="height" attributeType="XML" additive="replace"
-                        to="0" from="191.115" begin="stripeDownExpand1.end" dur="1" fill="freeze" />
+                        to="0" from="191.115" begin="stripeDownExpand1.end" dur="2" fill="freeze" />
 		</rect>
 	</g>
 </g>
 
 <g id="_door_maker">
     <animateMotion id="makerMove" repeatCount="1" path="m 0 0 l 0 222 l -110 0 l 0 130 l 115 0"
-                   begin="indefinite" dur="5" fill="freeze" />
+                   begin="indefinite" dur="3" fill="freeze" />
 
     <animateMotion id="makerReturn" repeatCount="1" path="z"
                    begin="makerMove.end" fill="freeze" />

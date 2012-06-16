@@ -100,12 +100,18 @@ public class Spinner {
                     if (angle < 0 && !negativePlaying) {
                         negativePlaying = true;
                         negativeSound.play();
-                        positiveSound.stop();
+                        if (positivePlaying) {
+                            positiveSound.stop();
+                            positivePlaying = false;
+                        }
                     }
                     else if (angle > 0 && !positivePlaying) {
                         positivePlaying = true;
                         positiveSound.play();
-                        negativeSound.stop();
+                        if (negativePlaying) {
+                            negativeSound.stop();
+                            negativePlaying = false;
+                        }
                     }
 
                     last = svgPoint;
