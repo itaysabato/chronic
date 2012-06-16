@@ -33,10 +33,18 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         bindIgulColors();
         linkWatchRight();
         bindIgulSlide(svgElement);
-        Utils.attachToy(elementLoader.squareColor, soundLoader.squareColor, true, animationLoader.squareColor);
-
+        bindSquareColor();
+        bindCube2();
 
         return svgElement;
+    }
+
+    private void bindCube2() {
+        Utils.attachToy(elementLoader.cube2, soundLoader.cube2, true, animationLoader.cube2Move);
+    }
+
+    private void bindSquareColor() {
+        Utils.attachToy(elementLoader.squareColor, soundLoader.squareColor, true, animationLoader.squareColor);
     }
 
     private void bindIgulSlide(OMSVGSVGElement svgElement) {

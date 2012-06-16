@@ -30,6 +30,7 @@ class AnimationLoader {
     final Toy.Animation igulColor;
     final Toy.Animation pinkLine;
     final Toy.Animation squareColor;
+    final Toy.Animation cube2Move;
 
     public AnimationLoader(ElementLoader elementLoader) {
         this.elementLoader = elementLoader;
@@ -49,10 +50,14 @@ class AnimationLoader {
         redButton = createRedButton();
         igulColor = createIgulColor();
         pinkLine = createPinkLine();
+        squareColor = createSquareColor();
+        cube2Move = new SvgToyAnimation(this.elementLoader.getAnimation("cube2Move"));
+    }
 
-        OMSVGAnimationElement squareColorChange1 = elementLoader.getAnimation("squareColorChange1");
-        OMSVGAnimationElement squareColorChange6 = elementLoader.getAnimation("squareColorChange6");
-        squareColor = new GifSvgAnimation(squareColorChange1, squareColorChange6);
+    private GifSvgAnimation createSquareColor() {
+        OMSVGAnimationElement squareColorChange1 = this.elementLoader.getAnimation("squareColorChange1");
+        OMSVGAnimationElement squareColorChange6 = this.elementLoader.getAnimation("squareColorChange6");
+        return new GifSvgAnimation(squareColorChange1, squareColorChange6);
     }
 
     private Toy.Animation createSlide() {

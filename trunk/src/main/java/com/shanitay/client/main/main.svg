@@ -861,8 +861,8 @@
 		</g>
 	</g>
 </g>
-<g id="mooving_cube_2">
-    <animateMotion id="cube2Move" repeatCount="indefinite" path="m 0 0 L 94 0 z"  begin="0" dur="1" fill="freeze" />
+<g id="cube2">
+    <animateMotion id="cube2Move" repeatCount="1" path="m 0 0 L 94 0 z"  begin="indefinite" dur="1" fill="freeze" />
 	<g>
 		<rect x="722" y="191.876" fill="#EAE984" width="53" height="73.384"/>
 	</g>
