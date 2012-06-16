@@ -136,10 +136,12 @@ public class Dragger {
         float dy = newY - lastTranslation.getY();
 
         if(dy > 0 && !forwardPlaying) {
+            stopBackward();
             forwardPlaying = true;
             forwardSound.play();
         }
         else if(dy < 0 && !backwardPlaying) {
+            stopForward();
             backwardPlaying = true;
             backwardSound.play();
         }
@@ -151,6 +153,20 @@ public class Dragger {
 //        Log.debug("Moved y by: "+dy);
 
         translate(newX, newY);
+    }
+
+    private void stopForward() {
+        if(forwardPlaying){
+            forwardSound.stop();
+            forwardPlaying = false;
+        }
+    }
+
+    private void stopBackward() {
+        if(backwardPlaying){
+            backwardSound.stop();
+            backwardPlaying = false;
+        }
     }
 
     private void translate(float newX, float newY) {
