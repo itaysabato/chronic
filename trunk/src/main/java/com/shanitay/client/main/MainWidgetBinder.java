@@ -32,12 +32,17 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         bindRedLine();
         bindIgulColors();
         linkWatchRight();
+        bindIgulSlide(svgElement);
+        Utils.attachToy(elementLoader.squareColor, soundLoader.squareColor, true, animationLoader.squareColor);
 
+
+        return svgElement;
+    }
+
+    private void bindIgulSlide(OMSVGSVGElement svgElement) {
         Spinner spinner = new Spinner(soundLoader.igulSlidePos, soundLoader.igulSlideNeg);
         spinner.setBounds(0f, 200f);
         spinner.init(elementLoader.igulSlide, svgElement, 695.71f, 311.79f);
-
-        return svgElement;
     }
 
     private void linkWatchRight() {

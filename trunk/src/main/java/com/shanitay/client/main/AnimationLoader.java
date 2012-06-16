@@ -29,6 +29,7 @@ class AnimationLoader {
     final Toy.Animation redButton;
     final Toy.Animation igulColor;
     final Toy.Animation pinkLine;
+    final Toy.Animation squareColor;
 
     public AnimationLoader(ElementLoader elementLoader) {
         this.elementLoader = elementLoader;
@@ -48,6 +49,10 @@ class AnimationLoader {
         redButton = createRedButton();
         igulColor = createIgulColor();
         pinkLine = createPinkLine();
+
+        OMSVGAnimationElement squareColorChange1 = elementLoader.getAnimation("squareColorChange1");
+        OMSVGAnimationElement squareColorChange6 = elementLoader.getAnimation("squareColorChange6");
+        squareColor = new GifSvgAnimation(squareColorChange1, squareColorChange6);
     }
 
     private Toy.Animation createSlide() {
