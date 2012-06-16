@@ -1,5 +1,6 @@
 package com.shanitay.client.main;
 
+import com.shanitay.client.utils.MultiToyAnimation;
 import com.shanitay.client.utils.SvgToyAnimation;
 import com.shanitay.client.utils.Toy;
 import org.vectomatic.dom.svg.OMSVGAnimationElement;
@@ -31,6 +32,7 @@ class AnimationLoader {
     final Toy.Animation pinkLine;
     final Toy.Animation squareColor;
     final Toy.Animation cube2Move;
+    final Toy.Animation upTriIgul;
 
     public AnimationLoader(ElementLoader elementLoader) {
         this.elementLoader = elementLoader;
@@ -51,13 +53,22 @@ class AnimationLoader {
         igulColor = createIgulColor();
         pinkLine = createPinkLine();
         squareColor = createSquareColor();
-        cube2Move = new SvgToyAnimation(this.elementLoader.getAnimation("cube2Move"));
+        cube2Move = createCube2Move();
+        upTriIgul = createUpTriIgul();
     }
 
-    private GifSvgAnimation createSquareColor() {
-        OMSVGAnimationElement squareColorChange1 = this.elementLoader.getAnimation("squareColorChange1");
-        OMSVGAnimationElement squareColorChange6 = this.elementLoader.getAnimation("squareColorChange6");
-        return new GifSvgAnimation(squareColorChange1, squareColorChange6);
+    private Toy.Animation createUpTriIgul() {
+        Toy.Animation animationChain = getAnimationChain("triHandleRotation1", "triHandleRotation2");
+        Toy.Animation triRotation = getAnimation("triRotation");
+        return new MultiToyAnimation(triRotation, animationChain);
+    }
+
+    private SvgToyAnimation createCube2Move() {
+        return new SvgToyAnimation(this.elementLoader.getAnimation("cube2Move"));
+    }
+
+    private Toy.Animation createSquareColor() {
+        return getAnimationChain("squareColorChange1", "squareColorChange6");
     }
 
     private Toy.Animation createSlide() {
@@ -120,7 +131,10 @@ class AnimationLoader {
     private Toy.Animation createIgulColor() {
         String firstAnimationId = "igulColorGif1";
         final String lastAnimationId = "igulColorGif6";
+        return getAnimationChain(firstAnimationId, lastAnimationId);
+    }
 
+    private Toy.Animation getAnimationChain(String firstAnimationId, String lastAnimationId) {
         final OMSVGAnimationElement firstAnimation = elementLoader.getAnimation(firstAnimationId);
         final OMSVGAnimationElement lastAnimation = elementLoader.getAnimation(lastAnimationId);
         return new GifSvgAnimation(firstAnimation, lastAnimation);

@@ -474,7 +474,7 @@
 <svg x="685.58" y="152.63">
     <g>
             <animateTransform id="triHandleRotation1" attributeName="transform" attributeType="XML" repeatCount="1"
-                type="rotate" from="0 0 0" to="90 0 0" begin="0; triHandleRotation2.end" dur="1"
+                type="rotate" from="0 0 0" to="90 0 0" begin="indefinite" dur="1"
                 additive="replace" fill="freeze" />
 
             <animateTransform id="triHandleRotation2" attributeName="transform" attributeType="XML" repeatCount="1"
@@ -488,7 +488,7 @@
             </g>
             <g id="up_meshulash">
                 <animateTransform id="triRotation" attributeName="transform" attributeType="XML"
-                     repeatCount="indefinite" type="rotate" from="0 -48.16 -50.42" to="360 -48.16 -50.42" begin="0" dur="2"
+                     repeatCount="1" type="rotate" from="0 -48.16 -50.42" to="360 -48.16 -50.42" begin="indefinite" dur="2"
                     additive="replace" fill="freeze" />
 
                 <g transform="translate(-685.58,-152.63)">
@@ -496,7 +496,7 @@
                 </g>
             </g>
             <g transform="translate(-685.58,-152.63)">
-                <g id="up_meshulash_igul">
+                <g id="upTriIgul">
                     <circle fill="#EE8F78" stroke="#EE8F78" cx="685.581" cy="153.071" r="15.363"/>
                     <circle fill="#EAE984" cx="685.582" cy="153.071" r="10.903"/>
                 </g>

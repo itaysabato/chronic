@@ -35,8 +35,13 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         bindIgulSlide(svgElement);
         bindSquareColor();
         bindCube2();
+        bindUpTriIgul();
 
         return svgElement;
+    }
+
+    private void bindUpTriIgul() {
+        Utils.attachToy(elementLoader.upTriIgul, soundLoader.upTriIgul, true, animationLoader.upTriIgul);
     }
 
     private void bindCube2() {
