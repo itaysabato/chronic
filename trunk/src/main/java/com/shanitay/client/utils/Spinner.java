@@ -25,6 +25,9 @@ public class Spinner {
     private float lastAngle = 0;
     private boolean dragging = false;
 
+    private Float lowerBoundAngle= 0f;
+    private Float upperBoundAngle = 360f;
+
     public Spinner(Sound positiveSound, Sound negativeSound) {
         this.positiveSound = positiveSound;
         this.negativeSound = negativeSound;
@@ -48,6 +51,11 @@ public class Spinner {
                 //To change body of implemented methods use File | Settings | File Templates.
             }
         });
+    }
+
+    public void setBounds(Float lowerBoundAngle, Float upperBoundAngle){
+        this.lowerBoundAngle = lowerBoundAngle;
+        this.upperBoundAngle = upperBoundAngle;
     }
 
     public void init(final OMSVGGElement round, final OMSVGSVGElement svgElement, final float centerX, final float centerY) {
@@ -101,6 +109,19 @@ public class Spinner {
 
                     last = svgPoint;
                     lastAngle = lastAngle + (float) angle;
+
+                    if(lastAngle < 0){
+                        lastAngle = 360 + (lastAngle);
+                    }
+
+                    if(lastAngle < lowerBoundAngle || upperBoundAngle < lastAngle){
+                        if(angle < 0){
+                            lastAngle = lowerBoundAngle;
+                        }
+                        else {
+                            lastAngle = upperBoundAngle;
+                        }
+                    }
 
                     Utils.rotate(round, lastAngle, centerX, centerY);
                 }
