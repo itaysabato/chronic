@@ -12,6 +12,8 @@ public class shanitay implements EntryPoint {
 
     public void onModuleLoad() {
         try {
+            Log.setUncaughtExceptionHandler();
+
             History.addValueChangeHandler(new ValueChangeHandler<String>() {
                 public void onValueChange(ValueChangeEvent<String> stringValueChangeEvent) {
                     final String historyToken = stringValueChangeEvent.getValue();

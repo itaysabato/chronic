@@ -4,6 +4,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.History;
 import com.shanitay.client.AbstractSvgWidgetBinder;
 import com.shanitay.client.PlaceType;
+import com.shanitay.client.utils.Dragger;
 import com.shanitay.client.utils.Spinner;
 import com.shanitay.client.utils.Toy;
 import com.shanitay.client.utils.Utils;
@@ -39,11 +40,24 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         bindUpTriIgul();
         bindCubes();
         bindCoolIgul();
-
-        Utils.attachToy(elementLoader.partGreen, soundLoader.partGreen, true, animationLoader.partGreen);
-        Utils.attachToy(elementLoader.movingHouse, soundLoader.movingHouse, true, animationLoader.movingHouse);
+        bindPartGreen();
+        bindMovingHouse();
+        bindSlide();
 
         return svgElement;
+    }
+
+    private void bindSlide() {
+        Dragger dragger = new Dragger(svgElement, 0, -140, 0, 50);
+        dragger.makeDraggable(elementLoader.slide, soundLoader.slideForward, soundLoader.slideBackward);
+    }
+
+    private Toy bindMovingHouse() {
+        return Utils.attachToy(elementLoader.movingHouse, soundLoader.movingHouse, true, animationLoader.movingHouse);
+    }
+
+    private void bindPartGreen() {
+        Utils.attachToy(elementLoader.partGreen, soundLoader.partGreen, true, animationLoader.partGreen);
     }
 
     private void bindCoolIgul() {
