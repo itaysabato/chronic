@@ -37,6 +37,7 @@ class ElementLoader {
     final OMSVGGElement squareColor;
     final OMSVGGElement cube2;
     final OMSVGGElement upTriIgul;
+    final OMSVGRectElement pinkCube;
 
     public ElementLoader(OMSVGSVGElement svg) {
         this.svg = svg;
@@ -52,6 +53,7 @@ class ElementLoader {
         blueCube = (OMSVGRectElement) getElement("blueCube");
         blackCube = (OMSVGRectElement) getElement("blackCube");
         yellowMiddleCube = (OMSVGRectElement) getElement("yellowMiddleCube");
+        pinkCube = (OMSVGRectElement) getElement("pinkCube");
         house = (OMSVGGElement) getElement("house");
         blueTriangle = (OMSVGGElement) getElement("blueTriangle");
         redLine = (OMSVGGElement) getElement("redLine");
