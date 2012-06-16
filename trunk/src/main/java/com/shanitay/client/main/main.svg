@@ -603,7 +603,7 @@
 	</g>
 </g>
 <animate id="moonGif1" attributeName="display" attributeType="CSS" to="none"
-                            begin="doorVanish.end" dur="0.125" fill="freeze" xlink:href="#moon1" />
+                            begin="indefinite" dur="0.125" fill="freeze" xlink:href="#moon1" />
 <animate id="moonGif2" attributeName="display" attributeType="CSS" to="none"
                             begin="moonGif1.end" dur="0.125" fill="freeze" xlink:href="#moon2" />
 <animate id="moonGif3" attributeName="display" attributeType="CSS" to="none"
@@ -890,7 +890,10 @@
 
 <g id="_door_maker">
     <animateMotion id="makerMove" repeatCount="1" path="m 0 0 l 0 222 l -110 0 l 0 130 l 115 0"
-                   begin="0; doorVanish.end" dur="5" fill="freeze" />
+                   begin="indefinite" dur="5" fill="freeze" />
+
+    <animateMotion id="makerReturn" repeatCount="1" path="z"
+                   begin="makerMove.end" fill="freeze" />
 
     <rect x="348.993" y="325.553" fill="#CCDDD7" width="22.986" height="20.743"/>
 </g>

@@ -43,8 +43,12 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         bindPartGreen();
         bindMovingHouse();
         bindSlide();
-
+        bindDoorMaker();
         return svgElement;
+    }
+
+    private void bindDoorMaker() {
+        Utils.attachToy(elementLoader.redButton, soundLoader.redButton, false, animationLoader.redButton);
     }
 
     private void bindSlide() {
@@ -85,7 +89,7 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
     }
 
     private void bindSquareColor() {
-        Utils.attachToy(elementLoader.squareColor, soundLoader.squareColor, true, animationLoader.squareColor);
+        Utils.attachToy(elementLoader.squareColor, soundLoader.squareColor, false, animationLoader.squareColor);
     }
 
     private void bindIgulSlide() {
