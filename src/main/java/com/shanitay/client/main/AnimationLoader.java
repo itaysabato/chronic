@@ -2,6 +2,7 @@ package com.shanitay.client.main;
 
 import com.shanitay.client.utils.ShaniColors;
 import com.shanitay.client.utils.Toy;
+import com.shanitay.client.utils.Utils;
 import com.shanitay.client.utils.animations.FillColorAnimator;
 import com.shanitay.client.utils.animations.MultiToyAnimation;
 import com.shanitay.client.utils.animations.PeekabooToyAnimation;
@@ -158,7 +159,7 @@ class AnimationLoader {
     }
 
     private Toy.Animation createRedButton() {
-        return null;  //To change body of created methods use File | Settings | File Templates.
+        return new DoorVanisherAnimation();
     }
 
     private Toy.Animation createIgulColor() {
@@ -170,57 +171,54 @@ class AnimationLoader {
     private Toy.Animation getAnimationChain(String firstAnimationId, String lastAnimationId) {
         final OMSVGAnimationElement firstAnimation = elementLoader.getAnimation(firstAnimationId);
         final OMSVGAnimationElement lastAnimation = elementLoader.getAnimation(lastAnimationId);
-        return new GifSvgAnimation(firstAnimation, lastAnimation);
+        return new ChainedSvgAnimation(firstAnimation, lastAnimation);
     }
 
     private Toy.Animation createPinkLine() {
         return null;  //To change body of created methods use File | Settings | File Templates.
     }
 
-    private static class GifSvgAnimation implements Toy.Animation {
-        private final OMSVGAnimationElement firstAnimation;
+    private class DoorVanisherAnimation implements Toy.Animation {
+        private final Toy.Animation vanisherMove;
+        private final OMSVGAnimationElement moonGif1;
+        private boolean continueGif = false;
 
-        private boolean looping;
-        private boolean playing;
-        private boolean stopping;
+        public DoorVanisherAnimation() {
+            String doorVanish = "doorVanish";
+            vanisherMove = getAnimationChain("makerMove", doorVanish);
 
-        public GifSvgAnimation(OMSVGAnimationElement firstAnimation, OMSVGAnimationElement lastAnimation) {
-            this.firstAnimation = firstAnimation;
+            OMSVGAnimationElement doorVanishAnimation = elementLoader.getAnimation(doorVanish);
+            moonGif1 = elementLoader.getAnimation("moonGif1");
 
-            lastAnimation.addEndHandler(new EndHandler() {
+            doorVanishAnimation.addEndHandler(new EndHandler() {
                 public void onEnd(EndEvent event) {
-                    if(looping && !stopping){
-                        GifSvgAnimation.this.firstAnimation.beginElement();
-                    }
-                    else {
-                        playing = false;
-                        stopping = false;
-                    }
+                    moonGif1.beginElement();
                 }
             });
 
-            looping = false;
-            playing = false;
-            stopping = false;
+            OMSVGAnimationElement moonGif13 = elementLoader.getAnimation("moonGif13");
+            moonGif13.addEndHandler(new EndHandler() {
+                public void onEnd(EndEvent event) {
+                    if(continueGif){
+                        moonGif1.beginElement();
+                    }
+                }
+            });
         }
 
         public void setLooping(boolean looping) {
-            this.looping = looping;
+            //To change body of implemented methods use File | Settings | File Templates.
         }
 
         public void play() {
-            if(!playing) {
-                playing = true;
-                stopping = false;
-                firstAnimation.beginElement();
-            }
-            else {
-                stopping = false;
-            }
+            Utils.hide(elementLoader.redButton);
+            vanisherMove.play();
+            continueGif = true;
         }
 
         public void stop() {
-            stopping = true;
+            continueGif = false;
+            //todo: bring back door without continuing gif
         }
     }
 }
