@@ -2,14 +2,11 @@ package com.shanitay.client.main;
 
 import com.shanitay.client.utils.ShaniColors;
 import com.shanitay.client.utils.Toy;
-import com.shanitay.client.utils.Utils;
 import com.shanitay.client.utils.animations.FillColorAnimator;
 import com.shanitay.client.utils.animations.MultiToyAnimation;
 import com.shanitay.client.utils.animations.PeekabooToyAnimation;
 import com.shanitay.client.utils.animations.SvgToyAnimation;
 import org.vectomatic.dom.svg.OMSVGAnimationElement;
-import org.vectomatic.dom.svg.events.EndEvent;
-import org.vectomatic.dom.svg.events.EndHandler;
 
 /**
  * Created By: Itay Sabato<br/>
@@ -30,8 +27,6 @@ class AnimationLoader {
     final Toy.Animation redLine;
     final Toy.Animation yellowLineDown;
     final Toy.Animation greenLineDown;
-    final Toy.Animation pinkButton;
-    final Toy.Animation redButton;
     final Toy.Animation igulColor;
     final Toy.Animation pinkLine;
     final Toy.Animation squareColor;
@@ -41,6 +36,10 @@ class AnimationLoader {
     final Toy.Animation coolIgul;
     final Toy.Animation partGreen;
     final Toy.Animation movingHouse;
+
+    private final DoorMakerAnimationBuilder doorVanisherAnimation;
+    final Toy.Animation pinkButton;
+    final Toy.Animation redButton;
 
     public AnimationLoader(ElementLoader elementLoader) {
         this.elementLoader = elementLoader;
@@ -57,8 +56,6 @@ class AnimationLoader {
         redLine = createRedLine();
         yellowLineDown = createYellowLineDown();
         greenLineDown = createGreenLineDown();
-        pinkButton = createPinkButton();
-        redButton = createRedButton();
         igulColor = createIgulColor();
         pinkLine = createPinkLine();
         squareColor = createSquareColor();
@@ -67,6 +64,10 @@ class AnimationLoader {
         coolIgul = createCoolIgul();
         partGreen = createPartGreen();
         movingHouse = createMovingHouse();
+
+        doorVanisherAnimation = new DoorMakerAnimationBuilder(elementLoader);
+        pinkButton = doorVanisherAnimation.getPinkButton();
+        redButton = doorVanisherAnimation.getRedButton();
     }
 
     private Toy.Animation createMovingHouse() {
@@ -158,8 +159,8 @@ class AnimationLoader {
         return null;  //To change body of created methods use File | Settings | File Templates.
     }
 
-    private Toy.Animation createRedButton() {
-        return new DoorVanisherAnimation();
+    private DoorMakerAnimationBuilder createRedButton() {
+        return doorVanisherAnimation;
     }
 
     private Toy.Animation createIgulColor() {
@@ -178,47 +179,4 @@ class AnimationLoader {
         return null;  //To change body of created methods use File | Settings | File Templates.
     }
 
-    private class DoorVanisherAnimation implements Toy.Animation {
-        private final Toy.Animation vanisherMove;
-        private final OMSVGAnimationElement moonGif1;
-        private boolean continueGif = false;
-
-        public DoorVanisherAnimation() {
-            String doorVanish = "doorVanish";
-            vanisherMove = getAnimationChain("makerMove", doorVanish);
-
-            OMSVGAnimationElement doorVanishAnimation = elementLoader.getAnimation(doorVanish);
-            moonGif1 = elementLoader.getAnimation("moonGif1");
-
-            doorVanishAnimation.addEndHandler(new EndHandler() {
-                public void onEnd(EndEvent event) {
-                    moonGif1.beginElement();
-                }
-            });
-
-            OMSVGAnimationElement moonGif13 = elementLoader.getAnimation("moonGif13");
-            moonGif13.addEndHandler(new EndHandler() {
-                public void onEnd(EndEvent event) {
-                    if(continueGif){
-                        moonGif1.beginElement();
-                    }
-                }
-            });
-        }
-
-        public void setLooping(boolean looping) {
-            //To change body of implemented methods use File | Settings | File Templates.
-        }
-
-        public void play() {
-            Utils.hide(elementLoader.redButton);
-            vanisherMove.play();
-            continueGif = true;
-        }
-
-        public void stop() {
-            continueGif = false;
-            //todo: bring back door without continuing gif
-        }
-    }
 }

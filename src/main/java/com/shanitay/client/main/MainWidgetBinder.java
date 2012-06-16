@@ -49,6 +49,7 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
 
     private void bindDoorMaker() {
         Utils.attachToy(elementLoader.redButton, soundLoader.redButton, false, animationLoader.redButton);
+        Utils.attachToy(elementLoader.pinkButton, soundLoader.pinkButton, false, animationLoader.pinkButton);
     }
 
     private void bindSlide() {

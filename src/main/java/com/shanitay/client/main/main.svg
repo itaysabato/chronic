@@ -763,7 +763,11 @@
     <svg x="367.066" y="680.0525">
         <g id="door">
             <animateTransform id="doorVanish" attributeName="transform" attributeType="XML" from="1,1" to="0,0"
-                repeatCount="1" type="scale" begin="makerMove.end" dur="1" fill="freeze" />
+                repeatCount="1" type="scale" begin="indefinite" dur="1" fill="freeze" />
+            <rect x="-58.193" y="-92.9475" fill="#CCDDD7" width="116.386" height="185.895"/>
+
+            <animateTransform id="doorReturn" attributeName="transform" attributeType="XML" to="1,1" from="0,0"
+                repeatCount="1" type="scale" begin="indefinite" dur="1" fill="freeze" />
             <rect x="-58.193" y="-92.9475" fill="#CCDDD7" width="116.386" height="185.895"/>
         </g>
     </svg>
