@@ -48,7 +48,7 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
     }
 
     private void bindSlide() {
-        Dragger dragger = new Dragger(svgElement, 0, -140, 0, 50);
+        Dragger dragger = new Dragger(svgElement, 0, -140, 0, 150);
         dragger.makeDraggable(elementLoader.slide, soundLoader.slideForward, soundLoader.slideBackward);
     }
 
