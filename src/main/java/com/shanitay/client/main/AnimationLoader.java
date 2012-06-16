@@ -32,6 +32,7 @@ class AnimationLoader {
     final Toy.Animation cube2Move;
     final Toy.Animation upTriIgul;
     final Toy.Animation pinkCube;
+    final Toy.Animation coolIgul;
 
     public AnimationLoader(ElementLoader elementLoader) {
         this.elementLoader = elementLoader;
@@ -55,6 +56,13 @@ class AnimationLoader {
         squareColor = createSquareColor();
         cube2Move = createCube2Move();
         upTriIgul = createUpTriIgul();
+        coolIgul = createCoolIgul();
+    }
+
+    private Toy.Animation createCoolIgul() {
+        String firstAnimationId = "coolIgulGif1";
+        final String lastAnimationId = "coolIgulGif8";
+        return getAnimationChain(firstAnimationId, lastAnimationId);
     }
 
     private Toy.Animation createUpTriIgul() {

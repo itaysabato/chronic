@@ -397,7 +397,7 @@
 </g>
 
         <animate id="coolIgulGif1" attributeName="display" attributeType="CSS" to="none"
-									begin="0; coolIgulGif8.end" dur="0.125" fill="freeze" xlink:href="#coolIgul1" />
+									begin="indefinite" dur="0.125" fill="freeze" xlink:href="#coolIgul1" />
 		<animate id="coolIgulGif2" attributeName="display" attributeType="CSS" to="none"
 									begin="coolIgulGif1.end" dur="0.125" fill="freeze" xlink:href="#coolIgul2" />
 		<animate id="coolIgulGif3" attributeName="display" attributeType="CSS" to="none"
