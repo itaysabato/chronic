@@ -1,7 +1,11 @@
 package com.shanitay.client.utils;
 
 import com.allen_sauer.gwt.voices.client.Sound;
+import com.allen_sauer.gwt.voices.client.handler.PlaybackCompleteEvent;
+import com.allen_sauer.gwt.voices.client.handler.SoundHandler;
+import com.allen_sauer.gwt.voices.client.handler.SoundLoadStateChangeEvent;
 import com.google.gwt.event.dom.client.*;
+import com.google.gwt.event.shared.HandlerRegistration;
 import org.vectomatic.dom.svg.OMSVGGElement;
 import org.vectomatic.dom.svg.OMSVGMatrix;
 import org.vectomatic.dom.svg.OMSVGPoint;
@@ -26,6 +30,9 @@ public class Dragger {
     private Sound forwardSound = null;
     private Sound backwardSound = null;
 
+    private boolean forwardPlaying = false;
+    private boolean backwardPlaying = false;
+
     public Dragger(OMSVGSVGElement container, float startX, float startY, float endX, float endY) {
         this.container = container;
         start = container.createSVGPoint(startX, startY);
@@ -38,9 +45,58 @@ public class Dragger {
         this.target = target;
         this.forwardSound = forwardSound;
         this.backwardSound = backwardSound;
+        forwardPlaying = false;
+        backwardPlaying = false;
 
         translate(start.getX(), start.getY());
 
+        addSoundHandlers();
+        addSwitchHandlers();
+        addDragHandler();
+    }
+
+    private void addSoundHandlers() {
+        this.forwardSound.addEventHandler(new SoundHandler() {
+            public void onPlaybackComplete(PlaybackCompleteEvent event) {
+                forwardPlaying = false;
+            }
+
+            public void onSoundLoadStateChange(SoundLoadStateChangeEvent event) {
+
+            }
+        });
+
+        this.backwardSound.addEventHandler(new SoundHandler() {
+            public void onPlaybackComplete(PlaybackCompleteEvent event) {
+                backwardPlaying = false;
+            }
+
+            public void onSoundLoadStateChange(SoundLoadStateChangeEvent event) {
+
+            }
+        });
+    }
+
+    private HandlerRegistration addDragHandler() {
+        return this.target.addMouseMoveHandler(new MouseMoveHandler() {
+            public void onMouseMove(MouseMoveEvent event) {
+                event.preventDefault();
+
+                if (dragging) {
+                    OMSVGPoint currentTouch = getEventPoint(event);
+//                    Log.debug("******* before current touch: "+currentTouch.getX()+","+currentTouch.getY());
+                    transformationVector.setX(currentTouch.getX());
+                    transformationVector.setY(currentTouch.getY());
+                    transformationVector.substract(lastTouch);
+//                    Log.debug("******* after last touch: " + lastTouch.getX() + "," + lastTouch.getY());
+                    translateAlongAxis();
+                    lastTouch = currentTouch;
+                }
+            }
+        });
+    }
+
+    private void addSwitchHandlers() {
         this.target.addMouseDownHandler(new MouseDownHandler() {
             public void onMouseDown(MouseDownEvent event) {
                 event.preventDefault();
@@ -64,23 +120,6 @@ public class Dragger {
                 lastTouch = null;
             }
         });
-
-        this.target.addMouseMoveHandler(new MouseMoveHandler() {
-            public void onMouseMove(MouseMoveEvent event) {
-                event.preventDefault();
-
-                if (dragging) {
-                    OMSVGPoint currentTouch = getEventPoint(event);
-//                    Log.debug("******* before current touch: "+currentTouch.getX()+","+currentTouch.getY());
-                    transformationVector.setX(currentTouch.getX());
-                    transformationVector.setY(currentTouch.getY());
-                    transformationVector.substract(lastTouch);
-//                    Log.debug("******* after last touch: " + lastTouch.getX() + "," + lastTouch.getY());
-                    translateAlongAxis();
-                    lastTouch = currentTouch;
-                }
-            }
-        });
     }
 
     private void translateAlongAxis() {
@@ -96,10 +135,12 @@ public class Dragger {
 
         float dy = newY - lastTranslation.getY();
 
-        if(dy > 0) {
+        if(dy > 0 && !forwardPlaying) {
+            forwardPlaying = true;
             forwardSound.play();
         }
-        else if(dy < 0) {
+        else if(dy < 0 && !backwardPlaying) {
+            backwardPlaying = true;
             backwardSound.play();
         }
 //        Log.debug("---------------------------------------------------------------------------------------------------------");
