@@ -82,7 +82,7 @@ public class Toy {
         played = false;
     }
 
-    Long getId() {
+    public Long getId() {
         return id;
     }
 

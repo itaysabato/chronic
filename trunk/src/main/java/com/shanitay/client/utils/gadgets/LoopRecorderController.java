@@ -1,5 +1,6 @@
-package com.shanitay.client.utils;
+package com.shanitay.client.utils.gadgets;
 
+import com.shanitay.client.utils.Utils;
 import org.vectomatic.dom.svg.OMSVGGElement;
 import org.vectomatic.dom.svg.OMSVGSVGElement;
 

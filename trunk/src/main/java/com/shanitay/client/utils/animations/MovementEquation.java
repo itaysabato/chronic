@@ -1,4 +1,4 @@
-package com.shanitay.client.utils;
+package com.shanitay.client.utils.animations;
 
 /**
  * Created By: Itay Sabato<br/>

@@ -1,4 +1,4 @@
-package com.shanitay.client.utils;
+package com.shanitay.client.utils.animations;
 
 import org.vectomatic.dom.svg.OMSVGElement;
 

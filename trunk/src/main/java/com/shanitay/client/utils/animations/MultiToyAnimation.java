@@ -1,4 +1,6 @@
-package com.shanitay.client.utils;
+package com.shanitay.client.utils.animations;
+
+import com.shanitay.client.utils.Toy;
 
 import java.util.Arrays;
 import java.util.List;
