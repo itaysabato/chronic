@@ -4,7 +4,13 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" width="1360px"
 	 height="763px" viewBox="0 0 1360 763" enable-background="new 0 0 1360 763" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink"  >
     <g id="back">
-	<rect id="pinkLine" x="852.826" y="317.791" fill="#F2B1B6" width="208.786" height="57.01"/>
+	<rect id="pinkLine" x="852.826" y="317.791" fill="#F2B1B6" width="208.786" height="57.01">
+		<animate id="pinkLineExpand1" attributeName="width" attributeType="XML" additive="replace"
+			from="208.786" to="496" begin="0; pinkLineExpand2.end" dur="1" fill="freeze" />
+
+		<animate id="pinkLineExpand2" attributeName="width" attributeType="XML" additive="replace"
+			from="496" to="208.786" begin="pinkLineExpand1.end" dur="1" fill="freeze" />
+	</rect>
 </g>
 <g id="squareColor">
 	<g>
@@ -225,7 +231,11 @@
 		</rect>
 	</g>
 </g>
+ <g id="up_green_cover">
+	<rect x="589.294" y="227.853" fill="#5AA17B" width="32.474" height="37.447"/>
+</g>
 <g id="blueTriangle">
+    <animateMotion id="blueTriangleMove" repeatCount="indefinite" path="m 0 0 L 0 -70 z L 70 0 z"  begin="0" dur="2" fill="freeze" />
 	<polygon id="blue_meshulash_1_" fill="#1F9C8D" points="540.699,172.803 587.287,212.564 540.699,252.324 	"/>
 </g>
 <g id="up_yellow_meshulash">
@@ -248,9 +258,6 @@
 		<path fill="#F2B1B6" d="M907.288,180.557c4.63,4.104,5.056,11.183,0.951,15.812l0,0c-4.104,4.629-11.181,5.055-15.812,0.952
 			l-65.272-57.861c-4.629-4.104-5.056-11.183-0.952-15.812l0,0c4.104-4.629,11.184-5.055,15.811-0.952L907.288,180.557z"/>
 	</g>
-</g>
-<g id="up_green_cover">
-	<rect x="589.294" y="227.853" fill="#5AA17B" width="32.474" height="37.447"/>
 </g>
 <g id="green_pipe">
 	<g>
@@ -539,7 +546,7 @@
 <animateMotion id="partsMoveIn4" repeatCount="1" path="m 50 0 L 0 0"
                begin="partsMoveIn3.end" dur="0.5" fill="freeze"  xlink:href="#partYellowAndRed" />
 
-<g id="part1">
+<g id="part1" transform="translate(1,0)">
     <animateMotion id="partMove" repeatCount="1" path="m 0 0 L 60 0 z"  begin="indefinite" dur="2" fill="freeze" />
 
     <g id="movingStripes">
