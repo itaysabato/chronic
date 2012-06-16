@@ -36,8 +36,16 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         bindSquareColor();
         bindCube2();
         bindUpTriIgul();
+        bindOrangeCube();
+        Utils.attachToy(elementLoader.blueCube, soundLoader.blueCube, false, animationLoader.blueCube);
+        Utils.attachToy(elementLoader.yellowMiddleCube, soundLoader.yellowMiddleCube, false, animationLoader.yellowMiddleCube);
+        Utils.attachToy(elementLoader.pinkCube, soundLoader.pinkCube, false, animationLoader.pinkCube);
 
         return svgElement;
+    }
+
+    private void bindOrangeCube() {
+        Utils.attachToy(elementLoader.orangeCube, soundLoader.orangeCube, false, animationLoader.orangeCube);
     }
 
     private void bindUpTriIgul() {

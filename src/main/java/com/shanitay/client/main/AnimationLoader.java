@@ -1,8 +1,6 @@
 package com.shanitay.client.main;
 
-import com.shanitay.client.utils.MultiToyAnimation;
-import com.shanitay.client.utils.SvgToyAnimation;
-import com.shanitay.client.utils.Toy;
+import com.shanitay.client.utils.*;
 import org.vectomatic.dom.svg.OMSVGAnimationElement;
 import org.vectomatic.dom.svg.events.EndEvent;
 import org.vectomatic.dom.svg.events.EndHandler;
@@ -33,6 +31,7 @@ class AnimationLoader {
     final Toy.Animation squareColor;
     final Toy.Animation cube2Move;
     final Toy.Animation upTriIgul;
+    final Toy.Animation pinkCube;
 
     public AnimationLoader(ElementLoader elementLoader) {
         this.elementLoader = elementLoader;
@@ -41,6 +40,7 @@ class AnimationLoader {
         watchRight = createWatchRight();
         orangeCube = createOrangeCube();
         blueCube = createBlueCube();
+        pinkCube = createPinkCube();
         blackCube = createBlackCube();
         yellowMiddleCube = createYellowMiddleCube();
         house = createHouse();
@@ -80,11 +80,23 @@ class AnimationLoader {
     }
 
     private Toy.Animation createOrangeCube() {
-        return null;  //To change body of created methods use File | Settings | File Templates.
+        FillColorAnimator colorAnimator = new FillColorAnimator(ShaniColors.RED, ShaniColors.YELLOW);
+        return new PeekabooToyAnimation(colorAnimator, 250, elementLoader.orangeCube);
     }
 
     private Toy.Animation createBlueCube() {
-        return null;  //To change body of created methods use File | Settings | File Templates.
+        FillColorAnimator colorAnimator = new FillColorAnimator(ShaniColors.TURQUOISE, ShaniColors.PINK);
+        return new PeekabooToyAnimation(colorAnimator, 250, elementLoader.blueCube);
+    }
+
+    private Toy.Animation createPinkCube() {
+        FillColorAnimator colorAnimator = new FillColorAnimator(ShaniColors.PINK, ShaniColors.RED);
+        return new PeekabooToyAnimation(colorAnimator, 250, elementLoader.pinkCube);
+    }
+
+    private Toy.Animation createYellowMiddleCube() {
+        FillColorAnimator colorAnimator = new FillColorAnimator(ShaniColors.YELLOW, ShaniColors.GREEN);
+        return new PeekabooToyAnimation(colorAnimator, 250, elementLoader.yellowMiddleCube);
     }
 
     private Toy.Animation createBlackCube() {
@@ -94,10 +106,6 @@ class AnimationLoader {
     private Toy.Animation getAnimation(String elementId) {
         OMSVGAnimationElement animationElement = elementLoader.getAnimation(elementId);
         return new SvgToyAnimation(animationElement);
-    }
-
-    private Toy.Animation createYellowMiddleCube() {
-        return null;  //To change body of created methods use File | Settings | File Templates.
     }
 
     private Toy.Animation createHouse() {
