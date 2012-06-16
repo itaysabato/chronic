@@ -6,21 +6,21 @@
     <g id="back">
 	<rect id="pinkLine" x="852.826" y="317.791" fill="#F2B1B6" width="208.786" height="57.01"/>
 </g>
-<g id="change_color_ribua1_1_">
+<g id="squareColor">
 	<g>
         <rect x="618.84" y="370.902" fill="#CCDDD7" width="113.63" height="59.91">
-            <animate id="squareColorChange1" attributeName="fill" attributeType="CSS" to="#CCDDD7"
-                begin="0; squareColorChange6.end" dur="0.125" fill="freeze" />
-            <animate id="squareColorChange2" attributeName="fill" attributeType="CSS" to="#EE8F78"
+            <animate id="squareColorChange1" attributeName="fill" attributeType="CSS" to="#EE8F78"
+                begin="indefinite" dur="0.125" fill="freeze" />
+            <animate id="squareColorChange2" attributeName="fill" attributeType="CSS" to="#1F9C8D"
                 begin="squareColorChange1.end" dur="0.125" fill="freeze" />
-            <animate id="squareColorChange3" attributeName="fill" attributeType="CSS" to="#1F9C8D"
+            <animate id="squareColorChange3" attributeName="fill" attributeType="CSS" to="#F2B1B6"
                 begin="squareColorChange2.end" dur="0.125" fill="freeze" />
-            <animate id="squareColorChange4" attributeName="fill" attributeType="CSS" to="#F2B1B6"
+            <animate id="squareColorChange4" attributeName="fill" attributeType="CSS" to="#1F9C8D"
                 begin="squareColorChange3.end" dur="0.125" fill="freeze" />
 
-            <animate id="squareColorChange5" attributeName="fill" attributeType="CSS" to="#1F9C8D"
+            <animate id="squareColorChange5" attributeName="fill" attributeType="CSS" to="#EE8F78"
                 begin="squareColorChange4.end" dur="0.125" fill="freeze" />
-            <animate id="squareColorChange6" attributeName="fill" attributeType="CSS" to="#EE8F78"
+            <animate id="squareColorChange6" attributeName="fill" attributeType="CSS" to="#CCDDD7"
                 begin="squareColorChange5.end" dur="0.125" fill="freeze" />
 		</rect>
 	</g>
