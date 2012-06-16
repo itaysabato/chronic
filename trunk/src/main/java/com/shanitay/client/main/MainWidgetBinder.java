@@ -40,6 +40,7 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         bindCubes();
         bindCoolIgul();
 
+        Utils.attachToy(elementLoader.partGreen, soundLoader.partGreen, true, animationLoader.partGreen);
 
         return svgElement;
     }
