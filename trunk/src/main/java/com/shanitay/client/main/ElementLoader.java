@@ -38,6 +38,11 @@ class ElementLoader {
     final OMSVGGElement cube2;
     final OMSVGGElement upTriIgul;
     final OMSVGRectElement pinkCube;
+    final OMSVGGElement coolIgul1;
+    final OMSVGGElement coolIgul2;
+    final OMSVGGElement coolIgul3;
+    final OMSVGGElement coolIgul4;
+    final OMSVGGElement coolIgul5;
 
     public ElementLoader(OMSVGSVGElement svg) {
         this.svg = svg;
@@ -69,6 +74,12 @@ class ElementLoader {
         squareColor = (OMSVGGElement) getElement("squareColor");
         cube2 = (OMSVGGElement) getElement("cube2");
         upTriIgul = (OMSVGGElement) getElement("upTriIgul");
+        coolIgul1 = (OMSVGGElement) getElement("coolIgul1");
+        coolIgul2 = (OMSVGGElement) getElement("coolIgul2");
+        coolIgul3 = (OMSVGGElement) getElement("coolIgul3");
+        coolIgul4 = (OMSVGGElement) getElement("coolIgul4");
+        coolIgul5 = (OMSVGGElement) getElement("coolIgul5");
+
     }
 
     private OMSVGElement getElement(String elementId) {

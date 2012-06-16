@@ -20,9 +20,10 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
     private SoundLoader soundLoader;
     private ElementLoader elementLoader;
     private AnimationLoader animationLoader;
+    private OMSVGSVGElement svgElement;
 
     protected OMSVGSVGElement bindWidgets() {
-        final OMSVGSVGElement svgElement = getSvg();
+        svgElement = getSvg();
         soundLoader = new SoundLoader();
         elementLoader = new ElementLoader(svgElement);
         animationLoader = new AnimationLoader(elementLoader);
@@ -32,20 +33,31 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         bindRedLine();
         bindIgulColors();
         linkWatchRight();
-        bindIgulSlide(svgElement);
+        bindIgulSlide();
         bindSquareColor();
         bindCube2();
         bindUpTriIgul();
-        bindOrangeCube();
-        Utils.attachToy(elementLoader.blueCube, soundLoader.blueCube, false, animationLoader.blueCube);
-        Utils.attachToy(elementLoader.yellowMiddleCube, soundLoader.yellowMiddleCube, false, animationLoader.yellowMiddleCube);
-        Utils.attachToy(elementLoader.pinkCube, soundLoader.pinkCube, false, animationLoader.pinkCube);
+        bindCubes();
+        bindCoolIgul();
+
 
         return svgElement;
     }
 
-    private void bindOrangeCube() {
+    private void bindCoolIgul() {
+        final Toy toy = Utils.attachToy(elementLoader.coolIgul1, soundLoader.coolIgul, true, animationLoader.coolIgul);
+        toyStopperHandler toyStopperHandler = new MainWidgetBinder.toyStopperHandler(toy);
+        Utils.addHandler(elementLoader.coolIgul2, toyStopperHandler);
+        Utils.addHandler(elementLoader.coolIgul3, toyStopperHandler);
+        Utils.addHandler(elementLoader.coolIgul4, toyStopperHandler);
+        Utils.addHandler(elementLoader.coolIgul5, toyStopperHandler);
+    }
+
+    private void bindCubes() {
         Utils.attachToy(elementLoader.orangeCube, soundLoader.orangeCube, false, animationLoader.orangeCube);
+        Utils.attachToy(elementLoader.blueCube, soundLoader.blueCube, false, animationLoader.blueCube);
+        Utils.attachToy(elementLoader.yellowMiddleCube, soundLoader.yellowMiddleCube, false, animationLoader.yellowMiddleCube);
+        Utils.attachToy(elementLoader.pinkCube, soundLoader.pinkCube, false, animationLoader.pinkCube);
     }
 
     private void bindUpTriIgul() {
@@ -60,7 +72,7 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         Utils.attachToy(elementLoader.squareColor, soundLoader.squareColor, true, animationLoader.squareColor);
     }
 
-    private void bindIgulSlide(OMSVGSVGElement svgElement) {
+    private void bindIgulSlide() {
         Spinner spinner = new Spinner(soundLoader.igulSlidePos, soundLoader.igulSlideNeg);
         spinner.setBounds(0f, 200f);
         spinner.init(elementLoader.igulSlide, svgElement, 695.71f, 311.79f);
