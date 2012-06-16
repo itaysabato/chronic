@@ -1,7 +1,9 @@
 package com.shanitay.client.main;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.user.client.History;
 import com.shanitay.client.AbstractSvgWidgetBinder;
+import com.shanitay.client.PlaceType;
 import com.shanitay.client.utils.Toy;
 import com.shanitay.client.utils.Utils;
 import org.vectomatic.dom.svg.OMSVGSVGElement;
@@ -28,8 +30,23 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         bindGreenLine();
         bindRedLine();
         bindIgulColors();
+        linkWatchRight();
 
         return svgElement;
+    }
+
+    private void linkWatchRight() {
+        Utils.SomeHandler someHandler = new Utils.SomeHandler() {
+            public void handle() {
+                History.newItem(PlaceType.CLIP.name());
+            }
+        };
+
+        Utils.addHandler(elementLoader.watchRight1, someHandler);
+        Utils.addHandler(elementLoader.watchRight2, someHandler);
+        Utils.addHandler(elementLoader.watchRight3, someHandler);
+        Utils.addHandler(elementLoader.watchRight4, someHandler);
+        Utils.addHandler(elementLoader.watchRight5, someHandler);
     }
 
     private void bindRedLine() {
