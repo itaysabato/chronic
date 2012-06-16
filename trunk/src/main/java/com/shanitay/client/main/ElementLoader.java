@@ -36,6 +36,7 @@ class ElementLoader {
     final OMSVGRectElement pinkLine;
     final OMSVGGElement squareColor;
     final OMSVGGElement cube2;
+    final OMSVGGElement upTriIgul;
 
     public ElementLoader(OMSVGSVGElement svg) {
         this.svg = svg;
@@ -65,6 +66,7 @@ class ElementLoader {
         pinkLine = (OMSVGRectElement) getElement("pinkLine");
         squareColor = (OMSVGGElement) getElement("squareColor");
         cube2 = (OMSVGGElement) getElement("cube2");
+        upTriIgul = (OMSVGGElement) getElement("upTriIgul");
     }
 
     private OMSVGElement getElement(String elementId) {
