@@ -1,6 +1,8 @@
 package com.shanitay.client.robot;
 
-import com.shanitay.client.utils.*;
+import com.shanitay.client.utils.Toy;
+import com.shanitay.client.utils.Utils;
+import com.shanitay.client.utils.animations.*;
 import org.vectomatic.dom.svg.OMSVGElement;
 import org.vectomatic.dom.svg.OMSVGGElement;
 import org.vectomatic.dom.svg.OMSVGRectElement;

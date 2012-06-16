@@ -1,5 +1,7 @@
 package com.shanitay.client.utils;
 
+import com.shanitay.client.utils.gadgets.LoopRecorder;
+
 /**
  * Created By: Itay Sabato<br/>
  * Date: 02/06/12 <br/>

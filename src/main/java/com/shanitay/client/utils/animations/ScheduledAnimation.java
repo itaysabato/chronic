@@ -1,4 +1,6 @@
-package com.shanitay.client.utils;
+package com.shanitay.client.utils.animations;
+
+import com.shanitay.client.utils.Toy;
 
 /**
 * Created By: Itay Sabato<br/>

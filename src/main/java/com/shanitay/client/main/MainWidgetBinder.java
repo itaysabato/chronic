@@ -4,10 +4,10 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.History;
 import com.shanitay.client.AbstractSvgWidgetBinder;
 import com.shanitay.client.PlaceType;
-import com.shanitay.client.utils.Dragger;
-import com.shanitay.client.utils.Spinner;
 import com.shanitay.client.utils.Toy;
 import com.shanitay.client.utils.Utils;
+import com.shanitay.client.utils.gadgets.Dragger;
+import com.shanitay.client.utils.gadgets.Spinner;
 import org.vectomatic.dom.svg.OMSVGSVGElement;
 import org.vectomatic.dom.svg.ui.SVGResource;
 

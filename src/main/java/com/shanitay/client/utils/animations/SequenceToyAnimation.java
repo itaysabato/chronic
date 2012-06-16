@@ -1,6 +1,7 @@
-package com.shanitay.client.utils;
+package com.shanitay.client.utils.animations;
 
 import com.google.gwt.core.client.Scheduler;
+import com.shanitay.client.utils.Toy;
 
 import java.util.Arrays;
 import java.util.LinkedList;
