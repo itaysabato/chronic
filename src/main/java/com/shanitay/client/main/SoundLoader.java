@@ -30,6 +30,7 @@ class SoundLoader {
     final Sound igulColor;
     final Sound pinkLine;
     final Sound squareColor;
+    final Sound cube2;
 
     public SoundLoader() {
         soundController = new SoundController();
@@ -52,6 +53,7 @@ class SoundLoader {
         igulColor = getSound("igulColor");
         pinkLine = getSound("pinkLine");
         squareColor = getSound("squareColor");
+        cube2 = getSound("cube2");
     }
 
     private Sound getSound(String name) {
