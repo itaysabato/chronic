@@ -172,31 +172,95 @@
 <g id="black_watch">
 	<rect x="147.688" y="430.916" fill="#173434" width="224" height="82.212"/>
 </g>
-<g id="igul_little_middle">
-    <animateMotion id="littleMiddleMove" repeatCount="indefinite" path="m 0 0 L 200 0 z"  begin="0" dur="2" fill="freeze" />
-	<g>
-		<g>
-			<rect x="634.812" y="426.807" fill="#EAE984" width="231.86" height="37.024"/>
-		</g>
-		<g id="circle_with_yellow_2_">
-			<svg x="631.524" y="445.247" id="igul_with_yellow">
-				<circle fill="#1F9C8D" cx="0" cy="0" r="25.547"/>
-				<circle fill="#F2B1B6" cx="0" cy="0" r="21.484"/>
-				<circle fill="#CCDDD7" cx="0" cy="0" r="14.648"/>
 
-                <g>
-                    <circle id="yellow_pas_1_" fill="#EAE984" cx="-11.233" cy="-22.95" r="6.595"/>
+<animate id="watchRightGif1" attributeName="display" attributeType="CSS" to="none"
+                            begin="0; watchRightGif6.end" dur="0.375" fill="freeze" xlink:href="#watchRight1" />
+<animate id="watchRightGif2" attributeName="display" attributeType="CSS" to="none"
+                            begin="watchRightGif1.end" dur="0.375" fill="freeze" xlink:href="#watchRight2" />
+<animate id="watchRightGif3" attributeName="display" attributeType="CSS" to="none"
+                            begin="watchRightGif2.end" dur="0.375" fill="freeze" xlink:href="#watchRight3" />
 
-                    <animateTransform id="circleWithYellowRotate1" attributeName="transform" attributeType="XML"
-                                      repeatCount="indefinite" type="rotate" from="0 0 0" to="360 0 0" begin="0" dur="1"
-                        additive="replace" fill="freeze" />
-                </g>
-			</svg>
-		</g>
+<animate id="watchRightGif4" attributeName="display" attributeType="CSS" to="block"
+                            begin="watchRightGif3.end" dur="0.375" fill="freeze" xlink:href="#watchRight3" />
+<animate id="watchRightGif5" attributeName="display" attributeType="CSS" to="block"
+                            begin="watchRightGif3.end" dur="0.375" fill="freeze" xlink:href="#watchRight2" />
+<animate id="watchRightGif6" attributeName="display" attributeType="CSS" to="block"
+                            begin="watchRightGif3.end" dur="0.375" fill="freeze" xlink:href="#watchRight1" />
+
+<g id="bigGroup">
+    <g id="igul_little_middle" >
+        <!--<animateMotion id="littleMiddleMove" repeatCount="indefinite" path="m 0 0 L 200 0 z"  begin="0" dur="2" fill="freeze" />-->
+        <g>
+            <g>
+                <rect x="634.812" y="426.807" fill="#EAE984" width="180" height="37.024"/>
+            </g>
+            <g id="circle_with_yellow_2_">
+                <svg x="631.524" y="445.247" id="igul_with_yellow">
+                    <circle fill="#1F9C8D" cx="0" cy="0" r="25.547"/>
+                    <circle fill="#F2B1B6" cx="0" cy="0" r="21.484"/>
+                    <circle fill="#CCDDD7" cx="0" cy="0" r="14.648"/>
+
+                    <g>
+                        <circle id="yellow_pas_1_" fill="#EAE984" cx="-11.233" cy="-22.95" r="6.595"/>
+
+                        <animateTransform id="circleWithYellowRotate1" attributeName="transform" attributeType="XML"
+                                          repeatCount="indefinite" type="rotate" from="0 0 0" to="360 0 0" begin="0" dur="1"
+                            additive="replace" fill="freeze" />
+                    </g>
+                </svg>
+            </g>
+        </g>
+    </g>
+    <g id="big_green" transform="translate(-150,0)" >
+        <g>
+            <rect x="958.426" y="375.957" fill="#5AA17B" width="401.574" height="124.508">
+                        <!--<animate id="bigGreenExpand1" attributeName="width" attributeType="XML" additive="replace"-->
+                            <!--from="0" to="401.574" begin="0; bigGreenExpand2.end" dur="1" fill="freeze" />-->
+
+                        <!--<animate id="bigGreenExpand2" attributeName="width" attributeType="XML" additive="replace"-->
+                            <!--to="0" from="401.574" begin="bigGreenExpand1.end" dur="1" fill="freeze" />-->
+            </rect>
+        </g>
+        <g id="watch2">
+	<g id="watchRight4">
+		<rect x="1135.886" y="404.033" fill="#EAE984" width="117" height="70.258"/>
+		<path fill="#1F9C8D" d="M1173.837,433.721l0.923,5.252l1.056-5.252h2.314l1.043,5.252l0.947-5.252h2.688l-2.101,8.49h-2.758
+			l-0.947-4.931l-1.008,4.931h-2.733l-2.063-8.49H1173.837z"/>
+		<path fill="#1F9C8D" d="M1186.172,433.721h2.831l3.034,8.49h-2.771l-0.324-1.115h-2.771l-0.323,1.115h-2.723L1186.172,433.721z
+			 M1186.688,439.357h1.774l-0.911-3.096L1186.688,439.357z"/>
+		<path fill="#1F9C8D" d="M1200.558,433.721v2.229h-2.507v6.261h-2.782v-6.261h-2.507v-2.229H1200.558z"/>
+		<path fill="#1F9C8D" d="M1207.218,436.971c-0.047-0.433-0.203-0.769-0.455-0.996c-0.265-0.24-0.588-0.359-0.983-0.359
+			c-0.49,0-0.888,0.191-1.199,0.576c-0.312,0.383-0.468,1.006-0.468,1.857c0,0.588,0.072,1.045,0.203,1.354
+			c0.133,0.301,0.313,0.529,0.553,0.685s0.527,0.229,0.888,0.229c0.42,0,0.768-0.119,1.02-0.359
+			c0.252-0.229,0.408-0.588,0.456-1.043h2.675c-0.061,0.527-0.155,0.972-0.313,1.318c-0.156,0.359-0.407,0.719-0.768,1.08
+			c-0.359,0.359-0.779,0.635-1.271,0.84c-0.503,0.191-1.066,0.299-1.715,0.299c-0.647,0-1.247-0.106-1.799-0.299
+			c-0.553-0.192-1.008-0.457-1.379-0.815c-0.372-0.349-0.66-0.757-0.875-1.212c-0.302-0.637-0.444-1.344-0.444-2.122
+			c0-0.66,0.108-1.271,0.323-1.837c0.217-0.573,0.504-1.055,0.876-1.438c0.384-0.383,0.792-0.684,1.247-0.875
+			c0.588-0.24,1.234-0.371,1.942-0.371c0.611,0,1.188,0.096,1.728,0.275c0.54,0.19,0.972,0.455,1.318,0.815
+			c0.35,0.349,0.612,0.756,0.805,1.211c0.132,0.336,0.216,0.72,0.264,1.177L1207.218,436.971z"/>
+		<path fill="#1F9C8D" d="M1211.229,433.721h2.795v2.865h2.603v-2.865h2.795v8.49h-2.795v-3.285h-2.603v3.285h-2.795V433.721z"/>
+	</g>
+    	<g id="watchRight3">
+		<rect id="watch_right_1_3_" x="1135.886" y="404.033" fill="#EAE984" width="117" height="70.258"/>
+		<rect x="1163.602" y="427.05" fill="#1F9C8D" width="64.099" height="22.797"/>
+		<rect x="1170.631" y="433.156" fill="#EAE984" width="50.04" height="9.689"/>
+	</g>
+	<g id="watchRight2">
+		<rect id="watch_right_1_2_" x="1135.886" y="404.033" fill="#EAE984" width="117" height="70.258"/>
+		<rect x="1154.602" y="420.846" fill="#1F9C8D" width="80.433" height="36"/>
+		<rect x="1163.602" y="427.05" fill="#EAE984" width="64.099" height="22.797"/>
+	</g>
+	<g id="watchRight1">
+		<rect id="watch_right_1_1_" x="1135.886" y="404.033" fill="#EAE984" width="117" height="70.258"/>
+		<rect x="1146.602" y="413.345" fill="#1F9C8D" width="96" height="51.313"/>
+		<rect x="1154.602" y="420.845" fill="#EAE984" width="80.433" height="36"/>
 	</g>
 </g>
+    </g>
+</g>
+
 <g id="rest2">
-	<rect x="884.868" y="389.812" fill="#5AA17B" width="24.046" height="92.517"/>
+	<rect x="884.868" y="389.812" fill="#1F9C8D" width="24.046" height="92.517"/>
 	<g>
 		<path fill="#EE8F78" d="M874.076,321.143v58.893v92.1c0,3.971,0.288,3.684-3.682,3.684h-50.355v3.51h53.162
 			c3.972,0,4.385-0.415,4.385-4.387v-94.906v-58.893H874.076z"/>
@@ -219,17 +283,6 @@
 	<rect x="178.432" y="438.114" display="inline" fill="#5AA17B" width="28.479" height="24.396"/>
 </g>
 <g id="yellow_pas">
-</g>
-<g id="big_green">
-	<g>
-		<rect x="958.426" y="375.957" fill="#5AA17B" width="401.574" height="124.508">
-            		<animate id="bigGreenExpand1" attributeName="width" attributeType="XML" additive="replace"
-                        from="0" to="401.574" begin="0; bigGreenExpand2.end" dur="1" fill="freeze" />
-
-                    <animate id="bigGreenExpand2" attributeName="width" attributeType="XML" additive="replace"
-                        to="0" from="401.574" begin="bigGreenExpand1.end" dur="1" fill="freeze" />
-		</rect>
-	</g>
 </g>
  <g id="up_green_cover">
 	<rect x="589.294" y="227.853" fill="#5AA17B" width="32.474" height="37.447"/>
@@ -998,55 +1051,6 @@
 	<rect x="425.259" y="568.347" fill="#EE8F78" stroke="#EE8F78" width="558.108" height="205.204"/>
 	<rect x="262.146" y="570.865" fill="#EE8F78" stroke="#EE8F78" width="46.344" height="203.441"/>
 	<rect x="261.919" y="568.24" fill="#EE8F78" stroke="#EE8F78" width="197.135" height="20.172"/>
-</g>
-
-        <animate id="watchRightGif1" attributeName="display" attributeType="CSS" to="none"
-									begin="0; watchRightGif6.end" dur="0.375" fill="freeze" xlink:href="#watchRight1" />
-		<animate id="watchRightGif2" attributeName="display" attributeType="CSS" to="none"
-									begin="watchRightGif1.end" dur="0.375" fill="freeze" xlink:href="#watchRight2" />
-		<animate id="watchRightGif3" attributeName="display" attributeType="CSS" to="none"
-									begin="watchRightGif2.end" dur="0.375" fill="freeze" xlink:href="#watchRight3" />
-
-		<animate id="watchRightGif4" attributeName="display" attributeType="CSS" to="block"
-									begin="watchRightGif3.end" dur="0.375" fill="freeze" xlink:href="#watchRight3" />
-		<animate id="watchRightGif5" attributeName="display" attributeType="CSS" to="block"
-									begin="watchRightGif3.end" dur="0.375" fill="freeze" xlink:href="#watchRight2" />
-		<animate id="watchRightGif6" attributeName="display" attributeType="CSS" to="block"
-									begin="watchRightGif3.end" dur="0.375" fill="freeze" xlink:href="#watchRight1" />
-<g id="watch2">
-	<g id="watchRight4">
-		<rect x="1135.886" y="404.033" fill="#EAE984" width="117" height="70.258"/>
-		<path fill="#1F9C8D" d="M1173.837,433.721l0.923,5.252l1.056-5.252h2.314l1.043,5.252l0.947-5.252h2.688l-2.101,8.49h-2.758
-			l-0.947-4.931l-1.008,4.931h-2.733l-2.063-8.49H1173.837z"/>
-		<path fill="#1F9C8D" d="M1186.172,433.721h2.831l3.034,8.49h-2.771l-0.324-1.115h-2.771l-0.323,1.115h-2.723L1186.172,433.721z
-			 M1186.688,439.357h1.774l-0.911-3.096L1186.688,439.357z"/>
-		<path fill="#1F9C8D" d="M1200.558,433.721v2.229h-2.507v6.261h-2.782v-6.261h-2.507v-2.229H1200.558z"/>
-		<path fill="#1F9C8D" d="M1207.218,436.971c-0.047-0.433-0.203-0.769-0.455-0.996c-0.265-0.24-0.588-0.359-0.983-0.359
-			c-0.49,0-0.888,0.191-1.199,0.576c-0.312,0.383-0.468,1.006-0.468,1.857c0,0.588,0.072,1.045,0.203,1.354
-			c0.133,0.301,0.313,0.529,0.553,0.685s0.527,0.229,0.888,0.229c0.42,0,0.768-0.119,1.02-0.359
-			c0.252-0.229,0.408-0.588,0.456-1.043h2.675c-0.061,0.527-0.155,0.972-0.313,1.318c-0.156,0.359-0.407,0.719-0.768,1.08
-			c-0.359,0.359-0.779,0.635-1.271,0.84c-0.503,0.191-1.066,0.299-1.715,0.299c-0.647,0-1.247-0.106-1.799-0.299
-			c-0.553-0.192-1.008-0.457-1.379-0.815c-0.372-0.349-0.66-0.757-0.875-1.212c-0.302-0.637-0.444-1.344-0.444-2.122
-			c0-0.66,0.108-1.271,0.323-1.837c0.217-0.573,0.504-1.055,0.876-1.438c0.384-0.383,0.792-0.684,1.247-0.875
-			c0.588-0.24,1.234-0.371,1.942-0.371c0.611,0,1.188,0.096,1.728,0.275c0.54,0.19,0.972,0.455,1.318,0.815
-			c0.35,0.349,0.612,0.756,0.805,1.211c0.132,0.336,0.216,0.72,0.264,1.177L1207.218,436.971z"/>
-		<path fill="#1F9C8D" d="M1211.229,433.721h2.795v2.865h2.603v-2.865h2.795v8.49h-2.795v-3.285h-2.603v3.285h-2.795V433.721z"/>
-	</g>
-    	<g id="watchRight3">
-		<rect id="watch_right_1_3_" x="1135.886" y="404.033" fill="#EAE984" width="117" height="70.258"/>
-		<rect x="1163.602" y="427.05" fill="#1F9C8D" width="64.099" height="22.797"/>
-		<rect x="1170.631" y="433.156" fill="#EAE984" width="50.04" height="9.689"/>
-	</g>
-	<g id="watchRight2">
-		<rect id="watch_right_1_2_" x="1135.886" y="404.033" fill="#EAE984" width="117" height="70.258"/>
-		<rect x="1154.602" y="420.846" fill="#1F9C8D" width="80.433" height="36"/>
-		<rect x="1163.602" y="427.05" fill="#EAE984" width="64.099" height="22.797"/>
-	</g>
-	<g id="watchRight1">
-		<rect id="watch_right_1_1_" x="1135.886" y="404.033" fill="#EAE984" width="117" height="70.258"/>
-		<rect x="1146.602" y="413.345" fill="#1F9C8D" width="96" height="51.313"/>
-		<rect x="1154.602" y="420.845" fill="#EAE984" width="80.433" height="36"/>
-	</g>
 </g>
 <g id="create">
 	<g id="create_1_">

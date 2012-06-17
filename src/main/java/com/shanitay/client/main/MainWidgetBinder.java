@@ -44,6 +44,7 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         bindPartGreen();
         bindMovingHouse();
         bindSlide();
+        bindBigGroup();
         bindDoorMaker();
         bindPinkLine();
         bindColorDoor();
@@ -67,6 +68,11 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
     private void bindSlide() {
         Dragger dragger = new Dragger(svgElement, 0, -140, 0, 150);
         dragger.makeDraggable(elementLoader.slide, soundLoader.slideForward, soundLoader.slideBackward);
+    }
+
+    private void bindBigGroup() {
+        Dragger dragger = new Dragger(svgElement, 0, 0, 200, 0);
+        dragger.makeDraggable(elementLoader.bigGroup, soundLoader.bigForward, soundLoader.bigBackward);
     }
 
     private Toy bindMovingHouse() {

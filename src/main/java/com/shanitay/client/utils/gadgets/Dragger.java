@@ -90,7 +90,19 @@ public class Dragger {
                     transformationVector.setY(currentTouch.getY());
                     transformationVector.substract(lastTouch);
 //                    Log.debug("******* after last touch: " + lastTouch.getX() + "," + lastTouch.getY());
-                    translateAlongAxis();
+                    float d = translateAlongAxis();
+
+                    if (d > 0 && !forwardPlaying) {
+                        stopBackward();
+                        forwardPlaying = true;
+                        forwardSound.play();
+                    }
+                    else if (d < 0 && !backwardPlaying) {
+                        stopForward();
+                        backwardPlaying = true;
+                        backwardSound.play();
+                    }
+
                     lastTouch = currentTouch;
                 }
             }
@@ -123,37 +135,43 @@ public class Dragger {
         });
     }
 
-    private void translateAlongAxis() {
-        float newY = lastTranslation.getY() + transformationVector.getY();
-        float newX = lastTranslation.getX();
+    private float translateAlongAxis() {
+        float newY, newX, d;
+        if (start.getX() == end.getX()) {
+            newY = lastTranslation.getY() + transformationVector.getY();
+            newX = lastTranslation.getX();
 
-        if(newY > end.getY()){
-            newY = end.getY();
+            if(newY > end.getY()){
+                newY = end.getY();
+            }
+            if (newY < start.getY()) {
+                newY = start.getY();
+            }
+
+            d = newY - lastTranslation.getY();
         }
-        if (newY < start.getY()) {
-            newY = start.getY();
+        else {
+            newY = lastTranslation.getY();
+            newX = lastTranslation.getX() + transformationVector.getX();
+
+            if (newX > end.getX()) {
+                newX = end.getX();
+            }
+            if (newX < start.getX()) {
+                newX = start.getX();
+            }
+            d = newX - lastTranslation.getX();
         }
 
-        float dy = newY - lastTranslation.getY();
-
-        if(dy > 0 && !forwardPlaying) {
-            stopBackward();
-            forwardPlaying = true;
-            forwardSound.play();
-        }
-        else if(dy < 0 && !backwardPlaying) {
-            stopForward();
-            backwardPlaying = true;
-            backwardSound.play();
-        }
 //        Log.debug("---------------------------------------------------------------------------------------------------------");
 //        Log.debug("transformation: " + transformationVector.getX() + "," + transformationVector.getY());
 //        Log.debug("new translation: " + newY + "," + newX);
 //        Log.debug("last touch: "+lastTouch.getX()+","+lastTouch.getY());
 //        Log.debug("last translation: " + lastTouch.getX() + "," + lastTouch.getY());
-//        Log.debug("Moved y by: "+dy);
+//        Log.debug("Moved y by: "+d);
 
         translate(newX, newY);
+        return d;
     }
 
     private void stopForward() {

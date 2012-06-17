@@ -39,6 +39,8 @@ class SoundLoader {
     final Sound slideForward;
     final Sound slideBackward;
     final Sound colorDoor;
+    final Sound bigForward;
+    final Sound bigBackward;
 
     public SoundLoader() {
         soundController = new SoundController();
@@ -70,6 +72,8 @@ class SoundLoader {
         slideForward = getSound("slideForward");
         slideBackward = getSound("slideBackward");
         colorDoor = getSound("colorDoor");
+        bigForward = getSound("bigForward");
+        bigBackward = getSound("bigBackward");
     }
 
     private Sound getSound(String name) {
