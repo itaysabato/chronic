@@ -57,7 +57,7 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
     }
 
     private void bindPinkLine() {
-        Utils.attachToy(elementLoader.pinkLine, soundLoader.pinkLine, false, animationLoader.pinkLine);
+        Utils.attachToy(elementLoader.pinkLine, soundLoader.pinkLine, true, animationLoader.pinkLine);
     }
 
     private void bindDoorMaker() {
