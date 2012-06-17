@@ -49,6 +49,8 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         bindPinkLine();
         bindColorDoor();
         bindHouse();
+        Utils.attachToy(elementLoader.yellowLineDown, soundLoader.yellowLineDown, false, animationLoader.yellowLineDown);
+
         return svgElement;
     }
 

@@ -139,7 +139,8 @@ class AnimationLoader {
     }
 
     private Toy.Animation createYellowLineDown() {
-        return null;  //To change body of created methods use File | Settings | File Templates.
+        FillColorAnimator fillColorAnimator = new FillColorAnimator(ShaniColors.YELLOW, ShaniColors.BLACK);
+        return new PeekabooToyAnimation(fillColorAnimator, 250, elementLoader.yellowLineDown);
     }
 
     private Toy.Animation createGreenLineDown() {

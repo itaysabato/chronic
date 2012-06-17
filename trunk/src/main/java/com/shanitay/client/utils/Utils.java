@@ -47,7 +47,7 @@ public class Utils {
     public static void addHandler(OMSVGElement element, final SomeHandler someHandler) {
         addEventListener(element.getElement(), EVENT, new EventListener() {
             public void onBrowserEvent(Event event) {
-//                event.preventDefault();
+                event.preventDefault();
                 someHandler.handle();
             }
         }, false);
