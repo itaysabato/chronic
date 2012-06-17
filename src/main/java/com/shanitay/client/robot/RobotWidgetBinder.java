@@ -58,28 +58,13 @@ public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
         Utils.attachToy(elementLoader.eyeBrawLeft, soundLoader.leftBraw, false, animationLoader.leftBraw);
         Utils.attachToy(elementLoader.eyeBrawRight, soundLoader.rightBraw, false, animationLoader.rightBraw);
 
-        Utils.attachToy(elementLoader.step1, soundLoader.step1, false, animationLoader.step1Explode);
-        Utils.attachToy(elementLoader.step2, soundLoader.step2, false, animationLoader.step2Explode);
-        Utils.attachToy(elementLoader.step3, soundLoader.step3, false, animationLoader.step3Explode);
-        Utils.attachToy(elementLoader.step4, soundLoader.step4, false, animationLoader.step4Explode);
-        Utils.attachToy(elementLoader.step5, soundLoader.step5, false, animationLoader.step5Explode);
-        Utils.attachToy(elementLoader.step6, soundLoader.step6, false, animationLoader.step6Explode);
-        Utils.attachToy(elementLoader.step7, soundLoader.step7, false, animationLoader.step7Explode);
-
-        Utils.attachToy(elementLoader.coopButton, soundLoader.coop, true, animationLoader.coopBg);
-        Utils.addHandler(elementLoader.coopButton, new Utils.SomeHandler() {
-            public void handle() {
-                animationLoader.coopCenter.play();
-            }
-        });
-
-        Utils.attachToy(
-                elementLoader.pumpHouse,
-                soundLoader.pumpHouse,
-                true,
-                animationLoader.pumpColors,
-                animationLoader.bgPump,
-                animationLoader.pumpHouse);
+//        Utils.attachToy(elementLoader.step1, soundLoader.step1, false, animationLoader.step1Explode);
+//        Utils.attachToy(elementLoader.step2, soundLoader.step2, false, animationLoader.step2Explode);
+//        Utils.attachToy(elementLoader.step3, soundLoader.step3, false, animationLoader.step3Explode);
+//        Utils.attachToy(elementLoader.step4, soundLoader.step4, false, animationLoader.step4Explode);
+//        Utils.attachToy(elementLoader.step5, soundLoader.step5, false, animationLoader.step5Explode);
+//        Utils.attachToy(elementLoader.step6, soundLoader.step6, false, animationLoader.step6Explode);
+//        Utils.attachToy(elementLoader.step7, soundLoader.step7, false, animationLoader.step7Explode);
 
         Toy.Animation noseAnimation = new HandlerToyAnimation(new Utils.SomeHandler() {
             public void handle() {

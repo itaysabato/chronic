@@ -56,6 +56,7 @@ class ElementLoader {
     final OMSVGGElement colorDoor5;
     final OMSVGGElement bigGroup;
     final OMSVGRectElement doorRect;
+    final OMSVGGElement create;
 
     public ElementLoader(OMSVGSVGElement svg) {
         this.svg = svg;
@@ -106,6 +107,7 @@ class ElementLoader {
         colorDoor5 = (OMSVGGElement) getElement("colorDoor5");
         bigGroup = (OMSVGGElement) getElement("bigGroup");
         doorRect = (OMSVGRectElement) getElement("doorRect");
+        create = (OMSVGGElement) getElement("create");
     }
 
     private OMSVGElement getElement(String elementId) {

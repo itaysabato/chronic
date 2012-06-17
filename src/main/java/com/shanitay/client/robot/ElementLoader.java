@@ -25,38 +25,12 @@ class ElementLoader {
     final OMSVGPathElement earRight;
     final OMSVGPathElement earLeft;
     final OMSVGGElement earHandle;
-    final OMSVGGElement coopButton;
     final OMSVGGElement bgCoop1;
     final OMSVGGElement bgCoop2;
     final OMSVGGElement bgCoop3;
-    final OMSVGRectElement coopButtonCenter;
-    final OMSVGElement pumpLight;
     final OMSVGGElement smallLightning;
     final OMSVGGElement eyeBallLeft;
     final OMSVGGElement eyeBallRight;
-    final OMSVGGElement step1;
-    final OMSVGGElement step2;
-    final OMSVGGElement step3;
-    final OMSVGGElement step4;
-    final OMSVGGElement step5;
-    final OMSVGGElement step6;
-    final OMSVGGElement step7;
-    final OMSVGRectElement step1Rect;
-    final OMSVGRectElement step2Rect;
-    final OMSVGRectElement step3Rect;
-    final OMSVGRectElement step4Rect;
-    final OMSVGRectElement step5Rect;
-    final OMSVGRectElement step6Rect;
-    final OMSVGRectElement step7Rect;
-    final OMSVGGElement pump;
-    final OMSVGGElement pumpColors1;
-    final OMSVGGElement pumpColors2;
-    final OMSVGGElement pumpColors3;
-    final OMSVGGElement pumpHouse;
-    final OMSVGGElement bgPump1;
-    final OMSVGGElement bgPump2;
-    final OMSVGGElement bgPump3;
-    final OMSVGGElement bgPump4;
     final OMSVGGElement teethDownOpen;
     final OMSVGGElement glasses;
     final OMSVGGElement surprised;
@@ -89,43 +63,22 @@ class ElementLoader {
         earLeft = (OMSVGPathElement) Utils.getSVGElement("earLeft", svgsvgElement);
         earHandle = Utils.getGElement("earHandle", svgsvgElement);
 
-        coopButton = Utils.getGElement("coopButton", svgsvgElement);
         bgCoop1 = Utils.getGElement("bgCoop1", svgsvgElement);
         bgCoop2 = Utils.getGElement("bgCoop2", svgsvgElement);
         bgCoop3 = Utils.getGElement("bgCoop3", svgsvgElement);
-        coopButtonCenter = (OMSVGRectElement) Utils.getSVGElement("coopButtonCenter", svgsvgElement);
 
-        pumpLight = Utils.getSVGElement("pumpLight", svgsvgElement);
         smallLightning = Utils.getGElement("smallLightning", svgsvgElement);
 
         eyeBallLeft = Utils.getGElement("eyeBallLeft", svgsvgElement);
         eyeBallRight = Utils.getGElement("eyeBallRight", svgsvgElement);
 
-        step1 = Utils.getGElement("step1", svgsvgElement);
-        step2 = Utils.getGElement("step2", svgsvgElement);
-        step3 = Utils.getGElement("step3", svgsvgElement);
-        step4 = Utils.getGElement("step4", svgsvgElement);
-        step5 = Utils.getGElement("step5", svgsvgElement);
-        step6 = Utils.getGElement("step6", svgsvgElement);
-        step7 = Utils.getGElement("step7", svgsvgElement);
-
-        step1Rect = getStepRect(step1);
-        step2Rect = getStepRect(step2);
-        step3Rect = getStepRect(step3);
-        step4Rect = getStepRect(step4);
-        step5Rect = getStepRect(step5);
-        step6Rect = getStepRect(step6);
-        step7Rect = getStepRect(step7);
-
-        pump = Utils.getGElement("pump", svgsvgElement);
-        pumpColors1 = Utils.getGElement("pumpColors1", svgsvgElement);
-        pumpColors2 = Utils.getGElement("pumpColors2", svgsvgElement);
-        pumpColors3 = Utils.getGElement("pumpColors3", svgsvgElement);
-        pumpHouse = Utils.getGElement("pumpHouse", svgsvgElement);
-        bgPump1 = Utils.getGElement("bgPump1", svgsvgElement);
-        bgPump2 = Utils.getGElement("bgPump2", svgsvgElement);
-        bgPump3 = Utils.getGElement("bgPump3", svgsvgElement);
-        bgPump4 = Utils.getGElement("bgPump4", svgsvgElement);
+//        step1 = Utils.getGElement("step1", svgsvgElement);
+//        step2 = Utils.getGElement("step2", svgsvgElement);
+//        step3 = Utils.getGElement("step3", svgsvgElement);
+//        step4 = Utils.getGElement("step4", svgsvgElement);
+//        step5 = Utils.getGElement("step5", svgsvgElement);
+//        step6 = Utils.getGElement("step6", svgsvgElement);
+//        step7 = Utils.getGElement("step7", svgsvgElement);
 
         nose = Utils.getGElement("nose", svgsvgElement);
         surprised = Utils.getGElement("surprised", svgsvgElement);
