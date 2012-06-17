@@ -22,6 +22,8 @@ import java.util.Iterator;
  */
 public class Utils {
     public static final int TIME_UNIT = 41;
+//    public static final String EVENT = "mousedown";
+    public static final String EVENT = "MozTouchDown";
 
     public static void animateFor(final StateChangeAnimator animator, final OMSVGElement element, int durationMillis) {
         animator.inAnimation(element);
@@ -43,8 +45,7 @@ public class Utils {
     }
 
     public static void addHandler(OMSVGElement element, final SomeHandler someHandler) {
-//        addEventListener(element.getElement(), "MozTouchDown", new EventListener() {
-            addEventListener(element.getElement(), "mousedown", new EventListener() {
+        addEventListener(element.getElement(), EVENT, new EventListener() {
             public void onBrowserEvent(Event event) {
                 event.preventDefault();
                 someHandler.handle();
