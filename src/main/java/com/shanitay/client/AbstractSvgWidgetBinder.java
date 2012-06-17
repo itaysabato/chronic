@@ -9,10 +9,10 @@ import org.vectomatic.dom.svg.OMSVGSVGElement;
  * Time: 19:12 <br/>
  */
 public abstract class AbstractSvgWidgetBinder implements WidgetBinder {
-    private final MyNewWidget myNewWidget = new MyNewWidget();
 
     public Widget initWidget() {
         OMSVGSVGElement element = bindWidgets();
+        final MyNewWidget myNewWidget = new MyNewWidget();
         myNewWidget.init(element);
         return myNewWidget;
     }

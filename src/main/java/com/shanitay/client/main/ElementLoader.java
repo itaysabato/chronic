@@ -44,10 +44,6 @@ class ElementLoader {
     final OMSVGGElement coolIgul5;
     final OMSVGGElement partGreen;
     final OMSVGGElement movingHouse;
-    final OMSVGGElement logo1;
-    final OMSVGGElement logo2;
-    final OMSVGGElement logo3;
-    final OMSVGGElement logo4;
     final OMSVGGElement logo5;
     final OMSVGGElement colorDoor1;
     final OMSVGGElement colorDoor2;
@@ -94,10 +90,6 @@ class ElementLoader {
         coolIgul5 = (OMSVGGElement) getElement("coolIgul5");
         partGreen = (OMSVGGElement) getElement("partGreen");
         movingHouse = (OMSVGGElement) getElement("movingHouse");
-        logo1 = (OMSVGGElement) getElement("logo1");
-        logo2 = (OMSVGGElement) getElement("logo2");
-        logo3 = (OMSVGGElement) getElement("logo3");
-        logo4 = (OMSVGGElement) getElement("logo4");
         logo5 = (OMSVGGElement) getElement("logo5");
 
         colorDoor1 = (OMSVGGElement) getElement("colorDoor1");
