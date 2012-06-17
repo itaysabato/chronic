@@ -35,7 +35,6 @@ class AnimationLoader {
     final Toy.Animation partGreen;
     final Toy.Animation movingHouse;
 
-    private final DoorMakerAnimationBuilder doorVanisherAnimation;
     final Toy.Animation pinkButton;
     final Toy.Animation redButton;
     final Toy.Animation colorDoor;
@@ -64,7 +63,7 @@ class AnimationLoader {
         colorDoor = createColorDoor();
 
 
-        doorVanisherAnimation = new DoorMakerAnimationBuilder(elementLoader);
+        DoorMakerAnimationBuilder doorVanisherAnimation = new DoorMakerAnimationBuilder(elementLoader);
         pinkButton = doorVanisherAnimation.getPinkButton();
         redButton = doorVanisherAnimation.getRedButton();
     }
@@ -127,7 +126,8 @@ class AnimationLoader {
     }
 
     private Toy.Animation createHouse() {
-        return null;  //To change body of created methods use File | Settings | File Templates.
+        FillColorAnimator fillColorAnimator = new FillColorAnimator(ShaniColors.LIGHT_BLUE, ShaniColors.TURQUOISE);
+        return new PeekabooToyAnimation(fillColorAnimator, 250, elementLoader.house);
     }
 
     private Toy.Animation createBlueTriangle() {

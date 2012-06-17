@@ -21,7 +21,7 @@ class ElementLoader {
     final OMSVGRectElement blueCube;
     final OMSVGRectElement blackCube;
     final OMSVGRectElement yellowMiddleCube;
-    final OMSVGGElement house;
+    final OMSVGRectElement house;
     final OMSVGGElement blueTriangle;
     final OMSVGGElement redLine;
     final OMSVGRectElement yellowLineDown;
@@ -69,7 +69,7 @@ class ElementLoader {
         blackCube = (OMSVGRectElement) getElement("blackCube");
         yellowMiddleCube = (OMSVGRectElement) getElement("yellowMiddleCube");
         pinkCube = (OMSVGRectElement) getElement("pinkCube");
-        house = (OMSVGGElement) getElement("house");
+        house = (OMSVGRectElement) getElement("house");
         blueTriangle = (OMSVGGElement) getElement("blueTriangle");
         redLine = (OMSVGGElement) getElement("redLine");
         yellowLineDown = (OMSVGRectElement) getElement("yellowLineDown");

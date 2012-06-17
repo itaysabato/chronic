@@ -161,9 +161,9 @@
 <g id="black_line_2">
 	<rect x="646.843" y="264.849" fill="#1F9C8D" width="233.092" height="41.517"/>
 </g>
-<g id="house">
-	<rect x="425.436" y="270.604" fill="#CCDDD7" width="103.998" height="45.628"/>
-	<rect x="425.436" y="308.01" fill="#1F9C8D" width="103.998" height="8.221"/>
+<g>
+	<rect  id="house" x="424.436" y="269.604" fill="#CCDDD7" width="103.998" height="45.628"/>
+	<rect x="423.436" y="308.01" fill="#1F9C8D" width="105" height="8.221"/>
 	<rect x="476.801" y="267.824" fill="#F2B1B6" width="41.38" height="9.75"/>
 </g>
 <g id="black_strip">
