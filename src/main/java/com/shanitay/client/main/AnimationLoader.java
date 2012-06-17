@@ -36,7 +36,7 @@ class AnimationLoader {
     final Toy.Animation movingHouse;
 
     final Toy.Animation pinkButton;
-    final Toy.Animation redButton;
+    final DoorMakerAnimationBuilder.DoorMakerToyAnimation redButton;
     final Toy.Animation colorDoor;
 
     public AnimationLoader(ElementLoader elementLoader) {

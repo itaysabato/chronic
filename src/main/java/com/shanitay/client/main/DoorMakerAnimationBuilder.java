@@ -1,5 +1,6 @@
 package com.shanitay.client.main;
 
+import com.allen_sauer.gwt.voices.client.Sound;
 import com.shanitay.client.utils.ShaniColors;
 import com.shanitay.client.utils.Toy;
 import com.shanitay.client.utils.Utils;
@@ -18,11 +19,30 @@ class DoorMakerAnimationBuilder {
     private final OMSVGAnimationElement moonGif1;
     private boolean continueGif = false;
     private boolean vanishDoor = false;
-    private boolean ignore = false;
-    private ElementLoader animationLoader;
+    private boolean playing = false;
+    private boolean stopping = false;
+
+    private ElementLoader elementLoader;
+    private final Toy.Animation pinkAnimation = new Toy.Animation() {
+        public void setLooping(boolean looping) {
+            //To change body of implemented methods use File | Settings | File Templates.
+        }
+
+        public void play() {
+            sound.play();
+            makerMove.beginElement();
+            vanishDoor = false;
+        }
+
+        public void stop() {
+            //To change body of implemented methods use File | Settings | File Templates.
+        }
+    };
+    private final DoorMakerToyAnimation redAnimation = new DoorMakerToyAnimation();
+    private Sound sound = null;
 
     public DoorMakerAnimationBuilder(final ElementLoader elementLoader) {
-        this.animationLoader = elementLoader;
+        this.elementLoader = elementLoader;
         makerMove = elementLoader.getAnimation("makerMove");
         final OMSVGAnimationElement doorVanishAnimation = elementLoader.getAnimation("doorVanish");
 
@@ -34,7 +54,7 @@ class DoorMakerAnimationBuilder {
             public void onEnd(EndEvent event) {
                 continueGif = true;
                 moonGif1.beginElement();
-                ignore = false;
+                pinkAnimation.play();
             }
         });
 
@@ -44,7 +64,13 @@ class DoorMakerAnimationBuilder {
             public void onEnd(EndEvent event) {
                 fillColorAnimator.offAnimation(elementLoader.doorRect);
                 continueGif = false;
-                ignore = false;
+                if (!stopping) {
+                    innerRedPlay();
+                }
+                else {
+                    playing = false;
+                    stopping = false;
+                }
             }
         });
 
@@ -70,45 +96,43 @@ class DoorMakerAnimationBuilder {
         });
     }
 
-    public Toy.Animation getPinkButton() {
-        return new Toy.Animation() {
-            public void setLooping(boolean looping) {
-                //To change body of implemented methods use File | Settings | File Templates.
-            }
-
-            public void play() {
-                if (!ignore) {
-                    ignore = true;
-                    Utils.show(animationLoader.redButton);
-                    makerMove.beginElement();
-                    vanishDoor = false;
-                }
-            }
-
-            public void stop() {
-                //To change body of implemented methods use File | Settings | File Templates.
-            }
-        };
+    private void innerRedPlay() {
+        sound.play();
+        makerMove.beginElement();
+        vanishDoor = true;
     }
 
-    public Toy.Animation getRedButton() {
-        return new Toy.Animation() {
-            public void setLooping(boolean looping) {
-                //To change body of implemented methods use File | Settings | File Templates.
-            }
+    public Toy.Animation getPinkButton() {
+        return pinkAnimation;
+    }
 
-            public void play() {
-                if (!ignore) {
-                    ignore = true;
-                    Utils.hide(animationLoader.redButton);
-                    makerMove.beginElement();
-                    vanishDoor = true;
-                }
-            }
+    public DoorMakerToyAnimation getRedButton() {
+        return redAnimation;
+    }
 
-            public void stop() {
+    public class DoorMakerToyAnimation implements Toy.Animation {
+        public void setSound(Sound sound) {
+            DoorMakerAnimationBuilder.this.sound = sound;
+        }
 
+        public void setLooping(boolean looping) {
+            //To change body of implemented methods use File | Settings | File Templates.
+        }
+
+        public void play() {
+            if (!playing) {
+                Utils.hide(elementLoader.redButton);
+                playing = true;
+                innerRedPlay();
             }
-        };
+            else {
+                Utils.show(elementLoader.redButton);
+                stopping = true;
+            }
+        }
+
+        public void stop() {
+
+        }
     }
 }
