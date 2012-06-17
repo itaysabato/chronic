@@ -29,12 +29,13 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         elementLoader = new ElementLoader(svgElement);
         animationLoader = new AnimationLoader(elementLoader);
 
+        linkWatchRight();
+        linkWatchLeft();
+        linkCreate();
         bindBlackCube();
         bindGreenLine();
         bindRedLine();
         bindIgulColors();
-        linkWatchRight();
-        linkWatchLeft();
         bindIgulSlide();
         bindSquareColor();
         bindCube2();
@@ -134,6 +135,16 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         Spinner spinner = new Spinner(soundLoader.igulSlidePos, soundLoader.igulSlideNeg);
         spinner.setBounds(0f, 200f);
         spinner.init(elementLoader.igulSlide, svgElement, 695.71f, 311.79f);
+    }
+
+    private void linkCreate() {
+        Utils.SomeHandler someHandler = new Utils.SomeHandler() {
+            public void handle() {
+                History.newItem(PlaceType.ROBOT.name());
+            }
+        };
+
+        Utils.addHandler(elementLoader.create, someHandler);
     }
 
     private void linkWatchRight() {
