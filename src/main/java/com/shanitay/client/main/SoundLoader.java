@@ -38,6 +38,7 @@ class SoundLoader {
     final Sound movingHouse;
     final Sound slideForward;
     final Sound slideBackward;
+    final Sound colorDoor;
 
     public SoundLoader() {
         soundController = new SoundController();
@@ -68,6 +69,7 @@ class SoundLoader {
         movingHouse = getSound("movingHouse");
         slideForward = getSound("slideForward");
         slideBackward = getSound("slideBackward");
+        colorDoor = getSound("colorDoor");
     }
 
     private Sound getSound(String name) {

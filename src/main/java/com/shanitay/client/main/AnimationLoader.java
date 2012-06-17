@@ -16,8 +16,6 @@ import org.vectomatic.dom.svg.OMSVGAnimationElement;
 class AnimationLoader {
     private final ElementLoader elementLoader;
 
-    final Toy.Animation slide;
-    final Toy.Animation watchRight;
     final Toy.Animation orangeCube;
     final Toy.Animation blueCube;
     final Toy.Animation blackCube;
@@ -40,12 +38,11 @@ class AnimationLoader {
     private final DoorMakerAnimationBuilder doorVanisherAnimation;
     final Toy.Animation pinkButton;
     final Toy.Animation redButton;
+    final Toy.Animation colorDoor;
 
     public AnimationLoader(ElementLoader elementLoader) {
         this.elementLoader = elementLoader;
 
-        slide = createSlide();
-        watchRight = createWatchRight();
         orangeCube = createOrangeCube();
         blueCube = createBlueCube();
         pinkCube = createPinkCube();
@@ -64,6 +61,8 @@ class AnimationLoader {
         coolIgul = createCoolIgul();
         partGreen = createPartGreen();
         movingHouse = createMovingHouse();
+        colorDoor = createColorDoor();
+
 
         doorVanisherAnimation = new DoorMakerAnimationBuilder(elementLoader);
         pinkButton = doorVanisherAnimation.getPinkButton();
@@ -96,14 +95,6 @@ class AnimationLoader {
 
     private Toy.Animation createSquareColor() {
         return getAnimationChain("squareColorChange1", "squareColorChange6");
-    }
-
-    private Toy.Animation createSlide() {
-        return null;  //To change body of created methods use File | Settings | File Templates.
-    }
-
-    private Toy.Animation createWatchRight() {
-        return null;  //To change body of created methods use File | Settings | File Templates.
     }
 
     private Toy.Animation createOrangeCube() {
@@ -155,20 +146,17 @@ class AnimationLoader {
         return getAnimation("greenLineMove");
     }
 
-    private Toy.Animation createPinkButton() {
-        return null;  //To change body of created methods use File | Settings | File Templates.
-    }
-
-    private DoorMakerAnimationBuilder createRedButton() {
-        return doorVanisherAnimation;
-    }
-
     private Toy.Animation createIgulColor() {
         String firstAnimationId = "igulColorGif1";
         final String lastAnimationId = "igulColorGif6";
         return getAnimationChain(firstAnimationId, lastAnimationId);
     }
 
+    private Toy.Animation createColorDoor() {
+        String firstAnimationId = "colorDoorGif1";
+        final String lastAnimationId = "colorDoorGif8";
+        return getAnimationChain(firstAnimationId, lastAnimationId);
+    }
     private Toy.Animation getAnimationChain(String firstAnimationId, String lastAnimationId) {
         final OMSVGAnimationElement firstAnimation = elementLoader.getAnimation(firstAnimationId);
         final OMSVGAnimationElement lastAnimation = elementLoader.getAnimation(lastAnimationId);

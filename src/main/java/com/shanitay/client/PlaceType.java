@@ -15,7 +15,8 @@ public enum PlaceType {
     PLACES(new DefaultWidgetBinder()),
     MAIN(new MainWidgetBinder()),
     PILOT(new PilotWidgetBinder()),
-    ROBOT(new RobotWidgetBinder());
+    ROBOT(new RobotWidgetBinder()),
+    TRAILER(new ClipWidgetBinder());
 
     private final transient WidgetBinder widgetBinder;
 

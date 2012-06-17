@@ -34,6 +34,7 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         bindRedLine();
         bindIgulColors();
         linkWatchRight();
+        linkWatchLeft();
         bindIgulSlide();
         bindSquareColor();
         bindCube2();
@@ -45,7 +46,7 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         bindSlide();
         bindDoorMaker();
         bindPinkLine();
-
+        bindColorDoor();
         return svgElement;
     }
 
@@ -73,11 +74,21 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
 
     private void bindCoolIgul() {
         final Toy toy = Utils.attachToy(elementLoader.coolIgul1, soundLoader.coolIgul, true, animationLoader.coolIgul);
-        toyStopperHandler toyStopperHandler = new MainWidgetBinder.toyStopperHandler(toy);
+        ToyStopperHandler toyStopperHandler = new ToyStopperHandler(toy);
         Utils.addHandler(elementLoader.coolIgul2, toyStopperHandler);
         Utils.addHandler(elementLoader.coolIgul3, toyStopperHandler);
         Utils.addHandler(elementLoader.coolIgul4, toyStopperHandler);
         Utils.addHandler(elementLoader.coolIgul5, toyStopperHandler);
+    }
+
+    private void bindColorDoor() {
+        final Toy toy = Utils.attachToy(elementLoader.colorDoor1, soundLoader.colorDoor, true, animationLoader.colorDoor);
+
+        ToyStopperHandler toyStopperHandler = new ToyStopperHandler(toy);
+        Utils.addHandler(elementLoader.colorDoor2, toyStopperHandler);
+        Utils.addHandler(elementLoader.colorDoor3, toyStopperHandler);
+        Utils.addHandler(elementLoader.colorDoor4, toyStopperHandler);
+        Utils.addHandler(elementLoader.colorDoor5, toyStopperHandler);
     }
 
     private void bindCubes() {
@@ -116,7 +127,20 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         Utils.addHandler(elementLoader.watchRight2, someHandler);
         Utils.addHandler(elementLoader.watchRight3, someHandler);
         Utils.addHandler(elementLoader.watchRight4, someHandler);
-        Utils.addHandler(elementLoader.watchRight5, someHandler);
+    }
+
+    private void linkWatchLeft() {
+        Utils.SomeHandler someHandler = new Utils.SomeHandler() {
+            public void handle() {
+                History.newItem(PlaceType.TRAILER.name());
+            }
+        };
+
+        Utils.addHandler(elementLoader.logo1, someHandler);
+        Utils.addHandler(elementLoader.logo2, someHandler);
+        Utils.addHandler(elementLoader.logo3, someHandler);
+        Utils.addHandler(elementLoader.logo4, someHandler);
+        Utils.addHandler(elementLoader.logo5, someHandler);
     }
 
     private void bindRedLine() {
@@ -129,7 +153,7 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
 
     private void bindIgulColors() {
         final Toy toy = Utils.attachToy(elementLoader.igulColor1, soundLoader.igulColor, true, animationLoader.igulColor);
-        toyStopperHandler toyStopperHandler = new MainWidgetBinder.toyStopperHandler(toy);
+        ToyStopperHandler toyStopperHandler = new ToyStopperHandler(toy);
         Utils.addHandler(elementLoader.igulColor2, toyStopperHandler);
         Utils.addHandler(elementLoader.igulColor3, toyStopperHandler);
         Utils.addHandler(elementLoader.igulColor4, toyStopperHandler);
@@ -145,15 +169,4 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         return svgResource.getSvg();
     }
 
-    private static class toyStopperHandler implements Utils.SomeHandler {
-        private final Toy toy;
-
-        public toyStopperHandler(Toy toy) {
-            this.toy = toy;
-        }
-
-        public void handle() {
-            toy.stop();
-        }
-    }
 }
