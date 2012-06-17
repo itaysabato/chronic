@@ -139,7 +139,7 @@ public class Utils {
         return attachToy(element, toy);
     }
 
-    private static Toy attachToy(OMSVGElement element, final Toy toy) {
+    public static Toy attachToy(OMSVGElement element, final Toy toy) {
         if(!toy.isLooping()) {
             LoopRecorderFactory.register(toy);
         }

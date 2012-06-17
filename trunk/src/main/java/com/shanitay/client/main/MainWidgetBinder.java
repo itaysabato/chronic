@@ -63,8 +63,15 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
     }
 
     private void bindDoorMaker() {
-        Utils.attachToy(elementLoader.redButton, soundLoader.redButton, false, animationLoader.redButton);
-        Utils.attachToy(elementLoader.pinkButton, soundLoader.pinkButton, false, animationLoader.pinkButton);
+        animationLoader.redButton.setSound(soundLoader.redButton);
+        Toy toy = new Toy(soundLoader.redButton, animationLoader.redButton) {
+            @Override
+            public void play() {
+                animationLoader.redButton.play();
+            }
+        };
+        Utils.attachToy(elementLoader.redButton, toy);
+        Utils.attachToy(elementLoader.pinkButton, toy);
     }
 
     private void bindSlide() {
