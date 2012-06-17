@@ -9,6 +9,7 @@ import com.google.gwt.event.shared.UmbrellaException;
 import com.google.gwt.user.client.History;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
+import com.shanitay.client.utils.SoundCleaner;
 
 import java.util.Set;
 
@@ -27,6 +28,7 @@ public class shanitay implements EntryPoint {
                 public void onValueChange(ValueChangeEvent<String> stringValueChangeEvent) {
                     final String historyToken = stringValueChangeEvent.getValue();
                     setView(historyToken);
+                    SoundCleaner.getInstance().cleanSounds();
                 }
             });
 

@@ -143,6 +143,9 @@ public class Utils {
         if(!toy.isLooping()) {
             LoopRecorderFactory.register(toy);
         }
+        else {
+
+        }
 
         addHandler(element, new SomeHandler() {
             public void handle() {

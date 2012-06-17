@@ -2,6 +2,7 @@ package com.shanitay.client.main;
 
 import com.allen_sauer.gwt.voices.client.Sound;
 import com.allen_sauer.gwt.voices.client.SoundController;
+import com.shanitay.client.utils.SoundCleaner;
 import com.shanitay.client.utils.Utils;
 
 /**
@@ -77,6 +78,8 @@ class SoundLoader {
     }
 
     private Sound getSound(String name) {
-        return Utils.getSound("main/"+name+".mp3", soundController);
+        final Sound sound = Utils.getSound("main/" + name + ".mp3", soundController);
+        SoundCleaner.getInstance().addSound(sound);
+        return sound;
     }
 }
