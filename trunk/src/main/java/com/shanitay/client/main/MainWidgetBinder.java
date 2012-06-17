@@ -166,11 +166,6 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
                 History.newItem(PlaceType.TRAILER.name());
             }
         };
-
-        Utils.addHandler(elementLoader.logo1, someHandler);
-        Utils.addHandler(elementLoader.logo2, someHandler);
-        Utils.addHandler(elementLoader.logo3, someHandler);
-        Utils.addHandler(elementLoader.logo4, someHandler);
         Utils.addHandler(elementLoader.logo5, someHandler);
     }
 

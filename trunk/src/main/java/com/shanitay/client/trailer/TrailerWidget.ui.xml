@@ -4,8 +4,8 @@
     <g:HTMLPanel ui:field="panel">
         <video id="myVideo" width="1360" height="760" preload="auto"
                oncanplaythrough="play()" onended="back()">
-            <source src="clip/clip.mp4" type="video/mp4"/>
-            <source src="clip/clip.ogv" type="video/ogg"/>
+            <source src="trailer/trailer.mp4" type="video/mp4"/>
+            <source src="trailer/trailer.ogv" type="video/ogg"/>
         </video>
 
         <script type="text/javascript">
