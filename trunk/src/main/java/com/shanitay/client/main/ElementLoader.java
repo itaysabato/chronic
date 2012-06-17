@@ -16,7 +16,6 @@ class ElementLoader {
     final OMSVGGElement watchRight2;
     final OMSVGGElement watchRight3;
     final OMSVGGElement watchRight4;
-    final OMSVGGElement watchRight5;
     final OMSVGGElement igulSlide;
     final OMSVGRectElement orangeCube;
     final OMSVGRectElement blueCube;
@@ -45,6 +44,16 @@ class ElementLoader {
     final OMSVGGElement coolIgul5;
     final OMSVGGElement partGreen;
     final OMSVGGElement movingHouse;
+    final OMSVGGElement logo1;
+    final OMSVGGElement logo2;
+    final OMSVGGElement logo3;
+    final OMSVGGElement logo4;
+    final OMSVGGElement logo5;
+    final OMSVGGElement colorDoor1;
+    final OMSVGGElement colorDoor2;
+    final OMSVGGElement colorDoor3;
+    final OMSVGGElement colorDoor4;
+    final OMSVGGElement colorDoor5;
 
     public ElementLoader(OMSVGSVGElement svg) {
         this.svg = svg;
@@ -54,7 +63,6 @@ class ElementLoader {
         watchRight2 = (OMSVGGElement) getElement("watchRight2");
         watchRight3 = (OMSVGGElement) getElement("watchRight3");
         watchRight4 = (OMSVGGElement) getElement("watchRight4");
-        watchRight5 = (OMSVGGElement) getElement("watchRight5");
         igulSlide = (OMSVGGElement) getElement("igulSlide");
         orangeCube = (OMSVGRectElement) getElement("orangeCube");
         blueCube = (OMSVGRectElement) getElement("blueCube");
@@ -83,6 +91,17 @@ class ElementLoader {
         coolIgul5 = (OMSVGGElement) getElement("coolIgul5");
         partGreen = (OMSVGGElement) getElement("partGreen");
         movingHouse = (OMSVGGElement) getElement("movingHouse");
+        logo1 = (OMSVGGElement) getElement("logo1");
+        logo2 = (OMSVGGElement) getElement("logo2");
+        logo3 = (OMSVGGElement) getElement("logo3");
+        logo4 = (OMSVGGElement) getElement("logo4");
+        logo5 = (OMSVGGElement) getElement("logo5");
+
+        colorDoor1 = (OMSVGGElement) getElement("colorDoor1");
+        colorDoor2 = (OMSVGGElement) getElement("colorDoor2");
+        colorDoor3 = (OMSVGGElement) getElement("colorDoor3");
+        colorDoor4 = (OMSVGGElement) getElement("colorDoor4");
+        colorDoor5 = (OMSVGGElement) getElement("colorDoor5");
     }
 
     private OMSVGElement getElement(String elementId) {
