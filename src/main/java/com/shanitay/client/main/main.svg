@@ -1031,11 +1031,11 @@
         <g id="door">
             <animateTransform id="doorVanish" attributeName="transform" attributeType="XML" from="1,1" to="0,0"
                 repeatCount="1" type="scale" begin="indefinite" dur="1" fill="freeze" />
-            <rect x="-58.193" y="-92.9475" fill="#CCDDD7" width="116.386" height="185.895"/>
 
             <animateTransform id="doorReturn" attributeName="transform" attributeType="XML" to="1,1" from="0,0"
                 repeatCount="1" type="scale" begin="indefinite" dur="1" fill="freeze" />
-            <rect x="-58.193" y="-92.9475" fill="#CCDDD7" width="116.386" height="185.895"/>
+
+            <rect id="doorRect" x="-58.193" y="-92.9475" fill="#CCDDD7" width="116.386" height="185.895"/>
         </g>
     </svg>
 </g>
@@ -1114,7 +1114,7 @@
     <animateMotion id="makerReturn" repeatCount="1" path="z"
                    begin="makerMove.end" fill="freeze" />
 
-    <rect x="348.993" y="325.553" fill="#CCDDD7" width="22.986" height="20.743"/>
+    <rect x="348.993" y="325.553" fill="#EAE984" width="22.986" height="20.743"/>
 </g>
 <rect id="pinkButton" x="326.884" y="301.844" fill="#F2B1B6" width="57.292" height="49.532"/>
 <rect id="redButton" x="326.884" y="301.844" fill="#EE8F78" stroke="#EE8F78" width="57.292" height="49.532"/>

@@ -1,7 +1,9 @@
 package com.shanitay.client.main;
 
+import com.shanitay.client.utils.ShaniColors;
 import com.shanitay.client.utils.Toy;
 import com.shanitay.client.utils.Utils;
+import com.shanitay.client.utils.animations.FillColorAnimator;
 import org.vectomatic.dom.svg.OMSVGAnimationElement;
 import org.vectomatic.dom.svg.events.EndEvent;
 import org.vectomatic.dom.svg.events.EndHandler;
@@ -19,12 +21,14 @@ class DoorMakerAnimationBuilder {
     private boolean ignore = false;
     private ElementLoader animationLoader;
 
-    public DoorMakerAnimationBuilder(ElementLoader elementLoader) {
+    public DoorMakerAnimationBuilder(final ElementLoader elementLoader) {
         this.animationLoader = elementLoader;
         makerMove = elementLoader.getAnimation("makerMove");
         final OMSVGAnimationElement doorVanishAnimation = elementLoader.getAnimation("doorVanish");
 
         moonGif1 = elementLoader.getAnimation("moonGif1");
+
+        final FillColorAnimator fillColorAnimator = new FillColorAnimator(ShaniColors.LIGHT_BLUE, ShaniColors.YELLOW);
 
         doorVanishAnimation.addEndHandler(new EndHandler() {
             public void onEnd(EndEvent event) {
@@ -38,6 +42,7 @@ class DoorMakerAnimationBuilder {
 
         doorReturn.addEndHandler(new EndHandler() {
             public void onEnd(EndEvent event) {
+                fillColorAnimator.offAnimation(elementLoader.doorRect);
                 continueGif = false;
                 ignore = false;
             }
@@ -56,6 +61,7 @@ class DoorMakerAnimationBuilder {
             public void onEnd(EndEvent event) {
                 if (vanishDoor) {
                     doorVanishAnimation.beginElement();
+                    fillColorAnimator.inAnimation(elementLoader.doorRect);
                 }
                 else {
                     doorReturn.beginElement();
