@@ -110,19 +110,19 @@ public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
         loopRecorderController.setRecorder(recorder1);
         LoopRecorderFactory.setRecorder(recorder1);
 
-        OMSVGGElement switcher = Utils.getGElement("switcher", svgElement);
-        Utils.addHandler(switcher, new Utils.SomeHandler() {
-            public void handle() {
-                if(LoopRecorderFactory.getRecorder() == recorder1){
-                    loopRecorderController.setRecorder(recorder2);
-                    LoopRecorderFactory.setRecorder(recorder2);
-                }
-                else {
-                    loopRecorderController.setRecorder(recorder1);
-                    LoopRecorderFactory.setRecorder(recorder1);
-                }
-            }
-        });
+//        OMSVGGElement switcher = Utils.getGElement("switcher", svgElement);
+//        Utils.addHandler(switcher, new Utils.SomeHandler() {
+//            public void handle() {
+//                if(LoopRecorderFactory.getRecorder() == recorder1){
+//                    loopRecorderController.setRecorder(recorder2);
+//                    LoopRecorderFactory.setRecorder(recorder2);
+//                }
+//                else {
+//                    loopRecorderController.setRecorder(recorder1);
+//                    LoopRecorderFactory.setRecorder(recorder1);
+//                }
+//            }
+//        });
     }
 
     private boolean isMouthOpen(ElementLoader elementLoader) {
