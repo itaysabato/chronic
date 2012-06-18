@@ -35,6 +35,10 @@ class SoundLoader {
     final Sound toothBottom;
     final Sound open;
     final Sound close;
+    final Sound drum1;
+    final Sound drum2;
+    final Sound drum3;
+    final Sound drum4;
 
     public SoundLoader() {
         SoundController soundController = new SoundController();
@@ -67,6 +71,11 @@ class SoundLoader {
 
         open = Utils.getSound("robot/open.mp3", soundController);
         close = Utils.getSound("robot/close.mp3", soundController);
+
+        drum1 = Utils.getSound("robot/drum1.mp3", soundController);
+        drum2 = Utils.getSound("robot/drum2.mp3", soundController);
+        drum3 = Utils.getSound("robot/drum3.mp3", soundController);
+        drum4 = Utils.getSound("robot/drum4.mp3", soundController);
 
     }
 }

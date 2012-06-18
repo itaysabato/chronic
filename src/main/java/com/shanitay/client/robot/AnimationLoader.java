@@ -1,5 +1,6 @@
 package com.shanitay.client.robot;
 
+import com.shanitay.client.utils.ShaniColors;
 import com.shanitay.client.utils.Toy;
 import com.shanitay.client.utils.animations.*;
 import org.vectomatic.dom.svg.OMSVGElement;
@@ -43,7 +44,10 @@ class AnimationLoader {
     final Toy.Animation mot;
     final Toy.Animation openMouth;
     final Toy.Animation closeMouth;
-
+    final PeekabooToyAnimation drum1;
+    final PeekabooToyAnimation drum2;
+    final PeekabooToyAnimation drum3;
+    final PeekabooToyAnimation drum4;
 
     public AnimationLoader(ElementLoader elementLoader) {
         this.elementLoader = elementLoader;
@@ -80,6 +84,12 @@ class AnimationLoader {
         mot = new PeekabooToyAnimation(fillColorAnimator, 250, elementLoader.mot);
         openMouth = new SvgToyAnimation(elementLoader.openMouthAnimation);
         closeMouth = new SvgToyAnimation(elementLoader.closeMouthAnimation);
+
+        drum1 = new PeekabooToyAnimation(new FillColorAnimator(ShaniColors.RED, ShaniColors.BLACK), 250, elementLoader.drum1);
+        drum2 = new PeekabooToyAnimation(new FillColorAnimator(ShaniColors.PINK, ShaniColors.YELLOW), 250, elementLoader.drum2);
+        drum3 = new PeekabooToyAnimation(new FillColorAnimator(ShaniColors.GREEN, ShaniColors.LIGHT_BLUE), 250, elementLoader.drum3);
+        drum4 = new PeekabooToyAnimation(new FillColorAnimator(ShaniColors.YELLOW, ShaniColors.PINK), 250, elementLoader.drum4);
+
     }
 
     private Toy.Animation createExplodeAnimation(OMSVGGElement step, OMSVGRectElement stepRect) {
