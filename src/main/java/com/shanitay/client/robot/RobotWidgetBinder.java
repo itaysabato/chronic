@@ -4,8 +4,10 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
 import com.shanitay.client.AbstractSvgWidgetBinder;
 import com.shanitay.client.utils.LoopRecorderFactory;
+import com.shanitay.client.utils.ShaniColors;
 import com.shanitay.client.utils.Toy;
 import com.shanitay.client.utils.Utils;
+import com.shanitay.client.utils.animations.FillColorAnimator;
 import com.shanitay.client.utils.animations.HandlerToyAnimation;
 import com.shanitay.client.utils.gadgets.LoopRecorder;
 import com.shanitay.client.utils.gadgets.LoopRecorderController;
@@ -21,15 +23,22 @@ import org.vectomatic.dom.svg.ui.SVGResource;
  */
 public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
 
+    private LoopRecorderController recorderController;
+    private OMSVGSVGElement svgElement;
+    private ElementLoader elementLoader;
+    private SoundLoader soundLoader;
+    private AnimationLoader animationLoader;
+
     protected OMSVGSVGElement bindWidgets() {
         RobotBundle robotBundle = GWT.create(RobotBundle.class);
         final SVGResource svgResource = robotBundle.mainSvg();
-        final OMSVGSVGElement svgElement = svgResource.getSvg();
+        svgElement = svgResource.getSvg();
 
-        final SoundLoader soundLoader = new SoundLoader();
-        final ElementLoader elementLoader = new ElementLoader(svgElement);
-        final AnimationLoader animationLoader = new AnimationLoader(elementLoader);
-        initRecorder(svgElement);
+        soundLoader = new SoundLoader();
+        elementLoader = new ElementLoader(svgElement);
+        animationLoader = new AnimationLoader(elementLoader);
+        recorderController = new LoopRecorderController(this.svgElement);
+        initRecorder();
 
         Utils.attachToy(elementLoader.tooth1, soundLoader.tooth1, false, animationLoader.tooth1);
         Utils.attachToy(elementLoader.tooth2, soundLoader.tooth2, false, animationLoader.tooth2);
@@ -103,26 +112,39 @@ public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
         return svgElement;
     }
 
-    private void initRecorder(OMSVGSVGElement svgElement) {
-        final LoopRecorder recorder1 = new LoopRecorder();
-        final LoopRecorder recorder2 = new LoopRecorder();
-        final LoopRecorderController loopRecorderController = new LoopRecorderController(svgElement);
-        loopRecorderController.setRecorder(recorder1);
-        LoopRecorderFactory.setRecorder(recorder1);
+    private void initRecorder() {
+        final FillColorAnimator animator1 = new FillColorAnimator(ShaniColors.PINK, ShaniColors.YELLOW);
+        final LoopRecorder recorder1 = new LoopRecorder(animator1, elementLoader.pinkButton1);
+        bindRecorder(recorder1, elementLoader.track1);
 
-//        OMSVGGElement switcher = Utils.getGElement("switcher", svgElement);
-//        Utils.addHandler(switcher, new Utils.SomeHandler() {
-//            public void handle() {
-//                if(LoopRecorderFactory.getRecorder() == recorder1){
-//                    loopRecorderController.setRecorder(recorder2);
-//                    LoopRecorderFactory.setRecorder(recorder2);
-//                }
-//                else {
-//                    loopRecorderController.setRecorder(recorder1);
-//                    LoopRecorderFactory.setRecorder(recorder1);
-//                }
-//            }
-//        });
+        final FillColorAnimator animator2 = new FillColorAnimator(ShaniColors.GREEN, ShaniColors.YELLOW);
+        final LoopRecorder recorder2 = new LoopRecorder(animator2, elementLoader.greenButton2);
+        bindRecorder(recorder2, elementLoader.track2);
+
+        final FillColorAnimator animator3 = new FillColorAnimator(ShaniColors.RED, ShaniColors.YELLOW);
+        final LoopRecorder recorder3 = new LoopRecorder(animator3, elementLoader.redButton3);
+        bindRecorder(recorder3, elementLoader.track3);
+
+        final FillColorAnimator animator4 = new FillColorAnimator(ShaniColors.TURQUOISE, ShaniColors.YELLOW);
+        final LoopRecorder recorder4 = new LoopRecorder(animator4, elementLoader.blueButton4);
+        bindRecorder(recorder4, elementLoader.track4);
+
+        recorder1.on();
+        recorderController.setRecorder(recorder1);
+        LoopRecorderFactory.setRecorder(recorder1);
+    }
+
+    private void bindRecorder(final LoopRecorder recorder, OMSVGGElement track) {
+        Utils.addHandler(track, new Utils.SomeHandler() {
+            public void handle() {
+                if (LoopRecorderFactory.hasRecorder()) {
+                    LoopRecorderFactory.getRecorder().off();
+                }
+                recorder.on();
+                recorderController.setRecorder(recorder);
+                LoopRecorderFactory.setRecorder(recorder);
+            }
+        });
     }
 
     private boolean isMouthOpen(ElementLoader elementLoader) {

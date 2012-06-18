@@ -11,6 +11,7 @@ import org.vectomatic.dom.svg.events.BeginHandler;
  * Time: 20:04 <br/>
  */
 class ElementLoader {
+    private final OMSVGSVGElement svg;
 
     private boolean mouthOpen = false;
     final OMSVGGElement tooth1;
@@ -46,31 +47,62 @@ class ElementLoader {
     final OMSVGAnimationElement closeMouthAnimation;
     final OMSVGAnimationElement handleMove1;
     final OMSVGGElement eyeRightSur;
+    final OMSVGGElement track1;
+    final OMSVGGElement track2;
+    final OMSVGGElement track3;
+    final OMSVGGElement track4;
+    final OMSVGRectElement pinkButton1;
+    final OMSVGRectElement greenButton2;
+    final OMSVGRectElement redButton3;
+    final OMSVGRectElement blueButton4;
+    final OMSVGRectElement drum1;
+    final OMSVGRectElement drum2;
+    final OMSVGPolygonElement drum3;
+    final OMSVGRectElement drum4;
 
-    public ElementLoader(OMSVGSVGElement svgsvgElement) {
-        tooth1 = Utils.getGElement("tooth1", svgsvgElement);
-        tooth2 = Utils.getGElement("tooth2", svgsvgElement);
-        tooth3 = Utils.getGElement("tooth3", svgsvgElement);
-        tooth4 = Utils.getGElement("tooth4", svgsvgElement);
-        tooth5 = Utils.getGElement("tooth5", svgsvgElement);
-        tooth6 = Utils.getGElement("tooth6", svgsvgElement);
+    public ElementLoader(OMSVGSVGElement svg) {
+        this.svg = svg;
 
-        lightningButton = Utils.getGElement("lightningButton", svgsvgElement);
-        electricWhite = Utils.getGElement("electricWhite", svgsvgElement);
-        electricBlack = Utils.getGElement("electricBlack", svgsvgElement);
+        track1 = (OMSVGGElement) getElement("track1");
+        pinkButton1 = (OMSVGRectElement) getElement("pinkButton");
 
-        earRight = (OMSVGPathElement) Utils.getSVGElement("earRight", svgsvgElement);
-        earLeft = (OMSVGPathElement) Utils.getSVGElement("earLeft", svgsvgElement);
-        earHandle = Utils.getGElement("earHandle", svgsvgElement);
+        track2 = (OMSVGGElement) getElement("track2");
+        greenButton2 = (OMSVGRectElement) getElement("greenButton");
 
-        bgCoop1 = Utils.getGElement("bgCoop1", svgsvgElement);
-        bgCoop2 = Utils.getGElement("bgCoop2", svgsvgElement);
-        bgCoop3 = Utils.getGElement("bgCoop3", svgsvgElement);
+        track3 = (OMSVGGElement) getElement("track3");
+        redButton3 = (OMSVGRectElement) getElement("redButton");
 
-        smallLightning = Utils.getGElement("smallLightning", svgsvgElement);
+        track4 = (OMSVGGElement) getElement("track4");
+        blueButton4 = (OMSVGRectElement) getElement("blueButton");
 
-        eyeBallLeft = Utils.getGElement("eyeBallLeft", svgsvgElement);
-        eyeBallRight = Utils.getGElement("eyeBallRight", svgsvgElement);
+        drum1 = (OMSVGRectElement) getElement("drum1");
+        drum2 = (OMSVGRectElement) getElement("drum2");
+        drum3 = (OMSVGPolygonElement) getElement("drum3");
+        drum4 = (OMSVGRectElement) getElement("drum4");
+
+        tooth1 = Utils.getGElement("tooth1", this.svg);
+        tooth2 = Utils.getGElement("tooth2", this.svg);
+        tooth3 = Utils.getGElement("tooth3", this.svg);
+        tooth4 = Utils.getGElement("tooth4", this.svg);
+        tooth5 = Utils.getGElement("tooth5", this.svg);
+        tooth6 = Utils.getGElement("tooth6", this.svg);
+
+        lightningButton = Utils.getGElement("lightningButton", this.svg);
+        electricWhite = Utils.getGElement("electricWhite", this.svg);
+        electricBlack = Utils.getGElement("electricBlack", this.svg);
+
+        earRight = (OMSVGPathElement) Utils.getSVGElement("earRight", this.svg);
+        earLeft = (OMSVGPathElement) Utils.getSVGElement("earLeft", this.svg);
+        earHandle = Utils.getGElement("earHandle", this.svg);
+
+        bgCoop1 = Utils.getGElement("bgCoop1", this.svg);
+        bgCoop2 = Utils.getGElement("bgCoop2", this.svg);
+        bgCoop3 = Utils.getGElement("bgCoop3", this.svg);
+
+        smallLightning = Utils.getGElement("smallLightning", this.svg);
+
+        eyeBallLeft = Utils.getGElement("eyeBallLeft", this.svg);
+        eyeBallRight = Utils.getGElement("eyeBallRight", this.svg);
 
 //        step1 = Utils.getGElement("step1", svgsvgElement);
 //        step2 = Utils.getGElement("step2", svgsvgElement);
@@ -80,23 +112,23 @@ class ElementLoader {
 //        step6 = Utils.getGElement("step6", svgsvgElement);
 //        step7 = Utils.getGElement("step7", svgsvgElement);
 
-        nose = Utils.getGElement("nose", svgsvgElement);
-        surprised = Utils.getGElement("surprised", svgsvgElement);
-        eyes = Utils.getGElement("eyes", svgsvgElement);
+        nose = Utils.getGElement("nose", this.svg);
+        surprised = Utils.getGElement("surprised", this.svg);
+        eyes = Utils.getGElement("eyes", this.svg);
 
-        teethDownOpen = Utils.getGElement("teethDownOpen", svgsvgElement);
-        glasses = Utils.getGElement("glasses", svgsvgElement);
+        teethDownOpen = Utils.getGElement("teethDownOpen", this.svg);
+        glasses = Utils.getGElement("glasses", this.svg);
 
-        lightning = Utils.getGElement("lightning", svgsvgElement);
+        lightning = Utils.getGElement("lightning", this.svg);
 
-        eyeBrawLeft = Utils.getGElement("eyeBrawLeft", svgsvgElement);
-        eyeBrawRight = Utils.getGElement("eyeBrawRight", svgsvgElement);
-        leftBrawRise = Utils.getAnimationElement("leftBrawRise", svgsvgElement);
-        rightBrawRise = Utils.getAnimationElement("rightBrawRise", svgsvgElement);
+        eyeBrawLeft = Utils.getGElement("eyeBrawLeft", this.svg);
+        eyeBrawRight = Utils.getGElement("eyeBrawRight", this.svg);
+        leftBrawRise = Utils.getAnimationElement("leftBrawRise", this.svg);
+        rightBrawRise = Utils.getAnimationElement("rightBrawRise", this.svg);
 
-        mot = (OMSVGRectElement) Utils.getSVGElement("mot", svgsvgElement);
-        openMouthAnimation = Utils.getAnimationElement("openMouth", svgsvgElement);
-        closeMouthAnimation = Utils.getAnimationElement("closeMouth", svgsvgElement);
+        mot = (OMSVGRectElement) Utils.getSVGElement("mot", this.svg);
+        openMouthAnimation = Utils.getAnimationElement("openMouth", this.svg);
+        closeMouthAnimation = Utils.getAnimationElement("closeMouth", this.svg);
 
         openMouthAnimation.addBeginHandler(new BeginHandler() {
             public void onBegin(BeginEvent event) {
@@ -110,8 +142,12 @@ class ElementLoader {
             }
         });
 
-        handleMove1 = Utils.getAnimationElement("handleMove1", svgsvgElement);
-        eyeRightSur = Utils.getGElement("eyeRightSur", svgsvgElement);
+        handleMove1 = Utils.getAnimationElement("handleMove1", this.svg);
+        eyeRightSur = Utils.getGElement("eyeRightSur", this.svg);
+    }
+
+    private OMSVGElement getElement(String elementId) {
+        return Utils.getSVGElement(elementId, svg);
     }
 
     private OMSVGRectElement getStepRect(OMSVGGElement step) {
