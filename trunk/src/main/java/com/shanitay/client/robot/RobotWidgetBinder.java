@@ -2,6 +2,7 @@ package com.shanitay.client.robot;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
+import com.google.gwt.user.client.History;
 import com.shanitay.client.AbstractSvgWidgetBinder;
 import com.shanitay.client.utils.LoopRecorderFactory;
 import com.shanitay.client.utils.ShaniColors;
@@ -113,6 +114,12 @@ public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
         Utils.attachToy(elementLoader.drum2, soundLoader.drum2, false, animationLoader.drum2);
         Utils.attachToy(elementLoader.drum3, soundLoader.drum3, false, animationLoader.drum3);
         Utils.attachToy(elementLoader.drum4, soundLoader.drum4, false, animationLoader.drum4);
+
+        Utils.addHandler(elementLoader.backArrow, new Utils.SomeHandler() {
+            public void handle() {
+                History.back();
+            }
+        });
 
         return svgElement;
     }
