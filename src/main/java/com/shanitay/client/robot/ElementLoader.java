@@ -59,9 +59,12 @@ class ElementLoader {
     final OMSVGRectElement drum2;
     final OMSVGPolygonElement drum3;
     final OMSVGRectElement drum4;
+    final OMSVGGElement backArrow;
 
     public ElementLoader(OMSVGSVGElement svg) {
         this.svg = svg;
+
+        backArrow = (OMSVGGElement) getElement("backArrow");
 
         track1 = (OMSVGGElement) getElement("track1");
         pinkButton1 = (OMSVGRectElement) getElement("pinkButton");

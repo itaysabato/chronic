@@ -33,7 +33,7 @@
 </g>
 <rect x="115.61" y="69.067" fill="#CCDDD7" width="237.305" height="22.168"/>
 <rect x="347.567" y="69.067" fill="#CCDDD7" width="22.168" height="73.209"/>
-<rect x="352.916" y="120.109" fill="#CCDDD7" width="91.082" height="22.168"/>
+<rect x="352.916" y="120.109" fill="#CCDDD7" width="95.082" height="22.168"/>
 <rect id="drum1" x="425.041" y="519.503" fill="#EE8F78" width="61.034" height="180.413"/>
 <polygon id="drum3" fill="#5AA17B" points="328.214,499.657 230.792,724.273 328.214,724.273 "/>
 <rect id="drum4" x="205.044" y="645.792" fill="#EAE984" width="220.144" height="38.791"/>
@@ -771,6 +771,11 @@
 		/>
 	<circle fill="#EE8F78" stroke="#EE8F78" cx="106.218" cy="459.583" r="43.559"/>
 	<circle fill="#EAE984" cx="106.218" cy="459.583" r="31.074"/>
+</g>
+<g id="backArrow">
+    <rect x="1283" y="0" fill="#F5F5F5" width="60" height="51"/>
+	<polygon fill="#5AA17B" points="1312.315,36.516 1293.88,25.873 1312.315,15.229 	"/>
+	<rect x="1312.315" y="23.171" fill="#5AA17B" width="29.791" height="5.528"/>
 </g>
 <g id="lightning" display="none">
 	<polygon display="inline" fill="#EAE984" points="547.987,-36.217 870.461,-35.67 667.875,273 813.646,505.259 584.262,808.548
