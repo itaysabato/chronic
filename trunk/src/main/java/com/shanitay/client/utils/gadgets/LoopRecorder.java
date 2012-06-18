@@ -2,7 +2,9 @@ package com.shanitay.client.utils.gadgets;
 
 import com.google.gwt.core.client.Scheduler;
 import com.shanitay.client.utils.Toy;
+import com.shanitay.client.utils.animations.StateChangeAnimator;
 import com.shanitay.client.utils.animations.ToyEvent;
+import org.vectomatic.dom.svg.OMSVGElement;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -19,6 +21,13 @@ public class LoopRecorder {
     private StoppableRepeatingCommand nextPlayback;
     private final List<StoppableRepeatingCommand> currentPlaybacks = new LinkedList<StoppableRepeatingCommand>();
     private final List<ToyEvent> recordedEvents = new LinkedList<ToyEvent>();
+    private final StateChangeAnimator animator;
+    private final OMSVGElement target;
+
+    public LoopRecorder(StateChangeAnimator animator, OMSVGElement target) {
+        this.animator = animator;
+        this.target = target;
+    }
 
     void startRecording() {
         startTimeMillis = System.currentTimeMillis();
@@ -87,6 +96,14 @@ public class LoopRecorder {
 
     State getState() {
         return state;
+    }
+
+    public void off() {
+        animator.offAnimation(target);
+    }
+
+    public void on() {
+        animator.inAnimation(target);
     }
 
     static enum State {
