@@ -109,6 +109,11 @@ public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
         Spinner spinner = new Spinner(soundLoader.open, soundLoader.close);
         spinner.init(elementLoader.eyeRightSur, svgElement, 809.87f, 199.86f);
 
+        Utils.attachToy(elementLoader.drum1, soundLoader.drum1, false, animationLoader.drum1);
+        Utils.attachToy(elementLoader.drum2, soundLoader.drum2, false, animationLoader.drum2);
+        Utils.attachToy(elementLoader.drum3, soundLoader.drum3, false, animationLoader.drum3);
+        Utils.attachToy(elementLoader.drum4, soundLoader.drum4, false, animationLoader.drum4);
+
         return svgElement;
     }
 
