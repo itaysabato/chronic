@@ -48,12 +48,14 @@
 <circle fill="#EAE984" cx="249.367" cy="539.755" r="3.32"/>
 <path fill="#EAE984" d="M236.486,523.29c0,6.16,4.994,11.154,11.154,11.154h3.188c6.16,0,11.154-4.994,11.154-11.154v-12.484
 	h-25.496V523.29z"/>
-<g id="new_color_right_ear">
-	<rect x="975.357" y="208.112" fill="#F2B1B5" stroke="#F2B1B5" width="390.643" height="11.883"/>
-	<rect x="975.357" y="219.994" fill="#ED8E78" stroke="#ED8E78" width="390.643" height="22.646"/>
-	<rect x="975.357" y="242.641" fill="#F2B1B5" stroke="#F2B1B5" width="390.643" height="12.158"/>
-	<rect x="975.357" y="254.799" fill="#183535" width="390.643" height="5.903"/>
-	<rect x="974.319" y="244.379" fill="#209B8C" width="390.643" height="9.943"/>
+<g id="rightEarColors">
+    <animateMotion id="rightEarFly" repeatCount="1" path="m 0 0 L 800 0"  begin="indefinite" dur="1" fill="freeze" />
+
+	<rect x="600" y="208.112" fill="#F2B1B5" stroke="#F2B1B5" width="390.643" height="11.883"/>
+	<rect x="600" y="219.994" fill="#ED8E78" stroke="#ED8E78" width="390.643" height="22.646"/>
+	<rect x="600" y="242.641" fill="#F2B1B5" stroke="#F2B1B5" width="390.643" height="12.158"/>
+	<rect x="600" y="254.799" fill="#183535" width="390.643" height="5.903"/>
+	<rect x="600" y="244.379" fill="#209B8C" width="390.643" height="9.943"/>
 </g>
 <rect id="new_giff_hand" x="814.51" y="292.543" fill="#173434" width="331.358" height="157.153"/>
 <rect x="1071.422" y="633.077" fill="#1F9C8D" width="224.544" height="61.181"/>
@@ -698,7 +700,18 @@
 			c44.516,0,80.596-36.085,80.596-80.601C892.89,163.817,856.81,127.73,812.294,127.73z"/>
 	</g>
 </g>
-<g id="newgiff1">
+
+<animate id="tvGif1" attributeName="display" attributeType="CSS" to="none"
+                            begin="0; tvGif4.end" dur="0.125" fill="freeze" xlink:href="#tv1" />
+<animate id="tvGif2" attributeName="display" attributeType="CSS" to="none"
+                            begin="tvGif1.end" dur="0.125" fill="freeze" xlink:href="#tv2" />
+
+<animate id="tvGif3" attributeName="display" attributeType="CSS" to="block"
+                            begin="tvGif2.end" dur="0.125" fill="freeze" xlink:href="#tv2" />
+<animate id="tvGif4" attributeName="display" attributeType="CSS" to="block"
+                            begin="tvGif2.end" dur="0.125" fill="freeze" xlink:href="#tv1" />
+
+<g id="tv3">
 	<path fill="#ED8E78" d="M1068.18,371.118c0-43.378,35.166-78.539,78.545-78.539c43.375,0,78.541,35.161,78.541,78.539
 		c0,43.379-35.166,78.543-78.541,78.543C1103.346,449.661,1068.18,414.497,1068.18,371.118z"/>
 	<path fill="#209B8C" d="M1211.059,416.142h-128.673c0,0-16.946-24.453-14.206-45.023h157.086
@@ -720,7 +733,7 @@
 	<rect x="1176.177" y="342.755" fill="#E9EA83" width="25.091" height="21.819"/>
 	<rect x="1176.177" y="379.414" fill="#183535" width="25.091" height="22.25"/>
 </g>
-<g id="newgiff2_1_">
+<g id="tv2">
 	<path fill="#ED8E78" d="M1068.18,371.118c0-43.378,35.166-78.539,78.545-78.539c43.375,0,78.541,35.161,78.541,78.539
 		c0,43.379-35.166,78.543-78.541,78.543C1103.346,449.661,1068.18,414.497,1068.18,371.118z"/>
 	<path fill="#209B8C" d="M1211.059,416.142h-128.673c0,0-16.946-24.453-14.206-45.023h157.086
@@ -742,7 +755,7 @@
 	<rect x="1176.177" y="342.755" fill="#183535" width="25.091" height="21.819"/>
 	<rect x="1176.177" y="379.414" fill="#183535" width="25.091" height="22.25"/>
 </g>
-<g id="newgiff3">
+<g id="tv1">
 	<path fill="#ED8E78" d="M1068.18,371.118c0-43.378,35.166-78.539,78.545-78.539c43.375,0,78.541,35.161,78.541,78.539
 		c0,43.379-35.166,78.543-78.541,78.543C1103.346,449.661,1068.18,414.497,1068.18,371.118z"/>
 	<path fill="#209B8C" d="M1211.059,416.142h-128.673c0,0-16.946-24.453-14.206-45.023h157.086

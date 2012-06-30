@@ -167,4 +167,8 @@ class ElementLoader {
     public boolean isMouthOpen() {
         return mouthOpen;
     }
+
+    public OMSVGAnimationElement getAnimation(String elementId) {
+        return Utils.getAnimationElement(elementId, svg);
+    }
 }

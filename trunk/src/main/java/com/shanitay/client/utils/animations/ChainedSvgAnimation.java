@@ -1,4 +1,4 @@
-package com.shanitay.client.main;
+package com.shanitay.client.utils.animations;
 
 import com.shanitay.client.utils.Toy;
 import org.vectomatic.dom.svg.OMSVGAnimationElement;
@@ -10,7 +10,7 @@ import org.vectomatic.dom.svg.events.EndHandler;
 * Date: 16/06/12 <br/>
 * Time: 21:55 <br/>
 */
-class ChainedSvgAnimation implements Toy.Animation {
+public class ChainedSvgAnimation implements Toy.Animation {
     private final OMSVGAnimationElement firstAnimation;
 
     private boolean looping;

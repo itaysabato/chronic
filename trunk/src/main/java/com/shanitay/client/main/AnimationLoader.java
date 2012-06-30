@@ -2,10 +2,7 @@ package com.shanitay.client.main;
 
 import com.shanitay.client.utils.ShaniColors;
 import com.shanitay.client.utils.Toy;
-import com.shanitay.client.utils.animations.FillColorAnimator;
-import com.shanitay.client.utils.animations.MultiToyAnimation;
-import com.shanitay.client.utils.animations.PeekabooToyAnimation;
-import com.shanitay.client.utils.animations.SvgToyAnimation;
+import com.shanitay.client.utils.animations.*;
 import org.vectomatic.dom.svg.OMSVGAnimationElement;
 
 /**
