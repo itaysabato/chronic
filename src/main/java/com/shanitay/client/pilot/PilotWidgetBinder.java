@@ -45,4 +45,9 @@ public class PilotWidgetBinder extends AbstractSvgWidgetBinder {
 
         return svgElement;
     }
+
+    @Override
+    protected void shutdown() {
+
+    }
 }

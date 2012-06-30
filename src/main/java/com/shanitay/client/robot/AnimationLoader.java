@@ -3,6 +3,7 @@ package com.shanitay.client.robot;
 import com.shanitay.client.utils.ShaniColors;
 import com.shanitay.client.utils.Toy;
 import com.shanitay.client.utils.animations.*;
+import org.vectomatic.dom.svg.OMSVGAnimationElement;
 import org.vectomatic.dom.svg.OMSVGElement;
 import org.vectomatic.dom.svg.OMSVGGElement;
 import org.vectomatic.dom.svg.OMSVGRectElement;
@@ -31,13 +32,6 @@ class AnimationLoader {
     final Toy.Animation earLeft;
     final Toy.Animation earRight;
     final Toy.Animation coopBg;
-//    final Toy.Animation step1Explode;
-//    final Toy.Animation step2Explode;
-//    final Toy.Animation step3Explode;
-//    final Toy.Animation step4Explode;
-//    final Toy.Animation step5Explode;
-//    final Toy.Animation step6Explode;
-//    final Toy.Animation step7Explode;
     final Toy.Animation leftBraw;
     final Toy.Animation rightBraw;
     final Toy.Animation mot;
@@ -60,21 +54,13 @@ class AnimationLoader {
 
         electric = createElectric();
 
-        final FillColorAnimator earsAnimator = new FillColorAnimator("#1F9C8D", "#EAE984");
-        earRight = new PeekabooToyAnimation(earsAnimator, RIGHT_EAR_DURATION, elementLoader.earRight);
-
+//        final FillColorAnimator earsAnimator = new FillColorAnimator("#1F9C8D", "#EAE984");
+//        earRight = new PeekabooToyAnimation(earsAnimator, RIGHT_EAR_DURATION, elementLoader.earRight);
+        earRight = new SvgToyAnimation(elementLoader.getAnimation("rightEarFly"));
         earLeft = createLeftEar(elementLoader);
 
         final FillColorAnimator coopCenterAnimator = new FillColorAnimator("#173434", "#EAE984");
         coopBg = new DiscoToyAnimation(true, AnimatorImpls.APPEAR, BG_INTERVAL, elementLoader.bgCoop1, elementLoader.bgCoop2, elementLoader.bgCoop3);
-
-//        step1Explode = createExplodeAnimation(elementLoader.step1, elementLoader.step1Rect);
-//        step2Explode = createExplodeAnimation(elementLoader.step2, elementLoader.step2Rect);
-//        step3Explode = createExplodeAnimation(elementLoader.step3, elementLoader.step3Rect);
-//        step4Explode = createExplodeAnimation(elementLoader.step4, elementLoader.step4Rect);
-//        step5Explode = createExplodeAnimation(elementLoader.step5, elementLoader.step5Rect);
-//        step6Explode = createExplodeAnimation(elementLoader.step6, elementLoader.step6Rect);
-//        step7Explode = createExplodeAnimation(elementLoader.step7, elementLoader.step7Rect);
 
         leftBraw = new SvgToyAnimation(elementLoader.leftBrawRise);
         rightBraw = new SvgToyAnimation(elementLoader.rightBrawRise);
@@ -142,5 +128,11 @@ class AnimationLoader {
                 stepRect.getHeight().getBaseVal().setValue(39.348f);
             }
         };
+    }
+
+    private Toy.Animation getAnimationChain(String firstAnimationId, String lastAnimationId) {
+        final OMSVGAnimationElement firstAnimation = elementLoader.getAnimation(firstAnimationId);
+        final OMSVGAnimationElement lastAnimation = elementLoader.getAnimation(lastAnimationId);
+        return new ChainedSvgAnimation(firstAnimation, lastAnimation);
     }
 }
