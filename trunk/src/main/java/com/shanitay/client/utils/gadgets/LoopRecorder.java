@@ -35,7 +35,7 @@ public class LoopRecorder {
         state = State.RECORDING;
     }
 
-    void stop() {
+    public void stop() {
         if(state == State.RECORDING){
             relativeEndTimeMillis = System.currentTimeMillis() - startTimeMillis;
         }

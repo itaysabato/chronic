@@ -17,6 +17,9 @@ import org.vectomatic.dom.svg.OMSVGGElement;
 import org.vectomatic.dom.svg.OMSVGSVGElement;
 import org.vectomatic.dom.svg.ui.SVGResource;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created By: Itay Sabato<br/>
  * Date: 19/05/12 <br/>
@@ -29,6 +32,7 @@ public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
     private ElementLoader elementLoader;
     private SoundLoader soundLoader;
     private AnimationLoader animationLoader;
+    private List<LoopRecorder> recordersList;
 
     protected OMSVGSVGElement bindWidgets() {
         RobotBundle robotBundle = GWT.create(RobotBundle.class);
@@ -67,14 +71,6 @@ public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
 
         Utils.attachToy(elementLoader.eyeBrawLeft, soundLoader.leftBraw, false, animationLoader.leftBraw);
         Utils.attachToy(elementLoader.eyeBrawRight, soundLoader.rightBraw, false, animationLoader.rightBraw);
-
-//        Utils.attachToy(elementLoader.step1, soundLoader.step1, false, animationLoader.step1Explode);
-//        Utils.attachToy(elementLoader.step2, soundLoader.step2, false, animationLoader.step2Explode);
-//        Utils.attachToy(elementLoader.step3, soundLoader.step3, false, animationLoader.step3Explode);
-//        Utils.attachToy(elementLoader.step4, soundLoader.step4, false, animationLoader.step4Explode);
-//        Utils.attachToy(elementLoader.step5, soundLoader.step5, false, animationLoader.step5Explode);
-//        Utils.attachToy(elementLoader.step6, soundLoader.step6, false, animationLoader.step6Explode);
-//        Utils.attachToy(elementLoader.step7, soundLoader.step7, false, animationLoader.step7Explode);
 
         Toy.Animation noseAnimation = new HandlerToyAnimation(new Utils.SomeHandler() {
             public void handle() {
@@ -125,21 +121,27 @@ public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
     }
 
     private void initRecorder() {
+        recordersList = new ArrayList<LoopRecorder>(4);
+
         final FillColorAnimator animator1 = new FillColorAnimator(ShaniColors.PINK, ShaniColors.YELLOW);
         final LoopRecorder recorder1 = new LoopRecorder(animator1, elementLoader.pinkButton1);
         bindRecorder(recorder1, elementLoader.track1);
+        recordersList.add(recorder1);
 
         final FillColorAnimator animator2 = new FillColorAnimator(ShaniColors.GREEN, ShaniColors.YELLOW);
         final LoopRecorder recorder2 = new LoopRecorder(animator2, elementLoader.greenButton2);
         bindRecorder(recorder2, elementLoader.track2);
+        recordersList.add(recorder2);
 
         final FillColorAnimator animator3 = new FillColorAnimator(ShaniColors.RED, ShaniColors.YELLOW);
         final LoopRecorder recorder3 = new LoopRecorder(animator3, elementLoader.redButton3);
         bindRecorder(recorder3, elementLoader.track3);
+        recordersList.add(recorder3);
 
         final FillColorAnimator animator4 = new FillColorAnimator(ShaniColors.TURQUOISE, ShaniColors.YELLOW);
         final LoopRecorder recorder4 = new LoopRecorder(animator4, elementLoader.blueButton4);
         bindRecorder(recorder4, elementLoader.track4);
+        recordersList.add(recorder4);
 
         recorder1.on();
         recorderController.setRecorder(recorder1);
@@ -177,5 +179,14 @@ public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
             }
         };
         Utils.attachToy(teethDown, Utils.getNullSound(), false, new HandlerToyAnimation(teethHandler));
+    }
+
+    @Override
+    protected void shutdown() {
+        if(recordersList != null) {
+            for (LoopRecorder loopRecorder : recordersList) {
+                loopRecorder.stop();
+            }
+        }
     }
 }

@@ -195,4 +195,8 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         return svgResource.getSvg();
     }
 
+    @Override
+    protected void shutdown() {
+
+    }
 }
