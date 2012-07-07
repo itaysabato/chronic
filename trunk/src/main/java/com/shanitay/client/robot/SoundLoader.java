@@ -66,6 +66,18 @@ class SoundLoader {
         tv = getSound("tv");
         disk = getSound("disk");
         nose = getSound("nose");
+
+        tooth1.setBalance(100);
+        tooth2.setBalance(100);
+        tooth3.setBalance(100);
+        tooth4.setBalance(100);
+        tooth5.setBalance(100);
+        tooth6.setBalance(100);
+
+        drum1.setBalance(-100);
+        drum2.setBalance(-100);
+        drum3.setBalance(-100);
+        drum4.setBalance(-100);
     }
 
     private Sound getSound(String name) {
