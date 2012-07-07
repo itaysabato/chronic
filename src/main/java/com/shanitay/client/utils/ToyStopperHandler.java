@@ -1,14 +1,11 @@
-package com.shanitay.client.main;
-
-import com.shanitay.client.utils.Toy;
-import com.shanitay.client.utils.Utils;
+package com.shanitay.client.utils;
 
 /**
 * Created By: Itay Sabato<br/>
 * Date: 17/06/12 <br/>
 * Time: 03:14 <br/>
 */
-class ToyStopperHandler implements Utils.SomeHandler {
+public class ToyStopperHandler implements Utils.SomeHandler {
     private final Toy toy;
 
     public ToyStopperHandler(Toy toy) {

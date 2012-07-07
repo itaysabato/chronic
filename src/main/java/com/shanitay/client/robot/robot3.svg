@@ -702,7 +702,7 @@
 </g>
 
 <animate id="tvGif1" attributeName="display" attributeType="CSS" to="none"
-                            begin="0; tvGif4.end" dur="0.125" fill="freeze" xlink:href="#tv1" />
+                            begin="indefinite" dur="0.125" fill="freeze" xlink:href="#tv1" />
 <animate id="tvGif2" attributeName="display" attributeType="CSS" to="none"
                             begin="tvGif1.end" dur="0.125" fill="freeze" xlink:href="#tv2" />
 
