@@ -44,7 +44,6 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         bindCubes();
         bindCoolIgul();
         bindPartGreen();
-        bindMovingHouse();
         bindSlide();
         bindBigGroup();
         bindDoorMaker();
@@ -84,10 +83,6 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
     private void bindBigGroup() {
         Dragger dragger = new Dragger(svgElement, 0, 0, 200, 0);
         dragger.makeDraggable(elementLoader.bigGroup, soundLoader.bigForward, soundLoader.bigBackward);
-    }
-
-    private Toy bindMovingHouse() {
-        return Utils.attachToy(elementLoader.movingHouse, soundLoader.movingHouse, true, animationLoader.movingHouse);
     }
 
     private void bindPartGreen() {

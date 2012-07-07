@@ -35,7 +35,6 @@ class SoundLoader {
     final Sound pinkCube;
     final Sound coolIgul;
     final Sound partGreen;
-    final Sound movingHouse;
     final Sound slideForward;
     final Sound slideBackward;
     final Sound colorDoor;
@@ -68,7 +67,6 @@ class SoundLoader {
         pinkCube = getSound("pinkCube");
         coolIgul = getSound("coolIgul");
         partGreen = getSound("partGreen");
-        movingHouse = getSound("movingHouse");
         slideForward = getSound("slideForward");
         slideBackward = getSound("slideBackward");
         colorDoor = getSound("colorDoor");
