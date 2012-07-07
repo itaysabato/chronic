@@ -116,7 +116,9 @@ public class Utils {
     }
 
     public static Sound getSound(final String soundUrl, SoundController soundController) {
-        return soundController.createSound(Sound.MIME_TYPE_AUDIO_MPEG_MP3, soundUrl, true, false);
+        final Sound sound = soundController.createSound(Sound.MIME_TYPE_AUDIO_MPEG_MP3, soundUrl, true, false);
+        SoundCleaner.getInstance().addSound(sound);
+        return sound;
     }
 
     public static OMSVGAnimationElement getAnimationElement(String elementId, OMSVGSVGElement svgsvgElement) {
