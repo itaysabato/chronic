@@ -3,6 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1360"
 	 height="760" viewBox="0 0 1360 760" enable-background="new 0 0 1360 760" xml:space="preserve">
+<g transform="translate(0,-80)">
 <g id="giffa26">
     <g>
 	<rect fill="#173434" width="1392" height="858"/>
@@ -453,107 +454,107 @@
 		<circle fill="#EAE984" cx="684.428" cy="447.413" r="14.955"/>
 	</g>
 </g>
+</g>
 
         <animate id="giffaGif1" attributeName="display" attributeType="CSS" to="none"
-									begin="0; giffaGif46.end" dur="0.125" fill="freeze" xlink:href="#giffa1" />
+									begin="0; giffaGif46.end" dur="0.2" fill="freeze" xlink:href="#giffa1" />
 		<animate id="giffaGif2" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif1.end" dur="0.125" fill="freeze" xlink:href="#giffa2" />
+									begin="giffaGif1.end" dur="0.2" fill="freeze" xlink:href="#giffa2" />
 		<animate id="giffaGif3" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif2.end" dur="0.125" fill="freeze" xlink:href="#giffa3" />
+									begin="giffaGif2.end" dur="0.2" fill="freeze" xlink:href="#giffa3" />
 		<animate id="giffaGif4" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif3.end" dur="0.125" fill="freeze" xlink:href="#giffa4" />
+									begin="giffaGif3.end" dur="0.2" fill="freeze" xlink:href="#giffa4" />
 		<animate id="giffaGif5" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif4.end" dur="0.125" fill="freeze" xlink:href="#giffa5" />
+									begin="giffaGif4.end" dur="0.2" fill="freeze" xlink:href="#giffa5" />
 		<animate id="giffaGif6" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif5.end" dur="0.125" fill="freeze" xlink:href="#giffa6" />
+									begin="giffaGif5.end" dur="0.2" fill="freeze" xlink:href="#giffa6" />
 		<animate id="giffaGif7" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif6.end" dur="0.125" fill="freeze" xlink:href="#giffa7" />
+									begin="giffaGif6.end" dur="0.2" fill="freeze" xlink:href="#giffa7" />
 		<animate id="giffaGif8" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif7.end" dur="0.125" fill="freeze" xlink:href="#giffa8" />
+									begin="giffaGif7.end" dur="0.2" fill="freeze" xlink:href="#giffa8" />
 		<animate id="giffaGif9" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif8.end" dur="0.125" fill="freeze" xlink:href="#giffa9" />
+									begin="giffaGif8.end" dur="0.2" fill="freeze" xlink:href="#giffa9" />
 		<animate id="giffaGif10" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif9.end" dur="0.125" fill="freeze" xlink:href="#giffa10" />
+									begin="giffaGif9.end" dur="0.2" fill="freeze" xlink:href="#giffa10" />
 		<animate id="giffaGif11" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif10.end" dur="0.125" fill="freeze" xlink:href="#giffa11" />
+									begin="giffaGif10.end" dur="0.2" fill="freeze" xlink:href="#giffa11" />
 		<animate id="giffaGif12" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif11.end" dur="0.125" fill="freeze" xlink:href="#giffa12" />
+									begin="giffaGif11.end" dur="0.2" fill="freeze" xlink:href="#giffa12" />
 		<animate id="giffaGif13" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif12.end" dur="0.125" fill="freeze" xlink:href="#giffa13" />
+									begin="giffaGif12.end" dur="0.2" fill="freeze" xlink:href="#giffa13" />
 		<animate id="giffaGif14" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif13.end" dur="0.125" fill="freeze" xlink:href="#giffa14" />
+									begin="giffaGif13.end" dur="0.2" fill="freeze" xlink:href="#giffa14" />
 		<animate id="giffaGif15" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif14.end" dur="0.125" fill="freeze" xlink:href="#giffa15" />
+									begin="giffaGif14.end" dur="0.2" fill="freeze" xlink:href="#giffa15" />
 		<animate id="giffaGif16" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif15.end" dur="0.125" fill="freeze" xlink:href="#giffa16" />
+									begin="giffaGif15.end" dur="0.2" fill="freeze" xlink:href="#giffa16" />
 		<animate id="giffaGif17" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif16.end" dur="0.125" fill="freeze" xlink:href="#giffa17" />
+									begin="giffaGif16.end" dur="0.2" fill="freeze" xlink:href="#giffa17" />
 		<animate id="giffaGif18" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif17.end" dur="0.125" fill="freeze" xlink:href="#giffa18" />
+									begin="giffaGif17.end" dur="0.2" fill="freeze" xlink:href="#giffa18" />
 		<animate id="giffaGif19" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif18.end" dur="0.125" fill="freeze" xlink:href="#giffa19" />
+									begin="giffaGif18.end" dur="0.2" fill="freeze" xlink:href="#giffa19" />
 		<animate id="giffaGif20" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif19.end" dur="0.125" fill="freeze" xlink:href="#giffa20" />
+									begin="giffaGif19.end" dur="0.2" fill="freeze" xlink:href="#giffa20" />
 		<animate id="giffaGif21" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif20.end" dur="0.125" fill="freeze" xlink:href="#giffa21" />
+									begin="giffaGif20.end" dur="0.2" fill="freeze" xlink:href="#giffa21" />
 		<animate id="giffaGif22" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif21.end" dur="0.125" fill="freeze" xlink:href="#giffa22" />
+									begin="giffaGif21.end" dur="0.2" fill="freeze" xlink:href="#giffa22" />
 		<animate id="giffaGif23" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif22.end" dur="0.125" fill="freeze" xlink:href="#giffa23" />
+									begin="giffaGif22.end" dur="0.2" fill="freeze" xlink:href="#giffa23" />
 		<animate id="giffaGifA" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGif23.end" dur="0.125" fill="freeze" xlink:href="#giffa24" />
+									begin="giffaGif23.end" dur="0.2" fill="freeze" xlink:href="#giffa24" />
     		<animate id="giffaGifB" attributeName="display" attributeType="CSS" to="none"
-									begin="giffaGifA.end" dur="0.125" fill="freeze" xlink:href="#giffa25" />
+									begin="giffaGifA.end" dur="0.2" fill="freeze" xlink:href="#giffa25" />
 
         <animate id="giffaGifC" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa25" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa25" />
         <animate id="giffaGifD" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa24" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa24" />
         <animate id="giffaGif24" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa23" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa23" />
 		<animate id="giffaGif25" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa22" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa22" />
 		<animate id="giffaGif26" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa21" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa21" />
 		<animate id="giffaGif27" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa20" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa20" />
 		<animate id="giffaGif28" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa19" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa19" />
 		<animate id="giffaGif29" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa18" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa18" />
 		<animate id="giffaGif30" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa17" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa17" />
 		<animate id="giffaGif31" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa16" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa16" />
 		<animate id="giffaGif32" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa15" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa15" />
 		<animate id="giffaGif33" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa14" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa14" />
 		<animate id="giffaGif34" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa13" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa13" />
 		<animate id="giffaGif35" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa12" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa12" />
 		<animate id="giffaGif36" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa11" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa11" />
 		<animate id="giffaGif37" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa10" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa10" />
 		<animate id="giffaGif38" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa9" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa9" />
 		<animate id="giffaGif39" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa8" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa8" />
 		<animate id="giffaGif40" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa7" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa7" />
 		<animate id="giffaGif41" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa6" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa6" />
 		<animate id="giffaGif42" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa5" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa5" />
 		<animate id="giffaGif43" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa4" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa4" />
 		<animate id="giffaGif44" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa3" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa3" />
 		<animate id="giffaGif45" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa2" />
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa2" />
 		<animate id="giffaGif46" attributeName="display" attributeType="CSS" to="block"
-									begin="giffaGifB.end" dur="0.125" fill="freeze" xlink:href="#giffa1" />
-
+									begin="giffaGifB.end" dur="0.2" fill="freeze" xlink:href="#giffa1" />
 </svg>
