@@ -63,11 +63,11 @@
 <g id="rightEarColors">
     <animateMotion id="rightEarFly" repeatCount="1" path="m 0 0 L 800 0"  begin="indefinite" dur="1" fill="freeze" />
 
-	<rect x="600" y="208.112" fill="#F2B1B5" stroke="#F2B1B5" width="390.643" height="11.883"/>
-	<rect x="600" y="219.994" fill="#ED8E78" stroke="#ED8E78" width="390.643" height="22.646"/>
-	<rect x="600" y="242.641" fill="#F2B1B5" stroke="#F2B1B5" width="390.643" height="12.158"/>
-	<rect x="600" y="254.799" fill="#183535" width="390.643" height="5.903"/>
-	<rect x="600" y="244.379" fill="#209B8C" width="390.643" height="9.943"/>
+	<rect x="599" y="208.112" fill="#F2B1B5" stroke="#F2B1B5" width="390.643" height="11.883"/>
+	<rect x="599" y="219.994" fill="#ED8E78" stroke="#ED8E78" width="390.643" height="22.646"/>
+	<rect x="599" y="242.641" fill="#F2B1B5" stroke="#F2B1B5" width="390.643" height="12.158"/>
+	<rect x="599" y="254.799" fill="#183535" width="390.643" height="5.903"/>
+	<rect x="599" y="244.379" fill="#209B8C" width="390.643" height="9.943"/>
 </g>
 <rect id="new_giff_hand" x="814.51" y="292.543" fill="#173434" width="331.358" height="157.153"/>
 <rect x="1071.422" y="633.077" fill="#1F9C8D" width="224.544" height="61.181"/>
@@ -539,8 +539,8 @@
 	<rect x="494.854" y="106.052" fill="#1F9C8D" width="403.305" height="399.584"/>
 	<path fill="#1F9C8D" d="M590.465,498.778c61.309,61.311,160.705,61.311,222.013,0l12.969-12.968H577.498L590.465,498.778z"/>
 	<rect x="527.369" y="124.526" fill="#173434" width="348.201" height="350.26"/>
-	<g id="teethDownOpen">
-		<rect x="526.965" y="445.472" fill="#EAE984" width="296.064" height="29.314"/>
+	<g>
+		<rect id="teethDownOpen" x="526.965" y="445.472" fill="#EAE984" width="296.064" height="29.314"/>
 	</g>
 </g>
 <g id="ribua">
@@ -631,7 +631,7 @@
 			c19.856-2.318,37.834,11.901,40.151,31.758L902.595,112.893z"/>
 	</g>
 </g>
-<g id="surprised" display="none">
+<g id="surprised" style="display: none;">
 	<g id="eyeLeftSur" display="inline">
 		<circle fill="#173434" cx="578.684" cy="195.982" r="57.432"/>
 		<circle fill="#EAE984" cx="578.684" cy="196.55" r="35.954"/>
@@ -674,7 +674,7 @@
 		<circle fill="#EAE984" cx="611.338" cy="102.651" r="12.573"/>
 	</g>
 </g>
-<g id="glasses" display="none">
+<g id="glasses" style="display: none;">
 	<polygon display="inline" fill="#EAE984" points="683.66,-64.149 683.66,-7.147 620.844,-7.147 620.844,73.289 757.268,73.289
 		757.268,-64.149 	"/>
 	<g id="glassesLeft" display="inline">

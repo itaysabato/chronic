@@ -46,6 +46,7 @@ class AnimationLoader {
     final SvgToyAnimation diskMoveIn;
     final Toy.Animation diskButton;
     final Toy.Animation nose;
+    final Toy.Animation teethDown;
 
     public AnimationLoader(ElementLoader elementLoader) {
         this.elementLoader = elementLoader;
@@ -85,16 +86,22 @@ class AnimationLoader {
         pumpWheelRotate = getAnimation("pumpWheelRotate");
         diskMoveOut = getAnimation("diskMoveOut");
         diskMoveIn = getAnimation("diskMoveIn");
-        diskButton = getDiskButton(elementLoader);
-        nose = getNose(elementLoader);
+        diskButton = getDiskButton();
+        nose = getNose();
+        teethDown = getTeethDown();
     }
 
-    private Toy.Animation getDiskButton(ElementLoader elementLoader) {
+    private Toy.Animation getTeethDown() {
+        final FillColorAnimator kind = new FillColorAnimator(ShaniColors.YELLOW, ShaniColors.RED);
+        return new PeekabooToyAnimation(kind, 250, elementLoader.teethDownOpen);
+    }
+
+    private Toy.Animation getDiskButton() {
         final FillColorAnimator kind = new FillColorAnimator(ShaniColors.YELLOW, ShaniColors.LIGHT_BLUE);
         return new PeekabooToyAnimation(kind, 250, elementLoader.diskButton);
     }
 
-    private Toy.Animation getNose(ElementLoader elementLoader) {
+    private Toy.Animation getNose() {
         final FillColorAnimator kind = new FillColorAnimator(ShaniColors.RED, ShaniColors.YELLOW);
         return new PeekabooToyAnimation(kind, 250, elementLoader.nose);
     }
