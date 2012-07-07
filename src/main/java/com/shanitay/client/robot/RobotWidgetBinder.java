@@ -11,6 +11,7 @@ import com.shanitay.client.utils.gadgets.LoopRecorder;
 import com.shanitay.client.utils.gadgets.LoopRecorderController;
 import com.shanitay.client.utils.gadgets.Spinner;
 import org.vectomatic.dom.svg.OMSVGAnimationElement;
+import org.vectomatic.dom.svg.OMSVGElement;
 import org.vectomatic.dom.svg.OMSVGGElement;
 import org.vectomatic.dom.svg.OMSVGSVGElement;
 import org.vectomatic.dom.svg.events.EndEvent;
@@ -206,7 +207,7 @@ public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
         return elementLoader.isMouthOpen();
     }
 
-    private void createGlassesButton(final SoundLoader soundLoader, final ElementLoader elementLoader, OMSVGGElement teethDown) {
+    private void createGlassesButton(final SoundLoader soundLoader, final ElementLoader elementLoader, OMSVGElement teethDown) {
         Utils.SomeHandler teethHandler = new Utils.SomeHandler() {
             public void handle() {
                 String display = elementLoader.glasses.getStyle().getDisplay();
@@ -219,7 +220,7 @@ public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
                 }
             }
         };
-        Utils.attachToy(teethDown, Utils.getNullSound(), false, new HandlerToyAnimation(teethHandler));
+        Utils.attachToy(teethDown, Utils.getNullSound(), false, new HandlerToyAnimation(teethHandler), animationLoader.teethDown);
     }
 
     @Override

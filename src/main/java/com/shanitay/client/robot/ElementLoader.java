@@ -32,7 +32,7 @@ class ElementLoader {
     final OMSVGGElement smallLightning;
     final OMSVGGElement eyeBallLeft;
     final OMSVGGElement eyeBallRight;
-    final OMSVGGElement teethDownOpen;
+    final OMSVGRectElement teethDownOpen;
     final OMSVGGElement glasses;
     final OMSVGGElement surprised;
     final OMSVGRectElement nose;
@@ -120,7 +120,7 @@ class ElementLoader {
         surprised = Utils.getGElement("surprised", this.svg);
         eyes = Utils.getGElement("eyes", this.svg);
 
-        teethDownOpen = Utils.getGElement("teethDownOpen", this.svg);
+        teethDownOpen = (OMSVGRectElement) Utils.getSVGElement("teethDownOpen", this.svg);
         glasses = Utils.getGElement("glasses", this.svg);
 
         lightning = Utils.getGElement("lightning", this.svg);
