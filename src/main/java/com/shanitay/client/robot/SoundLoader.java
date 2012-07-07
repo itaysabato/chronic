@@ -24,7 +24,7 @@ class SoundLoader {
     final Sound leftBraw;
     final Sound rightBraw;
     final Sound mot;
-    final Sound nose;
+    final Sound surprise;
     final Sound toothBottom;
     final Sound open;
     final Sound close;
@@ -33,11 +33,13 @@ class SoundLoader {
     final Sound drum3;
     final Sound drum4;
     final Sound tv;
+    final Sound disk;
+    final Sound nose;
 
     public SoundLoader() {
         soundController = new SoundController();
 
-        nose = getSound("nose");
+        surprise = getSound("surprise");
         tooth1 = getSound("tooth1");
         tooth2 = getSound("tooth2");
         tooth3 = getSound("tooth3");
@@ -62,6 +64,8 @@ class SoundLoader {
         drum4 = getSound("drum4");
 
         tv = getSound("tv");
+        disk = getSound("disk");
+        nose = getSound("nose");
     }
 
     private Sound getSound(String name) {
