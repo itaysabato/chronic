@@ -141,8 +141,6 @@ public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
             private boolean on = false;
 
             public void handle() {
-                animationLoader.diskButton.play();
-
                 if(on) {
                     animationLoader.diskMoveIn.play();
                 }
