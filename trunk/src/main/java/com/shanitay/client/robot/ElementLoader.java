@@ -60,9 +60,16 @@ class ElementLoader {
     final OMSVGPolygonElement drum3;
     final OMSVGRectElement drum4;
     final OMSVGGElement backArrow;
+    final OMSVGGElement tv1;
+    final OMSVGGElement tv2;
+    final OMSVGGElement tv3;
 
     public ElementLoader(OMSVGSVGElement svg) {
         this.svg = svg;
+
+        tv1 = (OMSVGGElement) getElement("tv1");
+        tv2 = (OMSVGGElement) getElement("tv2");
+        tv3 = (OMSVGGElement) getElement("tv3");
 
         backArrow = (OMSVGGElement) getElement("backArrow");
 
@@ -107,14 +114,6 @@ class ElementLoader {
         eyeBallLeft = Utils.getGElement("eyeBallLeft", this.svg);
         eyeBallRight = Utils.getGElement("eyeBallRight", this.svg);
 
-//        step1 = Utils.getGElement("step1", svgsvgElement);
-//        step2 = Utils.getGElement("step2", svgsvgElement);
-//        step3 = Utils.getGElement("step3", svgsvgElement);
-//        step4 = Utils.getGElement("step4", svgsvgElement);
-//        step5 = Utils.getGElement("step5", svgsvgElement);
-//        step6 = Utils.getGElement("step6", svgsvgElement);
-//        step7 = Utils.getGElement("step7", svgsvgElement);
-
         nose = Utils.getGElement("nose", this.svg);
         surprised = Utils.getGElement("surprised", this.svg);
         eyes = Utils.getGElement("eyes", this.svg);
@@ -151,17 +150,6 @@ class ElementLoader {
 
     private OMSVGElement getElement(String elementId) {
         return Utils.getSVGElement(elementId, svg);
-    }
-
-    private OMSVGRectElement getStepRect(OMSVGGElement step) {
-        OMSVGRectElement rect = null;
-        for (OMNode omNode : step.getChildNodes()) {
-            if(omNode instanceof OMSVGRectElement){
-                rect = (OMSVGRectElement) omNode;
-                break;
-            }
-        }
-        return rect;
     }
 
     public boolean isMouthOpen() {

@@ -4,10 +4,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.user.client.History;
 import com.shanitay.client.AbstractSvgWidgetBinder;
-import com.shanitay.client.utils.LoopRecorderFactory;
-import com.shanitay.client.utils.ShaniColors;
-import com.shanitay.client.utils.Toy;
-import com.shanitay.client.utils.Utils;
+import com.shanitay.client.utils.*;
 import com.shanitay.client.utils.animations.FillColorAnimator;
 import com.shanitay.client.utils.animations.HandlerToyAnimation;
 import com.shanitay.client.utils.gadgets.LoopRecorder;
@@ -117,7 +114,16 @@ public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
             }
         });
 
+        bindTv();
+
         return svgElement;
+    }
+
+    private void bindTv() {
+        final Toy toy = Utils.attachToy(elementLoader.tv1, soundLoader.tv, true, animationLoader.tv);
+        final ToyStopperHandler handler = new ToyStopperHandler(toy);
+        Utils.addHandler(elementLoader.tv2, handler);
+        Utils.addHandler(elementLoader.tv3, handler);
     }
 
     private void initRecorder() {

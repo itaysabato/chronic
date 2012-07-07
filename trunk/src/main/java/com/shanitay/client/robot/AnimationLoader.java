@@ -19,7 +19,6 @@ class AnimationLoader {
     private static final int EXPLODE_DUR = 250;
     private static final int TOOTH_DURATION = 125;
     public static final int ELECTRIC_DURATION = 125;
-    private static final int RIGHT_EAR_DURATION = 500;
 
     private final ElementLoader elementLoader;
     final Toy.Animation tooth1;
@@ -41,6 +40,7 @@ class AnimationLoader {
     final PeekabooToyAnimation drum2;
     final PeekabooToyAnimation drum3;
     final PeekabooToyAnimation drum4;
+    final Toy.Animation tv;
 
     public AnimationLoader(ElementLoader elementLoader) {
         this.elementLoader = elementLoader;
@@ -75,6 +75,7 @@ class AnimationLoader {
         drum3 = new PeekabooToyAnimation(new FillColorAnimator(ShaniColors.GREEN, ShaniColors.LIGHT_BLUE), 250, elementLoader.drum3);
         drum4 = new PeekabooToyAnimation(new FillColorAnimator(ShaniColors.YELLOW, ShaniColors.PINK), 250, elementLoader.drum4);
 
+        tv = getAnimationChain("tvGif1", "tvGif4");
     }
 
     private Toy.Animation createExplodeAnimation(OMSVGGElement step, OMSVGRectElement stepRect) {
