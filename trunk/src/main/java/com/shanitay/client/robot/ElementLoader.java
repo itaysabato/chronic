@@ -35,7 +35,7 @@ class ElementLoader {
     final OMSVGGElement teethDownOpen;
     final OMSVGGElement glasses;
     final OMSVGGElement surprised;
-    final OMSVGGElement nose;
+    final OMSVGRectElement nose;
     final OMSVGGElement eyes;
     final OMSVGGElement lightning;
     final OMSVGAnimationElement leftBrawRise;
@@ -63,10 +63,12 @@ class ElementLoader {
     final OMSVGGElement tv1;
     final OMSVGGElement tv2;
     final OMSVGGElement tv3;
+    final OMSVGCircleElement diskButton;
 
     public ElementLoader(OMSVGSVGElement svg) {
         this.svg = svg;
 
+        diskButton = (OMSVGCircleElement) getElement("diskButton");
         tv1 = (OMSVGGElement) getElement("tv1");
         tv2 = (OMSVGGElement) getElement("tv2");
         tv3 = (OMSVGGElement) getElement("tv3");
@@ -114,7 +116,7 @@ class ElementLoader {
         eyeBallLeft = Utils.getGElement("eyeBallLeft", this.svg);
         eyeBallRight = Utils.getGElement("eyeBallRight", this.svg);
 
-        nose = Utils.getGElement("nose", this.svg);
+        nose = (OMSVGRectElement) Utils.getSVGElement("nose", this.svg);
         surprised = Utils.getGElement("surprised", this.svg);
         eyes = Utils.getGElement("eyes", this.svg);
 

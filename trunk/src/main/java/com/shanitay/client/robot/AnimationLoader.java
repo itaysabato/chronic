@@ -41,6 +41,11 @@ class AnimationLoader {
     final PeekabooToyAnimation drum3;
     final PeekabooToyAnimation drum4;
     final Toy.Animation tv;
+    final Toy.Animation pumpWheelRotate;
+    final SvgToyAnimation diskMoveOut;
+    final SvgToyAnimation diskMoveIn;
+    final Toy.Animation diskButton;
+    final Toy.Animation nose;
 
     public AnimationLoader(ElementLoader elementLoader) {
         this.elementLoader = elementLoader;
@@ -76,6 +81,27 @@ class AnimationLoader {
         drum4 = new PeekabooToyAnimation(new FillColorAnimator(ShaniColors.YELLOW, ShaniColors.PINK), 250, elementLoader.drum4);
 
         tv = getAnimationChain("tvGif1", "tvGif4");
+
+        pumpWheelRotate = getAnimation("pumpWheelRotate");
+        diskMoveOut = getAnimation("diskMoveOut");
+        diskMoveIn = getAnimation("diskMoveIn");
+        diskButton = getDiskButton(elementLoader);
+        nose = getNose(elementLoader);
+    }
+
+    private Toy.Animation getDiskButton(ElementLoader elementLoader) {
+        final FillColorAnimator kind = new FillColorAnimator(ShaniColors.YELLOW, ShaniColors.LIGHT_BLUE);
+        return new PeekabooToyAnimation(kind, 250, elementLoader.diskButton);
+    }
+
+    private Toy.Animation getNose(ElementLoader elementLoader) {
+        final FillColorAnimator kind = new FillColorAnimator(ShaniColors.RED, ShaniColors.YELLOW);
+        return new PeekabooToyAnimation(kind, 250, elementLoader.nose);
+    }
+
+    private SvgToyAnimation getAnimation(String id) {
+        final OMSVGAnimationElement animation = elementLoader.getAnimation(id);
+        return new SvgToyAnimation(animation);
     }
 
     private Toy.Animation createExplodeAnimation(OMSVGGElement step, OMSVGRectElement stepRect) {

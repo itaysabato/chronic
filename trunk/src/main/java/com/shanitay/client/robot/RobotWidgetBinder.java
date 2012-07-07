@@ -10,8 +10,11 @@ import com.shanitay.client.utils.animations.HandlerToyAnimation;
 import com.shanitay.client.utils.gadgets.LoopRecorder;
 import com.shanitay.client.utils.gadgets.LoopRecorderController;
 import com.shanitay.client.utils.gadgets.Spinner;
+import org.vectomatic.dom.svg.OMSVGAnimationElement;
 import org.vectomatic.dom.svg.OMSVGGElement;
 import org.vectomatic.dom.svg.OMSVGSVGElement;
+import org.vectomatic.dom.svg.events.EndEvent;
+import org.vectomatic.dom.svg.events.EndHandler;
 import org.vectomatic.dom.svg.ui.SVGResource;
 
 import java.util.ArrayList;
@@ -63,17 +66,16 @@ public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
         });
         Utils.attachToy(elementLoader.lightningButton, soundLoader.electric, false, animationLoader.electric);
 
-        Utils.attachToy(elementLoader.earLeft, soundLoader.earLeft, false, animationLoader.earLeft);
         Utils.attachToy(elementLoader.earRight, soundLoader.earRight, false, animationLoader.earRight);
 
         Utils.attachToy(elementLoader.eyeBrawLeft, soundLoader.leftBraw, false, animationLoader.leftBraw);
         Utils.attachToy(elementLoader.eyeBrawRight, soundLoader.rightBraw, false, animationLoader.rightBraw);
 
-        Toy.Animation noseAnimation = new HandlerToyAnimation(new Utils.SomeHandler() {
+        Toy.Animation surpriseAnimation = new HandlerToyAnimation(new Utils.SomeHandler() {
             public void handle() {
                 String display = elementLoader.surprised.getStyle().getDisplay();
                 if (display.equalsIgnoreCase("none")) {
-                    soundLoader.nose.play();
+                    soundLoader.surprise.play();
                     Utils.show(elementLoader.surprised);
                     Utils.hide(elementLoader.eyes);
                 }
@@ -84,7 +86,7 @@ public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
             }
         });
 
-        Utils.attachToy(elementLoader.nose, Utils.getNullSound(), false, noseAnimation);
+        Utils.attachToy(elementLoader.diskButton, Utils.getNullSound(), false, surpriseAnimation, animationLoader.diskButton);
 
         createGlassesButton(soundLoader, elementLoader, elementLoader.teethDownOpen);
 
@@ -115,8 +117,43 @@ public class RobotWidgetBinder extends AbstractSvgWidgetBinder {
         });
 
         bindTv();
-
+        bindDisk();
+        bindNose();
         return svgElement;
+    }
+
+    private void bindNose() {
+        Utils.attachToy(elementLoader.nose,  soundLoader.nose, false, animationLoader.nose);
+    }
+
+    private void bindDisk() {
+        final Toy toy = new Toy(soundLoader.disk, animationLoader.pumpWheelRotate);
+        toy.setLooping(true);
+
+        final OMSVGAnimationElement moveIn = animationLoader.diskMoveIn.getSvgAnimationElement();
+        moveIn.addEndHandler(new EndHandler() {
+            public void onEnd(EndEvent event) {
+                toy.stop();
+            }
+        });
+
+        Utils.addHandler(elementLoader.earLeft, new Utils.SomeHandler() {
+            private boolean on = false;
+
+            public void handle() {
+                animationLoader.diskButton.play();
+
+                if(on) {
+                    animationLoader.diskMoveIn.play();
+                }
+                else {
+                    toy.play();
+                    animationLoader.diskMoveOut.play();
+                }
+
+                on =!on;
+            }
+        });
     }
 
     private void bindTv() {
