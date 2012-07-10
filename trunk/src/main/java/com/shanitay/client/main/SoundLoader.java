@@ -72,6 +72,34 @@ class SoundLoader {
         colorDoor = getSound("colorDoor");
         bigForward = getSound("bigForward");
         bigBackward = getSound("bigBackward");
+
+        colorDoor.setBalance(100);
+        slide.setBalance(100);
+        pinkLine.setBalance(100);
+        bigForward.setBalance(100);
+        cube2.setBalance(80);
+        coolIgul.setBalance(80);
+        igulSlideNeg.setBalance(60);
+        igulSlidePos.setBalance(60);
+        upTriIgul.setBalance(60);
+        squareColor.setBalance(60);
+        pinkCube.setBalance(40);
+        yellowMiddleCube.setBalance(40);
+        orangeCube.setBalance(40);
+        redLine.setBalance(40);
+
+        yellowLineDown.setBalance(-40);
+        blueCube.setBalance(-40);
+        blackCube.setBalance(-40);
+        house.setBalance(-40);
+        greenLineDown.setBalance(-60);
+        igulColor.setBalance(-60);
+        redButton.setBalance(-80);
+        pinkButton.setBalance(-80);
+        partGreen.setBalance(-100);
+        bigBackward.setBalance(-100);
+
+
     }
 
     private Sound getSound(String name) {
