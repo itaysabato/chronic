@@ -19,7 +19,6 @@ class SoundLoader {
     final Sound tooth5;
     final Sound tooth6;
     final Sound electric;
-    final Sound earLeft;
     final Sound earRight;
     final Sound leftBraw;
     final Sound rightBraw;
@@ -47,7 +46,6 @@ class SoundLoader {
         tooth5 = getSound("tooth5");
         tooth6 = getSound("tooth6");
         electric = getSound("electric");
-        earLeft = getSound("earLeft");
         earRight = getSound("earRight");
 
         leftBraw = getSound("leftBraw");
@@ -67,17 +65,21 @@ class SoundLoader {
         disk = getSound("disk");
         nose = getSound("nose");
 
-        tooth1.setBalance(100);
-        tooth2.setBalance(100);
-        tooth3.setBalance(100);
-        tooth4.setBalance(100);
-        tooth5.setBalance(100);
+        earRight.setBalance(100);
+        tv.setBalance(100);
         tooth6.setBalance(100);
+        tooth5.setBalance(60);
+        tooth4.setBalance(20);
+        tooth3.setBalance(-20);
+        tooth2.setBalance(-60);
+        tooth1.setBalance(-100);
 
-        drum1.setBalance(-100);
-        drum2.setBalance(-100);
-        drum3.setBalance(-100);
-        drum4.setBalance(-100);
+        drum1.setBalance(-80);
+        drum2.setBalance(-80);
+        drum3.setBalance(-80);
+        drum4.setBalance(-80);
+
+        disk.setBalance(-100);
     }
 
     private Sound getSound(String name) {
