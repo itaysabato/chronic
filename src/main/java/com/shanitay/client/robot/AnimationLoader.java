@@ -97,7 +97,7 @@ class AnimationLoader {
     }
 
     private Toy.Animation getDiskButton() {
-        final FillColorAnimator kind = new FillColorAnimator(ShaniColors.YELLOW, ShaniColors.LIGHT_BLUE);
+        final FillColorAnimator kind = new FillColorAnimator(ShaniColors.YELLOW, ShaniColors.RED);
         return new PeekabooToyAnimation(kind, 250, elementLoader.diskButton);
     }
 
