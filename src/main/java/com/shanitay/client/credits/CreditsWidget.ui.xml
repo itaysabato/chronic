@@ -1,0 +1,22 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+    <g:HTMLPanel ui:field="panel">
+        <video id="myVideo" width="1360" height="763" preload="auto"
+               oncanplaythrough="play()" onended="back()">
+            <!--<source src="credits/credits.mp4" type="video/mp4"/>-->
+            <source src="credits/credits.ogv" type="video/ogg"/>
+        </video>
+
+        <script type="text/javascript">
+            var myVideo=document.getElementById("myVideo");
+            function play() {
+                myVideo.play();
+            }
+
+            function back() {
+                $wnd.history.back();
+            }
+        </script>
+    </g:HTMLPanel>
+</ui:UiBinder>
