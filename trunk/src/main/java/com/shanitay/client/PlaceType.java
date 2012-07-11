@@ -1,6 +1,7 @@
 package com.shanitay.client;
 
 import com.shanitay.client.clip.ClipWidgetBinder;
+import com.shanitay.client.credits.CreditsWidgetBinder;
 import com.shanitay.client.giffef.GiffefWidgetBinder;
 import com.shanitay.client.main.MainWidgetBinder;
 import com.shanitay.client.pilot.PilotWidgetBinder;
@@ -17,6 +18,7 @@ public enum PlaceType {
     PILOT(new PilotWidgetBinder()),
     MAIN(new MainWidgetBinder()),
     CLIP(new DelayWidgetBinder(5000, new GiffefWidgetBinder(), new ClipWidgetBinder())),
+    CREDITS(new DelayWidgetBinder(5000, new GiffefWidgetBinder(), new CreditsWidgetBinder())),
     ROBOT(new RobotWidgetBinder()),
     TRAILER(new DelayWidgetBinder(5000, new GiffefWidgetBinder(), new TrailerWidgetBinder()));
 
