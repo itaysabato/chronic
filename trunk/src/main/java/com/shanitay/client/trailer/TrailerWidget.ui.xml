@@ -2,7 +2,7 @@
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 
     <g:HTMLPanel ui:field="panel">
-        <video id="myVideo" width="1360" height="760" preload="auto"
+        <video id="myVideo" width="1360" height="763" preload="auto"
                oncanplaythrough="play()" onended="back()">
             <source src="trailer/trailer.mp4" type="video/mp4"/>
             <source src="trailer/trailer.ogv" type="video/ogg"/>
