@@ -18,7 +18,7 @@ public enum PlaceType {
     PILOT(new PilotWidgetBinder()),
     MAIN(new MainWidgetBinder()),
     CLIP(new DelayWidgetBinder(5000, new GiffefWidgetBinder(), new ClipWidgetBinder())),
-    CREDITS(new DelayWidgetBinder(5000, new GiffefWidgetBinder(), new CreditsWidgetBinder())),
+    CREDITS(new CreditsWidgetBinder()),
     ROBOT(new RobotWidgetBinder()),
     TRAILER(new DelayWidgetBinder(5000, new GiffefWidgetBinder(), new TrailerWidgetBinder()));
 
