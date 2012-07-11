@@ -897,9 +897,8 @@
 	<circle id="diskButton" fill="#EAE984" cx="106.218" cy="459.583" r="31.074"/>
 </g>
 <g id="backArrow">
-    <rect x="1283" y="0" fill="#F5F5F5" width="60" height="51"/>
-	<polygon fill="#5AA17B" points="1312.315,36.516 1293.88,25.873 1312.315,15.229 	"/>
-	<rect x="1312.315" y="23.171" fill="#5AA17B" width="29.791" height="5.528"/>
+	<rect x="1285.6" y="27.095" fill="#5AA17B" width="46.701" height="15.881"/>
+	<polygon fill="#ED8E78" stroke="#ED8E78" points="1285.6,57.034 1253.592,35.442 1285.6,13.85 	"/>
 </g>
 <g id="lightning" display="none">
 	<polygon display="inline" fill="#EAE984" points="547.987,-36.217 870.461,-35.67 667.875,273 813.646,505.259 584.262,808.548
