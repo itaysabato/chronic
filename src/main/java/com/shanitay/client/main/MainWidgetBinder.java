@@ -30,6 +30,7 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         elementLoader = new ElementLoader(svgElement);
         animationLoader = new AnimationLoader(elementLoader);
 
+        linkCredits();
         linkWatchRight();
         linkWatchLeft();
         linkCreate();
@@ -154,6 +155,15 @@ public class MainWidgetBinder extends AbstractSvgWidgetBinder {
         Utils.addHandler(elementLoader.watchRight2, someHandler);
         Utils.addHandler(elementLoader.watchRight3, someHandler);
         Utils.addHandler(elementLoader.watchRight4, someHandler);
+    }
+
+    private void linkCredits() {
+        Utils.SomeHandler someHandler = new Utils.SomeHandler() {
+            public void handle() {
+                History.newItem(PlaceType.CREDITS.name());
+            }
+        };
+        Utils.addHandler(elementLoader.credits, someHandler);
     }
 
     private void linkWatchLeft() {
