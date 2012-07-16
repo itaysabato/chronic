@@ -5,7 +5,7 @@
         <video id="myVideo" width="1360" height="763" preload="auto"
                oncanplaythrough="play()" onended="back()">
             <!--<source src="credits/credits.mp4" type="video/mp4"/>-->
-            <source src="credits/credits.ogv" type="video/ogg"/>
+            <source src="http://itay.5gbfree.com/credits.ogv" type="video/ogg"/>
         </video>
 
         <script type="text/javascript">
