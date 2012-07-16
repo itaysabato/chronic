@@ -22,8 +22,8 @@ import java.util.Iterator;
  */
 public class Utils {
     public static final int TIME_UNIT = 41;
-//    public static final String EVENT = "mousedown";
-    public static final String EVENT = "MozTouchDown";
+    public static final String EVENT = "mousedown";
+//    public static final String EVENT = "MozTouchDown";
 
     public static void animateFor(final StateChangeAnimator animator, final OMSVGElement element, int durationMillis) {
         animator.inAnimation(element);
